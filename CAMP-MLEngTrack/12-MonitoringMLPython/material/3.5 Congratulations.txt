@@ -1,0 +1,23 @@
+1. Congratulations
+00:00 - 00:07
+Congratulations on completing the course! Let us recap what we've learned in this course!
+
+2. Chapter 1 recap
+00:07 - 00:31
+First, you've gained a solid understanding of the fundamentals of NannyML and how it's employed to build monitoring systems in a production environment. Furthermore, you've been introduced to the complete data preparation process, with a practical example to create reference and analysis sets. Lastly, we've delved into the performance estimation algorithms, CBPE and DLE, and how you can use them with NannyML.
+
+3. Chapter 2 recap
+00:31 - 01:04
+In Chapter 2, we delve deeper into the initial phase of the monitoring workflow, which is performance monitoring. You've learned the knowledge of measuring a model's performance when ground truth data is accessible. Additionally, you explored more advanced methods of working with the results, like filtering, plotting, and transforming them into a data frame. You also got more insights about chunking and thresholds. Lastly, you've gained the expertise to calculate and estimate the business value of your model, and you've tested this knowledge using a practical example on the hotel booking dataset.
+
+4. Chapter 3 recap
+01:04 - 01:39
+Chapter 3 takes us to the next phase in the monitoring process, where you figure out why the model's performance is going down. You learn to spot any major changes in the data using multivariate drift detection. You also explore various methods to pinpoint which feature is causing the performance drop in our hotel booking cancellation example. To get a better grip on the data, you check for missing and unseen values and perform statistical tests. Ultimately, you gain insights into what to do when performance starts to decline, which can mean doing nothing, retraining the model, or adjusting downstream processes.
+
+5. What's next?
+01:39 - 02:16
+We've gone through the fundamental aspects of the monitoring workflow, but there's much more knowledge waiting to be explored. To further your understanding: Explore our tutorials on our website, which provide in-depth insights into various aspects of monitoring. Refer to our comprehensive documentation that delves deeper into topics we've discussed, including performance estimation algorithms, as well as multivariate and univariate drift detection methods. Consider enrolling in other courses that cover areas you haven't touched upon, such as deploying models for production. DataCamp offers numerous machine learning projects which you can try the NannyML on.
+
+6. Thank you!
+02:16 - 02:26
+Congratulations again, and thank you for taking the course! I hope you enjoy using NannyML for your monitoring system from now on!

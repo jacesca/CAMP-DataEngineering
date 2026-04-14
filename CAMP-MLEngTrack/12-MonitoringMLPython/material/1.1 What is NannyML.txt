@@ -1,0 +1,32 @@
+1. What is NannyML?
+00:00 - 00:07
+Welcome, I am Hakim,CEO and co-founder of NannyML. I will be your instructor for this practical monitoring in production course.
+
+2. Prerequisites
+00:07 - 00:36
+You might know me from the Machine Learning Monitoring Concepts course, which is a prerequisite for this one. In the previous course, we explored the theoretical aspects of monitoring in production, such as ideal monitoring workflow, challenges of monitoring models in production, the two silent model failures concept drift and covariate shift, six methods for detecting it, and theoretical concepts behind CBPE and DLE algorithms.
+
+3. What this course will cover?
+00:36 - 00:55
+This course is more practical, and by the time you finish, you'll be able to: Firstly, build a robust monitoring system with NannyML. Secondly, implement performance estimation algorithms. Thirdly, use the business calculator to determine the monetary value of a machine learning model. And finally, run various covariate shift detection methods.
+
+4. Monitoring challenges
+00:55 - 01:46
+Creating a robust monitoring solution that will prevent a model from failing is not a trivial task. In practice, there are two prominent challenges each monitoring solution faces: First, a lack of access to ground truth or labels and, second, alert fatigue. In applications like loan default prediction, ground truth is often delayed. In others, it is completely absent. This means that we don't have labels to evaluate or retrain our models. We might, for example, just know if a loan has defaulted at the end of the month when controlling compiles the data. Secondly, the data drift detection methods are used when there's n ground truth to calculate the performance. These methods alert whenever there's a change in the production data distribution. This often causes an alerting fatigue problem, a phenomenon where the data science team is exposed to too many alerts and, as a result, misses the relevant ones.
+
+5. Open-source solution
+01:46 - 02:23
+Several companies are trying to tackle these problems, such as Evidently, DeepChecks, or WhyLabs. We will focus here on NannyML because it offers an estimate of the model's performance even when ground truth data is absent. It is an open-source Python library that handles detecting data drifts and smartly connects alerts to changes in model performance, addressing the issue of alert fatigue. As you'll discover later in the course, it has a user-friendly code interface and interactive visualizations that can be integrated with any ML framework. NannyML is a primary tool of choice for many organizations across different industries.
+
+6. The key features
+02:23 - 03:05
+NannyML helps data scientists to do three things. The first is monitoring what matters. This includes performance estimation and calculation to see how the model performs continuously in real-time. It also includes business value estimation and calculation, which helps to better communicate the monetary value of the model to the stakeholders. Secondly, after the changes are identified, NannyML helps to find what is broken. It supports two drift detection types, univariate and multivariate, that allow to link any changes in the incoming data to the performance of your model. As well as monitor data quality. Finally, NannyML helps to fix any problems that have been uncover, for example, by setting performance based retraining triggers.
+
+7. How to use NannyML?
+03:05 - 03:36
+The first step to using NannyML is setting up the data. NannyML requires two data sets: reference, which is the test set, and the analysis set, which is the production data. This is the data that a model encounters in reality after being deployed. For demo purposes, the library itself has plenty of implemented example datasets ready to explore. We need to import the nannyml library and use the load method to get the US consensus dataset. The method returns a reference set, an analysis set, and a column containing ground truth values.
+
+8. Let's practice!
+03:36 - 03:42
+Now that you have learned about the basics of NannyML, let's test your knowledge.
+

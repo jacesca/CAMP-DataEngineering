@@ -1,0 +1,32 @@
+1. Working with calculated and estimated results
+00:00 - 00:07
+Welcome back and let's explore how we can customize and further analyze our results.
+
+2. How to chunk the data?
+00:07 - 01:35
+A "chunk" represents aggregated results for a specific number of observations or a time interval, and it is displayed as a single point on the monitoring plot. There are three ways to create a chunk: The first type is the time-based chunk, which we've used in the previous video. It's created based on fixed time intervals. In the example, yellow rectangles represent daily chunks, dark blue represents weekly chunks, and the largest, light blue one, covers chunks for the entire month. As we can see, the number of observations per chunk can vary, as some days or weeks may have more data than others. This variation can result in a sampling error, where a single chunk may not accurately represent the entire dataset. Size-based chunking is a second type which ensures a fixed number of data points per chunk. In the example image, the yellow rectangles correspond to chunks containing 15 data points, dark blue includes 45 points, and light blue contains 90 points. The final method is number-based chunking. Here, we need to specify the total number of chunks we want. This method also ensures a fixed number of observations per chunk.
+
+3. Specifying different chunks
+01:35 - 02:09
+In the previous exercises, We've already initialized the performance estimator and calculator with the daily chunk period. However, NannyML also supports time-based chunking values ranging from seconds to a year. In the example code, we chose the monthly chunks. We can also use chunking methods in the code by specifying the chunk-size parameter or the chunk-number parameter. Please note that we can only select one chunking method at a time.
+
+4. Initializing custom thresholds
+02:09 - 03:03
+Remember that the reference set is our baseline data. If we fit the reference data to the NannyML algorithm, it generates threshold values for alerting purposes. Here's how it works: NannyML calculates the mean and standard deviation of the reference data. To compute the lower threshold, it subtracts three standard deviations from the mean. For the upper threshold, it adds three times the standard deviation to the mean. However, NannyML also provides simple modules to customize this calculation. We can manually set the standard deviation multiplier for both the lower and upper thresholds using the "Standard Deviation Threshold" module. Additionally, we can set lower and upper threshold values using the "Constant thresholds" module.
+
+5. Specifying custom thresholds
+03:03 - 03:45
+These modules are imported from the nannyml thresholds, but the import line on the previous slide was skipped to fit the code to the page. Here, We've also skipped the portion related to the initialization of CBPE to focus on the threshold parameter. It's important to note that we pass our custom thresholds as a dictionary, mapping the metric name to the threshold value we want to use. Any unspecified thresholds will still use the default values. As a result, we obtain two graphs with the custom thresholds.
+
+6. Filtering results
+03:45 - 04:04
+NannyML has introduced a helpful method that enables us to filter the result data, making it easy to retrieve the specific information we're interested in. We can filter by the reference and analysis periods, the metrics of interest, or by both criteria.
+
+7. Export results to dataframe
+04:04 - 04:39
+We can use the to-df method to convert the results into a data frame. Let's take a look at what our resulting DataFrame looks like. As we can see, it includes a section with chunk information, such as start and end indices, dates, and specific values. Following that, we'll find numerical results for specific metric calculations, including values like confidence boundaries, thresholds, and whether there was an alert or not.
+
+8. Let's practice!
+04:39 - 04:46
+We've covered a lot of information; let's put your knowledge into practice!
+

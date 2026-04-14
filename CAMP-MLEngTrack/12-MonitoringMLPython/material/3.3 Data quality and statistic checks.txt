@@ -1,0 +1,27 @@
+1. Data quality checks and summary statistics
+00:00 - 00:08
+Hi, it's Hakim again. In this video, we will take a closer look at Data Quality and Statistic checks. Let's get into it.
+
+2. What are data quality checks and summary statistics?
+00:08 - 00:42
+Data Quality and Statistics checks are illustrated in the diagram as the final step of the root cause analysis process. However, in practice, their order depends on the application at hand. For example, one of the quality checks is row count, where we can monitor the number of rows for each chunk. If the number of examples is really low, it might indicate that there is not enough data to calculate univariate or multivariate results. In that case, it's better to prioritize row count as the first step. NannyML is providing us with two data quality check methods.
+
+3. Missing values detection
+00:42 - 01:44
+The first method counts the number of missing values in the given chunk or their share. The impact of missing values on performance in data science can be significant. Missing data leads to reduced chunk size and, as a result, can bias results. The reason is that the incomplete chunk of our data doesn't represent the entire dataset from that period correctly. Missing data can also result in the loss of valuable information, affecting the quality of insights and predictions. Analyzing incomplete data can, therefore, lead to incorrect interpretations and decisions. Observing the missing values can lead to detecting issues in the data-gathering process. For example, a sensor we used to collect data might be outdated and is starting to produce more NaN values. To run a missing value check, we need to initialize the MissingValueCalculator module and pass the column names we want to observe. Additionally, if you want to see the ratio of missing values, set the normalized parameter to True. Then we fit, calculate, and plot results.
+
+4. Missing values plot
+01:44 - 01:55
+As you can see, with normalize set to true, the plot displays the ratio of missing values for each chunk over time, and for false values, it shows the actual number of missing values.
+
+5. Unseen values detection
+01:55 - 02:53
+Another data quality check is showing unseen values. NannyML defines unseen values as categorical feature values not present in the reference period. An unexpected increment of unseen values in your model input can make it less confident in the regions containing these values. For instance, our model that predicts hotel booking cancellations our reference data had no bookings made by Belgian citizen. However, in the production environment, this number increased to ten thousand. So it is always important to know how to deal with these changes. Similarly to the missing value check, we first need to initialize the UnseenValuesCalculator class and pass the column names we want to observe. Additionally, if you want to see the absolute count, set the normalize parameter to False. As usual, later, we fit, calculate, and plot results. As you can see, the plot displays the number of unseen values for each chunk over time.
+
+6. Summary statistics
+02:53 - 03:35
+Another data quality check is summary statistics. NannyML offers five statistical calculators that work similarly to missing-value or unseen calculators. Each method calculates specific statistics for the values in the chunk. Summation: As the name says, summing up. It's useful, for example, for financial data to calculate total revenue for a specific period. Mean and Standard Deviation are helpful for data drift checks. If the mean is drifting, it indicates changes in the distribution, helping in explainability. The median is resistant to outliers, making it useful when dealing with features that have many extreme values. Row Counts helps to determine if there is enough data in each chunk to provide meaningful insights.
+
+7. Let's practice!
+03:35 - 03:41
+Now, let’s do the quality and statistics checks on our Hotel Booking dataset!

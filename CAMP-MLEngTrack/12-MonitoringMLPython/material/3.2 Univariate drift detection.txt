@@ -1,0 +1,41 @@
+1. Univariate drift detection
+00:00 - 00:05
+Now let's have a look at the univariate drift detection approach.
+
+2. What is univariate drift detection?
+00:05 - 00:15
+Univariate drift detection is a method used after the multivariate one. Where you look at each feature individually to determine why and if it is drifting.
+
+3. Univariate methods
+00:15 - 00:50
+The returned results are a single number, which represents the amount of drift between the reference and analysis chunk. NannyML supports six methods whose application varies depending on the variable type: Jensen-Shannon distance and Hellinger, which both work for both categorical and continuous variables. Wasserstein and Kolmogorov-Smirnov both for continuous variables. and, L-infinity and Chi-squared only for categorical variables.
+
+1 https://nannyml.readthedocs.io/en/stable/how_it_works/univariate_drift_comparison.html
+4. Code implementation
+00:50 - 01:29
+The implementation process is similar to other calculators but with a few extra parameters. First, we initialize the UnivariateDriftCalculator and specify a list of categorical methods we want to use, and a list of continuous methods. Then, we specify column names that we want to observe; it also can include the model's predictions as well as typical parameters like timestamp and chunk period. Then, as usual, we fit reference data and calculate the results on the analysis set. However, the results are more ambiguous since we created plot for each variable and for each specified method.
+
+5. Filtering
+01:29 - 01:59
+Fortunately, we can filter the resulting plots. Besides the already mentioned period argument, we can filter by the column names and methods we have used. We can do it by using filter method on univariate results and specify column names and methods as an argument. However, imagine a model with 100 features. In that scenario, it is a tedious task to go over all of the features to find the relevant drifts. Nanny has a solution for it, called ranker.
+
+6. Alert count ranker
+01:59 - 02:37
+In NannyML, we have two rankers at our disposal. The first is the alert count ranking, which ranks features based on the number of alerts generated during the analysis period. To use this, we initialize the AlertCountRanker method, provide it with the univariate results, and specify whether we want results for all features or only those that are drifting. The outcome is a DataFrame that displays the number of alerts for each column, along with their ranking positions. The column with the highest number of alerts is given the top position. However, considering that many alerts may be false, we can use the correlation ranker to validate them.
+
+7. Correlation ranker
+02:37 - 03:26
+The correlation ranker ranks features based on how closely they correlate to absolute changes in performance. To use this method, we start by fitting the calculation or estimation results for just one metric. Then, we call the correlation rank module, fitting the performance results that have been filtered for the reference period. Finally, we call the rank method, passing both the univariate and performance results for evaluation. The outcome is a dataframe table containing Pearson correlation and p-values for each feature. It also provides information about whether a feature drifted and its rank. A high correlation value indicates a strong positive correlation, with a small p-value signifies statistical significance, as seen in the "trip_distance" feature.
+
+8. Monitoring feature's distribution
+03:26 - 03:51
+By default, NannyML keeps an eye on the output of the particular univariate method we previously defined. However, it offers an additional option to track how the feature distributions evolve in each chunk. This can significantly improve our understanding of drift and its connection to performance. To utilize this feature, we only need to set the "kind" argument in the plot method to "distribution."
+
+9. Feature distribution plot
+03:51 - 04:03
+This approach is applicable to both categorical and continuous variables. The outcome is a plot that displays the distributions in each chunk, with the red distribution indicating an alert.
+
+10. Let's practice!
+04:03 - 04:15
+We've covered a good amount of information in this video. Now, let's apply what we've learned to understand the drift we identified in the hotel booking dataset during the previous exercise.
+
