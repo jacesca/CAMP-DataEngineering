@@ -1,0 +1,47 @@
+1. How operational models help with data security
+00:00 - 00:14
+This video will cover the next level of data security in organizations, operational models for protecting data. These models are implemented as detailed internal guidelines to reduce data breach risks.
+
+2. What are operational models?
+00:14 - 00:53
+Operational models are implemented to address specific security challenges or protect particular types of data. They aim to prevent cyberattacks, mitigate human errors compromising data, and reduce unintentional data loss. They are implemented in the form of processes and rules defined internally by an organization. They are based on their unique needs and risk profiles. Instead of frameworks that provide a holistic approach, they meet a specific need. They are flexible and can be tailored to deliver optimal results under various circumstances.
+
+3. Five popular operational models
+00:53 - 01:10
+Let’s dive deeper to understand operational models better. We’ll discuss five popular ones: Zero Trust Architecture, Separation of Duties, Principle of Least Privilege , Data Loss Prevention, and Role-Based Control.
+
+4. Zero Trust Architecture (ZTA)
+01:10 - 01:42
+Zero Trust Architecture, or ZTA, operates on “never trust, always verify.” All systems and users are untrustworthy until proven otherwise. It emphasizes continuous verification and strict access controls. Google’s BeyondCorp, an example of ZTA, enables secure work from anywhere without a VPN. It grants access based on user identities and device health, reducing unauthorized access and data breach risks.
+
+5. Separation of Duties (SoD)
+01:42 - 02:13
+Separation of Duties, or SoD, divides tasks and privileges among users to prevent one person from controlling a critical process. It establishes a checks-and-balances system enhancing data security and integrity. Commonly adopted in financial institutions, it reduces conflicts of interest, fraud, or errors. SoD frameworks are legally required for banks under the SOX regulation that we discussed in chapter one.
+
+6. Principle of Least Privilege (PoLP)
+02:13 - 02:33
+The Principle of Least Privilege, or PoLP, restricts user access to what’s necessary for their job functions, minimizing security risks. The healthcare industry commonly uses PoLP to ensure confidential medical information access only to those who need it.
+
+7. Data Loss Prevention (DLP)
+02:33 - 03:00
+Data Loss Prevention, or DLP, is a set of tools and practices protecting sensitive information from unauthorized access, sharing, or theft. DLP uses a multifaceted approach with monitoring, detection, and blocking mechanisms to prevent data breaches and ensure data integrity. It’s used in healthcare organizations, financial institutions, and government agencies.
+
+8. Role-Based Control (RBC)
+03:00 - 03:20
+Role-Based Control, or RBC, assigns access permissions based on job roles. Users receive permissions aligned with their roles, streamlining access management and reducing unauthorized access risks. Large corporations with diverse departments widely adopt this model.
+
+9. Aim to fortify organizations
+03:20 - 03:55
+While these operational models have different approaches, they all aim to fortify organizations against threats. They are defined internally by organizations, address specific security challenges and protect certain types of data. Unlike holistic frameworks, they meet specific needs and can be tailored to deliver optimal results under various circumstances. The key to choosing the best one is identifying the most effective for specific needs and risks unique to each organization.
+
+10. AI has also affected the landscape
+03:55 - 04:13
+The expansion of AI has also affected the landscape. AI-powered tools can ensure operational models are practical and efficient. Automation can improve critical tasks such as risk assessment, policy enforcement, and anomaly detection.
+
+11. Company leadership and culture
+04:13 - 04:47
+It's important to point out that to be effective, operational models must be a part of the company culture. An organization's leadership must be data defenders who are committed to them. This ensures that the necessary resources are available and that staff are properly trained and aware. Despite offering robust data protection, these operational models are not fool-proof. Cyber threats constantly evolve. Thus, organizations must be proactive in updating their operational models to keep pace with these changes.
+
+12. Let's practice!
+04:47 - 04:54
+Now, let's see what challenges you and Data Defender will face next!

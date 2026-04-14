@@ -1,0 +1,36 @@
+1. Business line and technology data roles
+00:00 - 00:07
+In this video, we will review data roles that you might find in the lines of business or technology.
+
+2. A food analogy
+00:07 - 00:35
+Think about a pepper - from the time it is grown to the time it ends up in a delicious meal on your table, several roles play a critical part in ensuring the pepper is handled properly, safely, and efficiently along the food supply chain. Similarly, with data, several key roles ensure data is handled properly, safely, and efficiently from the time it is created to when it is used and eventually destroyed.
+
+3. Data owners
+00:35 - 01:11
+To plant and harvest a successful crop, a farm owner must ensure he has land, soil, farmworkers, machinery, and standard processes for seeding, watering, and harvesting. The farm owner must also ensure food is handled in line with applicable regulations. Data is created in many forms. To establish ownership and accountability, every data asset or data set should have a data owner. The data owner oversees infrastructure, governance, resources, practices, and regulatory compliance.
+
+4. Data producers
+01:11 - 01:44
+Before a pepper is ready to be transported to a market or a processing plant, it must be planted, harvested, and handled properly by the farmworkers that support the farm owner. Farmworkers also inspect food before it leaves the farm and help resolve farming issues. Data producers create or enter data into source systems that data owners own. Data producers implement quality controls to check for errors before the data is sent downstream and are responsible for addressing data issues raised by consumers.
+
+5. Data engineers
+01:44 - 02:19
+When a pepper is sent to a food processing plant, it gets converted into different products through systems designed by a food process engineer. Food process engineers develop systems to optimize the quality, storage, and distribution of food, including automation of processing and packaging. Similarly, data engineers build pipelines and systems to collect and convert raw data into more useful information. Data engineers optimize the quality, storage, and distribution of data through automated processes.
+
+6. Data custodians
+02:19 - 02:56
+Food distributors gather the pepper once grown and/or processed and then store, transport, and deliver it to the retail market for consumer use. The food distributor must ensure the procedure runs smoothly and that the pepper arrives undamaged. Similarly, once data has been created and processed, data custodians are responsible for ensuring safe transport and storage of data while maintaining physical and system security. Data custodians also ensure controls are in place to maintain data integrity, including managing servers, backups, and networks.
+
+7. Data stewards
+02:56 - 03:30
+Our pepper has made it to the marketplace, where a grocery store manager will ensure it meets standards, organize it as part of a food display, and provide guidance to customers on locating and using it. Data stewards report to the data owner and are subject matter experts for the data asset they support. Data stewards are responsible for many tasks, including data and definition standardization, data classification and organization, access and protection management, and guiding consumers on best practices for data use.
+
+8. Data analysts and scientists
+03:30 - 04:08
+Once a chef receives an order, she locates the ingredients and inspects, cleans, and processes them before using the ingredients to make a meal. The meal will range from basic to gourmet, depending on the chef's skill. Data analysts and scientists solve business problems by collecting the needed data, reviewing its quality, and preparing it for analysis through processing and cleansing. Data analysts will provide basic to intermediate results through reporting and dashboards, whereas data scientists will use advanced analytics and machine learning to generate actionable insights.
+
+9. Let's practice!
+04:08 - 04:17
+Now that you've learned about different data roles in the business lines and IT, let's practice applying your knowledge.
+

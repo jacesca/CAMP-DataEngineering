@@ -1,0 +1,19 @@
+1. Recap: Introduction to Data Quality
+00:00 - 00:09
+Well done! You've reached the final video of this course. Let's wrap up by reviewing what you've learned.
+
+2. Chapter 1: Defining data quality terms
+00:09 - 00:30
+In chapter one, you learned that data quality is a measurement of the degree to which data is fit for purpose. You learned about six essential data quality dimensions and how they are used to measure data quality. You also learned why data quality is important and what roles and responsibilities are involved in data quality.
+
+3. Chapter 2: Data quality processes and components
+00:30 - 00:50
+In chapter two, you learned how to identify data quality rules for each data quality dimension using data profiles. You learned about the importance of metadata and data lineage in data quality. You also learned the overall data quality process for triaging and remediating data quality.
+
+4. Chapter 3: Data quality rules in action
+00:50 - 01:07
+Finally, in chapter three you learned about detective and preventative data quality rules. You learned about when anomaly detection can be used in identifying potential data quality issues. You wrapped up by learning about data quality alert thresholds.
+
+5. Congratulations!
+01:07 - 01:25
+Thank you for the time that you have committed to learning about data quality in this course. Data quality is a foundational component in using data in every data related role. It has been an honor to share my data quality knowledge and experience with you and I wish you all the best in your learning journey.

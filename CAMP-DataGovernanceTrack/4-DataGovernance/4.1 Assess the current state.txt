@@ -1,0 +1,32 @@
+1. Assess the current state
+00:00 - 00:08
+In this video, we will review how to assess existing data governance activities and determine a target state for an organization.
+
+2. Assessment steps
+00:08 - 00:48
+Whether creating a brand-new data governance program or transforming an existing one, it is critical that you start with an objective assessment of current data governance capabilities against the organization's needs. The assessment should follow five steps: identifying data sources and stakeholders, interviewing stakeholders to assess their needs, evaluating current capabilities against an industry benchmark, documenting the current and target states, analyzing gaps, and prioritizing the next steps. Let's use these steps to assess data governance at a fictional company called ZH Healthcare.
+
+3. Identify data sources and stakeholders
+00:48 - 01:23
+To identify data sources and stakeholders at ZH Healthcare, we start by asking questions of IT and the business lines. For example, when we ask how reporting data is sourced, we learn that the company has ten source systems operated by five departments, meaning data silos exist. We're unable to get clear answers regarding who owns the data. Still, IT provides us with four departments that consume data for reporting and analytics, including marketing, finance, human resources, and compliance.
+
+4. Interview stakeholders
+01:23 - 01:59
+Now that we've identified ZH Healthcare's data stakeholders, we can interview them about their data needs. When we ask data stakeholders how they know their data is of high quality, we find they tend to rely on gut instinct rather than any formal data quality processes and metrics. When we ask IT how data is protected from misuse and loss, we find there are recovery processes in place and department-based access controls. Asking about concerns regarding data helps us uncover issues meeting privacy regulations due to the lack of metadata management and classification capabilities.
+
+5. Evaluate current capabilities
+01:59 - 02:46
+Next, we need to compare the current state of data governance at ZH Healthcare to an industry-standard framework, such as EDM Council's Data Capability Assessment Model (DCAM) as shown on the slide. Capability assessment models provide detailed guidance on what is expected for each rating level for stakeholder engagement, necessary artifacts, and process maturity. Since some data governance capabilities do not exist, but stakeholders have been identified and engagements are underway, ZH Healthcare's processes are rated either 1- Not Initiated, 2 - Conceptual, or 3 - Developmental against the DCAM rating scale. Their overall maturity rating is between two and three.
+
+1 edmcouncil.org, 2021
+6. Document current and target states
+02:46 - 03:25
+Using the information we've gathered in the previous steps, our next task is documenting the current state of ZH Healthcare's data governance capabilities. For example, we state that data quality management is non-existent, the lack of metadata management is causing data privacy concerns, and there are basic access controls in place. To document ZH Healthcare's target state, we leverage the industry framework, and stakeholder needs to illustrate the advancements the company plans to make such as daily data quality rule monitoring, integrating a metadata solution, and enhancing access controls.
+
+7. Analyze and prioritize
+03:25 - 04:00
+In our last step, we take ZH Healthcare's documented current and target states for all data governance capabilities - not just those in our example - and perform a gap analysis. After identifying all the areas that need improvement, we recommend to ZH Healthcare which gaps to prioritize based on the needs of the organization and available resourcing. Senior leaders and data stakeholders review our recommendations and provide feedback, which we incorporate into our final report. Now the assessment is complete!
+
+8. Let's practice!
+04:00 - 04:07
+Now that you know how to perform a current state assessment let's practice some of the concepts.

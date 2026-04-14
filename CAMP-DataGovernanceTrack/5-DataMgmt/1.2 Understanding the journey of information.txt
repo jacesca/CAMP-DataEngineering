@@ -1,0 +1,32 @@
+1. Understanding the journey of information
+00:00 - 00:12
+Welcome back! In this video, we will explore the data life cycle. We will break down what it is, what it includes, and why data management is at the heart of it.
+
+2. From creation to insight
+00:12 - 01:50
+The data life cycle outlines the journey from data inception to culmination through these pivotal stages: creation and acquisition, storage, processing, use and sharing and archiving and destruction. Good management is vital at each stage of the data life cycle and this is where data life cycle management comes into play. It is a framework overseeing business data within an organization throughout its lifespan. To understand this concept, ask yourself: Where does data come from, and where does it go? Examine customer transaction data from a retail website: it is captured and stored in a database. Thereafter, it undergoes processing, followed by utilization across departments for analysis and sharing of insights. If the data remains unused, it eventually ages and can be responsibly decommissioned. Data life cycle management enables efficient data utilization, facilitating informed decision-making, and optimizing resources. Overlooking this coordination may result in data chaos, security vulnerabilities, and non-compliance with regulations. Comprehending the data life cycle and implementing robust data management processes guarantees a purposeful journey for your data, minimizing risks while maximizing intrinsic value. Let's explore the data life cycle stages.
+
+1 Images in this lesson were created using Freepik
+3. Crafting data
+01:50 - 02:41
+Data creation and acquisition marks the inception of the data life cycle. During this phase, data not only comes into existence but also integrates into the organization's domain. For example, consider customer details being input into a system or the acquisition of market trends from diverse sources. Understanding this foundational phase is paramount as it sets the tone for the entire data life cycle. The quality, accuracy, and relevance of the data established here ripple through subsequent stages, influencing decisions and insights derived later on. It's not merely about gathering data. It's about ensuring its integrity and alignment with organizational objectives.
+
+4. Data's shelter
+02:41 - 03:08
+The second stage in the life cycle, data storage, provides a secure haven for information. It involves choosing optimal storage solutions, from databases to the cloud, ensuring data resides in a protected environment. Efficient data storage lays the groundwork for accessibility and integrity throughout the life cycle, supporting informed decision-making.
+
+5. From raw to refined
+03:08 - 03:35
+During data processing, the third step in the data life cycle, raw data gets transformed into useful information. This involves using tools and techniques to refine the data, making it more meaningful. Efficient data processing lays the groundwork for discovering patterns and trends, empowering organizations to operate more effectively and enhance overall performance.
+
+6. Shared data, smart decisions
+03:35 - 04:03
+The data use and sharing stage is where data becomes a shared resource, influencing the collective intelligence of the organization. This phase involves collaborative utilization across departments, extracting value from insights. Successful data use and sharing amplify the impact of information, fostering teamwork, and getting the most out of insights for better operations and strategic progress.
+
+7. Preservation and data goodbyes
+04:03 - 04:44
+As we wrap up the data life cycle, the spotlight shifts to data archiving and destruction. Archiving preserves valuable historical data for future reference and compliance, ensuring a comprehensive organizational memory. Conversely, data destruction responsibly concludes the data journey, safeguarding privacy and adhering to regulatory requirements. Together, these stages epitomize the responsible management of data, balancing the retention of valuable insights with the necessity of securely saying goodbye to data that has served its purpose.
+
+8. Let's practice!
+04:44 - 05:03
+While data life cycles are valuable, it's vital to understand that a data journey isn't always a straightforward path, with some actions possibly not occurring. To enhance your understanding, take the practice questions and put your knowledge to the test!

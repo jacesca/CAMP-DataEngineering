@@ -1,0 +1,48 @@
+1. The art of understanding data sensitivity
+00:00 - 00:14
+In this video, we will explore the art of understanding data sensitivity. Understanding which data is sensitive and appreciating the importance of protecting it is the most crucial concept for data security.
+
+2. Data sensitivity is of paramount importance
+00:14 - 00:53
+Data sensitivity is of paramount importance for organizations to get right. Sensitive data needs protection because of the risks associated with it falling into the wrong hands. Understanding which data is sensitive and appreciating the importance of protecting it is a fundamental skill for anyone involved in data security. This understanding forms the basis for ensuring legal compliance, selecting the best organizational measures, and implementing effective data protection measures. In essence, it is about determining what data needs to be protected, who should access it, and how to safeguard it best.
+
+3. The risks of mismanagement
+00:53 - 01:25
+Properly managing sensitive data helps prevent breaches, unauthorized access, and compliance issues. It also safeguards a company's reputation and customer trust. Compromised sensitive data can cause serious consequences such as fines, legal fees, and lost customers. An individual's Personally Identifiable Information, or PII, can also cause significant damage if it falls into the wrong hands.
+
+4. Public versus private data
+01:25 - 02:03
+As previously mentioned, data requires different levels of confidentiality, importance, and protection based on the potential negative impact if it falls into the wrong hands. Some data is public. It is not a secret, and there are no significant risks of it being widely shared. Other data is private. Risks are associated with how it could be used, so it needs special protection to keep it safe from the wrong people. Understanding data sensitivity helps us know which information falls into the different categories.
+
+5. Group data by risk and impact
+02:03 - 02:28
+A critical first step in handling sensitive data is to group it by its risk and potential impact. Every company is different, but there are four typical sensitivity levels: Public, Internal, Confidential, and Top Secret. With each group, the level of sensitivity of the data increases. Now, we will define each level in more detail.
+
+6. Public data
+02:28 - 02:42
+Public data is generally accessible to anyone. There is no negative impact linked to people seeing it. Examples include public social media posts, website content, or company press releases.
+
+7. Internal data
+02:42 - 02:59
+Internal data is only for employees or trusted partners of a company. There is a risk of moderate negative potential impact if unauthorized people see it. Examples include meeting minutes, internal worker notes, or company policies.
+
+8. Confidential data
+02:59 - 03:14
+Confidential data is private and needs protection. PII is typically allocated to this category. Examples include customer phone numbers, personal bank account numbers, or private strategic plans.
+
+9. Top-secret data
+03:14 - 03:32
+Top secret data is highly confidential and sensitive. It can cause significant damage if unauthorized persons access it. Examples include scientific research, government intelligence, or sensitive personal information such as US Social Security numbers.
+
+10. What everyone should know
+03:32 - 04:04
+To safeguard data, everyone in an organization should understand their company’s data classification levels, who should be able to access each level, the rules for putting data into each group, what counts as PII, how to handle data based on sensitivity levels, and the process for reporting potential data breaches. In addition, each company should have a named person responsible for ensuring widespread training and awareness.
+
+11. Real-life consequences at Equifax
+04:04 - 04:39
+The Equifax data breach in September 2017 exposed the PII of 147 million people, including names, addresses, Social Security numbers, and in some cases, credit card numbers. This breach, due to several security weaknesses, led to potential identity theft. The aftermath cost Equifax $1.4 billion for technology infrastructure cleanup and security improvement, and over $400 million in fines, significantly damaging its reputation.
+
+1 CSO Online, United States Federal Trade Commission
+12. Let's practice!
+04:39 - 04:47
+Now that we've examined data sensitivity let's test your and Data Defender's knowledge.

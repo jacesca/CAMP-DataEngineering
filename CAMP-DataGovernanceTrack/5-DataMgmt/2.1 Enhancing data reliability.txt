@@ -1,0 +1,24 @@
+1. Enhancing data reliability
+00:00 - 00:27
+Hello again! In this chapter, we will delve into the pillars of data management. First, let's take a look at these four data management pillars: master data management, reference data management, metadata management, and data quality. By the end of this video, you will understand the significance of these knowledge areas in enhancing data reliability.
+
+2. Basics of master data management
+00:27 - 01:25
+Master data management is a methodical approach to managing the organization's master data. Master data includes core business entities such as customers, products, employees, and suppliers. The goal of master data management is to ensure the consistency, accuracy, and coherence of this essential data across an entire organization in order to provide a unified view that can be shared and utilized consistently across various departments and systems. Master data management involves activities like data profiling, consolidation, and validation to prevent inconsistencies and duplications. The ultimate objective is to enhance data quality, facilitate informed decision-making, and promote operational efficiency.
+
+1 Images in this lesson were created using Freepik
+3. Navigating reference data
+01:25 - 02:11
+The systematic and organized approach to managing reference data within an organization is reference data management. Reference data consists of non-changing, static values that are used to classify or categorize other data. Examples of reference data include currency codes, country lists, or product categories. Reference data management involves defining, categorizing, and updating of reference data, ensuring that it remains accurate and up-to-date. By maintaining uniformity in these shared values, reference data management enhances the consistency and reliability of information across an organization.
+
+4. Governance of data about data
+02:11 - 03:11
+Metadata refers to data that provides information about other data, offering context and clarity. This may include details about data sources, definitions, formats, and relationships between datasets. Metadata management involves the systematic administration and control of metadata within an organization. This practice ensures that metadata is captured, stored, and utilized effectively to enhance the understanding and interpretation of data across an entity. Activities in metadata management include designing metadata schemas, documenting data dictionaries, and establishing metadata maintenance processes. By providing context to the underlying data, metadata management plays a role in improving data comprehension and facilitating data discovery.
+
+5. Achieving information precision
+03:11 - 04:05
+Data quality refers to the validity, integrity, timeliness, consistency, completeness, and accuracy of data in a dataset. It is a measure of the reliability and usefulness of data for its intended purpose. High data quality ensures that information is free from errors, duplicates, and inconsistencies, making it trustworthy for analysis and decision-making. Achieving and maintaining data quality involves various processes, including data profiling, cleansing, validation, and ongoing monitoring. Implementing measures for data quality ensures that data adheres to the standards necessary for its effective utilization in business operations and analytics.
+
+6. Let's practice!
+04:05 - 04:21
+We have explored the pillars of data management that support reliability. Take a deep dive into our practice questions to reinforce your understanding. Happy practicing!

@@ -1,0 +1,39 @@
+1. Top data protection strategies
+00:00 - 00:14
+Welcome to this video on data protection measures, the nuts and bolts of data security. They answer the question: "We know our data needs to be protected, but how exactly will that be done on an operational level?"
+
+2. What are data protections measures?
+00:14 - 00:38
+A data protection measure refers to a wide range of strategies, techniques, and tools. They aim to prevent sensitive information from being accessed, altered, disclosed, or destroyed by unauthorized parties. Taking these measures protects data from evolving cyber threats and ensures its confidentiality, integrity, and availability.
+
+3. A comprehensive data security ecosystem
+00:38 - 01:21
+The four types of data security measures that we cover in this course can be viewed as a hierarchy. Data protection measures are the foundation of the data security hierarchy. They define the overall objectives and principles. Operational models are the practical implementation of data protection measures. They translate high-level objectives into actionable steps. Voluntary regulatory frameworks provide guidelines and best practices for robust security. Finally, compliance rules and regulations are legally binding requirements that organizations must adhere to. Together, these elements form a comprehensive data security ecosystem.
+
+4. Fundamental data protection measures
+01:21 - 01:44
+We will dive deeper into three core data protection measures: access controls, encryption, and secure hardware. These measures are fundamental to any data security strategy. They are essential to prevent data breaches and protect data integrity. In addition, we'll look at special considerations for cloud computing and generative AI.
+
+5. Access controls: guarding the gates
+01:44 - 02:35
+Access controls are the first line of defense against unauthorized access. They determine who can enter, modify, or view specific resources. If implemented well, they ensure that only authorized personnel can interact with sensitive data. This prevents breaches and maintains the integrity of information. Strong password policies, multi-factor authentication, and regular access reviews strengthen the effectiveness of access controls, so unnecessary permissions are promptly revoked. Better access controls could have potentially prevented all five data breaches introduced in lesson one. For instance, in Yahoo, hackers could falsify login credentials, and the Microsoft AI team misconfigured an access token, making it overly permissive.
+
+6. Data encryption: transforming secrets
+02:35 - 03:09
+A second core data protection measure is encryption. It is a process that transforms data, making it unreadable for unauthorized individuals. This is a crucial additional layer to protect the confidentiality of sensitive information. Using full disk encryption on data at rest, encrypting data in transit, and carefully managing encryption keys are best practices for encrypting data. The Equifax and Yahoo data breaches were significantly more damaging due to sensitive data not being encrypted.
+
+7. Hardware risks: taming the beasts within
+03:09 - 03:31
+Secure hardware management is also crucial. If not managed properly, it can pose significant risks. Key elements to reduce risk from hardware are: maintaining an updated inventory of hardware assets, ensuring the physical safety of devices, updating firmware regularly, and securely disposing of hardware.
+
+8. Cloud computing: navigating the skies safely
+03:31 - 03:58
+Cloud computing, with its distributed nature, presents unique security challenges. Organizations should select cloud providers with robust security, encryption, and industry-standard adherence. Selecting a provider that offers robust Cloud Data Loss Prevention is also crucial. It ensures proactive monitoring to prevent unauthorized data sharing, guard against breaches, and preserve data integrity.
+
+9. Generative AI: a whole new challenge
+03:58 - 04:34
+AI's use poses new challenges. Data protection strategies must evolve to address these risks, such as unintentional sensitive data sharing, as with the Microsoft AI team, and unauthorized access to sensitive data due to its unprotected availability in a model. These topics are just a few examples of the many data protection measures that organizations can implement to safeguard their sensitive information. To keep up to date on potential data security measures, regularly read industry news and subscribe to security-focused newsletters.
+
+10. Let's practice!
+04:34 - 04:41
+Let’s test your understanding of the core elements of data protection.

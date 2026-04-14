@@ -1,0 +1,44 @@
+1. The risks of not securing data
+00:00 - 00:24
+In this video we will look at the real-life consequences of data breaches. To appreciate the importance of knowledge about the various elements of data security, it is vital to remember that data breaches are not just abstract events in the digital world. They have real and tangible consequences for individuals, companies, and society. Let's dive in!
+
+2. Personal data and identity theft
+00:24 - 01:35
+One consequence can be the risk of impacts on personal well-being. People are more susceptible to fraud and financial scams when personal information such as identity documents, passwords, and location information is stolen. This can result in financial losses, identity theft, and emotional distress.  Data breaches at Yahoo between 2013-2016 are an example. Personal information from around 3 billion accounts was stolen. Affected users had to take steps to protect their accounts and prevent identity theft.  Identity theft is when someone assumes another person's identity to commit a crime. It can have devastating consequences. Victims may find it challenging to do everyday things like getting a loan or even a job due to the damaged credit history caused by the activity done in their name. The emotional toll of identity theft can be immense. Individuals can grapple with feelings of betrayal, violation, and insecurity.
+
+3. Financial consequences
+01:35 - 02:02
+Data breaches can also have severe financial consequences for companies. Statistics from the 2023 Cost of Data Breach Report by IBM Security show that the average cost of a data breach was $4.45 million in 2023. This includes direct and indirect expenses such as investigation, remediation, legal fees, and lost business.
+
+1 https://www.ibm.com/reports/data-breach
+4. Legal consequences
+02:02 - 02:21
+There are also many legal risks. Companies may face legal action from regulators and affected individuals if they are not compliant with relevant data security laws. This can lead to penalties, sanctions, and even loss of business license or criminal charges.
+
+5. Reputational damage
+02:21 - 02:58
+Companies may also experience reputational damage from data breaches. When customers' trust is broken, it can lead to lost business, boycotts, and a decline in brand value. As RepTrack put it, "In early in 2017, Equifax only had an average reputation with a pulse score of 66.5...based on the risk exposure to data privacy issues, it’s highly likely that Equifax could lose more than 10-pulse points— which would put the company in the realm of having a weak to vulnerable reputation."
+
+1 https://www.reptrak.com/
+6. Broader impact on society
+02:58 - 03:14
+Data breaches can also have a broader impact on society, undermining trust in digital technologies. Data breaches can also be used for malicious purposes, such as influencing public opinion and political manipulation.
+
+1 https://www.newstatesman.com/
+7. Consequences for jobs
+03:14 - 03:42
+Finally, data breaches can have consequences for jobs. Top executives may be held accountable for leadership failures. IT security professionals may be fired because of inadequate security measures. Employees who access or handle sensitive data may be fired if they are found to have mishandled the data. Breaches are a combined result of failed leadership, processes, and human error.
+
+1 https://www.forbes.com
+8. Impact of generative AI
+03:42 - 04:11
+The rise of generative AI has introduced new challenges and opportunities for data security. Generative AI models can create data that is not easy to distinguish between genuine and fake information. However, generative AI can also enhance data security. Models can help in many ways, such as detecting anomalies, identifying suspicious patterns of data, and attracting and isolating cyber attacks.
+
+9. Data defender
+04:11 - 04:28
+A data defender knows both how valuable and risky data is. By being acutely aware of the potential consequences of data breaches, you will be in a much better position to uphold data security within your organization.
+
+10. Let's practice!
+04:28 - 04:39
+Now let's dive into the questions to test your awareness of the consequences of data breaches and continue helping to save the Digital Realm.
+

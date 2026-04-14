@@ -1,0 +1,51 @@
+1. Managing the risk of social engineering
+00:00 - 00:15
+This video will discuss a massive challenge to any data defender: social engineering. Taking care of the possibility of social engineering attacks is one of the most critical contributions individuals can make to keeping data safe.
+
+2. Manipulation by exploiting human tendencies
+00:15 - 00:38
+In social engineering, attackers manipulate people into taking actions that compromise their data security. The effectiveness of social engineering attacks lies in exploiting our natural tendencies, such as the fact that people are driven by emotions like fear, empathy, curiosity, and greed, and our trust in authority figures.
+
+3. Social engineering techniques
+00:38 - 01:03
+Social engineers use many different techniques. Some of the most common examples are Phishing, Baiting, Diversion Theft, Scareware, Pretexting, and Piggybacking. Although we will look at them individually, it's important to point out that many social engineering attacks are multi-faceted. Attackers use a combination of techniques to increase their chances of success.
+
+4. Phishing
+01:03 - 01:48
+Phishing involves posing as someone else to trick people into giving away sensitive information or click malicious links. It comes in a number of different forms. General Phishing doesn't target one particular person or organization. Examples are Smishing, which uses SMS messages and Vishing, which uses phone calls. In some types of Phishing, attackers collect specific information about their target to seem more legitimate. Spear Phishing is targeted to specific individuals or organizations. Whaling is aimed explicitly at high-profile individuals or executives. Business Email Compromise targets specific businesses.
+
+5. Baiting
+01:48 - 01:56
+Baiting involves the use of enticements. Gifts or promotions lure victims to click on malicious links or open attachments.
+
+6. Diversion Theft
+01:56 - 02:12
+Diversion Theft occurs when an attacker tricks someone into sending sensitive data or sharing it with the wrong person. This is often accomplished by impersonating someone in a legitimate organization, such as an auditing firm or a financial institution.
+
+7. Scareware
+02:12 - 02:28
+Scareware employs deceptive tactics to scare users into buying or downloading unnecessary software. Typically, it displays alarming pop-ups or messages claiming that your computer is infected and offering solutions.
+
+8. Pretexting
+02:28 - 02:40
+Pretexting involves creating false scenarios in order to gain trust from the victim. The basis of trust allows attackers to manipulate them into revealing sensitive information.
+
+9. Piggybacking
+02:40 - 02:50
+Piggybacking is a physical social engineering technique. It involves following someone closely to gain unauthorized access to restricted areas or information.
+
+10. Defend yourself with awareness
+02:50 - 03:21
+The best way to defend against social engineering attacks is awareness of how they are executed. Since techniques evolve rapidly, continuous education is necessary. Luckily, there are some typical red flags for social engineering attacks that people can look out for. These include urgent or threatening language, impersonal or unprofessional communication, links or attachments that don't look legitimate, and requests for sensitive information.
+
+11. The risk of doing things without thinking
+03:21 - 03:53
+Social engineering is often successful due to people's tendency to act impulsively. Attackers rely on people clicking or giving away information carelessly. In the digital world, thinking before acting is crucial. Generative AI has also made it easier for attackers by making attacks more convincing and challenging to detect. This can take many forms. The use of generative AI to create realistic deep fakes and cloned human speech are some examples.
+
+12. Phishing at Equifax
+03:53 - 04:22
+The 2017 Equifax breach was possible due to a successful pretexting attack. The attackers sent out a phishing email to employees that appeared to be from a legitimate source. The email contained a link that, when clicked, led to a fake website that looked like the Equifax website. Employees who clicked on the link were tricked into entering their credentials. The attackers then accessed the institution's systems and stole customer data.
+
+13. Let's practice!
+04:22 - 04:30
+Now that we've presented the most common tactics let's see how our data defender stays safe!

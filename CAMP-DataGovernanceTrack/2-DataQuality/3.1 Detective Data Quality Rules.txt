@@ -1,0 +1,27 @@
+1. Detective Data Quality Rules
+00:00 - 00:09
+In this video we will learn about detective data quality rules and when they should be used to actively identify data quality issues.
+
+2. Detect and prevent
+00:09 - 00:24
+There are two types of data quality rules which we will cover in this course. Detective data quality rules, which detect issues, and preventative data quality rules, which prevent issues. In this video we will dive into detective data quality rules.
+
+3. Defining detective data quality rule
+00:24 - 01:16
+What is a detective data quality rule? A detective data quality rule is one that monitors the data after it has already been loaded into the downstream target databases where it can be consumed. A detective rule finds issues after the issues have already been dispersed to consuming databases, applications, and reports. Most data quality rules are detective in nature and do not prevent downstream processes or data from loading. Detective controls are perfectly fine to use on non-critical data where there is some time allowed for correcting an issue. In most cases, we do not want to let data quality results stand in the way of business processes. Instead, we mitigate risk by writing detective data quality rules which will alert us of existing issues and allow us to decide whether or not we can use data.
+
+4. Using detective rules
+01:16 - 01:59
+When should a detective data quality rule be used? A detective data quality rule should be used in the following scenarios: 1. When the issue will not cause significant harm if it is not immediately corrected 2. When there issue is too complex to quickly remediate 3. When the issue has an impact on a relatively small number of records If a critical data element, Customer First Name, for example, has a data quality issue where the name is null for 1% of records, the producer will likely need to investigate why this is happening. Should this issue prevent the data from loading? The answer is usually no, the data should be loaded while the 1% of records are triaged.
+
+5. Implementing a detective rule
+01:59 - 03:04
+Let's look at the Validity rule implemented for Customer Account Type. The rule checks that the values in the field are one of the allowable values. In our example, we found that 1% of records have a null value and 4% of records have other various values. Should this be a detective control? Let's check the criteria for detective data quality rules: Will these issues cause harm if not immediately corrected? No Is there a way to quickly remediate the issues? No Are 5% of records or less effected? Yes We are finding that this should be a detective data quality rule. There is no quick way to fix the issue, no harm will be done if the issue exists for a certain amount of time, and a relatively low number of records are effected. The data governance team may suggest or require detective data quality rule issues to be remediated within a certain amount of time. The requirement will likely be long enough for triage, prioritization, and remediation to occur.
+
+6. Remediating issues
+03:04 - 03:38
+When an issue is identified by a detective data quality rule, we should remember that the issue has already been passed downstream. The issue may effect every layer in the data pipeline, including the reports which consume it. In the customer dataset, when we found the records with invalid Customer Account Types, we worked with the data producer to determine a remediation plan. Not only must the issues be corrected in the source, all downstream consuming layers in the data pipeline must have the data refreshed or reloaded to have the issue corrected.
+
+7. Let's practice!
+03:38 - 03:44
+Now let's practice what you have learned about detective data quality rules.

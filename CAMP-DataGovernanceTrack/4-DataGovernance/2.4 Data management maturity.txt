@@ -1,0 +1,33 @@
+1. Data management maturity
+00:00 - 00:07
+In this lesson, we will review different types of data management maturity models.
+
+2. What is data management maturity?
+00:07 - 00:41
+Data management maturity measures an organization's capabilities to manage its data assets and perform other data-related activities. The measurement often includes several factors such as: comparisons to industry peers and standards, regulatory requirements, artifacts such as policies, standards, framework, and strategy, funding, stakeholder engagement, executive support, and integration of data management and governance processes.
+
+3. Why does data management maturity matter?
+00:41 - 01:05
+As an organization matures in its data management capabilities, it should expect to reap several benefits, including more advanced analytics and insights, better data security and protection, increased compliance, more efficient processes, improved customer service, and increased revenue and growth opportunities.
+
+4. What is a data management maturity model?
+01:05 - 01:44
+To assess an organization's data management maturity, it is helpful to use a data management maturity model. This model will help evaluate an organization's current capabilities against industry standards and benchmarks. Additionally, leveraging a data management maturity model can help identify gaps and areas for improvement and determine target capabilities for an organization to work towards as part of its data governance framework and strategy. To evaluate your current data management capabilities, you can leverage industry-standard models and adapt them to fit your needs.
+
+5. CMMI Data Management Maturity Model
+01:44 - 02:20
+Capability Maturity Model Integration or CMMI for data management maturity assesses how well your processes perform based on risk, capability, and usage. The model uses five different levels from least to most mature and considers whether processes are ad-hoc, managed, defined, measured, or optimized. Organizational awareness, senior leadership buy-in, data skills, resources, funding, and business use all factor into this maturity model.
+
+1 cmmiinstitute.com, 2022
+6. DCAM Assessment
+02:20 - 03:10
+In the previous lesson, we talked about the framework developed by the EDM Council - the Data Management Capability Assessment Model or DCAM. DCAM has an assessment tool for companies to evaluate their capabilities against industry best practices and benchmarks to obtain a quantifiable score. The DCAM assessment is also mapped directly to the risk principles of the Basel Committee for Banking Supervision's Standard 239 (or BCBS 239) and privacy regulations such as the Global Data Privacy Regulation (or GDPR), which makes this a handy tool for regulated financial institutions. There are six levels in DCAM scoring ranging from one - Not initiated to six - Enhanced.
+
+1 edmcouncil.org, 2021
+7. Leveraging data management maturity assessments
+03:10 - 03:40
+Although we are reviewing data management maturity assessments at the end of this lesson, you should consider it an important first step in developing a data governance framework and strategy. By assessing current capabilities against industry standards and benchmarks, your organization will be better equipped to identify gaps, areas for improvements, target capabilities, and required technology, funding, and resources to become a data-driven organization.
+
+8. Let's practice!
+03:40 - 03:47
+Now that you've learned about data management maturity let's practice applying your knowledge of the concepts.

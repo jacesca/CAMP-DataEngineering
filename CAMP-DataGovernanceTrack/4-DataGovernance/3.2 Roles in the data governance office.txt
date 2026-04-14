@@ -1,0 +1,31 @@
+1. Roles in the data governance office
+00:00 - 00:05
+In this video, we'll discuss roles and responsibilities in the data governance office.
+
+2. Establishing a data governance office
+00:05 - 00:25
+As you implement a data governance framework, one of the most critical steps is identifying the right people to fill roles in a data governance office. In this video, we will cover some of these key roles, including chief data officer (CDO), data governance lead, data governance consultant, and data quality analyst.
+
+3. Chief data officer
+00:25 - 01:02
+The chief data officer (or CDO) is a senior leader that develops and executes a data strategy that guides the organization on leveraging data to drive business value. CDOs typically focuses on several data-related functions, including creating and promoting a data-driven culture, overseeing data governance, data management, and data analytics, and supporting data operations. A successful Chief Data Officer is able to drive change and influence others. A CDO must also understand the needs of business lines and the capabilities of technology.
+
+4. Data governance lead
+01:02 - 01:23
+The data governance lead is responsible for defining and communicating data governance policies, standards, and the framework across the enterprise. The data governance lead and supporting team also provide help and expertise to business lines as they implement processes to comply with data governance policies and standards.
+
+5. Data governance consultant
+01:23 - 01:46
+A data governance consultant is a subject matter expert in data governance and data management practices. The consultant supports the data governance lead by guiding business lines on data governance implementation according to the policy and standards. Data governance consultants often liaise between the business and technology by translating business requirements into technical specifications.
+
+6. Data quality analyst
+01:46 - 02:09
+Data quality analysts use data profiling and statistical analysis to find anomalies in large datasets. They also collaborate with data stewards from the business lines to write and implement data quality rules for monitoring purposes. These analysts perform root cause investigation of data quality errors and assist with issue remediation.
+
+7. Data architect
+02:09 - 02:35
+A data architect is responsible for using business requirements to create a blueprint for an integrated, secure data framework that will meet business needs. The data engineer will take the design to build data pipelines. The data architect also manages the end-to-end data architecture and defines and manages data flow. Data architects may sit within the data governance office or in technology.
+
+8. Let's practice!
+02:35 - 02:42
+Now that you've learned about roles in a data governance office let's practice the concepts.

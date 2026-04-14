@@ -1,0 +1,43 @@
+1. Building a strong data security culture
+00:00 - 00:12
+This video will delve into the secret ingredient of great data security: company culture. An organization with a strong data security culture has a competitive edge.
+
+2. What is company culture?
+00:12 - 00:33
+Company culture is a set of shared values, beliefs, and behaviors that define an organization's operations. It encompasses how employees interact with each other, customers, and the community. This can significantly impact data security, shaping how employees perceive and focus on security.
+
+3. What is data security culture?
+00:33 - 00:59
+For sensitive data to be protected and breaches mitigated, a strong security culture is essential. This means having a shared understanding of the importance of data security, a commitment to following security policies and procedures, and a willingness to report any suspicious activities. There are several strategies that organizations can put in place to promote a security-aware culture.
+
+4. Continuous improvement
+00:59 - 01:21
+The first strategy is the mindset of the need for continuous improvement. Security threats evolve, and organizations need to evolve with them. To achieve this, security policies and procedures need to be reviewed and updated regularly. The organization must be set up to quickly and flexibly adapt to any new threats.
+
+5. Accountability
+01:21 - 01:38
+The second strategy is a sense of both shared and individual accountability. Each employee should feel personally responsible for protecting the organization. Yet, people must also work together to identify and manage threats.
+
+6. Decision-making
+01:38 - 02:03
+A third strategy is incorporating data security into decision-making. Data security considerations should be integrated into all aspects of organizational decision-making. Implications of data security must be considered for all projects, policies, and procedures. This goes a long way to protecting sensitive information and keeping data security on people's minds.
+
+7. Champions
+02:03 - 02:21
+A fourth strategy is to establish a security champion program. Identify and empower employees to serve as security champions within their departments. They help raise awareness of security issues, promote best practices, and support their colleagues.
+
+8. Public recognition
+02:21 - 02:34
+A fifth strategy is publicly recognizing and rewarding employees who exhibit security-conscious behaviors. This can reinforce the importance of security and motivate other employees to do the same.
+
+9. Collaboration
+02:34 - 03:49
+The final strategy is to ensure that different departments collaborate. Data security is not the responsibility of one department. Threats can manifest themselves in any area of the company. The obligation to keep them in check cannot be outsourced. There are various ways that departments can collaborate on data security. Here are three examples. Put best practice sharing in place. Each department has its unique expertise and experience. By sharing what each does best, departments can learn from each other and improve their security posture. Widespread involvement when developing and updating security policies and procedures. Getting various departments to work together will help ensure a more holistic approach to security. Considering different viewpoints and unique circumstances helps ensure that all data security needs are met with the company's policies and procedures. Policies and procedures will align with the organization's overall needs and more effectively protect data. Regular security audits can involve multiple departments. This will help ensure that all aspects of the organization's security posture are being assessed.
+
+10. Creating an army of data defenders
+03:49 - 04:22
+Utilizing the strategies from this video, people will share a common understanding of the importance of data security, adhere to security policies and procedures, and report any suspicious activity. This will create a culture with a whole army of data defenders! Finally, it's also worth pointing out that a company culture that embraces data security can also have external implications. It enhances the organization's reputation and credibility. This can attract customers, investors, and partners.
+
+11. Let's practice!
+04:22 - 04:31
+Now that we've completed the last lesson let's see how it can help our data defender achieve her mission.

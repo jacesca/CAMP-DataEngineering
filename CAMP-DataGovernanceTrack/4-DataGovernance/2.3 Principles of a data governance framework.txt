@@ -1,0 +1,35 @@
+1. Principles of a data governance framework
+00:00 - 00:06
+Now that we've reviewed types of data governance frameworks, let's learn about framework principles.
+
+2. Data governance framework principles
+00:06 - 00:25
+There are six core principles that all data governance frameworks should have. These principles center around integrity, ownership and accountability, standardization and consistency, change management, risk management and compliance, and data strategy alignment.
+
+3. Integrity
+00:25 - 00:48
+One of the most important principles of a data framework is ensuring that everyone acts with integrity. This means that data stakeholders must be honest and transparent in their dealings with each other, including being upfront about concerns, challenges, and constraints encountered during data governance activities. This helps promote a culture of trust, teamwork, and collaboration.
+
+4. Ownership and accountability
+00:48 - 01:14
+As part of a data governance framework, organizations must define clear roles and responsibilities for decision-making, processes, policy enforcement, and control. This is especially critical for cross-functional processes where ownership and accountability may change throughout a process. In such situations, duplication or overlap in efforts can result in ownership gaps.
+
+5. Standardization and consistency
+01:14 - 01:35
+Through a data governance framework, standardization and consistency should be promoted to ensure repeatable processes, standardized data and data definitions, and consistent data management processes. This helps reduce business-specific data processes and silos in favor of standardized, high-quality data for enterprise use.
+
+6. Change management
+01:35 - 02:13
+Change management should be part of data governance frameworks from both a personnel and a data impact perspective. When establishing a new data governance strategy or framework, it will be especially important to ensure that data employees are empowered with the necessary knowledge, tools, and skills to be successful. It is also important to properly socialize the new framework and ways of working to obtain buy-in across the organization. From a data impact perspective, change management should be incorporated into all data processes to ensure users are notified of any upstream or downstream impacts.
+
+7. Risk management and compliance
+02:13 - 02:43
+A data governance framework should ensure proper risk management and compliance. This includes having auditable processes, controls to ensure compliance with applicable regulations, and identifying, managing, and controlling data-related risks. All these activities help with meeting regulatory, audit, and compliance requirements, preventing penalties associated with non-compliance, and mitigating risks and issues associated with poorly managed data.
+
+8. Strategy alignment
+02:43 - 03:16
+Lastly, as part of a data governance framework, the data governance strategy should align with and support organizational goals. When developing the strategy, it is important to include input from business partners and other stakeholders. Additionally, it should be clear to the organization how the data governance strategy supports business goals and drives value. By ensuring this alignment and transparency, business stakeholders are much more likely to support the data governance program, increasing its chances of success.
+
+9. Let's practice!
+03:16 - 03:24
+Now that we've reviewed the eight data governance principles let's practice applying your knowledge!

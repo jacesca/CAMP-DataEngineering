@@ -1,0 +1,47 @@
+1. Staying one step ahead by understanding compliance
+00:00 - 00:13
+This video will discuss a critical element of data security: compliance with legal regulations. It helps you avoid issues, protect your customers' data, and maintain stakeholder trust.
+
+2. Legal vs mandatory regulatory requirements
+00:13 - 00:32
+Firstly, let's clarify terminology. Compliance means meeting both legal and mandatory regulatory requirements. Legal requirements are mandated by law. Mandatory regulatory requirements are set by regulatory bodies, and are a wider set of rules.
+
+3. Data security compliance requirements
+00:32 - 01:06
+A complex set of laws and regulations protect data confidentiality, integrity, and availability. They safeguard people's personal information and ensure that companies handle data responsibly. Getting an overview of what they cover is the goal of this video. To start, considering them based on their focus is helpful. Data collection and processing, data subject rights, and data protection are three common groups. Let's take a closer look at each one.
+
+4. Data collection and processing
+01:06 - 01:25
+Data collection and processing deals with proper data acquisition and lawful processing. Examples of provisions are data minimization, collecting the minimum data for a specific purpose, and purpose limitation, using data only for the purpose it was collected.
+
+5. Data subject rights
+01:25 - 01:40
+The rights of data subjects are about individuals' control over their data. Examples of provisions are the right to access data a company has about them and have personal data from company databases erased.
+
+6. Data protection
+01:40 - 02:13
+Regulations focusing on data protection aim to safeguard sensitive information from unauthorized access, modification, or destruction. These regulations mandate a range of measures. Examples of provisions are data breach notification and encryption, or scrambling, of sensitive data. Let's look at three examples of prominent regulations. This will show you some of the most significant requirements to avoid legal issues, safeguard customer data, and build stakeholder trust.
+
+7. General Data Protection Regulation (GDPR)
+02:13 - 02:40
+The General Data Protection Regulation, commonly known as GDPR, requires businesses to protect EU citizens' privacy. It grants individuals extensive rights. They must be able to access, rectify, erase, restrict, or contest the processing of their data. Notification of a personal data breach is also strictly regulated.
+
+8. Sarbanes-Oxley Act (SOX)
+02:40 - 03:04
+The Sarbanes-Oxley Act, commonly known as SOX, was in response to corporate accounting scandals in the United States. It aims to prevent financial fraud and improve corporate accountability. Companies must establish internal controls designed to ensure that financial disclosures are accurate and reliable and they are also tested and evaluated regularly.
+
+9. Cybersecurity Information Sharing Act (CISA Act)
+03:04 - 03:55
+The Cybersecurity Information Sharing Act, commonly known as CISA Act, is a U.S. data security law that fosters cooperation between the private and public sectors to combat cyber threats. Companies that share information with the government bodies in good faith are protected. It fosters a more secure digital landscape by encouraging the exchange of threat indicators and defensive measures. It has had a widespread impact, causing organizations and individuals worldwide to become more aware of cybersecurity. This law was the basis for one of the fines Equifax received following the 2017 data breach we mentioned in lesson one. Among other fines, it paid $5.9 million for violations of the CISA Act.
+
+10. Stay one step ahead
+03:55 - 04:16
+GDPR, SOX and CISA Act are cornerstones of data security regulation. As data security compliance is complex, consult a legal expert to determine what is relevant to your organization. Generally, it depends on your data, customers, and industry.
+
+11. Keep up to date
+04:16 - 04:46
+This doesn't mean you should leave the work up to legal experts. A responsible data defender knows what's necessary to ensure compliance. Avoiding legal issues, protecting your customers' data, and maintaining stakeholder trust are everyone's responsibility! Here are some tips for proactive action. Check the websites of relevant industry associations. Follow news sources that cover data security issues. Attend data security conferences and webinars.
+
+12. Let's practice!
+04:46 - 04:51
+Now let's continue on Data Defender's mission.

@@ -1,0 +1,27 @@
+1. Data quality issues triage
+00:00 - 00:09
+In this video, we will use data lineage and metadata to triage the issues found when we defined the data quality rule for Customer Account Type.
+
+2. Using data lineage and metadata
+00:09 - 00:46
+Now that you understand what data lineage and metadata are, let's use them in the data quality process. They are used when triaging, or examining, where data quality issues occur and who is accountable for remediating, or correcting issues. Data lineage shows where data came from and metadata tells us information about the source. It would be impossible to triage and remediate an issue in the right place if we didn't have data lineage and metadata available to provide us this specific information. We can work with confidence knowing we are using the right source and asking the right people to help.
+
+3. Step 1: Review the data profile
+00:46 - 01:13
+Step one is to Review the data profile for Customer Account Type. The implemented rule is: All records must have a Customer Account Type with one of the following values: Loan, Deposit, Loan and Deposit, or Credit Card. This rule will identify the records which are part of the 1% of null records and the 4% of records with other various values as those are invalid. Next, let's review the data lineage.
+
+4. Step 2: Identify where the rule is running
+01:13 - 01:40
+We check the data lineage for Customer Account Type to identify where this data quality rule is running. We see that Customer Account Type is sourced from the Customer Source Table. We also see the SQL statement, which is the technical implementation of the data quality rule. The code for this rule shows us that it was implemented on the Customer Source Table, which is great because that is the closest layer to the source that we have available for querying.
+
+5. Step 3: Check the metadata
+01:40 - 02:11
+Next we check the metadata for the Customer Account Type field in the Customer Source Table by searching the data dictionary. Remember that the metadata is different for each layer of data lineage, so it is important to check the correct field. Part of the available metadata is the name of the data owner, who in this case is the data producer. This will tell us who is ultimately responsible for correcting the issue. We review the information and see that the data owner of Customer Account Type in the Customer Source Table is Rita Walker.
+
+6. Step 4: Correct the issue
+02:11 - 03:01
+We reach out to Rita and let her know that there are data quality issues in the Customer Account Type field in her source table. As the data producer, she reviews the records and determines that null records are valid because they all have been added yesterday and Customer Account Type is not populated until two business days after the customer account record is created, so we shouldn't expect it until the third business day. In this case, you need to update the data quality rule. This is an example of why it is important to confirm business context when defining data quality rules. As for the records with other various values, Rita confirms that these are true data quality issues. She found that there was a rogue bot that was updating the Customer Type to an invalid value. Rita thanks you for bringing this issue to her attention.
+
+7. Let's practice!
+03:01 - 03:08
+You have learned how to work a data quality issue from start to finish. Let's practice!

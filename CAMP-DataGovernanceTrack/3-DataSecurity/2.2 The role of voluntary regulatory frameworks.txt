@@ -1,0 +1,44 @@
+1. The role of voluntary regulatory frameworks
+00:00 - 00:10
+In this lesson, we're going to talk about voluntary regulatory frameworks. Organizations can use these guidelines as a blueprint for how to secure their data.
+
+2. Voluntary versus mandatory frameworks
+00:10 - 00:45
+Voluntary regulatory frameworks are often created by government agencies or industry bodies, but they're not legally binding. This differs from the mandatory compliance rules and regulations discussed in chapter one. Those are often prescriptive, focusing on achieving a specific outcome, like ensuring the secure handling of personal data. Voluntary frameworks provide broader support to organizations. Their flexible guidelines allow companies to set up processes to meet their specific data security needs.
+
+3. Well-known regulatory frameworks
+00:45 - 01:23
+Now that we know the purpose of voluntary regulatory frameworks, let's look at some examples. Three well-known voluntary frameworks are Control Objectives for Information Technology, commonly known as COBIT, ISO 27001, and the National Institute of Standards and Technology Cybersecurity Framework, commonly known as NIST CSF. Organizations can use these frameworks to manage cybersecurity risks and protect their data. To better understand how frameworks work, let's take a closer look at the NIST CSF.
+
+4. What is NIST CSF?
+01:23 - 02:00
+NIST CSF helps manage cybersecurity risks by recommending best practices and providing a common language and approach. It enjoys widespread usage across various industries in over 190 countries. Its recommendations allow for defining security measures appropriate to each unique situation. The core of NIST CSF are its five functions: identify, protect, detect, respond, and recover. These provide a structured approach to cybersecurity. Let's look at each one in more detail.
+
+5. Function 1: identify
+02:00 - 02:25
+The first step in effective cybersecurity is identifying. It involves recognizing the organization's most critical assets and understanding potential risks. Thorough risk assessments are conducted to find vulnerabilities and potential threats. Data breaches, malware attacks, and unauthorized access attempts are examples of these threats.
+
+6. Function 2: protect
+02:25 - 02:46
+The second step is protecting. It involves putting in place appropriate safeguards for critical data and associated risks. Examples include user access controls, encryption techniques, and data loss prevention, commonly known as DLP, solutions. We'll cover these tools in later lessons.
+
+7. Function 3: detect
+02:46 - 03:10
+The third step is detecting. It involves implementing continuous monitoring to discover potential cybersecurity threats and breaches. To achieve this goal, security tools and technologies monitor network traffic, user activity, and system performance. This helps detect abnormal or suspicious activity, which may mean a threat or breach.
+
+8. Function 4: respond
+03:10 - 03:31
+The fourth step is responding. It involves a well-defined incident response plan during a cybersecurity incident. The plan should include clear procedures for identifying, containing, and eradicating threats. It should also define transparent processes for communicating the incident to all stakeholders.
+
+9. Function 5: recover
+03:31 - 03:50
+The final phase is recovering. This ensures that the organization can bounce back after a cybersecurity incident. The focus is on quickly and efficiently restoring its systems, data, and capabilities. The key is well-tested backup and recovery procedures.
+
+10. Which framework is best?
+03:50 - 04:56
+Like other voluntary regulatory frameworks, the NIST CSF is like a secret weapon against cyber threats. They raise awareness, help plan defenses, guide resource allocation, ensure compliance, and enable continuous improvement in cybersecurity posture. Choosing the best framework depends on an organization's specific needs, risk profile, and industry. Considerations include the organization's size, type of data handled, regulatory requirements, and budget. Organizations often adopt a hybrid approach, incorporating elements from many frameworks. While not legally binding, these frameworks are vital in business. Many firms mandate certified conformity for business transactions. By doing so, they help ensure their own security. As a final thought, with the growth of generative AI, various bodies are working on regulatory frameworks for responsible AI and data safety. These efforts are ongoing.
+
+11. Let's practice!
+04:56 - 05:02
+Now, let's take the next part of Data Defender's journey.
+

@@ -1,0 +1,31 @@
+1. Data quality roles and responsibilities
+00:00 - 00:06
+In this video we will review three main data quality roles and their responsibilities.
+
+2. Roles and responsibilities involved in data quality activities
+00:06 - 00:39
+Defining roles and responsibilities for data quality activities is a core component of data governance. We clearly identify which individuals serve a specific function in data quality activities. Oftentimes data quality roles are not full time positions. Roles are identified by assessing everyone who produces, manages, or consumes data. When defining responsibilities, we clearly establish what each of the data quality roles is responsible for in data quality activities.
+
+3. Data Producers
+00:39 - 01:24
+The first role to know is the data producer. These are individuals, often application owners, who produce data. Creating, collecting, processing, transforming, and storing data are data producer activities. Examples of data producers include source system owners, database owners, ETL developers, report writers who create derived fields, and data scientists who create data. Any role which produces data upstream from data consumers is a data producer. The data producer is responsible for implementing data quality rules, setting up alerts, remediating, or correcting, issues, and defining technical data quality rules.
+
+4. Data Consumers
+01:24 - 02:16
+Data consumers are the next role to understand. Data consumers are individuals or applications which use data. Examples of data consumers include report writers, data scientists, and ETL developers. Any role which consumes or uses data from an upstream data source is a data consumer. Data consumers provide feedback to data producers on appropriate business data quality rules. Data consumers know how data is used and what rules will identify data quality issues from a business perspective. Data consumers need to understand the quality of a data element before deciding to use it. It is up to the data consumer to decide the level of risk they are willing to take if data has poor quality. Data consumers are also responsible for reporting data quality issues to the data producer.
+
+5. Both a producer and consumer
+02:16 - 02:49
+Notice that ETL developers, data scientists, and report writers are both data producers and data consumers. Oftentimes, people consume data from upstream sources and transform that data for their purposes, producing derived fields. A report writer may consume data and then manipulate that data on their report to produce new derived metrics. The report writer's data quality responsibilities depend on whether the data quality issues occur in derived metrics on the report or upstream.
+
+6. Data Governance Team
+02:49 - 03:32
+The final data quality role to know is the data governance team. This team is responsible for overall data quality program oversight and governance. A data governance team may be comprised of data governance, data quality, and metadata resources. We will only cover the data governance team's data quality responsibilities. The data governance team is responsible for defining and enforcing data quality policies and standards, which includes the definition of data quality roles and responsibilities and monitoring data quality dashboards for service level agreement breaches. The team also ensures data quality tools, processes, and training are available.
+
+7. Data Quality Roles and Responsibilities Applied
+03:32 - 04:11
+Let's look at how to apply the data quality roles and responsibilities we just explored using the following scenario. A report writer is preparing to use data on a report. She finds that one of the fields is blank for every record. What should she do? As the data consumer she alerts the data producer, in this case the source system owner, about the issue and suggests that a data quality rule which looks for blank records be implemented. The source system owner implements the rule and remediates the issue. Meanwhile the data governance team ensures that a data quality dashboard is available to monitor data quality health.
+
+8. Let's practice!
+04:11 - 04:18
+Now that you have an understanding of data quality roles and responsibilities, let's practice.

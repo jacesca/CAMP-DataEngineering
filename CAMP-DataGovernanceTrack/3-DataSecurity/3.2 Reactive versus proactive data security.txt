@@ -1,0 +1,35 @@
+1. Reactive versus proactive data security
+00:00 - 00:08
+In this video, we will discuss a topic that is key to a solid data security foundation: being proactive.
+
+2. Acting before or after the fact
+00:08 - 00:25
+Proactive data security is about preventing breaches from happening. Reactive data security focuses on responding after something occurs. The difference lies in timing and approach: reactive is after the fact, and proactive is preventative.
+
+3. Legal requirements versus proactive protection
+00:25 - 01:25
+If a company only focuses on data security measures to meet legal requirements, they are being reactive. The main reason is that these requirements are typically based on known threats. A time lag can exist before they are updated to address new threats. Focusing only on legal requirements also ignores a company's unique security risks. Companies are only reacting to requirements, not proactively trying to solve their unique security needs. A proactive approach involves continuous activity. Companies look to combat both known and unknown threats. This approach helps in staying ahead of the curve and provides a more robust defense against cyber threats. Organizations that adopt a proactive approach recognize the need to go beyond mere legal compliance. They use a holistic approach that encompasses people, processes, and technology.
+
+4. Ways to be proactive
+01:25 - 02:07
+Many of the techniques we discussed in Chapter 2 are proactive in nature. Two examples are voluntary regularity frameworks and technical best practices. There are also other best practices that a proactive company can implement. Regular security audits help identify vulnerabilities and areas for improvement faster. Ensuring third-party vendors adhere to your data security standards also reduces risk. Regular updates and patches of software, operating systems, and applications are also crucial. This addresses newly discovered vulnerabilities and security weaknesses.
+
+5. Common pitfalls
+02:07 - 02:37
+Even with the best intentions to be proactive, there are some common mistakes in data security that companies must strive to avoid. These encompass a variety of issues. They include the absence of a clear strategy, inadequate training, underestimation of insider threats, failure to be sufficiently adaptive to evolving threats, neglect of regular audits,
+
+6. Common pitfalls
+02:37 - 03:10
+overly complex security measures, insufficient data classification, lack of an incident response plan, reliance solely on processes and technology for protection, and failure to update policies. It's important to be aware of and look out for these potential problems. They often happen because people believe that the issue "is someone else's problem." Yet, in a proactive data security mindset, everyone must feel responsible for identifying and fixing weaknesses.
+
+7. Focus on people's critical role
+03:10 - 03:47
+Another way to avoid these common pitfalls is to focus on people's critical role in data security. It's not just about knowledge but also about having the right mindset. Without it, even the best-laid data security defenses are doomed to failure. A data security mindset is about having a culture of awareness and responsibility. It must be carefully curated so that everyone feels responsible for protecting data. Employees should also feel empowered to report suspicious activities without fear of repercussions.
+
+8. The reactive police department
+03:47 - 04:22
+The Dallas Police Department is a prime example of the potential damage of security measures that are not proactive enough. An employee attempted to free up storage space on their laptop and accidentally deleted an entire folder containing the files. This was possible because of insufficient security measures. The employee had inadequate training in data management. Besides, the police department didn't have sufficient data retention policies. No laws were broken, but a more proactive approach would have prevented significant damage.
+
+9. Let's practice!
+04:22 - 04:30
+Now that we've reviewed proactive data security measures let's see if you can help our data defender use them!

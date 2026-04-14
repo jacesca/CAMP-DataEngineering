@@ -1,0 +1,39 @@
+1. Data profiles
+00:00 - 00:07
+In this video, we will learn about data profiling and how it should be used when identifying data quality rules.
+
+2. What is data profiling?
+00:07 - 00:57
+Data profiling is the activity of running statistics on a data set to better understand the data and field dependencies. Data profiling is often the first step in the data quality process because it level sets expectations of the the data. Data profiling can answer questions like: How many records are in the data set? What are the min and max values for a particular data element? How many records have a particular data element populated? When column A is populated, what other columns are also populated? This last question is what we mean by field dependencies. It is powerful to understand how fields within a dataset relate to each other as data quality rules can be implemented to monitor that fields which depend on each other have complete and valid values.
+
+3. Importance of data profiling
+00:57 - 01:24
+Data profiling is useful because it can confirm what you already know about the data, but can also reveal characteristics you may not know about your data. For example, maybe you didn't know that there were records in your data with invalid values. Usually when you find something like this, that means you have data quality issues. The profile helps you find anomalies and write better data quality rules.
+
+4. What does a data profile look like?
+01:24 - 01:52
+You are probably anxious to see what a data profile looks like so that you can better understand how you may use it. Let's use the customer table as an example. In the file you have Customer ID, Customer First Name, Customer Last Name, Customer Birth Date, and Customer Account Type. In our example dataset, there are 15,430 records and data profiling software was used to query the data and produce the profiles.
+
+5. Customer ID data profile
+01:52 - 02:04
+Customer ID is populated for all 15,430 records. All values are numeric with 11 characters. The min value and the Max value are also noted.
+
+6. Customer Name data profile
+02:04 - 02:38
+Customer First Name is populated for 98% of records and is a string of text with Min Length = 1 and Max Length = 20. 95% of records have a Customer First Name and Customer Last Name. The most common value is Jennifer Customer Last Name is populated for 96% of records. String of text with Min Length = 1 and Max Length = 30. 95% of records have a Customer First Name and Customer Last Name. The most common value is Smith
+
+7. Customer Birth Data data profile
+02:38 - 02:55
+Birth Date is populated for 76% records. 98% of records conform to the date format MM/DD/YYYY. The min value and max value are also noted. 75% of records have a Social Security Number and Birth Date populated.
+
+8. Customer Account Type data profile
+02:55 - 03:04
+Customer Account Type is populated for 99% of the 15,430 records. With various percentages of different values.
+
+9. Using a data profile in data quality
+03:04 - 04:00
+Data profiles should be used to identify potential data quality rules. The data profile provides basic information about the current data. When paired with business knowledge, data quality rules can be defined. Let's look at the data profile to define Validity data quality rules for each field. Based on the data profiles: - All CustomerID values must be 11 numeric characters. - All CustomerFirstName values must be 1 - 20 character string of text. - All CustomerLastName values must be 1 - 30 character string of text. - All CustomerBirthDate values must be in the MM/DD/YYYY format and between 01/01/1900 and 99/99/9999. - All CustomerAccountType values must be Loan, Deposit, Loan and Deposit, or Credit Card.
+
+10. Let's practice!
+04:00 - 04:08
+You now have a basic understanding of data profiles and how to use them in data quality. Let's practice!

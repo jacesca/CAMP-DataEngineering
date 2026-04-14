@@ -1,0 +1,39 @@
+1. Data quality terms and concepts
+00:00 - 00:10
+Let's formally define data quality and learn how to apply it in business context. We will cover basic data quality terms and concepts.
+
+2. Defining data quality
+00:10 - 00:53
+Data quality is a measurement of the degree to which data is fit for purpose. When data is used for business purposes, it is important that the data is fit for the intended use, meaning it is accurate, valid, and complete. Good data quality means that data can be trusted to make business decisions and run business processes. People often assume that the quality of their data is good, but that is risky. Data quality needs to be regularly measured and monitored to ensure that data is fit for use. Best practices call for business data consumers to determine a threshold which data quality must meet in order to use data for their intended purpose.
+
+3. Defining data quality dimensions
+00:53 - 01:45
+A data quality dimension is a measurement of a specific attribute of a data's quality. When measuring different dimensions of a data's quality we are able to understand and quantify how fit for use the data is. We can liken data quality dimensions to the dimensions of a 3-D shape. We can measure its height, width, and length. Each of these are dimensions of the 3-D shape and help us quantify the shapes size. This is much like how we can measure the validity, accuracy, and consistency of a piece of data in order to determine its quality. There are several dimensions you can use to assess data quality. We look at six of the most common in this course. Completeness, validity, uniqueness, consistency, timeliness, and accuracy. Let's focus on a few.
+
+4. Completeness as a data quality dimension
+01:45 - 02:08
+Completeness can be measured at the dataset or data element level. Completeness measures the degree to which all expected records in a dataset are present. At a data element level, completeness is the degree to which all records have data populated when expected. Calculations can be skewed due to missing data and can cause poor decision making.
+
+5. Completeness example
+02:08 - 02:21
+In this completeness example, we find an error in the CustomerName field. For the last record, we see that the customer name is missing. This record would fail a completeness data quality rule.
+
+6. Validity as a data quality dimension
+02:21 - 02:48
+Validity measures the degree to which the values in a data element are valid. The business defines a list of valid values or criteria for determining if a value is valid. In this depiction, purple boxes are valid, so the teal boxes are marked as invalid. The numeric measurement may be something like 15 out of 18 boxes are a valid color so the validity score is 83.33%.
+
+7. Validity example
+02:48 - 03:10
+In this validity example, we find that there are three errors across three different fields. Both CustomerBirthDate and LatestAccountOpenDate have invalid values because they are in the future but should be in the past. Credit Card is an invalid CustomerAccountType. Note the three data quality rules we could use.
+
+8. Uniqueness as a data quality dimension
+03:10 - 03:32
+Uniqueness measures the degree to which the records in a dataset are not duplicated. In order to identify a unique record, business context is needed. For example, in this depiction we see several different colored rows. Two of the rows are the same color, so they are duplicates and would fail a uniqueness rule.
+
+9. Uniqueness example
+03:32 - 03:46
+In this uniqueness example, we find that Robert Brown is duplicated. It is usually enough to measure uniqueness by assessing duplicates in the CustomerID field, but we see that the entire row is duplicated data.
+
+10. Let's practice!
+03:46 - 03:52
+Now that you have a basic understanding of what data quality is, let's practice.

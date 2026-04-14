@@ -1,0 +1,35 @@
+1. Enabling data governance with technology
+00:00 - 00:05
+In this video, we will review technical options for enabling data governance.
+
+2. Data governance solutions
+00:05 - 00:31
+As data increases in volume and complexity, so does the need to have technical solutions that can help manage and govern data in a more automated fashion. In this video, we will highlight some of the most useful features to look for when choosing a solution. These features include a business glossary, data dictionary, data catalog, data lineage, data protection, data privacy, and data quality.
+
+3. Business glossary
+00:31 - 01:00
+A business glossary contains standard descriptions and definitions of business terms that business and technology users can clearly understand. Having a business glossary creates a common vocabulary across the organization. An example entry in ZH Healthcare's business glossary for social security number would be: unique identifier assigned by the US government to citizens; used for taxes, credit reporting, and health-related purposes.
+
+4. Data dictionary
+01:00 - 01:35
+A data dictionary contains technical information about data elements in a database, such as usage, format, allowable values, location, relationships to other data, and definitions. A data dictionary helps promote consistency and transparency amongst database users and developers. An example of an entry in ZH Healthcare's data dictionary for social security number would be indicating that the data element must be in a nine-digit format with hyphens and the names of the table and column of where it is stored.
+
+5. Data catalog
+01:35 - 02:16
+A data catalog is a metadata management tool that provides a comprehensive, organized inventory of data stored within an organization's systems. The data catalog links information in the business glossary and data dictionary to create a data marketplace where users can easily and quickly locate, understand, and leverage data. Using a data catalog improves operational efficiency, increases data transparency, and enables better collaboration. Try thinking of using a data catalog to find metadata, as you would use a library to find knowledge that is located in books that are nicely organized, labeled, and easy to use.
+
+6. Automated data lineage
+02:16 - 02:48
+Data lineage is a form of metadata that describes how data flows from origination to consumption, including any transformations. Historically, data lineage has been a challenge to document, as it is often an extremely time-consuming, manual process. Now, there are tools to help with the automated extraction and maintenance of lineage, including technical and business data flows. Understanding and documenting lineage helps increase the trust, accuracy, and validity of data.
+
+7. Data protection, privacy, and quality
+02:48 - 03:06
+Other features to look for in data management platforms include data protection through data access capabilities, data privacy management through data classification and application of regulations, and data quality management through rule writing, metrics, and exception reporting.
+
+8. Choosing a solution
+03:06 - 03:53
+Using the right automated solutions - not manual processes - will ultimately help sustain and scale a data governance program. When advising ZH Healthcare on choosing an option, we asked them to consider several points. Are their primary users technically savvy or do they need a more intuitive option? Is the organization heavily regulated or will a basic platform fit their needs? Additionally, any solution(s) they choose will need to integrate well with existing software to prevent future issues with implementation and adoption. We share that there are many comprehensive solutions on the market from different vendors. Four popular choices include: Collibra, Atlan, Informatica, and IBM.
+
+9. Let's practice!
+03:53 - 03:59
+Let's test your knowledge of data governance technologies with the following exercises.

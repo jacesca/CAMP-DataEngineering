@@ -1,0 +1,27 @@
+1. Data quality thresholds
+00:00 - 00:07
+In this video we learn how to determine appropriate thresholds and alerts for data quality rules
+
+2. Data quality alert thresholds
+00:07 - 00:41
+A data quality alert threshold is set by the data producer or consumer and will trigger an action when a data quality rule results in more issues than the threshold allows for. It is represented as a count or percentage of records. When data quality issues are identified, the count of issues is reported. If this count breaches the data quality alert threshold then an alert is sent. The alert lets the relevant people know about the issue and can prevent data from loading downstream if the data or issue is critical.
+
+3. Importance of thresholds and alerts
+00:41 - 01:01
+Thresholds and alerts are important because if a rule is running and issues are identified, action needs to be taken. Defining that action when implementing the rule is good practice because it sets expectations before issues occur so when an issue does occur, remediation and issue management activities are already known.
+
+4. Determining thresholds
+01:01 - 01:47
+How do we determine an appropriate data quality threshold? Thresholds for alerts are based on criticality, priority, and impact of the data quality issue. If the data quality rule is implemented on a critical data element that is used on regulatory reporting or to make business decisions, then the threshold should be high and allow for few errors to occur without alerting. The party responsible for correcting the errors should be alerted immediately when the data is critical. You may implement rules on non- critical data and wish to be alerted of errors. The threshold that you choose should match the level of criticality and require the appropriate level of urgency. For non- critical data, you may choose a lower threshold.
+
+5. Levels of alert thresholds
+01:47 - 02:56
+Levels of alert thresholds. Sometimes you may want an alert to be sent when an issue occurs but you are only interested in it as a warning and don't expect the error to be remediated quickly. Other times, you need to set thresholds for alerts to be sent right away so that issues can be remediated quickly. Finally, sometimes an error may be so critical that you want all downstream processes to stop and remediate the issue before the processes continue. These three scenarios require different levels and types of thresholds alerts. A basic threshold matrix looks like this: Level 1 - Warning - this level will alert a user when a threshold is breached and does not require rapid remediation. Level 2 - Critical issue alert - this level will alert a user when a threshold is breached and requires rapid remediation Level 3 - Critical issue prevent - this level will alert a user when a threshold is breached and will stop downstream processes from loading data further in the data pipeline. This is associated with a preventative data quality rule.
+
+6. Alert example
+02:56 - 03:46
+Let's look at an example of alert thresholds and levels. The Validity data quality rule for customer account type has a lower criticality than the Completeness data quality rule. We see that the threshold and alert level are lower for Validity than Completeness. In this example, the business has stated that it is more critical for the value to be populated, than it is for that value to be valid. Therefore, we set a lower threshold and only send a warning for the Validity rule. We set a higher threshold which must be met for Completeness and require an alert to be sent to the data producer for rapid issue remediation. Customer ID is a critical field, so we allow no room for error and set the threshold to 100% with an action of preventing the data from loading further downstream.
+
+7. Let's practice!
+03:46 - 03:50
+Let's practice what you have learned about thresholds.

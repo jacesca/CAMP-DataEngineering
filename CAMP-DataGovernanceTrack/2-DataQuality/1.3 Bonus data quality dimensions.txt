@@ -1,0 +1,35 @@
+1. Bonus data quality dimensions
+00:00 - 00:08
+In this video we will learn about three additional data quality dimensions that are fundamental to measuring data quality.
+
+2. Recalling what a dimension is
+00:08 - 00:33
+Recall that a data quality dimension is a measurement of a specific attribute of a data's quality. When measuring different dimensions of a data's quality we are able to understand and quantify how fit for use the data is. We have already covered how to use Completeness, Validity, and Uniqueness in data quality. Now let's learn more about Consistency, Timeliness, and Accuracy.
+
+3. Timeliness as a dimension
+00:33 - 00:51
+Timeliness measures the degree to which a dataset is available when expected. It is usually measured by monitoring the time data is loaded and comparing it to the time the data is expected to be loaded based on a service level agreement or SLA.
+
+4. Timeliness example
+00:51 - 01:05
+In this Timeliness example, we see that the service level agreement, or SLA, for the customer table is 9:00 am. The data was not loaded until 11:07 am, so the data has failed the timeliness rule.
+
+5. Consistency as a dimension
+01:05 - 01:50
+Consistency measures the degree to which data is the same across all instances of the data. Consistency can be measured by comparing data values in two data sets to ensure they are the same across datasets. It can also be used to measure how consistent record counts are over time. For example, there are roughly 10,000 records in the customer table when it was loaded everyday in the past few months. The customer table would be considered consistent across time if the table is loaded with 10,000 records plus or minus 5%. If the table suddenly had 20,000 records, it would be inconsistent with previous data loads and may be an issue.
+
+6. Consistency examples
+01:50 - 02:24
+In the first Consistency example, we see a rule that the TargetCustomerTable must load each day with plus or minus 5% of the count of records loaded the previous day. The latest data load resulted in approximately double the amount of records, which is not consistent with previous data loads. In the second example, we see a rule the the Customer ID values in the AccountTable must also be in the CustomerTable. There are two CustomerIDs that are not in both tables so they are flagged as issues.
+
+7. Accuracy as a dimension
+02:24 - 02:59
+Accuracy measures the degree to which data is correct and represents the truth. Accuracy is challenging to measure because it relies on the source of truth being available and accurate. In the customer data set, we are monitoring social security number validity by checking character length. How do we know that social security number is accurate though? We can compare it to an official government document or customer submitted form. This comparison may be manual or automated using a document scraping application.
+
+8. Accuracy example
+02:59 - 03:14
+In this Accuracy example, we compare the record information in the Customer Table to the information submitted by the customer on the tax form. We see that the birth date and state are not accurate in the Customer Table when compared to the tax form.
+
+9. Let's practice!
+03:14 - 03:21
+Now that we have reviewed six basic data quality dimensions, let's practice what you have learned.

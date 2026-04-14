@@ -1,0 +1,35 @@
+1. Metadata and data quality
+00:00 - 00:07
+In this video, we will define metadata and data lineage and learn what role they play in data quality.
+
+2. What is metadata?
+00:07 - 00:37
+Metadata is data about data, or attributes that describe data. Metadata is used to organize and understand datasets and data elements and is often managed in a governed metadata repository. Metadata is critical in the data quality process because it helps us determine the definition of a field, who the data owner of a field is, and when the field was last updated. This information determines who is responsible for correcting data quality issues.
+
+3. Metadata examples
+00:37 - 01:11
+In mature data organizations, metadata can be found in a data dictionary. You can search for specific data fields using either the business or technical data element name and find related metadata. Metadata examples include business data element name, business definition, data owner, and technical physical field name. There are many pieces of metadata that can be recorded. In the example here, we searched for Customer First Name and can see several pieces of information, or metadata, about the field.
+
+4. What is data lineage?
+01:11 - 01:35
+Data lineage is a representation of how data moves in a pipeline, from where the data is entered in the source through each step in the data pipeline, until it is consumed. Each of these layers in the data lineage has its own set of metadata and can have different data quality rules and expectations. Ultimately data lineage is used to determine where to implement a data quality rule.
+
+5. Data lineage example
+01:35 - 02:08
+We have been working with the customer dataset. The customer data starts in the customer source tables and is moved into a customer staging table, which is a table often used to hold data from different sources and prepare it for transformation, then into the customer table, and then onto customer reports. Each of these moves is recorded in data lineage. Data quality rules may be needed in each of these tables or reports. The more data moves through the data pipeline, the more chances for data quality issues to occur.
+
+6. Metadata and data lineage example
+02:08 - 02:43
+We want to implement data quality rules as close to the source as possible. Many data quality tools work by querying data, so in our customer example, we can start by running rules on the Customer Source Tables because they are the SQL databases closest to the source. Why is it important to write data quality rules and correct issues close to the source? Imagine the customer data is used on 3 reports and all three reports as well as all upstream data sources have an incorrect value in the CustomerAccountStatus field.
+
+7. Metadata and data lineage example bad practice
+02:43 - 02:55
+What if we only fixed the issue on one of the reports by hard coding logic in the report to correct the error? What would happen to the other two reports? They would still have the error.
+
+8. Metadata and data lineage examplebest practice
+02:55 - 03:14
+By implementing data quality rules and correcting data quality issues at the source, all three reports would be corrected. It is best practice to fix the root of the issue rather than only fix the issue at the consumption layer. This will allow you to fix the issue once rather than needing to fix it multiple times.
+
+9. Let's practice!
+03:14 - 03:22
+Now that you understand how to use metadata and data lineage in data quality activities, let's practice!

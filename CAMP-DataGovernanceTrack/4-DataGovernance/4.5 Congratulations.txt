@@ -1,0 +1,27 @@
+1. Congratulations!
+00:00 - 00:08
+Congratulations on completing all four chapters of the course! Hopefully, you gained a lot of new knowledge about data governance concepts.
+
+2. Chapter 1: What is data governance and why is it important?
+00:08 - 00:18
+In chapter 1, you learned about the pillars of data governance while shopping for a new car, and how data governance leverages people, processes, and technology to drive business value.
+
+3. Chapter 2: Data governance frameworks, principles, and maturity
+00:18 - 00:27
+In chapter 2, you learned about data governance frameworks, their six components, principles, and the importance of data management maturity.
+
+4. Chapter 3: Roles, committees, and operating models
+00:27 - 00:41
+In chapter 3, you learned about data governance roles and responsibilities and how the data lifecycle compares to the food supply chain of a pepper. You also learned about data governance committees and different types of operating models.
+
+5. Chapter 4: Implementing a data governance program
+00:41 - 01:05
+In chapter 4, you learned how to implement a data governance program by assessing current needs against a target state, developing a strategy, leveraging technology, and creating a roadmap. And throughout the course, you provided expertise and assistance to Milly and Chase at DOG Investments, ABC Bank, ZH Healthcare, and Smith Medical Group.
+
+6. Wait - there's more!
+01:05 - 01:32
+If you enjoyed the data governance concepts course and would like to learn more about data, then DataCamp has many offerings for you to choose from. For other conceptual courses like this one, check out these courses: Understanding Data Science, Understanding Data Topics, and Data Skills for Business. For technical courses, check out: Power BI and Tableau, Python and R, and SQL.
+
+7. Thank you!
+01:32 - 01:46
+Thank you for taking the Data Governance Concepts course. I hope you've enjoyed the material and learned some very useful information. I hope to see you back here at DataCamp soon and wish you all the best in your future learning endeavors!

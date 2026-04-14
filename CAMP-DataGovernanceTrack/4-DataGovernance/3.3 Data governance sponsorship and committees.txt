@@ -1,0 +1,27 @@
+1. Data governance sponsorship and committees
+00:00 - 00:05
+In this video, we'll discuss the role of data governance sponsors and committees.
+
+2. Data governance sponsor
+00:05 - 00:48
+A data governance sponsor is an executive that champions the data governance program and helps promote buy-in across the organization. The sponsor provides direction to the data governance program by clarifying business priorities and ensuring alignment with the organization's strategic objectives. Additionally, the sponsor helps with securing resourcing and funding for hiring, tooling, training, and issue resolution. Ideally, a data governance sponsor is a business executive that is seen as a trusted, respected leader with an effective and diverse network to help drive a successful program and navigate potential issues. Having this sponsor helps drive change and adoption.
+
+3. What is a data governance committee?
+00:48 - 01:07
+A data governance committee is a cross-functional forum responsible for data-related decision-making, program oversight, issue awareness, escalation handling, and data governance facilitation. It may also be called a data governance council, steering committee, or advisory council.
+
+4. When to establish a data governance committee
+01:07 - 01:43
+A data governance committee may be established to start a data governance initiative. The committee would be responsible for designing and implementing the data governance framework and later providing oversight. Alternatively, the data governance committee can be implemented after the initial data governance framework has been established, key players have been identified, and there is progress to be monitored. In either situation, the data governance committee should maintain a clear purpose and be able to demonstrate an ongoing commitment to ensuring the success of the data governance program.
+
+5. Data governance committee members
+01:43 - 02:16
+A data governance committee should consist of executive leaders across different business lines, including the data governance sponsor and chief data officer, to help ensure organizational buy-in. The committee should also include representatives from IT to ensure alignment between technology and data governance priorities. Additional participants should include subject matter experts and impacted stakeholders to promote awareness and buy-in. All of the committee members help ensure the forum has a comprehensive perspective for decision-making.
+
+6. Data governance committee topics
+02:16 - 02:48
+In general, data governance committee meetings should include a review of five core areas. This includes a quarterly review of the effectiveness of the data governance strategy and how well it aligns with organizational goals; the return on investment from implementing data governance, and business unit compliance with policies and standards. On a monthly basis, the council should review the progress of data quality efforts and what types of change management or communication efforts are required to promote the data governance program.
+
+7. Let's practice!
+02:48 - 02:55
+Now that you've learned about data governance sponsorship and committees, let's practice!

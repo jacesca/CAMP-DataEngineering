@@ -1,0 +1,21 @@
+1. Protecting, guiding, and harnessing data wisdom
+00:00 - 00:15
+Welcome back to our journey through the pillars of data management. In this video, we will elevate our understanding and examine three more critical pillars: data security, data governance, and business intelligence.
+
+2. Keeping data secure
+00:15 - 01:30
+In data management, ensuring the security and privacy of information is a priority. Data security, the protection of digital data from unauthorized access, corruption, or theft, is instrumental in maintaining the confidentiality, integrity, and availability of information. This entails implementing measures such as encryption, access controls, firewalls, and antivirus software. In parallel, data privacy focuses on the protection of personal information to prevent misuse or unauthorized access. Adherence to regulations such as GDPR and CCPA is key, accompanied by practices like data anonymization, consent management, and clear privacy policies. However, this landscape is not devoid of challenges, with cyber threats, compliance complexities, and the risk of data breaches ever-present. Best practices encompass regular security audits, comprehensive employee training, and thoughtful data classification.
+
+1 Images in this lesson were created using Freepik
+3. Elements of data governance
+01:30 - 03:17
+Data governance is the formalized framework guiding decision-making, control, authority, and accountability around data assets. It involves establishing clear data policies, assigning data stewardship responsibilities, and ensuring compliance with regulations and industry standards. Embracing established frameworks, such as the DAMA International Data Management Body of Knowledge or EDM Council’s Data Management Capability Assessment Model, provides a structured approach to implementing and optimizing data governance practices. The focus of data governance is on orchestrating the strategic and organizational aspects of data, ensuring that data is treated as a valuable asset and is aligned with business objectives. This contrasts with data management, which encompasses the practices, processes, and technologies used to organize, store, retrieve, and analyze data. Data management ensures that information is efficiently and effectively handled throughout its existence while data governance, a subset of data management, specifically emphasizes the governance and control aspects. Implementing data governance sometimes comes with challenges such as overcoming resistance to change and striking a balance between flexibility and control in governance policies. Despite these challenges, a well-implemented data governance strategy produces increased efficiency and overall trust in organizational data.
+
+4. Unlocking insights
+03:17 - 04:33
+Business intelligence transforms raw data into actionable insights, offering historical, current, and predictive views of business operations. Utilizing components like data warehousing, reporting, and dashboards, business intelligence serves as a user-friendly tool accessible to non-technical users, primarily dealing with structured data from internal sources. On the other hand, data science is a more expansive field that extracts insights from both structured and unstructured data. Rooted in advanced technical expertise, it employs machine learning, big data analytics, computer science, and predictive modeling to uncover hidden patterns and forecast future trends. While business intelligence is retrospective and user-centric, data science embraces a forward-looking perspective, exploring and discovering insights through an interdisciplinary lens. Together, these disciplines empower organizations to harness the full spectrum of data for strategic decision-making.
+
+5. Let's practice!
+04:33 - 04:47
+Now that we have understood these three pillars of data management, it's time for a challenge! Head over to the exercises provided to test your newfound knowledge.
+

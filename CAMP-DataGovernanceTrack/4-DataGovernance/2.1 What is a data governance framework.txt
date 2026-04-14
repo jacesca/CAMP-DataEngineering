@@ -1,0 +1,40 @@
+
+1. What is a data governance framework?
+00:00 - 00:08
+In the first lesson of this chapter, we will cover the definition of a data governance framework and review key components.
+
+2. Data governance framework defined
+00:08 - 00:25
+A data governance framework is a blueprint for how people, technology, and processes should work together to ensure compliance with data governance policies and standards. So, where data governance describes the "what", a data governance framework defines the "how".
+
+3. Framework components
+00:25 - 00:43
+When implementing a data governance framework, there are six key components: strategy, policies and standards, processes and technology, coordination and collaboration, progress monitoring and communication, and data literacy and culture.
+
+4. Strategy
+00:43 - 01:10
+When establishing a data governance framework, defining an overall data governance strategy is critical. A data governance strategy defines how an organization plans to use data safely, efficiently, and effectively to solve business problems and meet business goals. Additionally, a data governance strategy ensures that data is consistently recognized and leveraged as a valuable asset.
+
+5. Policies and standards
+01:10 - 01:47
+A data governance policy is a documented set of principles that outlines decision-making rights, goals, expectations, and responsibilities of people and teams to ensure proper data management across an organization. A data governance standard is a consistent, agreed-upon guideline that outlines best practices for complying with a data governance policy. As essential parts of a data governance framework, data governance policies and standards guide decision-making, promote consistency, and help drive outcomes.
+
+6. Processes and technology
+01:47 - 02:20
+A data governance framework supports the execution of data governance by defining critical processes and supporting technology. Processes should have detailed procedures that address topics such as data quality monitoring, data issue remediation, data sharing, metadata management, master data management, and more. Additionally, a data governance framework should address the technical capabilities required to implement, maintain, and track critical processes successfully.
+
+7. Coordination and collaboration
+02:20 - 02:45
+Data governance often consists of complex practices that require coordination and collaboration between stakeholders to be successful. A data governance framework should clearly outline roles and responsibilities around data usage, data sharing, and data management, including how each data governance role interacts with and supports each other.
+
+8. Progress monitoring and communication
+02:45 - 03:17
+A data governance framework should outline how an organization will consistently measure and monitor the progress of a data governance program using key performance indicators (KPIs), data quality measurements, privacy and risk exposure, regulatory and policy compliance, and return on investment (ROI). When shared with stakeholders and sponsors, progress metrics help to communicate the data governance program's impact, successes, challenges, and needs.
+
+9. Data literacy and culture
+03:17 - 03:52
+Data literacy is the ability to read, work with, analyze and communicate with data. A data governance framework should include plans to educate and train employees on topics such as critical thinking, research, analysis, and visualization to help increase data literacy. Data literate employees are more likely to understand the need for high-quality data to generate better analytics and insights that drive business decisions. Data literacy is key to creating and promoting a data-driven culture.
+
+10. Let's practice!
+03:52 - 03:59
+Now that we've reviewed data governance framework components let's take a few minutes to practice what you've learned.

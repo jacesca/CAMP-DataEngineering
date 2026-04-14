@@ -1,0 +1,43 @@
+1. Why does data governance matter?
+00:00 - 00:04
+In this video, we'll review the importance of data governance.
+
+2. The evolution of data governance
+00:04 - 00:44
+Did you know that data governance has actually been around for decades? In its early phases, data governance consisted of Information Technology groups or IT creating a large inventory of transactional detail. It wasn't until the early 2000s that companies started to realize the power of high-quality, governed data for analytics, insights, and data-driven decision-making. Along with wanting trusted, quality data for decision-making, today's companies also look to data governance to help them comply with increased regulatory and privacy requirements.
+
+3. Increased financial regulations
+00:44 - 01:15
+Financial regulators have continued to enhance and refine legislation designed to mitigate the risk of harmful financial events such as the accounting scandals in the early 2000s and the financial crisis of 2008. As we briefly review some of this legislation, you should note that they reflect common themes such as accountability, better risk management, more accurate reporting, and increased protection. In other words, we need data governance!
+
+4. The Sarbanes-Oxley (SOX) Act
+01:15 - 01:37
+In 2002, the Sarbanes-Oxley Act (or SOX) was enacted in the United States as a response to many high-profile accounting scandals. To ensure better accountability, the act states that executive management must attest that their financial and corporate reporting is accurate and complies with certain standards.
+
+5. CCAR
+01:37 - 02:10
+As a result of the financial crisis of 2008, the U.S. Federal Reserve began to mandate stress testing in 2009 to better evaluate the stability and resiliency of large banks in the event of another economic downturn or crisis. These stress tests eventually became part of the annual Comprehensive Capital Analysis and Review (or CCAR) which also includes a review of a bank's capital planning process, including the distribution of shares and/or dividends.
+
+6. BCBS 239
+02:10 - 02:46
+The financial crisis revealed the need for more reliable identification and management of risk. In 2013, the Basel Committee on Banking Supervision published Standard 239 (or BCBS 239), containing 14 key principles for effective risk data aggregation and reporting and requirements for data governance and quality. This global regulatory standard is designed to reduce the severity of losses or systemic crises that can result from poor risk management.
+
+7. U.S. privacy regulations
+02:46 - 03:19
+In addition to federal regulations, data privacy regulations have also increased. In the U.S., data privacy is covered by various federal and state laws. Two examples are; the Health Insurance Portability and Accountability Act (HIPAA), which prevents sensitive patient data from being shared without patient consent, and the California Consumers Protection Act (CCPA), which provides California residents with more control over the use of their data.
+
+8. General Data Protection Regulation (GDPR)
+03:19 - 03:55
+The General Data Protection Regulation (GDPR) was enacted in 2018 to provide a comprehensive way for EU nations to protect the data privacy of citizens and residents. The law applies to any company that collects data on EU citizens and residents and includes several principles for how personal data should be protected, shared, and transferred. The regulations we've reviewed have forced organizations to rethink how they use, handle, store, and protect data and look to data governance for help.
+
+9. Data classification and retention
+03:55 - 04:26
+To help ensure regulatory compliance, data governance provides frameworks for data classification, retention, and destruction. Data classification is the process of grouping data based on confidentiality level to indicate how it should be handled, protected, and used. Data classification can then be used to comply with data retention and destruction policies, which specify how long data must be kept and when it should be destroyed.
+
+10. Master, reference, and metadata management
+04:26 - 05:15
+Master data management enables consistency and transparency in data by creating master or golden records that are used to identify, match, and merge data across systems. Reference data management is a subset of master data management. It involves identifying, mapping, and conforming coded data sets across different business lines and systems, such as country code or currency. Metadata management includes processes, policies, and technologies that describe and define data. Metadata includes data definitions and lineage, which describes how data flows from origination to consumption. Metadata management allows data to be cataloged and searchable.
+
+11. Let's practice!
+05:15 - 05:23
+Now that we've reviewed different drivers of data governance let's take a few minutes to practice the concepts.

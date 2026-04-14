@@ -1,0 +1,27 @@
+1. Preventative Data Quality Rules
+00:00 - 00:08
+In this video we learn about preventative data quality rules and their use in stopping poor data from loading downstream.
+
+2. Defining preventative rules
+00:08 - 00:37
+A preventative data quality rule stops data from loading downstream if an issue is found. These rules prevent critical errors from appearing on reports and force a speedy remediation so that the data can be loaded. A detective rule finds an issue after the issue has already occurred and moved downstream. A preventative rule stops issues from occurring further downstream. The trade off is the dataset does not load and data can not be used.
+
+3. Using preventative rules
+00:37 - 01:36
+There are guidelines for when preventative data quality rules should be used: 1. When the data is critical to business processes and an identified issue would cause harm if it is not immediately corrected 2. When the issue can be easily fixed 3. When the issue has an impact on a large number of records If critical data has a data quality issue where all of records are blank, the data should not persist downstream. Critical data elements often have business critical impacts. If every customer has a null value for a critical element, then something must be wrong with the source. Occasionally it makes sense to prevent missing data from loading downstream because business decisions should and could not be made based on missing data. If every record is null, there is likely a quick fix, perhaps reloading the data file, that can resolve the problem.
+
+4. Implementing preventative rules
+01:36 - 02:32
+Let's look at how we can implement a preventative data quality rule on customer current balance. First we identify the Completeness data quality rule that all customer records must have a value populated. With the clarifying note that 0, negative, and positive values are allowed. Next we determine where this rule should be implemented. Best practice tells us as close to the source as possible. In this case, we should also implement the rule in the layers in the data pipeline downstream from the source in case there are issues with loading the data in each of the layers. We may implement this as a detective data quality rule for when the issues impacts a small amount of records, otherwise we add the preventative threshold of 10% or more, so if 10% or more of records are null, then prevent the data from loading downstream.
+
+5. Remediating issues
+02:32 - 03:35
+Let's explore what happens when we find that 50% of customer records have a null customer current balance value in CustomerSource. What should happen? First, the preventative threshold has been breached, so the data should not load downstream until the records are remediated. Next, we look up the data producer in the metadata repository and find that Rita is the producer. She is alerted of the issue and its associated SLA. In this case, she must resolve the issue in 24 hours. Rita reviews the source file in CustomerSource and checks a few records in the front end Customer application. She finds that the front end has values populated so there must be an issue with the file the Customer application vendor sent. She calls the vendor and determines that there was an issue with the file transfer which resulted in half the record's data being wiped. The vendor resends the file with 100% of values populated and the data is loaded into CustomerSource and beyond.
+
+6. Detect vs prevent
+03:35 - 03:48
+Now we have learned about both detective and preventative data quality rules. Detective rules detect issues in the source and downstream. Preventative rules prevent issues from loading into the downstream tables.
+
+7. Let's practice!
+03:48 - 03:54
+Now let's practice what we have learned about preventative data quality rules.

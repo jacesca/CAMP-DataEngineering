@@ -1,0 +1,35 @@
+1. Benefits of data governance
+00:00 - 00:05
+In this lesson, we will review the many benefits data governance has to offer.
+
+2. Data governance benefits
+00:05 - 00:30
+Data governance is more than a check-the-box exercise to comply with policies and procedures. It provides many tangible business benefits. In this lesson, we will review six of those benefits, including; better data quality, increased compliance, improved decision-making, increased efficiency, better reputation, and greater profits.
+
+3. Having better data
+00:30 - 00:55
+Data quality programs help ensure users receive complete, accurate, and timely data. Additionally, companies can implement controls to ensure validity - by catching operational errors such as data entry; consistency - by ensuring data is the same across systems; and integrity - by monitoring for technical errors as data moves throughout systems.
+
+4. Mitigating risk
+00:55 - 01:32
+Remember all those regulations we learned about in the previous lesson? A huge benefit of data governance is that it provides visibility and transparency into data use, handling, and quality. Without data governance, it would be extremely difficult for executives and process owners to attest to the accuracy and completeness of their data. Failure to comply with financial and privacy regulations can result in strict penalties such as hefty fines, imprisonment, loss of privileges, and reputational harm.
+
+5. Making better decisions
+01:32 - 01:46
+Because data governance enables high quality data and increased visibility, business users become more confident trusting their data to generate actionable insights and make data-driven decisions.
+
+6. Streamlining processes
+01:46 - 02:11
+Data governance policies and standards help define clear roles and responsibilities and increase transparency around how data is used and handled. Additionally, data governance controls help identify and minimize areas of duplicate work, operational errors, and manual adjustments leading to increased process efficiency.
+
+7. Providing better customer service
+02:11 - 02:50
+Think about how difficult it would be to answer a customer's question when you have to leverage five separate systems with different formats of information. Implementing a data governance program to ensure data integrity, consistency, and validity will greatly improve an organization's ability to answer customer questions, provide excellent service, and handle complaints quickly and effectively. Additionally, well-governed data can be used to analyze customer feedback and identify ways to ensure a better customer experience and reputation as a service provider.
+
+8. Making more profit
+02:50 - 03:06
+All of the previous benefits - better data quality, increased compliance, improved decision-making, increased efficiency, and better reputation - lead to reduced costs, increased revenue, and, therefore, greater profits for your company.
+
+9. Let's practice!
+03:06 - 03:14
+Now that we've reviewed the many benefits of data governance let's test your knowledge.

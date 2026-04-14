@@ -1,0 +1,24 @@
+1. Anomaly detection
+00:00 - 00:09
+In this video we will learn how to use anomaly detection as part of data quality and how to interpret the results of an anomaly detection report.
+
+2. Defining anomaly detection
+00:09 - 00:49
+What is anomaly detection? Anomaly detection is when a machine learning algorithm is used to learn about a dataset using historical data and identify potential data quality issues. Anomaly detection is beneficial because it can be used as a hands off, automated approach to data quality and does not require human intervention until results need to be interpreted. Anomaly detection requires either special tools and applications or building a machine learning model which detects anomalous record values in python or R. It also requires historical data so that patterns in the data can be learned.
+
+3. Benefits of anomaly detection
+00:49 - 01:28
+There are many benefits to anomaly detection. It allows companies to monitor data at scale vs just critical data. It requires little business knowledge to set up because the machine learning algorithm learns to detect errors. As long as you feed the algorithm enough data over time, it learns to detect anomalies. Anomaly detection can also detect data drift and non obvious data insights that the business may not know. Data drift is when data changes over time. Business might not be aware of the these changes without anomaly detection finding them.
+
+4. Using anomaly detection
+01:28 - 02:26
+Anomaly detection should be used when a specific data quality rule isn't defined but you still want to monitor a dataset for outlier records. Anomaly detection is great for monitoring large datasets, with historical data, because it requires a large amount of data to learn from. Defining and implementing data quality rules is time and resource intensive. With anomaly detection you are able to automate data quality monitoring at scale on many columns and tables at once. Anomaly detection may be used in addition to traditional data quality rules but most companies will still need both. Companies in highly regulated industries, such as finance, will likely need more traditional data quality tools owned by data governance teams. Anomaly detection tools are often used by data science teams because they require less governance and vigor than a traditional data quality tool provides.
+
+5. Anomaly detection example
+02:26 - 03:55
+Let's take a look at the customer dataset and what anomaly detection might look like on the Customer Type field. We have already defined this detective data quality rule: All records must have a customer account type equal to one of the following values: Loan, Deposit, Loan and Deposit, or Credit Card. How can we use anomaly detection for this field? An anomaly detection algorithm would quickly learn that customer account type has these four valid values. Over time it will learn that roughly 100 records will have a null value everyday. We already confirmed with the data producer that null values are expected until the third business day. What if there is a spike in null values and suddenly one day there are 500 null customer account types values? An anomaly detection algorithm would likely flag this as an anomaly the data producer should review. She may find that the 150 additional null values are true errors, or she may find that customer accounts have increased as business has picked up and she should expect about 250 records with a null Customer Type value. Anomaly detection is not perfect, and can sometimes alert users of non-issues. However, the detection of data drift, in this case an increase in customer accounts, can be useful in how data producers and consumers understand the data they produce or consume.
+
+6. Let's practice!
+03:55 - 04:03
+This video reviewed the concept of using anomaly detection in data quality. Let's practice!
+

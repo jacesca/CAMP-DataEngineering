@@ -1,0 +1,35 @@
+1. Data governance operating models
+00:00 - 00:05
+In this video, you will learn about data governance operating models.
+
+2. What is a data governance operating model?
+00:05 - 00:24
+A data governance operating model is a set of guidelines for how an organization wants to operate around its data. An effective operating model outlines how data governance roles interact with each other, including who is responsible for decision-making, program direction, policy enforcement, and business unit oversight.
+
+3. Benefits of operating models
+00:24 - 00:50
+When an organization implements a data governance operating model, it has established a clear governance structure with defined roles, responsibilities, and processes. This leads to improved communication, better teamwork, increased ownership and accountability, more efficient workflows and processes, and overall better chances of having a successful data governance program.
+
+4. Operating model types
+00:50 - 00:58
+We will review three types of data governance operating models: Centralized, Decentralized, and Federated.
+
+5. Centralized operating model
+00:58 - 01:56
+The Data Governance Office (or DGO) defines and enforces data governance policies, standards, and frameworks in a centralized operating model. This means that the rest of the organization must use and follow the data governance program established by the DGO. In the diagram on the right, the center circle represents the DGO, and the branches represent different business units in an organization. The benefits of using this operating model include a single enforcement authority, a clear governance structure, and more efficient decision-making. This model is most useful in organizations with lower data management maturity. As data governance programs mature, this model may be seen as too bureaucratic and cause decreased operational efficiency. Additionally, a centralized model often focuses more on enterprise-wide needs and less on those of specific business units.
+
+6. Decentralized operating model
+01:56 - 02:50
+In a decentralized operating model, decisions are made at the Data Governance Committee or Council level. In the corresponding diagram, the center circle represents the Data Governance Committee or Council, and the branches represent different business lines. Each branch has its own center to illustrate that businesses have the autonomy to govern data according to their specific needs. This operating model is relatively easy to establish and ensures that there is representation from all business lines in decision-making. Because of the flattened structure, businesses have more autonomy over how they choose to govern their data. In this model, the decision-making process can often take longer since the committee must reach a consensus. Additionally, it can be difficult to coordinate meetings across business functions and ensure participation from all business lines.
+
+7. Federated operating model
+02:50 - 03:50
+The DGO provides a centralized strategy, framework, policies, and tools for businesses to leverage in a federated or hybrid operating model. In the corresponding diagram, the center circle represents the DGO and its centralized capabilities. The blue circles on the outside represent different business lines that interact with each other, whether it is through the DGO or outside the DGO. This model is more flexible and allows businesses to implement data governance according to their needs. Additionally, a federated operating model helps ensure a balance between enterprise and business-level data priorities. Because this model works best in organizations with high levels of data management maturity, it is important to have a highly skilled data governance leader who can influence the organization. Additionally, business units must ensure they have the right people with the right skills on their teams to ensure data is governed properly and efficiently.
+
+8. Adjusting your operating model
+03:50 - 04:12
+As we've reviewed, each operating model has its own benefits and challenges. It is important to select the operating model that works best for your organizational needs. You should also make sure to periodically evaluate the effectiveness of the operating model and adjust it as needed based on changes in data management maturity, company size, and business needs.
+
+9. Let's practice!
+04:12 - 04:22
+Now that you've learned about the different types of data governance operating models let's see how well you can match the characteristics to the appropriate model.

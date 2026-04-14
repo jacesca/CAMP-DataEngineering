@@ -1,0 +1,38 @@
+1. Types of data governance frameworks
+00:00 - 00:05
+In this video, we will discuss different types of data governance frameworks.
+
+2. Choosing a type of framework
+00:05 - 00:26
+There are three types of data governance frameworks: the traditional top-down approach, the traditional bottom-up approach, and the collaborative approach. Organizations should choose a data governance framework that works best for their needs based on priorities and desired outcomes, regulatory requirements, and organization size.
+
+3. Traditional top-down approach
+00:26 - 01:10
+With the traditional top-down approach, a small team of data professionals (often in technology) serves as the organization's only data provider. This team of data "gatekeepers" has full control over when and whether businesses can access the data for analytical use. Using well-defined best practices, the centralized team ensures data is well-governed, controlled, and protected. A challenge of this approach is that it is not easily scalable as a small team will have difficulty with maintaining and providing highly governed data as the amount of and demand for data increases.
+
+4. Traditional bottom-up approach
+01:10 - 01:46
+With the traditional bottom-up approach, data democratization is the priority. This means that data is easily and widely accessible to stakeholders throughout the organization without a bottleneck caused by gatekeepers. In this more scalable approach, raw data is available to consumers before data governance controls have been applied. This leads to challenges in ensuring consumers use governed, not raw, data, which could lead to increased regulatory risk and potentially higher data management costs.
+
+5. Collaborative approach
+01:46 - 02:30
+In contrast to the other approaches, the collaborative data governance framework is more flexible and scalable. It balances defensive needs such as ensuring compliance and managing risk with the desire to have an offensive strategy that leverages data for analytics. With this approach, data stakeholders across the organization collaborate to create an enterprise body of data that is trusted and accessible. For this framework to succeed, an organization must follow well-defined data use, production, and aggregation principles. Additionally, this approach might not be controlled enough for highly regulated business processes.
+
+6. DAMA Data Management Body of Knowledge
+02:30 - 03:06
+The DAMA International Data Management Body of Knowledge (DAMA-DMBOK2) is a frequently leveraged industry-standard framework. The DMBOK2 provides a comprehensive guide on data management functions, terminology, and best practices. Data governance is seen as a unifying theme across ten different data management knowledge areas in this framework. DMBOK2 can be used as an educational resource and guide for more detailed information.
+
+1 DAMA. Earley, S., & Henderson, D., Sebastian-Coleman, L (Eds.). The DAMA Guide to the Data Management Body of Knowledge (DAMA-DM BOK). Bradley Beach, NJ: Technics Publications, LLC. 2017.
+7. DGI data governance framework
+03:06 - 03:38
+The Data Governance Institute (DGI) has developed a data governance framework that contains ten components grouped into three core areas: people and organizational bodies, rules and rules of engagement, and processes. As another industry-standard resource, the DGI framework provides guidance for implementing data governance programs based on six types of organizational focus areas, such as data quality, data warehouses and business intelligence, and management support.
+
+1 The Data Governance Institute. Thomas, G. The DGI Data Governance Framework. 2020
+8. EDM Council's DCAM Framework
+03:38 - 04:07
+The EDM Council's Data Management Capability Assessment Model (DCAM) is another popular framework used by data professionals. This framework is especially useful for financial institutions with heavy regulatory and compliance requirements, but it can also be leveraged in other industries. DCAM provides guidance on best practices, key capabilities, organizational structure, terminology, and progress monitoring.
+
+1 edmcouncil.org, 2022
+9. Let's practice!
+04:07 - 04:14
+Let's test your knowledge of data governance framework types before diving into principles!

@@ -1,0 +1,35 @@
+1. Creating a data governance strategy
+00:00 - 00:06
+In this video, you will learn the key components of a successful data governance strategy.
+
+2. Strategy components
+00:06 - 00:33
+As part of a successful data governance program, an organization must create and communicate a strategy for implementing data governance. The strategy should be part of a holistic data strategy and include a defined type of approach, vision statement, mission statement, value proposition, guiding principles, and roles and responsibilities. Let's work with ZH Healthcare on their strategy.
+
+3. Defined approach
+00:33 - 01:16
+We first want to define with ZH Healthcare whether they prefer a data governance strategy that is offensive, defensive, or a balance of the two. A defensive strategy focuses primarily on minimizing risk and ensuring compliance, whereas an offensive strategy focuses mainly on supporting business objectives using actionable insights. Our assessment identified several data-related risks, such as data quality and privacy issues. Therefore, we advise ZH Healthcare to focus initially on a defensive strategy and move towards a more balanced approach where data risks are mitigated, and business value is realized.
+
+4. The vision statement
+01:16 - 02:01
+Next, ZH Healthcare needs to write a vision statement for its data governance program that is inspiring, compelling, and easily understood. Like a "North Star", the vision statement will help the organization align on what they want to achieve with data over the next three to five years. After several working sessions, ZH Healthcare issued the following vision statement: "Revolutionize the way patients leverage their own data to make informed healthcare decisions." To achieve that goal, ZH Healthcare knows they need to greatly improve their data governance capabilities to ensure they have accurate, protected data for patients to use.
+
+5. Mission statement
+02:01 - 02:37
+A mission statement serves as a call to action by providing guidance on how an organization should work toward achieving its objectives. It should tie with the vision statement and include the organization's goal in the wording. Since we know ZH Healthcare wants to transform how patients use their own data to make healthcare decisions, we help them write a mission statement that says, "Enable patients to make data-driven decisions about their healthcare by providing them with secured access to accurate, trusted data and insights."
+
+6. Value proposition
+02:37 - 03:13
+A value proposition or statement for a data governance program outlines how the program will provide value to the organization. It is a statement of cause and effect that helps convince executive sponsors, senior leaders, and business stakeholders of the benefits of implementing the program. An example for ZH Healthcare could be: Through implementing this data governance program, we will realize more accurate data for actionable insights, better compliance with privacy regulations, and increased trust in data for decision-making.
+
+7. Guiding principles
+03:13 - 03:37
+The guiding principles in a data governance strategy are essential for defining how data should be used, managed, and treated to meet business goals and minimize risk. Some examples we developed for ZH Healthcare include the following: data owners and stewards will be assigned to ensure accountability, and data stakeholders must be transparent in all decision-making.
+
+8. Roles and responsibilities
+03:37 - 04:11
+When outlining roles and responsibilities in a data governance strategy, we need to align with the company's data governance framework and operating model. Since ZH Healthcare has chosen to use a top-down data governance framework and centralized operating model, we know that we need to establish a centralized authority - the data governance office, and hire a Chief Data Officer to lead it. We can also outline how businesses must follow the policies and standards set by the data governance office and that compliance will be measured through monthly data health checks.
+
+9. Let's practice!
+04:11 - 04:19
+Now that you've learned about the components of a data governance strategy, let's practice the concepts.

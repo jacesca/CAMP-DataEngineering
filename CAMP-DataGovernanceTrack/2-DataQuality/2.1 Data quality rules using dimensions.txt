@@ -1,0 +1,35 @@
+1. Data quality rules using dimensions
+00:00 - 00:06
+Let's take a look at how we can apply the data quality dimensions by defining data quality rules.
+
+2. Data quality rules
+00:06 - 00:21
+A data quality rule is a type of rule that validates whether data meets business requirements. The rule monitors for issues that occur on the table, which is called a dataset data quality rule, or on a data element which monitors a specific column.
+
+3. Completeness data quality rule
+00:21 - 01:02
+For the dataset: All expected records from the source must be loaded. This requires us to know the record count in the source and to compare the record count in the table we are monitoring. For the data element, we need more business context to know when a value is expected for each field. We can propose the following: All records must have a Customer ID, Customer First Name, Customer Last Name, and Customer Type populated. You'll notice that there can be overlap in using dimensions when defining data quality rules. We can often define a rule that monitors that a field is populated, which measures completeness, by a certain time, which measures timeliness.
+
+4. Timeliness data quality rule
+01:02 - 01:33
+The customer dataset must be loaded by the service level agreement (SLA). Business and technical stakeholders define the SLA, for example if the SLA is 9:00 AM and the data does not load until 11:07 AM, then the dataset fails the timeliness rule. For data elements, we may define the timeliness expectations for each field: For example, a tax ID number must be populated by the first time the customer's account status is set to Open.
+
+5. Validity data quality rule
+01:33 - 02:12
+Validity is one of the most common data quality rules to implement because we typically know what a valid value for a field should be. Examples of validity data quality rules include: All records must have a Birth Date value in the format MM/DD/YYY and the value must be in the past. All records must have an Account Status of Open, Closed, or Pending. Each of these rules detects when invalid data has been entered. We should take care not to confuse this with completeness, which just checks that a value is populated, or accuracy, which would check that the valid value is also correct.
+
+6. Consistency data quality rule
+02:12 - 03:00
+You may not be able to check for Consistency of all data values for every field. It takes a lot a time and resources to run these comparisons everyday. It is recommended to focus consistency checks on the most critical data. At the dataset level, a consistency check can be: The count of records loaded today must be within +/- 5% of the count of records loaded yesterday. At the data element level, a consistency rule may look like: All Customer ID values in the AccountTable must also be present in the CustomerTable. This checks that there aren't any customer records associated with accounts that are not present in the customer table which is the golden source of customer records.
+
+7. Accuracy data quality rule
+03:00 - 03:22
+Accuracy is tough to measure. In this example, we look at customer data for a financial institution which requires official documentation, such as tax forms. We can scrape the tax form to find values for the customer name, birth date and address. We can then compare this information with the information in our dataset to confirm accuracy.
+
+8. Uniqueness data quality rule
+03:22 - 03:40
+Uniqueness measured the presence of duplicate records. All records in the customer table must have a unique customer ID and a unique combination of customer name, birth date, and address. In this example, there are duplicates based on key fields.
+
+9. Let's practice!
+03:40 - 03:46
+Now that you have seen examples of each dimension used in a data quality rule, let's practice!

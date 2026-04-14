@@ -1,0 +1,19 @@
+1. Recap
+00:00 - 00:04
+Congratulations! You've entered the world of data security!
+
+2. You're a sworn data defender
+00:04 - 00:33
+You're now a sworn data defender who can help yourself and others! Let's review the journey. We built your knowledge of a holistic approach to data security. It started with the basics of data security: protecting data's confidentiality, integrity, and availability. From there, the basis is mandatory regulatory compliance. However, on top of that, proactive usage of voluntary models and strategies is a must.
+
+3. People are the final level of protection
+00:33 - 00:51
+The final level of protection is people. No matter how good data security tools and processes are, they make or break success. They must know the tricks of social engineering, appreciate the importance of great communication, and have a data security mindset.
+
+4. Continuous learning is a must
+00:51 - 01:17
+But this isn't the end. Continuous learning is a must! Resources such as the blog Krebs on Security, the website Dark Reading, or the podcast Smashing Security can be a great help. Remember, getting others on board means knowing how to explain key concepts in very simple terms. The Data Girl and Friends channel on YouTube is an example of how to do this.
+
+5. The digital world needs you
+01:17 - 01:26
+Thank you for caring about keeping data safe. The digital world needs your data-defending skills!

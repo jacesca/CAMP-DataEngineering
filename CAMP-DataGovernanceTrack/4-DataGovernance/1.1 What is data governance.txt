@@ -1,0 +1,39 @@
+1. What is data governance?
+00:00 - 00:15
+Welcome to the Data Governance Concepts Course. I'm your instructor, Courtney Smith. In this video, you'll learn what data governance is, why it is so important, and how data governance can provide benefits to any organization.
+
+2. First, some car shopping
+00:15 - 00:57
+Let's say that you're looking to buy a new car. Besides color and style, you're going to have some minimum requirements. For example, the car should be built with high-quality materials and according to certain standards. It should have features that protect its passengers and prevent unauthorized access. The car needs to be available for you to buy, and it should be usable and reliable. Additionally, once you assume ownership of the car, you want to know that the dealer will be responsible for fixing any issues while it's under warranty. When you know that a car meets all of these requirements, you'll be much more confident when you decide to purchase and drive that vehicle off the lot.
+
+3. Data governance provides confidence
+00:57 - 01:38
+So how does car shopping relate to data and data governance? Just as we had minimum requirements for purchasing a vehicle, we should also have requirements for using data for reporting, analytics, and insights. We want to feel as confident in using our data as we did driving the new car off the lot. This is where data governance comes in. Data governance is a set of principles and practices that helps ensure trusted, high-quality data is available and accessible to stakeholders throughout an organization. Data governance also defines roles and responsibilities for decision-making, ownership, and accountability.
+
+4. Data governance pillars
+01:38 - 02:05
+Data governance is a coordinated effort between people, processes, and technology that enables data-driven decisions, actionable insights, and measurable outcomes. We will review five pillars of data governance in this lesson and throughout the rest of the course; Ownership and Accountability, Data Quality, Data Protection and Safety, Data Use and Availability, and Data Management.
+
+5. Ownership and accountability
+02:05 - 02:31
+When you bought that new car, you knew without a doubt that you were the new owner, and that the dealer would be held accountable for any repairs covered under warranty. These roles aren't always so clearly defined when it comes to data. One of the most critical components of data governance is clearly defined roles and responsibilities, so there is no question about who owns the data and which parties are accountable for it.
+
+6. Data quality
+02:31 - 02:47
+When shopping for our new car, one of our requirements was high quality. When looking to use data, we also want to ensure high quality by evaluating completeness, accuracy, consistency, validity, timeliness, and integrity.
+
+7. Data protection and safety
+02:47 - 03:03
+Similarly, as with our new car, we want to ensure our data is safe and secure. Data protection helps prevent negative impacts to data through features such as data masking and encryption, disaster recovery, and access management.
+
+8. Data use and availability
+03:03 - 03:24
+Remember how we wanted to ensure our new car would be usable, reliable, and available to purchase? The data use and availability governance pillar helps ensure that we can consistently rely on and use data for reporting and analytics. Additionally, in order to use data, we need to be able to locate and access it easily.
+
+9. Data management
+03:24 - 04:02
+Now that you've purchased a new car, you also need to treat the car properly, including performing regular maintenance, storing it in a safe place, and driving it according to procedures and regulations. This helps ensure that your car stays trustworthy, safe, and of high-quality. When it comes to data, it is equally important to treat it as the valuable asset it is through proper data management practices. Data management is a set of technologies that enables the protection, use, and storage of data in support of data governance policies, procedures, and goals.
+
+10. Let's practice!
+04:02 - 04:06
+Let's practice what we've gone over through a few exercises.

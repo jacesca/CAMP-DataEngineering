@@ -1,0 +1,35 @@
+1. Developing a roadmap
+00:00 - 00:07
+In this video, we'll discuss how to develop a roadmap for implementing your data governance framework.
+
+2. Roadmap planning
+00:07 - 00:28
+Now that we've developed a data governance strategy and chosen an operating model and data governance framework, we need to outline a roadmap to help us move forward. A data governance roadmap should include plans to obtain buy-in, build a team, create documentation, communicate and train, measure success, and choose new solutions.
+
+3. Obtain buy-in
+00:28 - 00:59
+If you haven't already obtained an executive sponsor, now is the time to secure that support. Make sure the person is senior enough to influence others and help secure funding for the program. Ask the executive sponsor to help form a data governance committee of senior leaders from different departments. By including different types of stakeholders at the start of your program, people are more likely to feel that they are a part of the effort, which leads to better engagement.
+
+4. Build the team
+00:59 - 01:34
+Based on your operating model, data governance framework, and strategy, you should start to have a good idea of the types of employees you need to hire. With ZH Healthcare, for example, senior leadership identified the need to hire a chief data officer (CDO) immediately. Once they selected and onboarded a candidate, they empowered the CDO to select her own team based on her expertise and experience. Since ZH Healthcare follows a centralized model, the CDO establishes a governance office of 30 people to help enforce policies and standards.
+
+5. Create documentation
+01:34 - 01:58
+Speaking of policies and standards, you'll want some technical writers or data governance experts who can write robust policies, standards, and procedures. Keep in mind that these are living documents and should be updated regularly. Additionally, you should ensure that the organization can comply with these documents within a reasonable timeframe and that there are ways to measure and enforce compliance.
+
+6. Communicate and train
+01:58 - 02:34
+Next, the CDO and team should develop a communication plan to regularly schedule updates to senior leadership and share-outs with the rest of the company. This will help keep the company informed and engaged in the data governance program and progress. This is also a good time to discuss how to start a campaign to increase the organization's data literacy. Options include setting up data-related training and workshops, leveraging external vendors (such as DataCamp!), sharing articles, and establishing virtual data communities for sharing best practices.
+
+7. Measure success
+02:34 - 03:06
+To ensure everyone is on the same page, senior leadership must provide clear guidance to data stakeholders on what success looks like and how it will be measured. A great way to do this is by establishing objectives and key performance indicators (or KPIs). For example, suppose your goal is to increase data quality by 30% in the first six months. You can start measuring that KPI using data quality metrics and share your progress with stakeholders in quantifiable terms.
+
+8. Choose new solutions
+03:06 - 03:29
+When implementing your roadmap, identify the technical solutions you need for data governance, and build in time for testing, implementation, training, and the change management involved in transforming or setting up a new process. Your initial draft of the data governance roadmap should be complete! Be sure to revisit your timelines and objectives to adjust as needed periodically.
+
+9. Let's practice!
+03:29 - 03:36
+Now that you've built your data governance roadmap, let's test out some final concepts.
