@@ -1,0 +1,27 @@
+1. Different phases in MLOps
+00:00 - 00:07
+Great work so far! We will now look into different phases in the machine learning lifecycle.
+
+2. MLOps lifecycle
+00:07 - 00:51
+The machine learning lifecycle is one of the fundamental concepts in MLOps. It consists of three broad phases: design, development, and deployment. This is an iterative and cyclical process in which it is not uncommon to go back and forth between phases. It is important to spend time on each phase as they all play an important part in the full lifecycle. During each phase, it is important to constantly evaluate with stakeholders whether the machine learning project should be continued. It could be that we find out during the design phase that we only have limited data or that we can only apply the problem to a small group. This reduces the added value and thus requires additional evaluation by stakeholders.
+
+3. Why the machine learning lifecycle?
+00:51 - 01:13
+The machine learning lifecycle is important because it gives a high-level overview of how a machine learning project should be structured in order to deliver real, practical value. It also defines the roles that are required at each step to make the project into a success. As we will see in this course, we can apply certain practices and tools to each phase to optimize the lifecycle.
+
+4. Design phase
+01:13 - 01:39
+In the design phase, we focus on the design of the machine learning project. We define the context of the problem and determine the added value of using machine learning. We also gather business requirements, as well as establish key metrics through which we can track the progress of the machine learning lifecycle. Additionally, we need to gather data and make sure the data quality is sufficient for developing a machine learning model.
+
+5. Development phase
+01:39 - 02:07
+In the development phase, we focus on developing the machine learning model. We do this by experimenting with a combination of data, algorithms, and hyperparameters in line with the implementation design. During the experiment, we train and evaluate one or more models in order to find the most suitable one. The goal of the development phase is to end up with the most suitable machine learning model that is ready for deployment.
+
+6. Deployment phase
+02:07 - 02:47
+In the deployment phase, we integrate the machine learning model we developed earlier into the business process. This might involve building a microservice from the machine learning model. A microservice is a small application that includes the machine learning model such that we can easily integrate it into the business process. We also aim to set up monitoring of the machine learning model. We can set up alerts when we encounter data drift or when our model does not output a prediction anymore. Data drift occurs when our data changes, which impacts the machine learning model. We'll look at these concepts in greater detail later in the course, where we'll walk through the different components of each phase.
+
+7. Let's practice!
+02:47 - 02:54
+We have looked into the different phases of the machine learning lifecycle. Let's dive into some exercises!

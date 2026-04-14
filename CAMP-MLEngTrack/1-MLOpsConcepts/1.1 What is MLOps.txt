@@ -1,0 +1,27 @@
+1. What is MLOps?
+00:00 - 00:07
+Welcome to this course on MLOps. My name is Folkert, and I'll be explaining all about MLOps.
+
+2. Machine Learning Operations
+00:07 - 00:42
+MLOps is the abbreviation for Machine Learning Operations, and it describes the set of practices to design, deploy and maintain machine learning in production continuously, reliably, and efficiently. 'In production' means that we focus on machine learning that is used in business processes rather than a machine learning model that only exists on your laptop. We also look into more than just training a machine learning model. MLOps is applied to what we call the machine learning lifecycle, which includes everything from design and development up until the maintenance of machine learning in production.
+
+3. Why MLOps
+00:42 - 01:48
+Imagine a chef in a restaurant making wonderful dishes for his guests. Before making a recipe for a new dish, he needs to find out what ingredients he has and what guests want. From there, he develops the best possible recipe. To deliver the dish to guests, people are required in service, and equipment to prepare the dish is also needed. The combination of all these factors make it a complex process. To structure the process, there could be routine checkups on equipment, a daily tasting of the dish, and dishes could be tested on different guests. Similarly, machine learning development is also a complex process. Before we develop a machine learning model, we need to think about the business requirements and added value of our model. Combining the data and requirements, we need to find the appropriate algorithm, the recipe. During development, we also need a computer, which has its own challenges as well, just like the kitchen equipment. MLOps aims to structure the process and mitigate the risks that are involved in machine learning development, deployment, and maintenance.
+
+4. The origin of MLOps
+01:48 - 02:28
+MLOps originates from Development Operations, also called DevOps in short. DevOps describes a set of practices and tools that can be applied to software development to ensure that software is developed continuously, reliably, and efficiently. Traditional software development used to be slow because of the separation of Development and Operations teams. The development team consists of the people who write the code, who were separated from the operations team, the people who deploy and support the code. This is why DevOps is an integration of both teams. Similar to how DevOps is applied to software development, MLOps is applied to machine learning development.
+
+5. WhatOps?
+02:28 - 03:19
+Just like DevOps and MLOps, there are also best practices and tools for similar departments we can find in an IT organization, such as ModelOps, DataOps, and AIOps. Each Ops originates from the same philosophy in DevOps, and focuses on continuous, reliable, and efficient development. ModelOps can be seen as an extension of MLOps, with a set of practices primarily focused on the machine learning model. DataOps focuses on best practices regarding data quality and analytics. Since data is part of machine learning, this overlaps with MLOps. AIOps stands for Artificial Intelligence for IT Operations and is broader than just machine learning. In AIOps, analytics, big data, and machine learning are used to solve IT issues without human assistance or intervention.
+
+6. Benefits of MLOps
+03:19 - 03:45
+Using MLOps practices and tools has multiple benefits. It can, for instance, improve the overall speed of developing and delivering machine learning models. Processes also become more reliable and secure because of MLOps. Inherent to MLOps is that it aims to bridge the gap between machine learning and operations teams, which enhances collaboration. We will look into how MLOps aims to provide these benefits during this course.
+
+7. Let's practice!
+03:45 - 03:52
+Now that you have had an introduction into the world of MLOps, let's dive into some exercises.

@@ -1,0 +1,39 @@
+1. Machine learning deployment architecture
+00:00 - 00:06
+Great job on those exercises. We will now look into the architecture.
+
+2. Microservices architecture
+00:06 - 00:17
+After we have taken care of the different runtime environments, we need to think about how to deploy the machine learning model. This also implies that we need to think about how we set up the architecture.
+
+3. Monolith vs. microservice architecture
+00:17 - 00:45
+Let's say we are running a webshop with a payment service, a service for the shopping cart, and a service for the inventory. We can run each service on the same computer, also known as a single instance. In traditional software development, applications were often built in a monolithic architecture. This means that the application is one uniform application that includes all services.
+
+4. Monolith vs. microservice architecture
+00:45 - 00:59
+A different solution is the microservices architecture. The microservices architecture is, contrary to the monolithic architecture, a collection of smaller services that can be deployed independently.
+
+5. Monolith vs. microservice architecture
+00:59 - 01:34
+If an application fails in a microservices architecture, only the separate service fails, while in a monolithic architecture, the whole application will fail. A monolithic application can become complex since all services are intertwined and not independent. This also makes it harder to scale. The usage of a microservices architecture depends on the application. If our application is very small, having a separate microservice for each even smaller part can become costly because each service requires compute power and has to be maintained independently.
+
+6. Inferencing
+01:34 - 01:46
+It is common practice to deploy the machine learning model as a microservice. This allows us to use the machine learning model to make predictions based on new, unseen data.
+
+7. Inferencing
+01:46 - 02:04
+This process is also called inferencing. It is the process in which we send new input, for instance, the input data of a customer, for which the machine learning model will infer an output. In this case, the output is a prediction containing the probability that a customer will churn.
+
+8. Application Programming Interface (API)
+02:04 - 02:51
+To provide communication between microservices, an application programming interface (or API) is used. An API is a set of pre-defined input and output combinations that allows different services to communicate. It is similar to the menu in a restaurant. If a pizza carciofo is ordered using a menu, the kitchen knows it needs to gather the pizza base, eggplant, etcetera, and will deliver this once it is done such that the service can deliver it to the guest. The input is the order on the menu, which is send to the kitchen, the machine learning model, which returns the ordered item. Not having an API would be like not having a menu, and as such, we wouldn’t have proper communication between the services.
+
+9. Integration
+02:51 - 03:23
+After the model has been deployed as a microservice and the API allows us to inference the model, one last step is required. The last step is to integrate the model within the business process. This is different for each business, but most of the time involves connecting the API with the system that is already in place. Before we actually use the machine learning model in production, it is common practice to first test the model with a sample of the data to make sure everything works as expected.
+
+10. Let's practice!
+03:23 - 03:30
+Now that we have learned all concepts around machine learning deployment architecture, let's dive into some exercises.

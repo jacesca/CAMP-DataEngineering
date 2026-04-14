@@ -1,0 +1,27 @@
+1. Levels of MLOps maturity
+00:00 - 00:06
+Well done so far! We will now look into different levels of MLOps maturity.
+
+2. MLOps maturity
+00:06 - 00:48
+We can look at a machine learning lifecycle and determine how mature its MLOps practices are. The MLOps maturity is about the automation, collaboration, and monitoring within machine learning and operations processes in a business. It does not necessarily mean that a higher level of MLOps maturity is better. However, it does show where there is potential room for improvement to further enable the usage of machine learning within the business. The levels mostly apply to the development and deployment phase. The design phase cannot be fully automated since it requires human input from multiple different roles, but templates can be used in order for the phase to progress more quickly and smoothly.
+
+3. Levels of MLOps maturity
+00:48 - 01:18
+We can distinguish three levels. Each with its own level of automation, collaboration, and monitoring. In level 1, there is no automation at all, and the machine learning and operations teams work in isolation. In level 2, there is automation in the development of machine learning models, and machine learning and operations teams collaborate together when a new model is ready for deployment. In level 3, the machine learning lifecycle is fully automated throughout the development and deployment phases.
+
+4. Level 1: Manual processes
+01:18 - 01:58
+In the lowest level of MLOps maturity, there are no automated processes. From data ingestion to model deployment, everything has to be done manually. Teams or roles working on the use case work on them in an isolated manner. Each phase is passed off onto the next, and there is little collaboration. There is little to no traceability. The features used, experiments, and performance of the model are not tracked. A company that just started using machine learning will start at this level. Since all processes are manual, the development and deployment will take more time and involve more work, especially when something goes wrong during one of the phases.
+
+5. Level 2: Automated development
+01:58 - 02:42
+In the second level of MLOps maturity, not all processes are manual anymore. There is automation in the development process of the machine learning model. This is typically done by using feature stores and automated model training. There is a continuous integration pipeline, but once developed, models are not yet automatically deployed. There is some collaboration between the machine learning and operations teams. However, the deployment of new models still happens manually. There is some traceability in this level, especially during the development process. It is easy to reproduce models and track model performance during development. After deployment, there is often a small amount of monitoring.
+
+6. Level 3: Automated development and deployment
+02:42 - 03:07
+In the highest level of MLOps maturity, the development, as well as the deployment of machine learning models, is automated. There is a full CI/CD pipeline to develop, test, and deploy new models to production. There is close collaboration between the different roles involved in the machine learning pipeline. Machine learning models in production are monitored and, in some cases, even automatically triggered to retrain.
+
+7. Let's practice!
+03:07 - 03:12
+We will now try to identify different levels of MLOps maturity in the exercises.

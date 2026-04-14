@@ -1,0 +1,39 @@
+1. Retraining a machine learning model
+00:00 - 00:06
+Nice job on the exercises! Next up is retraining machine learning models.
+
+2. Retraining after changes
+00:06 - 00:31
+Inherent to data is that it changes over time. It is a given that the world is changing, and since our machine learning model depends on data, these changes also impact the model. This is also why a model might need retraining. Retraining means that we use new data to develop a fresh version of the machine learning model, such that it learns and adjusts to new patterns.
+
+3. Drift in data
+00:31 - 01:06
+In a typical machine learning problem, we have input data and output data, which is also known as the target variable. The input data are the variables used to predict the target variable. If we look at the case of predicting whether a customer will churn, we will have data about the customer, which is the input data. The target variable, in this case, is whether the customer will churn, represented by the numbers zero, did not churn, and one churned. There are two main changes possible in this type of dataset, namely data drift and concept drift.
+
+4. Data drift
+01:06 - 01:24
+Data drift describes a change in the input data. Over time, we could get customers of different ages or customers from different regions. Changes in the input data might affect the performance of the machine learning model, but since data inherently changes, this is not necessarily the case.
+
+5. Concept drift
+01:24 - 01:56
+Another type of drift is concept drift. Concept drift describes a change in the relationship between the input data and the target variable. This could be the case when our customer's behavior changes. This would, for instance, happen when the same input data causes a customer to not churn instead of churn. In that case, the relationship between the input and output data has changed. Concept drift could cause our model performance to deteriorate because the patterns that the model was previously trained on do not hold anymore.
+
+6. How often to retrain?
+01:56 - 02:53
+How often to retrain depends on several factors. The first one is the business environment. One business environment can be more subject to changes than others. This can also be identified by a subject matter expert that has more knowledge about the environment, for instance, when they might expect a change. Secondly, how often to retrain also depends on the cost of retraining. Training a model requires resources. Depending on the complexity of the model, retraining requires more resources and, thus, more money. Lastly, the business requirements influence how often to retrain the model. If it is required that the model to always have an accuracy of more than 90%, and a small change in data causes the accuracy to decrease below that threshold, the model will require retraining more often. How fast the model accuracy goes down is also called model degradation.
+
+7. Retraining methods
+02:53 - 03:06
+When we retrain, a new model is obtained by using new data. We could either use a model that only uses new data, such that there is a separate model trained on old data and a model trained on new data.
+
+8. Retraining methods
+03:06 - 03:16
+We could also combine new and old data to develop a new model. This will also depend on the domain, cost, and required model performance.
+
+9. Automatic retraining
+03:16 - 03:29
+Depending on the maturity of machine learning within the company, we could also apply automatic retraining once a certain amount of data or a concept drift is detected. For instance, when we detect that the average age of customers is changing.
+
+10. Let's practice!
+03:29 - 03:34
+Now that we've learned all about retraining, let's go into some exercises.

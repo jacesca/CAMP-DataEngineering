@@ -1,0 +1,47 @@
+1. Roles in MLOps
+00:00 - 00:08
+Well done on the course so far! We will now look into the different roles that are involved within the machine learning lifecycle.
+
+2. Machine learning lifecycle
+00:08 - 00:26
+From the phases we have seen in the machine learning lifecycle, we can create an example sequence of steps that the lifecycle goes through. For each task, different roles are required. We will be looking into two categories of roles, namely business roles and technical roles.
+
+3. Business roles
+00:26 - 00:35
+In the business category, we can distinguish two main roles, the business stakeholder and subject matter expert. Let's first look into the business stakeholder role.
+
+4. Business roles: business stakeholder
+00:35 - 01:07
+The business stakeholder is sometimes also referred to as the product owner. They are a managerial staff making budget decisions, and they make sure the machine learning project is aligned with the high-level vision of the company. They are involved throughout the lifecycle. First, they define the business requirements during the design phase. In the development phase, they also see whether the initial results from the experiments are satisfactory. Later in the deployment phase, they again examine whether the outcome of the lifecycle is as expected.
+
+5. Business roles: subject matter expert
+01:07 - 01:30
+Secondly, there is the subject matter expert, who has domain knowledge about the problem that we are trying to solve. In retail, this could, for instance, be someone from the sales team that knows the variables that influence sales. The subject matter expert is involved throughout the lifecycle because they can assist the more technical roles with interpreting the data and results at each step.
+
+6. Technical roles
+01:30 - 01:42
+There are five main technical roles involved in the machine learning lifecycle, the data engineer, data scientist, software engineer, ML engineer, and backend engineer.
+
+7. Technical roles: data engineer
+01:42 - 02:05
+The data engineer is responsible for the collecting, storing, and processing of data. This also means that the data engineer should check the data quality and include tests such that the quality is maintained throughout the process. Therefore, the data engineer is mostly involved with tasks that have to do with data before training the model, during the model training, and once the model is used in production.
+
+8. Technical roles: data scientist
+02:05 - 02:26
+The data scientist is responsible for data analysis and model training and evaluation. The evaluation includes monitoring the model once it has been deployed to ensure that the model predictions are valid. We can find the data scientist in all phases of the lifecycle, but mostly during the development phase.
+
+9. Technical roles: software engineer
+02:26 - 02:50
+The software engineer is mainly involved in the deployment phase, where they write software to run the model, deploy the model, and monitor whether the model is and stays online once it is deployed. They also make sure that code is written in accordance with common guidelines. Since the deployment is an important part of the machine learning lifecycle, the software engineer should also be included in the design phase.
+
+10. Technical roles: ML engineer
+02:50 - 03:16
+The machine learning engineer is a relatively new role that is quite versatile and designed specifically to have expertise over the entire machine learning lifecycle. It is a cross-functional role that overlaps with the other technical roles. As such, the machine learning engineer is involved in all phases. They know, for instance, how to extract and store data and develop or deploy a machine learning model.
+
+11. Technical roles: backend engineer
+03:16 - 03:36
+The backend engineer is someone that is mostly involved with setting up the cloud infrastructure to enable development and deployment of machine learning models. This could be a database for storing the data, but also the computers that run the machine learning model.
+
+12. Let's practice!
+00:00 - 03:36
+Let's dive into some exercises to practice with the roles we have just looked into!
