@@ -1,0 +1,46 @@
+Transcript
+1. DVC Setup and Initialization
+00:00 - 00:13
+Welcome back! I hope you are as excited as I am after seeing DVC's capabilities in the last chapter. In this video, we will start with the basics of DVC.
+
+2. Installation
+00:13 - 00:43
+There are several ways to install DVC. As DVC is a Python package, we can install it universally by running the command 'pip install dvc'. Always install DVC in virtual environments to avoid conflicts with other packages. Additionally, ensure that Git is installed on the system for the best experience.
+
+3. Verify Installation
+00:43 - 01:09
+We can get useful information about DVC installation using the 'dvc version' command. It prints out the DVC version, the installation method, and the current platform, global, and system config locations. Finally, it also tells us what repositories are in the working directory.
+
+1 https://dvc.org/doc/command-reference/version
+4. Initializing DVC
+01:09 - 01:27
+DVC works best within a Git repository as it allows full functionality and offers the greatest benefits. Therefore, a 'git init' command should precede before executing the 'dvc init' command.
+
+1 https://dvc.org/doc/command-reference/init
+5. DVC Hidden Files
+01:27 - 01:57
+When initializing DVC, a fresh `.dvc` directory is generated. This directory houses configuration settings, the default cache location, and various other internal files and directories that are not visible to the user. This directory is automatically staged using 'git add', enabling easy commits with Git.
+
+6. .dvcignore File
+01:57 - 02:46
+The .dvcignore file is used in DVC projects. It is very similar to the .gitignore file and marks which files and/or directories should be excluded when traversing a DVC project. This can be particularly useful when working in a workspace directory with a large number of data files, as you might encounter extended execution time for operations. By using the .dvcignore file, we can specify files or directories for DVC to ignore, improving the efficiency of your project management.
+
+1 https://dvc.org/doc/user-guide/project-structure/dvcignore-files
+2 https://git-scm.com/docs/gitignore
+7. Example
+02:46 - 03:37
+Let's understand the rules of .dvcignore with an example The first rule, data slash asterisk, tells DVC to ignore all files in the data directory. The second rule, NOT data slash data.csv, is an exception to the first rule. It tells DVC not to ignore data.csv inside the data directory. The NOT sign is used to make an exception to an ignore pattern. The third rule, asterisk .tmp, tells DVC to ignore all files with the .tmp extension in the entire project.
+
+1 https://dvc.org/doc/user-guide/project-structure/dvcignore-files
+8. Checking Ignored Files
+03:37 - 04:42
+We can use the 'dvc check-ignore' command to check if a file or directory is being ignored by DVC. This command checks whether the given targets are ignored by DVC according to the .dvcignore file. In this example, data slash file.txt is the file we want to check. If file.txt is being ignored by DVC, this command will print data slash file.txt. If the file is not being ignored, the command will not print anything. We can also use the dash-d option to show the exclude patterns along with each target path. This can be useful if we want to see the line number and the rule in the .dvcignore file that is causing a file to be ignored.
+
+1 https://dvc.org/doc/command-reference/check-ignore
+9. Summary
+04:42 - 04:53
+Here is a summary of DVC commands covered in this lesson that will be useful for reference while working on exercises.
+
+10. Let's practice!
+04:53 - 05:02
+Good job finishing the video. Let's test your knowledge about setting up DVC.

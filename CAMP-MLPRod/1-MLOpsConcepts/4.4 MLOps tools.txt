@@ -1,0 +1,37 @@
+1. MLOps tools
+00:00 - 00:08
+Superb job on getting this far in the course! We now look into the last part of this course about MLOps tools.
+
+2. MLOps tools
+00:08 - 00:25
+Since the emergence of MLOps, many tools have been developed that can enhance the efficiency and reliability of machine learning processes. Some of these tools are even open-source. Let's dive into some possible tools we can use per component discussed throughout this course.
+
+1 https://www.datacamp.com/blog/infographic-data-and-machine-learning-tools-landscape
+3. Feature store
+00:25 - 00:58
+For the feature store, multiple tools are available, such as Feast and Hopsworks. Feast is an open-source feature store; the name is an acronym of Feature and Store. Feast is a self-managed feature store, meaning we have to manage it ourselves, which requires more work but also provides more flexibility compared to other feature stores. Hopsworks is also an open-source feature store, part of the larger Hopsworks platform. It is, therefore, more likely to be used if the rest of the Hopsworks tools are already in use.
+
+4. Experiment tracking
+00:58 - 01:23
+For experiment tracking, we can use MLFlow, ClearML, and Weights and Biases, among others. MLFlow and ClearML offer tools for the machine learning lifecycle, including experiment tracking. MLflow is specialized on machine learning development, while ClearML also provides tools to deploy models. Weights and Biases has its main focus on tracking and visualizing experiment results.
+
+5. Containerization
+01:23 - 01:46
+For containerization, Docker is the most popular tool to containerize an application. Kubernetes is used to run the containerized application, enabling automatic deployment and scalability. Apart from these open-source tools, cloud providers AWS, Azure, and Google Cloud also provide their own tools for running containerized applications.
+
+6. CI/CD pipeline
+01:46 - 02:08
+For providing full CI/CD pipelines there are tools such as Jenkins and GitLab. Jenkins is an open-source CI/CD tool, while GitLab is not. Both of these tools allow developers to work on code together using a repository. For each project, there is often a separate repository, which we can see as a directory that contains all code for the project.
+
+7. Monitoring
+02:08 - 02:37
+There is a broad range of tools for monitoring machine learning projects. We can distinguish tools that focus on monitoring of the machine learning model and tools that monitor the data. Both Fiddler and Great Expectations provide statistical monitoring tools. Fiddler focuses on the model performance, for instance, how well our model predictions are doing. Great Expectations focuses on data monitoring, for instance, how much data is missing in a certain column.
+
+8. MLOps platforms
+02:37 - 03:08
+There is also tooling available that provides a full machine learning lifecycle platform. Each cloud provider, AWS, Azure, and Google, has one. They are called AWS Sagemaker, Azure Machine Learning, and Google Cloud AI Platform. Tools that cater the full machine learning lifecycle provide tools for every task in the lifecycle. This could be a tool for doing data exploration and data processing, but also a feature store and model training tool.
+
+9. Let's practice!
+03:08 - 03:14
+We have looked into possible tooling for the machine learning lifecycle. Let's go into the last exercises.
+

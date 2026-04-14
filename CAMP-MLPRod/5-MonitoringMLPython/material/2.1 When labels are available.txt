@@ -1,0 +1,31 @@
+1. When labels are available
+00:00 - 00:29
+Welcome back! I'm Maciej, I'm a data scientist at NannyML, and I will be your instructor for this chapter. Previously, we explored the process of creating two essential sets for NannyML: The reference and analysis set. We also discussed how to estimate the performance of a tip prediction model without the ground truth. Now, our focus will shift to monitoring performance when we have access to the ground truth data.
+
+2. Estimated vs realized performance
+00:29 - 01:23
+For a clearer perspective, let's compare estimated and realized performance. Estimated performance measures how well a model is expected to perform. Starting with this video, we will refer to algorithms for performance estimation as "estimators" and performance calculation algorithms as "calculators." This should help to distinguish their respective roles. Performance estimation comes into play when there's no ground truth data. On the other hand, realized performance is calculated when labels are accessible using performance calculators. Now, to grasp this concept better, let's revisit our model from previous exercises. The model predicts whether a customer who booked a hotel room will actually arrive.
+
+3. Delayed ground truth
+01:23 - 02:08
+In that scenario, the bookings can be made one week or a few months in advance, but the ground truth or labels are only accessible on the day of the arrival. This means that the model evaluation is delayed in time. For example, the IT department collects and shares the label data with the data science team every week on Monday. In the meantime, the CBPE estimator is used to monitor the model in real-time. Every Monday, when labels are available data science team calculates the realized performance using the performance calculator and decides whether to retrain or replace the model.
+
+4. Performance calculator
+02:08 - 03:14
+To get the model's realized performance with nannyml, we need to initialize the performance calculator module and specify parameters like names of the columns with predicted probabilities, predicted labels, ground truth, timestamp, type of the problem, chunk period, and metrics we want to monitor. Under the hood, NannyML simply compares the model's predictions with the labels and calculates specified metrics. Similar to the CBPE and DLE estimators, we fit the reference data, which is the test set used to evaluate the model before deploying it to production. However, in this case, we are not estimating the performance; instead, we are calculating it on the production data known as the analysis set. Also, since we are calculating the realized performance, the analysis set needs to include a column with the ground truth.
+
+5. Plot the results
+03:14 - 03:37
+The realized performance graph looks identical to the plot for estimated performance with one difference: The metrics values are light blue instead of dashed dark blue for the estimated metric. Once we have estimated and realized performance, we can compare them and evaluate if the estimator worked well.
+
+6. Realized and estimated performance
+03:37 - 04:09
+To compare realized and estimated performance, we must run the performance estimator and calculator beforehand. The estimated results are stored in the estimated-results variable and realized results are stored in the realized-results variable. Now, we need to use the compare method to create the comparison results between realized-results and estimated-results. Then, we use the plot and show method to visualize the graph.
+
+7. Realized and estimated performance
+04:09 - 04:31
+Finally, we can evaluate the quality of NannyML estimations. In our example, it looks like CBPE is mimicking the model's actual behavior very well. If the predictions are far off, it might indicate that concept drift is present in the data, since neither the DLE nor CBPE can deal with it.
+
+8. Let's practice!
+04:31 - 04:43
+Now that we better understand how to calculate performance when ground truth data is available, let's apply it to our Green Taxi dataset!

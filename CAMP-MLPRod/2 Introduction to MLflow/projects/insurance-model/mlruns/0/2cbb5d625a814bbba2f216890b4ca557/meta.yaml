@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/0/2cbb5d625a814bbba2f216890b4ca557/artifacts
+end_time: 1717528819313
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2cbb5d625a814bbba2f216890b4ca557
+run_name: luminous-mule-471
+run_uuid: 2cbb5d625a814bbba2f216890b4ca557
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717528816183
+status: 3
+tags: []
+user_id: Jacqueline

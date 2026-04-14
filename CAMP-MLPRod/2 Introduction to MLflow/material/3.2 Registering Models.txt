@@ -1,0 +1,48 @@
+1. Registering Models
+00:00 - 00:09
+Now that we have set the stage by creating Model placeholders in the MLflow Model Registry, we can dive into the process of registering our own MLflow Models.
+
+2. Registering MLflow Models
+00:09 - 00:43
+Registering MLflow Models to the MLflow Model Registry provides many benefits. A registered model provides version control much like traditional software applications. Model versioning provides a way to track changes as well as a way to revert changes if results are unsatisfactory. Registering models also provide easy collaboration. This includes collaboration for sharing models between different teams such as Data Scientists and Developers and also between the same teams to assist in improving or testing models.
+
+3. Model lifecycle management
+00:43 - 00:51
+Overall, registering models to the MLflow Model Registry is an essential step in improving the lifecycle management of MLflow Models.
+
+1 datacamp.com
+4. Ways to register models
+00:51 - 01:27
+MLflow provides two ways to register MLflow Models to the Model Registry. First, for existing MLflow Models, we can use the register_model function from the MLflow module. The model can exist locally or within the MLflow Tracking server by passing in the correct path as the model_uri argument. Second, for new MLflow Models, we can use the log_model function from the model flavor to log the model and also register it. Simply pass in the registered_model_name argument when the log_model function is called.
+
+5. Registering model example
+01:27 - 01:47
+The register_model function can register an existing model from either the local filesystem or from a Tracking server by passing the model's URI. The following code will register existing MLflow Models to the "Unicorn" Model in the Model Registry. One from the local filesystem and the other from the Tracking Server.
+
+6. Registering local model
+01:47 - 02:04
+When a model is registered to the Model Registry, MLflow first checks if the Model exists in the Registry. If it does not exist it will be automatically created. After MLflow checks for existing Models, MLflow creates a new version of the model starting at version 1.
+
+7. Registering tracking model
+02:04 - 02:21
+Each time a new MLflow Model is registered to an existing Model that already contains a version, the version is incremented by 1 version. When registering our model from the Tracking Server, the Model Registry created version 2 of the Model "Unicorn".
+
+8. Models UI
+02:21 - 02:31
+The following image shows the Model Registry UI of all Models. The Unicorn Model shows the latest version as 2 which we just generated.
+
+9. Unicorn versions
+02:31 - 02:40
+By clicking on the Unicorn Model in the UI, we can see all individual MLflow Models registered and their associated version.
+
+10. Logging model
+02:40 - 03:11
+Now that we have an existing Registered Model in the Model Registry, we also can register new models during training runs with the log_model function from model flavors. The log_model function provides an argument called registered_model_name. We can pass in the name of the Model we would like to register to when we log our model to MLflow Tracking. Using the log_model function allows users to register models during a training run instead of having to register the model later using the register_model function.
+
+11. Logging model output
+03:11 - 03:17
+Here, registering a new model to Unicorn incremented the version to 3.
+
+12. Let's practice
+03:17 - 03:25
+Now that we learned more about managing the lifecycle of models, let's practice registering models to the Model Registry.

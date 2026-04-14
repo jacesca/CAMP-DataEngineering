@@ -1,0 +1,49 @@
+1. Model serving
+00:00 - 00:11
+Now that we have learned how to use MLflow Models as a way to package and log models, we also need a way to serve models. In this lesson, we are going to learn how to use MLflow Models for model deployment.
+
+2. MLflow Models
+00:11 - 00:28
+We have learned how MLflow Models is used to standardize model packaging, log models for tracking, and evaluate model performance. These features, in combination, cover the "Model Engineering" and "Model Evaluation" steps of the ML Lifecycle.
+
+3. Model Deployment
+00:28 - 00:38
+Model deployment is another important step in the ML lifecycle. Because model packaging is standardized, MLflow Models also allow for simplified model deployment.
+
+1 datacamp.com
+4. REST API
+00:38 - 01:21
+MLflow serves models as a REST API. A rest API is an application programming interface that allows for interaction with a service via HTTP endpoints. MLflow's API used for deploying models defines four endpoints: The ping and health endpoints are used to get health information about the REST API service. The version endpoint is used to retrieve the version of MLflow used on the REST API. And finally, the invocations endpoint is used to retrieve a score from the deployed model. The REST API uses port 5000 by default. Each endpoint can be reached once a model is deployed by going to the URL of where MLflow is running.
+
+5. Invocations endpoint
+01:21 - 01:45
+The invocations endpoint accepts either CSV or JSON as input. A CSV is a data file that uses comma-separated values and a JSON is a data file format containing key-value objects. The REST API also needs a content-type header to be specified with either application-slash-json or application-slash-csv to specify the input format.
+
+6. CSV and JSON format
+01:45 - 02:07
+When using CSV input, the input must be a valid pandas DataFrame. Pandas has a to_csv method for CSV format representation. JSON input must be a dictionary with exactly one of dataframe_split or dataframe_records. The fields specify the type of input data being passed to the REST API.
+
+7. DataFrame split
+02:07 - 02:27
+DataFrame split orientation is the recommended orientation as it guarantees the preservation of column order. The following example is a JSON input using split orientation. Here, we specified the field of the input as dataframe_split and defined columns and rows as lists.
+
+8. Serving Models
+02:27 - 02:38
+To serve a model, MLflow includes a command line interface command called "Serve". Serve is used to launch a local webserver that runs the REST API used for serving models.
+
+9. Serve uri
+02:38 - 03:00
+Serve provides a dash-m option to specify the URI to the model. As with the Model API, Serve accepts the following as URI formats: Specify the local filesystem path to the model. Run id and artifact path to the model. As well as many cloud providers such as AWS S3.
+
+10. Serve example
+03:00 - 03:12
+We can use the Serve command to serve a model that predicts if a person is a smoker when invoked. When the Serve command is run, MLflow loads the model and starts a web server, and begins listening on port 5000.
+
+11. Invocations Request
+03:12 - 03:46
+To get a score from the model, we send the following request to the invocations endpoint using curl. Curl is a command line tool used to send data to a server. The request payload includes a Content-Type header as application-slash-json with the dash-H argument and a JSON input with dataframe_split field defining the columns and rows using the dash-d argument. Once the model has finished scoring the data, MLflow returns a response that includes a list of predictions. In this case, indicating a one for a smoker and a zero for a non-smoker.
+
+12. Let's practice!
+03:46 - 03:52
+Now that you have learned more about model deployment, let's practice what we learned.
+

@@ -1,0 +1,20 @@
+1. Congratulations!
+00:00 - 00:06
+As you wrap up the course, let's reflect on the key learnings and takeaways.
+
+2. Data versioning and DVC
+00:06 - 00:57
+Anatomy of a machine learning model involves defining code, data, and hyper-parameters, which need to be versioned appropriately. Git and DVC play key roles in managing machine learning projects. While Git tracks code changes, DVC focuses on tracking data. Git enables DVC by tracking metadata about the actual data. DVC enables data and model versioning. It facilitates reproducible experiment pipelines, easing model development iteration. Additionally, DVC tracks changes in metrics and plots.
+
+3. DVC setup, cache, and remotes
+00:57 - 01:58
+Setting up DVC involves installing it via pip and initializing it in your project directory. Use a .dvcignore file to specify file patterns for ignored files. Add files to the cache using 'dvc add', calculating the MD5 hash and storing it in a .dvc file. Manage the cache by removing files with 'dvc remove' and cleaning up with 'dvc gc' to free up disk space. You can configure DVC remotes using 'dvc remote add' and manage them with 'dvc remote list'. Upload data to remotes using 'dvc push' and download it using 'dvc pull'.
+
+4. DVC pipelines
+01:58 - 03:00
+The dvc.yaml is used to define DVC pipeline. Use 'dvc stage add' to add stages, which includes commands, dependencies, params, and outputs. Use the metrics and plots keys to track model performance and visualize results. Visualize the pipeline with 'dvc dag', and run it with 'dvc repro', ensuring stages execute in the correct order. You can use 'dvc plots show' and 'dvc metrics show' to visualize metrics and plots, tracking model performance. Compare metrics and plots between runs with 'dvc plots diff' and 'dvc metrics diff' to understand the impact of pipeline changes.
+
+5. Thank you!
+03:00 - 03:12
+I hope that this course provided you with the building blocks to set up reproducible experiments in machine learning. Until next time.
+

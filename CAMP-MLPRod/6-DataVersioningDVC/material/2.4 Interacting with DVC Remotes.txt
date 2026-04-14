@@ -1,0 +1,28 @@
+Transcript
+1. Interacting with DVC Remotes
+00:00 - 00:07
+Hello again! Let's learn how we can upload and download data from DVC remotes.
+
+2. Uploading and Retrieving Data
+00:07 - 01:07
+After configuring the remotes, we can move data between the local cache and the remote storage location. This can be done by using 'dvc push' and 'dvc pull' commands. 'dvc push' uploads data from the cache to DVC remote, while 'dvc pull' downloads tracked data from a DVC remote to the cache and links or copies the files or directories to the workspace. The primary purposes of these commands include sharing data across different environments and maintaining data versions, including input datasets, interim outcomes, models, and DVC metrics, in remote locations. The target can be specified as individual files or directories.
+
+3. Uploading and Retrieving Data
+01:07 - 02:14
+If we don't specify a target, all the contents of the data cache will be pushed by default. Sometimes, we just want to update the DVC cache without reflecting the changes in the workspace. We can use 'dvc fetch' command for that purpose. One example where this is useful is to get DVC-tracked data from multiple project branches or tags into our machine after checking out a fresh copy of a DVC repository. We can also specify a specific remote location with the dash-r flag. This is useful in a case when we have multiple remotes configured in our DVC config and want to interact with a specific one. Not specifying the remote location results in interactions with the default remote, which can be configured when we are adding remotes.
+
+4. Similarities with Git
+02:14 - 03:17
+We can see how DVC push and pull commands are similar to their Git counterpart in function, but there are important differences. 'dvc pull' downloads data from remote storage (such as S3, SSH, or GCS) into our local DVC project and is useful for fetching large datasets or model artifacts. 'git pull' fetches commits from a remote Git repository and merges them into the currently checked-out branch, and is mostly used for keeping the local branch up to date with remote. Similarly, we can use 'dvc push' to upload data or model artifacts to the remote storage for sharing or storing purposes, while we use 'git push' to send and publish local commits to the shared Git repository.
+
+5. Versioning data
+03:17 - 04:15
+Despite their differences, these commands work to version and checkout datasets. Recall that each data file has a corresponding metadata file ending in .dvc, and this is tracked by Git. In doing so, we can leverage both Git and DVC to check out a specific version of data. First, we check out a specific Git commit, tag, or branch using the 'git checkout' command. This updates the .dvc file to a specific version. Next, we can check out a specific target using the 'dvc checkout' command. This command retrieves the data with specific MD5 mentioned in its .dvc file.
+
+6. Tracking Data Changes
+04:15 - 05:00
+In the event that the contents of the data file change, the following steps are needed to keep track these changes with DVC and push to remote. First, stage changes to the DVC cache by running 'dvc add' command, which will also update the corresponding .dvc file. Stage and commit .dvc file with Git using 'git add' and 'git commit' commands. Push your metadata changes to Git with 'git push'. Push changed data file to DVC remote using 'dvc push'.
+
+7. Let's practice!
+05:00 - 05:09
+Good work in finishing the video. Let's review your knowledge of working with DVC remotes.

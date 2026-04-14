@@ -1,0 +1,57 @@
+1. Specifying parameters
+00:00 - 00:06
+So far we have learned how MLflow Projects is used to create reproducible code for the ML Lifecycle.
+
+2. Parameters
+00:06 - 00:26
+MLflow Projects allows flexibility and customization through the use of parameters. Parameters are variables that can be specified by the user when running an MLflow Project. Using parameters simplifies the process of exploring different configurations for our ML models such as Model hyperparameters during training.
+
+1 unsplash.com
+3. Specifying parameters
+00:26 - 00:38
+Parameters are declared within the MLproject file and are given a specified name. Each parameter allows for specifying a data type and a default value.
+
+4. Specifying parameters
+00:38 - 00:52
+Data types can be any supported Python data type such as float or string. If no data type is specified, it defaults to string. A default value is used in the event a parameter value is not specified during the Project run.
+
+5. Parameters block
+00:52 - 01:03
+A block of parameters is placed within an entry_point in an MLproject file. The parameters are then passed to the command within the entry point as arguments.
+
+6. train_model.py
+01:03 - 01:15
+Let's begin by making changes to our train_model.py code used to train our salary model. Here, we add importing the sys module with other necessary libraries and modules.
+
+7. train_model.py
+01:15 - 01:35
+We now add variables called n_jobs_param and fit_intercept_param set to the first and second arguments passed to our training script using sys-dot-argv. Our variables also define the data type. These parameter variables then get set as hyperparameters when training our model.
+
+8. MLproject
+01:35 - 01:52
+In our MLproject file, we add a new parameters block specifying n_jobs_param and fit_intercept_param with data types and a default value. We must also update the command to pass the parameters as arguments to our train_model-dot-.py file.
+
+9. Running parameters
+01:52 - 02:26
+To run our new parameterized ML code, in Python we can use the MLflow-dot-projects module with the run method or from the mlflow run command. The run method from the MLflow-dot-projects module takes an argument called "parameters". The parameters argument accepts a dictionary containing parameters. The MLflow run command accepts a dash-capital-P argument to pass a parameter to a Project. Each parameter must have its own dash-capital-P argument in the form of parameter-name equals parameter-value.
+
+10. Projects run
+02:26 - 02:36
+To run our Project using the MLflow-dot-projects module, we add a parameters argument to the run method containing a dictionary of the parameters we want to pass to our training code.
+
+11. Output
+02:36 - 02:50
+When the Project is run, our parameters are executed with the command as the values defined from our dictionary, and a new run is started. When finished, MLflow lets us know that the run succeeded.
+
+12. Run command
+02:50 - 03:14
+We can also run a Project using the MLflow run command. Our command uses a backslash to allow the command to run over multiple lines. Here we pass two dash-capital-P arguments to our run command to specify our parameters for n_jobs_param and fit_intercept_param. This time we are setting n_jobs_param to 3 and fit_intercept_param to True.
+
+13. Output
+03:14 - 03:21
+For this run, our command executed our training code with the arguments 3 and True.
+
+14. Let's practice!
+03:21 - 03:28
+Now that we have seen how parameters provide flexibility to MLflow Projects, let's test what we learned.
+

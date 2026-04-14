@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/647171923248151882/5260210ad79c465cb7d1e479bf6f1f83/artifacts
+end_time: 1717222336223
+entry_point_name: ''
+experiment_id: '647171923248151882'
+lifecycle_stage: active
+run_id: 5260210ad79c465cb7d1e479bf6f1f83
+run_name: salty-loon-192
+run_uuid: 5260210ad79c465cb7d1e479bf6f1f83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717222336157
+status: 3
+tags: []
+user_id: Jacqueline

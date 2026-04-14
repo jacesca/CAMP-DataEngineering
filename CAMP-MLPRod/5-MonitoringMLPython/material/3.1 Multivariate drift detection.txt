@@ -1,0 +1,28 @@
+1. Multivariate drift detection
+00:00 - 00:09
+Welcome back. Now, we will dive deeper into investigating why our model is failing and how we can resolve it. Let's get into it!
+
+2. What is multivariate drift detection?
+00:09 - 00:28
+Multivariate drift detection is the first step of root cause analysis before univariate drift detection. The result is a single value for all features, which is an indicator of a drift in the data. This method allows the detection of more subtle changes in the data structure that are hard to detect with an univariate approach.
+
+3. How it works?
+00:28 - 01:37
+You may recall how the multivariate drift detection method works from the prerequisite course, but we will briefly go over it again. The inputs are either all features or a subset of features, which are then compressed using the PCA algorithm to capture data structure and get rid of noise. Compressed means that the latent space will have a lower dimensionality than the original dataset. Then, the data goes through a reconstruction process using what's known as an inverse PCA algorithm. The inverse PCA will return the compressed dataset back to its original dimension. This reconstructed data may have slight differences compared to the initial one. These differences are referred to as the "reconstruction error" and they will help us to detect data drift in the following way: If the original data remains constant, the reconstruction error stays the same. However, when there is a change in the data, the reconstruction error increases, which indicates data drift. NannyML calculates the reconstruction error for each chunk and raises an alert when the values get outside of the thresholds defined in the reference period. Now, let's see the code for this.
+
+4. Code implementation
+01:37 - 02:25
+The multivariate and univariate methods follow the same approach to performance calculators and estimators. First, we initialize here the DataReconstructionDriftCalculator function using the following parameters: column-names that contain column names with features; the rest is the same as in the other examples. Additionally, we can pass custom thresholds using the threshold argument. Previously, we passed here a dictionary. Here, however, we are monitoring only reconstruction errors, so we just pass a threshold. Next, we fit a reference dataset and utilize the "calculate" method to obtain the results for the analysis set. It's important to note that when we're calculating results for our specific dataset, we use the "calculate" method instead of "estimate."
+
+5. Plotting the results
+02:25 - 02:57
+The commands to visualize the results are the same as in other calculators. We can filter the results and plot them. The plot might look a bit different since the metric and confidence band is lighter blue now. Looking at the plot, we can quickly see if the drifts occur in our data or not. Here, for example, we can derive data drift from the significant increase in the data reconstruction drift in April 2019. However, to make sure that the drift is relevant to our performance, we compare them on one graph.
+
+6. Multivariate drift vs. realized performance
+02:57 - 03:24
+Just like the comparison plot of estimated performance versus realized performance, we can also compare the multivariate results with either estimated or realized performance. To do this, we use the same "compare" method and pass the results accordingly. When we examine the resulting graph, we can observe that the increase in reconstruction error, which serves as an indicator of data drift, aligns with a decrease in accuracy, suggesting that data drift is the root cause of the issue.
+
+7. Let's practice!
+03:24 - 03:31
+Alright, now let's look at the hotel booking dataset and see if there's a drift in our data.
+

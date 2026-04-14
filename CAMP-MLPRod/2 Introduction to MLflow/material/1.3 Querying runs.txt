@@ -1,0 +1,42 @@
+1. Querying runs
+00:00 - 00:11
+MLflow Tracking provides a way to log metrics, parameters, and artifacts to a centralized location during the model engineering and model evaluation phases of the ML lifecycle.
+
+2. Model data
+00:11 - 00:23
+Throughout the ML lifecycle, we have likely built and experimented with many different models. We must now decide which model to use in our ML application by comparing metrics and other data.
+
+1 istock.com
+3. Runs data
+00:23 - 00:40
+The MLflow Tracking UI offers a view into runs that belong to the same experiment but does not offer the ability to compare or calculate easily. Wouldn't it be great if we could query this run information for our own investigation? Luckily, MLflow offers a way of gathering this run information.
+
+4. Searching runs
+00:40 - 01:05
+This is done through the search_runs function from the MLflow module. The search_runs function offers programmatic access to runs data and is used to query runs and return the data to an output for further data analysis. With search_runs, users can select a tool of choice for data analysis such as the widely used pandas library. Pandas is, in fact, the default output of the function.
+
+1 https://pandas.pydata.org/
+5. Output format
+01:05 - 01:37
+Before getting started using search_runs, it is important to understand what data is available to query and what is returned. The following example is a pandas output from search_runs from an experiment. MLflow places each metric and parameter into a separate column as well as other data such as the run_id, status, start and end times, and tags. Each metric column is prefixed with metrics-dot-metric and parameters are prefixed with params-dot-parameter.
+
+6. Filtering run searches
+01:37 - 02:10
+The search_runs function is flexible and can take several different arguments to retrieve data to fit our needs. Some of these arguments include: max_results, which only returns the specified amount of runs. order_by, which is used to sort columns such as metrics in ascending or descending order. filter_string is likely the most powerful argument which allows for querying runs based on a query string. Experiment_names is used to return data from only specified experiments. More than one experiment can be specified.
+
+7. Tracking UI
+02:10 - 02:26
+The following experiment has 4 runs and contains both metrics and parameters that can be queried. Let's use the search_runs function to query the runs from the Default experiment so that we can get the run data into a format in which we can begin our analysis.
+
+8. Search runs example
+02:26 - 02:56
+Let's say we want to search runs from the Insurance Experiment and query for the f1_score metrics that are greater than zero-point-six. We also want to order the results by precision_score in descending order. Begin by importing the mlflow module. Let's store our filter string as a variable to make it easier to pass in as an argument. Now let's call the search_runs function with filter_string and order_by arguments and include the experiment name "Insurance Experiment".
+
+9. Example output
+02:56 - 03:02
+Our query results return two runs having f1_score greater than zero-point-six.
+
+10. Let's practice!
+03:02 - 03:11
+Now that we have a better understanding of the search_runs function, let's practice by querying runs from our Unicorn experiments.
+

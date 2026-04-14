@@ -1,0 +1,23 @@
+1. Recap: MLOps concepts
+00:00 - 00:08
+Amazing! Excellent work on finishing the course. Let's briefly review what we've learned throughout this course.
+
+2. What is MLOps?
+00:08 - 00:23
+In chapter 1, we went over what MLOps is, how it originated from DevOps, what the different phases are, and which roles are involved. We also looked at how each role contributed to a machine learning lifecycle.
+
+3. Design and development
+00:23 - 00:44
+In the second chapter, we went over the design phase, in which we look at added value estimation, business requirements, and key metrics. We also dove into data ingestion and data quality. Afterwards, we looked into the development phase and how feature stores and experiment tracking enable the development phase to run as smooth as possible.
+
+4. Deployment
+00:44 - 00:59
+In the third chapter, we looked into the deployment phase. How to prepare a model for deployment, and how to deploy the model into production. We learned about the microservices architecture, APIs, CI/CD pipeline, and deployment strategies.
+
+5. Maintaining machine learning
+00:59 - 01:11
+In the last chapter, we went into maintaining machine learning once it is in production. We also looked into the different levels of MLOps maturity and potential tools we can use in our machine learning lifecycle.
+
+6. Congratulations!
+01:11 - 01:23
+Thanks for taking the time to finish this course! MLOps provides me great practices and principles to enable the usage of machine learning within the businesses I work for. I hope it does the same for you!

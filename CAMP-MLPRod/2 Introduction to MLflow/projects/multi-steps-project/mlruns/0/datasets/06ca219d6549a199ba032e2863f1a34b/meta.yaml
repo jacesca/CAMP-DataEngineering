@@ -1,0 +1,11 @@
+digest: cd97b3db
+name: dataset
+profile: '{"num_rows": 402, "num_elements": 2412}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "age", "required": true},
+  {"type": "double", "name": "bmi", "required": true}, {"type": "double", "name":
+  "children", "required": true}, {"type": "double", "name": "smoker", "required":
+  true}, {"type": "double", "name": "charges", "required": true}, {"type": "double",
+  "name": "sex", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Jacqueline", "mlflow.source.name": "evaluate.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

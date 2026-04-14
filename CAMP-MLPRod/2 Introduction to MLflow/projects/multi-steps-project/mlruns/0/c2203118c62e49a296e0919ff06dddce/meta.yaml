@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/multi-steps-project/mlruns/0/c2203118c62e49a296e0919ff06dddce/artifacts
+end_time: 1717549286217
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c2203118c62e49a296e0919ff06dddce
+run_name: traveling-boar-256
+run_uuid: c2203118c62e49a296e0919ff06dddce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717549286171
+status: 3
+tags: []
+user_id: Jacqueline

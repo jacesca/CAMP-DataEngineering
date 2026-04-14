@@ -1,0 +1,43 @@
+1. How to detect covariate shift
+00:00 - 00:00
+Nice work on those exercises so far. Now we will take a look how to detect the covariate shift.
+
+2. Multivariate drift detection
+00:00 - 00:00
+When we notice a decline in the model's performance, the first step in root cause analysis is to check for a covariate shift in your data. Specifically, we want to look at any changes in the joint distribution before we dive deeper into shifts in individual features. This method is based on the PCA algorithm, which compresses the data into a lower dimension, aiming to capture the internal structure of the model input data while filtering out random noise. It then utilizes inverse PCA to reconstruct the data back to its original shape, with a certain level of error. By comparing the reconstruction error to a baseline without shift, we can determine whether there has been a change in the input data distribution.
+
+3. Univariate drift detection
+00:00 - 00:00
+Once we verify the occurrence of a shift in the incoming data using multivariate drift detection, the next step is to pinpoint the single features that are undergoing the drift. There are different methods available for this task, classified based on the type of features they analyze: for example, categorical features, which represent data that can be divided into groups, and continuous features, which can take an infinite number of real values within a given interval. Now, let's explore the specific methods utilized to detect drift in both types of variables.
+
+4. Continuous methods - Jensen-Shannon
+00:00 - 00:00
+First, we have the Jensen-Shannon distance, which measures the similarity of two distributions using Kullback–Leibler divergence. It operates within the range from 0 to 1 and is sensitive to small drifts, making it capable of capturing subtle changes in the data.
+
+5. Continuous methods - Wasserstein
+00:00 - 00:00
+Next, there's the Wasserstein distance, which quantifies the minimum effort needed to transform one distribution into another. Its metric ranges from 0 to infinity, but be cautious of outliers. Extreme values can significantly impact the results, making this method less robust to outliers.
+
+6. Continuous methods - Kolmogorov-Smirnov
+00:00 - 00:00
+Moving on to the Kolmogorov-Smirnov statistic test, which is the maximum distance of the cumulative distribution functions of the two samples and falls into 0-1 range. The limitation comes with larger datasets, as it may generate false positive alerts for drifts, increasing the chances of misidentifying meaningful changes.
+
+7. Continuous methods - Hellinger
+00:00 - 00:00
+Lastly, we have the Hellinger method, which is suitable for categorical and continuous variables. It measures the overlap between distributions, but here's the catch: it can't detect shifts when there's no overlap. This means that even if distributions are close or far apart, it still results in maximum value. For continuous features, it's recommended to consider the Jensen-Shannon distance or Wasserstein distance. Remember, there's no one-size-fits-all solution, but these methods generally perform well.
+
+8. Categorical methods - Chi-squared
+00:00 - 00:00
+For monitoring categorical variables, the first method is the Chi-squared test, which is sensitive to changes in low-frequency categories. Even a small change can significantly impact the test statistic when the frequency is already low.
+
+9. Categorical methods - L-infinity
+00:00 - 00:00
+Next, we have the L-infinity method, which measures the largest difference between distributions of different categories. It works well with numerous categories as it identifies the most significant shift across all categories, effectively detecting differences regardless of the number of categories.
+
+10. Categorical methods - Jensen-Shannon and Hellinger
+00:00 - 00:00
+Moving on, both the Jensen-Shannon distance and Hellinger method are versatile approaches suitable for various variable types. Consider using the Jensen-Shannon distance or L-Infinity distance when dealing with many categories. The L-Infinity distance is recommended if your specific aim is to detect changes in individual categories.
+
+11. Let's practice!
+00:00 - 00:00
+We have explored various methods for detecting covariate shift. Now, let's put it to the test.

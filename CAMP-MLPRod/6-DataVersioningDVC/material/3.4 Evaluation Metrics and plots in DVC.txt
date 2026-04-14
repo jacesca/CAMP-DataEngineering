@@ -1,0 +1,32 @@
+1. Evaluation: Metrics and plots in DVC
+00:00 - 00:11
+Welcome back! In this final video, we will learn about evaluating model performance with metrics and plots using DVC.
+
+2. Metrics: changes in dvc.yaml
+00:11 - 00:57
+DVC provides a useful feature for monitoring model performance metrics, visualizing them through graphs, and comparing results across different experiments. This helps in choosing the best model for a specific machine-learning task. To monitor metrics, modify the dvc.yaml file by tracking the 'metrics.json' file under a 'metrics' key instead of using the 'outs' field. Since metrics files are typically small and text based, we set the 'cache 'parameter to false to track it using Git instead of DVC.
+
+3. Printing DVC metrics
+00:57 - 01:06
+We can use the 'dvc metrics show' command to print current metrics on the terminal.
+
+4. Compare metrics across runs
+01:06 - 01:41
+DVC provides the capability to contrast metrics across various experiments. Since we have committed the prior experiment in both DVC and Git, altering a hyperparameter and executing 'dvc repro' again would result in a new experiment. In this particular case, utilizing the 'dvc metrics diff' command to compare metrics reveals an enhancement in the performance of the model.
+
+5. Plots: changes in dvc.yaml
+01:41 - 02:25
+Instead of tracking image files, DVC tracks the data files used to generate plots. The data file name serves as a plot output target reference under the plots key in the dvc.yaml file. Define a template for the plot style. Next, we organize the data by identifying column names from the data file and labeling the plot axes and title. Remember that setting cache to false means the plot file is tracked through Git.
+
+1 https://dvc.org/doc/user-guide/experiment-management/visualizing-plots#plot-templates-data-series-only
+6. Printing DVC plots to file
+02:25 - 02:54
+Similarly to metrics, we can now show plots by executing the 'dvc plots show' command in the terminal. This command requires a reference to the relevant target in the dvc.yaml file. By default, it yields a path to an HTML file that contains an interactive plot embedded within it.
+
+7. Comparing DVC plots
+02:54 - 03:29
+To compare current state of plots with another branch, use the 'dvc plots diff' command. Specify the plot output target from the dvc.yaml and the branch we want to compare against. Alternatively, we can also specify the commit SHA. This facilitates the side-by-side visualization of plots and enables the comparison of changes between branches or commits.
+
+8. Let's practice!
+03:29 - 03:39
+Now, let's check your understanding of managing metrics and plots in DVC.

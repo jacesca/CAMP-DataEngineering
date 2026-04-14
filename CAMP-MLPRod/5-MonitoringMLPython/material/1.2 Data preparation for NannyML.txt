@@ -1,0 +1,31 @@
+1. Data preparation for NannyML
+00:00 - 00:09
+Great job with the exercises! Now, let's explore how to create the reference and analysis sets required for monitoring machine learning models with NannyML!
+
+2. Loading the data
+00:09 - 00:29
+The process of getting the data ready begins by loading it. In this course, we'll focus on structural data, commonly found in formats like CSV, Parquet, or JSON. As an example, we will load the New York Green Taxi dataset to build and monitor a machine learning model that predicts the tip amount a passenger will leave.
+
+3. Processing the data
+00:29 - 00:55
+The next step is typical data preprocessing. We will skip the cleaning and preparation process since it goes beyond the scope of this video. Currently the data only considers trips paid with a credit card as a payment type because they are the only ones with a tip amount in the dataset. Also, we selected only examples with positive tip amounts since negative tip amounts are chargebacks or possible errors in the data quality pipeline.
+
+4. Splitting the data
+00:55 - 01:28
+Now, let's split our data. In machine learning, we typically divide the data into two sets: training and testing, or sometimes three sets, adding validation set. However, to simulate the real-world environment to monitor our model, we will split it into: A Training set, which consists of data from the first week of December 2016. A Testing set obtained from the second week of December 2016, which will become the reference set later, And Production data from the third and fourth weeks of December 2016 which will serve as an analysis set.
+
+5. Building the model
+01:28 - 01:55
+Now, we will train an LGBMRegressor using the lightgbm library with its default parameters. LightGBM, or Light Gradient Boosting Machine is known for its efficiency in handling large datasets, which is a go-to solution for predictive modeling tasks. The model is fitted with the training data and evaluated using the test set. Now, let's see how it works in production. To simulate the production environment, we will pass the production data.
+
+6. Creating reference and analysis sets
+01:55 - 02:42
+We have all the components needed to create a reference and analysis set. But before we do it, let's understand both of these sets a bit better. First, the reference period is a time frame during which the model behaves as expected. The perfect data is the test set, where we know the model performance and have ground truth data. When fitted to the NannyML algorithm, the reference set serves as a baseline for every metric we wish to monitor. In our case, these are rides from the second week of December. Second, the analysis period is the latest production data, which should be after the reference period ends. Having actual labels or ground truth data in this phase is optional since NannyML can estimate performance. For our example, these are the rides from the third and fourth weeks of December.
+
+7. Reference set example
+02:42 - 03:24
+Here, we will look at the reference set and explain it's structure. The only difference between reference and analysis set is that the target column which contains the ground truth, is required for the reference set but is optional for analysis, since it's not always available. The timestamp column contains information about when each observation occurred. It is optional - if not provided, resulting plots will no longer use a time-based x-axis. Next, we have features that were fed as input to our model. And finally, predictions score or probabilities outputted by the model. For a classification task, there will be an extra column containing prediction class labels, which are thresholded probability scores.
+
+8. Let's practice!
+03:24 - 03:30
+That's it for this video, now let's practice what we've learned!

@@ -1,0 +1,31 @@
+1. Availability of ground truth
+00:00 - 00:05
+In this video we will discuss in detail the availability of ground truth in production.
+
+2. Instant ground truth
+00:05 - 00:39
+At the end of the previous chapter, you categorized different scenarios based on the availability of ground truth. One of these scenarios occurs when the ground truth is immediately available. A simple example is taxi arrival estimation, where the information regarding the arrival is known immediately after the taxi picks up the customer. In such a scenario, the performance can be monitored in near real-time, enabling a quick reaction to any drop in performance. The evaluation process is straightforward, and the results are the most accurate, as they measure the actual performance.
+
+3. Production data - instant
+00:39 - 01:05
+The graph illustrates a performance graph of a classification problem, where the "reference period" represents the testing dataset, and the "analysis period" represents a stream of production data. Additionally, there is a tabular dataset with highlighted ground truth values. When the ground truth is instantly available, we can monitor the ROC-AUC metric in real time. A drop from June to October is an indicator to launch an investigation into the cause behind it.
+
+4. Delayed ground truth
+01:05 - 01:46
+In many real-world situations, the ground truth is delayed. Unlike in taxi arrival estimation, where it takes only a few minutes to obtain the ground truth, in other applications, this delay can be much longer. It could range from a month to a year or even more, depending on the specific scenario. For instance, a simple example is again loan default prediction where the ground truth is available only when the borrower fails to make a scheduled payment and all legal actions against them are completed. In the meantime, the model's technical performance is unknown, and the bank may end up giving loans to individuals with a high probability of default. This situation requires a performance estimation algorithm until the ground truth becomes available.
+
+5. Production data - delayed
+01:46 - 02:07
+In the case of delayed ground truth, the tabular data is missing some target values. This absence of information is reflected in the performance graph, which displays a gap in the ROC AUC performance of the model from May to November. Under such circumstances, it becomes challenging to determine the model's performance and determine whether its decisions are still accurate.
+
+6. Absent ground truth
+02:07 - 02:36
+In some cases, the ground truth may not be available, such as in fully automated processes. A perfect example of this is using machine learning models for insurance pricing. These models are deployed in production to forecast the price of insurance based on demographic or vehicle information. However, acquiring the actual labels is a costly and time-consuming process. Therefore, the actual performance of the model is unknown. In order to verify whether the model is still providing business value, performance estimation is necessary.
+
+7. Production data - absent
+02:36 - 02:50
+For absent ground truth, the target values are entirely absent, as you can see in the blank performance graph after deployment. In this situation, it becomes complicated to determine how well our model is performing and whether its predictions are trustworthy.
+
+8. Let's practice!
+02:50 - 03:03
+To keep track of how well a model is doing in real-time, regardless of the situation, you need to estimate its performance. In the next video, we will dive into the specifics, but now let's practice!

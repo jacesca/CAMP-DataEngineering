@@ -1,0 +1,36 @@
+1. DVC Cache and Staging Files
+00:00 - 00:12
+Welcome back! We'll continue learning about DVC in this video to understand what a DVC cache is and how it works.
+
+2. DVC Cache
+00:12 - 01:35
+DVC cache is a powerful feature of DVC that helps manage and version large datasets and machine learning models. The DVC cache is a hidden storage for files and directories tracked by DVC and their different versions. Understanding and utilizing the DVC cache is crucial as it enhances efficiency and reproducibility in data science workflows by enabling seamless tracking and versioning of data and models. DVC cache stages temporary files that are not yet ready to be committed to the DVC repository, allowing us to work with large datasets without committing them to DVC until they are ready. There is no restriction of what files can be versioned with DVC, but in practice we should use it for large datasets and non-text files. It typically resides under the .dvc directory in the workspace of a DVC project but is configurable with the 'dvc cache dir' command.
+
+3. Adding Files to Cache
+01:35 - 02:18
+To understand the mechanics of the DVC cache, we'll need to start with adding files to it. In DVC, we can add files by running the 'dvc add' command. As evident from the output, DVC creates a new text-readable file data.csv.dvc, which saves metadata about the newly added file. By versioning these .dvc files with Git, we can keep track of data changes while keeping the repository lightweight.
+
+4. .dvc files
+02:18 - 03:51
+The .dvc files are unique for each data file tracked by DVC. To track the data file, we need to commit the associated .dvc file. Let's dive inside these .dvc files. outs: This section specifies the output data files or artifacts associated with the DVC pipeline. It has the following components md5: The MD5 checksum of the tracked data file. MD5 is a widely used cryptographic hash function. It's a unique value generated based on the contents of the data file. If the file changes, the MD5 checksum also changes. size: The size of the tracked data file in bytes. In this case, the size is 16 bytes. hash: Specifies the type of hash function used to calculate the checksum. In this case, it's MD5. path: The path to the tracked data file within the project directory. In this example, the tracked file is named data.csv.
+
+5. Interaction with DVC Cache
+03:51 - 04:28
+In the background, the 'dvc add' moves the data to the cache and links it back to our workspace. Using a terminal command 'find', we can verify that .dvc slash cache folder contains a subfolder f3, having a file starting with string 8a850. The MD5 hash value of the data.csv file we just added (f38a850...) determines this cache path.
+
+6. Interaction with DVC Cache
+04:28 - 04:57
+We can get a detailed picture of the interaction with the DVC cache by augmenting 'dvc add' with a dash-v flag. In the picture, the highlighted output is relevant where DVC prepares to copy the file to the cache. Further down, it also prints that it is saving information to the .dvc file.
+
+7. Removing from and Cleaning Cache
+04:57 - 05:32
+To remove added files, we can use 'dvc remove' on the .dvc files. This removes references to DVC data files. At this stage, the cache has still not deleted the cached file. We can do so by running the 'dvc gc' with a dash-w flag, for workspace. It will ask for a confirmation, followed by clearing the cache of the dead link file.
+
+8. Summary
+05:32 - 05:41
+Here is a summary of DVC commands covered in this lesson that will be useful for reference while working on exercises.
+
+9. Let's practice!
+05:41 - 05:48
+It is time to test your knowledge about DVC cache.
+

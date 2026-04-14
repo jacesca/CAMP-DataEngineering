@@ -1,0 +1,23 @@
+1. Monitoring technical performance directly
+00:00 - 00:05
+Now we're going to discuss why performance is the core of the monitoring workflow.
+
+2. Covariate shift - performance relationship
+00:05 - 02:32
+Let's start with a simple definition: A covariate is just another name for an input feature, while performance refers to the technical metrics of the model. There are three ways that covariates can shift. The first one is where the model tends to have more production data in areas where it is more certain. For the data shifting to regions where the model is more certain of the outcome, there will be no impact on your model performance. Technically, model performance can increase because there are more observations that the model is good at predicting. To better illustrate it let's assume we try to predict credit loan default in New York based on age, industry, and living area using a deployed classification machine learning model and look at its accuracy post-deployment. Suppose our training data had many examples of high-income people paying off their loans, and the data shifts to having 30% of high-income people applying for loans instead of 10%. In that case, the accuracy remains the same or improves. The second is a shift to regions with more production data from under-represented segments in the training set. Where it gets interesting is a shift into regions that were underrepresented in the training set. Here there is an unknown impact on model performance. In that case, our training data has few examples of people working in the technology sector paying off their loans. After deployment, production data shifted from having 10% of people in the technology sector applying for loans instead of 0.5% of people in the training set, and as a result, accuracy can decrease. And thirdly, a shift where there is more production data in areas where the model is less certain. Finally, when the data shifts to the regions where the model is less certain, close to the decision boundary that the model tried to learn, there will be a negative impact on model performance. For example, people living in Manhattan always lie close to the decision boundary, making it hard to predict. They have a 50% chance of paying back their loan and a 50% chance of default. The production data shifts from 20% of people living in Manhattan to 40% of people living in Manhattan; in that case, the accuracy will definitely decrease.
+
+3. Guaranteed negative impact
+02:32 - 03:08
+When the features shift to uncertain regions closer to the decision boundary, the machine learning model's performance will decrease, and it is always negatively impacted. The training period visualization highlights the region around the decision boundary where the model is least certain. During the production period, there are more data points located within this region than before. This is reflected in the example of middle-income and middle age people from Manhattan. Their numbers increased from 20% to 40%, which resulted in more uncertain predictions of the model.
+
+4. False alerts problem
+03:08 - 03:52
+While it is true that covariate shifts to unseen regions can have a negative impact, it does not appear often. The drift detection methods measure the difference between distributions and fire an alert every time a drift above a certain threshold is observed. They don't have a built-in logic to distinguish the type of shift and assume that every single one will affect the model's performance. Another problem is that features can shift, but the model's performance may remain the same if they are irrelevant. Having drift detection at the center of an ML monitoring system can do more harm than good. Since it may overwhelm the team with too many false alarms, causing alert fatigue.
+
+5. The importance of technical performance
+03:52 - 04:13
+The technical performance of a machine learning model is a direct metric of how well the model performs the task at hand. Additionally, any silent failures in the model will be reflected in its performance, removing the overload of false alarms. This is why performance monitoring is the first step of the monitoring workflow in production.
+
+6. Let's practice!
+04:13 - 04:17
+Now let’s practice!

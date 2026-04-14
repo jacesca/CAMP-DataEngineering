@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/0/e5f5ca62a650424191f4589394d6c482/artifacts
+end_time: 1717528477134
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5f5ca62a650424191f4589394d6c482
+run_name: ambitious-chimp-723
+run_uuid: e5f5ca62a650424191f4589394d6c482
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717528473760
+status: 3
+tags: []
+user_id: Jacqueline

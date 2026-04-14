@@ -1,0 +1,36 @@
+1. Executing DVC pipelines
+00:00 - 00:07
+Hello again! In this video, we will talk about executing DVC pipelines.
+
+2. Recap
+00:07 - 00:22
+Recall that our ML pipeline dependency graph described two steps, named preprocess and train and evaluate, as defined in dvc.yaml file.
+
+3. Reproducing a pipeline
+00:22 - 01:16
+The pipeline definition in dvc.yaml allows us to quickly re-run the pipeline based on new data using 'dvc repro' command. In our example, the preprocess and train_and_evaluate steps are run one after the other, and a dvc.lock file is created in the process. This file is very similar to .dvc files, which we learned about in the previous video, and captures the pipeline state. It's good practice to immediately commit dvc.lock file to Git after its creation or modification to record the current state and results.
+
+4. Using cached results
+01:16 - 01:38
+If we re-run our pipeline but some steps have not changed, DVC will use the previously cached results and skip the execution of those steps. This is particularly useful in complex DAGs, where we don't want to run unchanged steps.
+
+5. Stage caching in DVC
+01:38 - 02:43
+During the stage run, DVC calculates a hash using the md5 checksum for each dependency such as input files, code, and parameters. If any dependency has changed since the last run, the hash will be different, and DVC will consider the stage outdated, requiring a rerun. DVC also checks if the outputs of a stage are already cached using the md5 checksum. If they are, and the dependencies and code have not changed, DVC will use the cached outputs without rerunning the stage. Otherwise, it will rerun the stage. Once the stage is executed, DVC calculates a new hash for the outputs and stores the results in the cache for future use.
+
+6. Dry running a pipeline
+02:43 - 03:16
+We can choose to print only the commands that will be executed without the actual execution of the pipeline using the dash-dash-dry flag. Note that in this example, the output just displays the python commands corresponding to preprocess and train_and_evaluate stage. This is useful in verifying which stages will execute before actually executing them.
+
+7. Additional arguments
+03:16 - 04:46
+'dvc repro' supports various additional options and flags, and we'll mention a few here. To run a specific dvc.yaml file, we can provide the relative path to the file. Note that there can only be one dvc.yaml file per folder. When you specify a stage name in the 'dvc repro' command, it not only runs that particular stage but also executes any upstream stages that the specified stage depends on. By specifying the dash-f flag, we force DVC to re-run all stages in the pipeline, even if they have already been executed before. This can be useful when we want to ensure a complete and fresh execution of the pipeline, regardless of any cached results. We can also choose not to store the outputs of a particular execution in the cache. This is useful to avoid caching unnecessary data when exploring different data or stages. Be sure to use 'dvc commit' to finish the operation when we are done.
+
+8. Parallel stage execution
+04:46 - 05:34
+If we need to parallelize stage execution, we can launch 'dvc repro' multiple times concurrently, for example, in separate terminals. This pipeline consists of two parallel branches (A and B), and the final train stage, where the branches merge. To reproduce both branches simultaneously, we could run 'dvc repro A2' and 'dvc repro B2' at the same time. Finally, running 'dvc repro train' would take advantage of stage caching and only execute the final stage.
+
+9. Let's practice!
+05:34 - 05:40
+It's time to test your knowledge of executing DVC pipelines.
+

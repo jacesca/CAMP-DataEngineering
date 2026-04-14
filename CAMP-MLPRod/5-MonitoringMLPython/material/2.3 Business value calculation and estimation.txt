@@ -1,0 +1,27 @@
+1. Business value calculation and estimation
+00:00 - 00:06
+Now, we will check out how to calculate and estimate the model's business value.
+
+2. Model business value
+00:06 - 01:05
+The main aim of machine learning models in real-world use is to help businesses make smarter decisions based on data, ultimately providing monetary value to the business. Let's use hotel booking cancellations as an example. The model's job is to predict whether a booking will be canceled. When the model is correct, the hotel can assign the room to another guest in advance, avoiding last-minute rush and price discounts. In this scenario, the model brings clear financial benefits to the hotel. However, this benefit can deteriorate if customer behaviors or habits change. Also, the model might not fit the situation anymore, for example, the hotel might start heavily penalize cancellations, so most of the guests will actually show up. These are the reasons why it's crucial to keep an eye on how valuable the model is in regards to the business.
+
+3. Confusion matrix
+01:05 - 02:06
+Fortunately, NannyML provides us with the ability to monitor the business metric of the model over time. Let's go back to our hotel arrival prediction example to see how it works. The model's predictions can be organized into a confusion matrix with four possible outcomes: The first one is true positive (the model correctly predicts that a booking will not be canceled), The second one is false positive (the model incorrectly predicts a booking will not be canceled), The third one is false negative (the model incorrectly predicts that a booking will be canceled), and the last one is a true negative (the model correctly predicts that a booking will be canceled). The confusion matrix tells us how many times each of these outcomes occurred. We need to define the business value matrix to calculate the business value.
+
+4. Business value formula
+02:06 - 03:10
+This matrix assigns a monetary value to each element in the confusion matrix. In our case, here's how we value these predictions: When the model correctly predicts that a booking won't be canceled, it doesn't add or subtract any value because that's what the hotel normally expects. If the model incorrectly predicts that a booking will be canceled, leading to relocations and discounts, it costs the hotel 200 dollars. When the model predicts the booking won't be canceled, but it is, it costs the hotel 100 dollars for a one-night stay until a replacement is found. When the model correctly predicts a booking will be canceled, it's worth 1000 dollars because the hotel can give the room to someone else. Finally, to calculate the business value of the model, NannyML multiplies the number of occurrences from the confusion matrix by the corresponding monetary values from the business matrix and then adds them all together.
+
+5. When labels are available
+03:10 - 03:49
+Now, let's see how we can do this in NannyML. When information about booking cancellations is available, we can easily use the performance calculator module, the same one we used for realized performance evaluation. For business value calculation, we need to provide four additional parameters: problem type, business value metric, business value matrix, and normalized business value, which can be set to either None or per prediction. This choice determines whether the results are shown for the entire chunk or each prediction.
+
+6. When labels are not available
+03:49 - 04:09
+When information about booking cancellations is not available, we can still estimate the business value of the model using the CBPE estimator. The parameters we initialize remain the same, but in this scenario, we change the "normalize" parameter to per-prediction to show what it looks like.
+
+7. Let's practice!
+04:09 - 04:16
+Now that we've learned how to calculate and estimate business value, let's practice!

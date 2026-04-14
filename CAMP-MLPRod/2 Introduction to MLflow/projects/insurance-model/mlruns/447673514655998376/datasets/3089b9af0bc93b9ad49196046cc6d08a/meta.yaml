@@ -1,0 +1,10 @@
+digest: 382ca4b1
+name: dataset
+profile: '{"num_rows": 936, "num_elements": 4680}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "age", "required": true},
+  {"type": "double", "name": "bmi", "required": true}, {"type": "double", "name":
+  "children", "required": true}, {"type": "double", "name": "smoker", "required":
+  true}, {"type": "double", "name": "charges", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Jacqueline", "mlflow.source.name": "train_insurance_model.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

@@ -1,0 +1,36 @@
+1. Code organization and refactoring
+00:00 - 00:10
+Welcome! In this video, we'll learn how to organize and structure our ML code to leverage pipelines in DVC.
+
+2. Prototyping vs production code
+00:10 - 00:46
+During the early model development cycle, we can work with prototyping tools like Jupyter Notebook that allow us to iterate quickly and change parameters on the fly. This approach, however, does not scale well with code and is unfit for production due to the following reasons: The code is not tested and possibly has bugs The code has many repeatable blocks The code isn't reproducible across environments and time
+
+3. Features of good production code
+00:46 - 01:42
+To be considered robust, our machine learning code should be able to recreate the same experimental results or outcomes consistently by replicating the environment and data used in a previous study or analysis. It should also be structured into distinct, independent, and testable modules or components, facilitating easier development, maintenance, and reuse. Finally, it should use all the configuration parameters from a parameter or configuration file. These are hyperparameters or other configuration values used by our code. This provides a single location to prescribe them and makes tracking changes a lot easier.
+
+4. Configuration files and YAML
+01:42 - 02:48
+To help with parameter consistency, the configuration files should preferably be YAML, JSON, TOML, or Python files. DVC looks for params.yaml as the default configuration. We'll focus on the YAML format to describe parameters, as its knowledge will be useful in later lessons. YAML, which stands for "YAML Ain't Markup Language," is a widely used language for organizing data in a readable format and transferring it between applications. Its appeal is in its simplicity and clean syntax. The format is designed to be easily readable by humans, making it straightforward to write and comprehend. YAML files typically use the file extensions dot-yaml or dot-yml.
+
+1 https://dvc.org/doc/command-reference/params#description
+5. YAML Syntax
+02:48 - 03:49
+In YAML, we can specify parameters or configurations as key-value pairs or dictionaries, with keys and values separated by a colon. Comments begin with pound or hash symbol. YAML supports multiple data types, including integers, floats, strings, the null type, and booleans. In addition, it also supports data structures like arrays, expressed in different styles with heterogeneous data types. Finally, YAML also supports nested dictionaries. This feature is very powerful and allows us to group parameters into related blocks. The hierarchy is maintained through indentation, which is important in YAML syntax.
+
+6. Example configuration file
+03:49 - 04:21
+For example, working with the weather dataset we previously saw, we can separate our parameters into groups related to data preprocessing and model training-specific parameters. In the preprocessing group, we can describe the target and categorical feature columns, etc. In the training section, we can define the hyperparameters needed for the specific types of models we want to consider.
+
+7. Example modular function
+04:21 - 05:00
+Modularizing code makes it easier to reuse it. Instead of repeating code, it is easier to write it in a single .py file and import it as a Python module. In this example, we see how common metrics computation can be written into a function in a separate module, which can then be imported and used in the entry-point code file or a notebook. This can save code duplication and errors associated with it.
+
+8. Sample project code layout
+05:00 - 05:44
+Our final code layout should look similar to this. We should have a configuration or parameter file. Our helper functions can go into one or multiple files depending on how we want to group them, and our entry-point code should reside in individual files. Ideally, a single entry-point code file should address a single step in our workflow, like data preprocessing, model training, etc. Finally, our model definition should also be abstracted in a separate module.
+
+9. Let's practice!
+05:44 - 05:52
+Let's work on some exercises involving writing configuration files and structuring code.

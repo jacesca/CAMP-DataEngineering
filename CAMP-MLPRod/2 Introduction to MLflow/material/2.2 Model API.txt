@@ -1,0 +1,57 @@
+1. Model API
+00:00 - 00:10
+MLflow Models are a way to standardize how ML models are packaged. Now let's learn the different ways that MLflow uses the Model API to save and load models.
+
+2. MLflow REST API
+00:10 - 00:28
+MLflow uses a REST API that allows users to create, list, and retrieve information programmatically from every component of MLflow. An API is an "application programming interface" that enables two software components to communicate using a set of definitions.
+
+1 istock.com
+3. The Model API
+00:28 - 00:39
+The Model API is used to interact with models. With the Model API users can save, log, and load an MLflow model using a particular flavor.
+
+1 wikipedia.org
+4. Model API functions
+00:39 - 01:07
+Remember, MLflow integrates with several common libraries such as scikit-learn. Using the mlflow-dot-sklearn module users can do the following: Use the save_model function to save a model to the local filesystem. The log_model function logs the model to MLflow Tracking as an artifact within a run. Finally, the load_model function is used to load the model from either the local filesystem or from MLflow Tracking.
+
+5. Load model
+01:07 - 01:34
+When loading an MLflow Model it is important to understand what location formats are supported. When loading a model from the local filesystem, load_model supports both relative and absolute paths. To load a model from MLflow Tracking, MLflow uses a "runs" format where the run id and model path must be included. MLflow also supports loading models from AWS S3 and other cloud storages.
+
+6. Save model
+01:34 - 01:53
+The following is a model using logistic regression from scikit-learn. We are going to use the save_model function to save the model to the local filesystem. When checking the local filesystem using ls on the command line, we can see that the model was saved locally using the standardized storage format.
+
+7. Load local model
+01:53 - 02:05
+The load_model function is used to load the model from the local filesystem using the relative path "local_path". To ensure that the model was loaded successfully we can print the model.
+
+8. Log model
+02:05 - 02:24
+Using our same model, to log the model to MLflow Tracking we use the log_model function and define our path as "tracking_path". Using the log_model function instead of autolog function allows users to specify additional options when logging the model such as artifact path or model name.
+
+9. Tracking UI
+02:24 - 02:38
+Going over to MLflow Tracking UI for the run, we can see that our model was logged to MLflow Tracking as an artifact under "tracking_path". Logging the model to MLflow Tracking also used the standardized storage format.
+
+10. Last active run
+02:38 - 02:58
+Remember the format needed to load the model from MLflow Tracking. In order to load the model we need the run_id of the run that logged the model. The MLflow module includes a function called last_active_run. This function returns metadata about the latest run via the Run class.
+
+11. Last active run id
+02:58 - 03:04
+We can then use the info property of the Run class and then return the run_id.
+
+12. Setting the run id
+03:04 - 03:17
+In the example, we create a new variable called run_id and set the value to run-dot-info-dot-run_id. run_id becomes a string value we can then pass to the load_model function.
+
+13. Load model from MLflow Tracking
+03:17 - 03:35
+The example code passes the run_id as an f-string literal to the load_model function. We also include tracking_path as part of the URI since it was the path we included when we logged the model. Finally, we print the model to ensure it loaded successfully.
+
+14. Let's Practice
+03:35 - 03:42
+Now that we understand the Model API, let's practice saving, logging, and loading models.

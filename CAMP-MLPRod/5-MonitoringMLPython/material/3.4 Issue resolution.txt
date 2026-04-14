@@ -1,0 +1,24 @@
+1. Issue resolution
+00:00 - 00:10
+Welcome back! In this video we will learn how to fight the data drift when it's causing issues with a model performance. The first option is doing nothing.
+
+2. Do nothing
+00:10 - 00:51
+More often than not, models are left to deteriorate in production. It is not always a conscious decision, but in some cases, it actually makes sense. By having a good monitoring system, we can do an opportunity cost analysis and decide if it is worth it to retrain or keep the current model. Let's say a call center has a forecasting model that estimates how many people will call for support in a day. After a while, the model starts underperforming, and it's frequently overestimating the number of calls. In this case, we could ignore the drop in performance since we know there will be enough agents to answer all the calls. If the service level is more important than the costs, we can let the model deteriorate for a few months until we take further action.
+
+3. Retraining the model
+00:51 - 02:08
+Retraining a model is the most popular technique after doing nothing. It may sound straightforward, but it shouldn't be applied blindly. There are different ways to do it and important things to consider. We need to decide on which data to train the model and how to do it. Training on both old and new data is particularly useful when we see a drop in performance because a big percentage of the production data moves to regions where the training data is not very well represented. The idea behind this is to capture as many possible distributions in a dataset and build a model complex enough to can learn them. The model becomes more robust because because its retrain with more relevant data. Fine-tuning the old model with the new, more recent data is a popular technique when we are working with neural networks and or gradient boosting methods such as LightGBM, where we can refit the model with newly acquired data while preserving the old model’s structure. Instead of training the model from scratch every time we collect new data, we fine-tune the old model with the new data. The idea of weighting data is to give more importance to recent data. If the new data is more relevant to the business problem, we can weigh the recent data in a way that the model gives more importance to it.
+
+4. Reverting back to a previous model
+02:08 - 02:27
+If you notice a decline in the model's performance after a recent update, reverting to a previous version of the model can be an effective solution. It's essential to quickly switch back to the previous model and conduct an analysis on the new model, as the decline may be due to human errors during the training process, such as data leakage.
+
+5. Change business process
+02:27 - 03:03
+We could deal with the issues downstream, change the business rules, and or run manual analysis on predictions coming from the drifting distributions. Let's take a supermarket chain as an example. They use a forecasting tool to estimate how many units of each product will be sold next week. This helps the branch managers know how much to order from their suppliers. Recently, the model has been underperforming for toilet paper and cleaning products. In this case, we could notify the branch managers to use their own judgment when placing orders for these products and do a manual overwriting.
+
+6. Let's practice!
+03:03 - 03:09
+Now, let's put to practice what you've learned with some practical exercises!
+

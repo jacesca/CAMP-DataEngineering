@@ -1,0 +1,36 @@
+1. Writing and visualizing DVC pipelines
+00:00 - 00:10
+Welcome back! In this video, we will learn about DVC pipelines, a powerful way to reproduce Machine Learning steps.
+
+2. DVC Pipelines
+00:10 - 01:11
+A DVC pipeline is a structured sequence of stages that defines the workflow and its dependencies for a machine learning or data processing task. These pipelines can be versioned using Git and, therefore, can be tracked. The steps are defined in the dvc.yaml file, which configures the stages of a DVC pipeline, such as: Input data and scripts, such as preprocessing or training code files, under the deps key. Parameters under the params key. Stage execution commands, such as running Python scripts, under cmd key. Output artifacts, such as processed dataset, under outs key. And special outputs, like evaluation metrics and plot data, are under their respective keys. Let's understand this with a concrete example.
+
+3. Adding preprocessing stage
+01:11 - 02:33
+We can use the 'dvc stage add' command to create a stage in the dvc.yaml file. In this example, we run the 'dvc stage add' command to perform data preprocessing by specifying the name with dash-n, parameters with dash-p, dependencies with dash-d, outputs with dash-o, and writing the command at the end. This creates a corresponding stage in the dvc.yaml file where corresponding entries are written appropriately. Notice carefully how we specify parameters differently from dependencies. Instead of just a filename, we specify a specific key from params.yaml. This way, only the changes in the 'preprocess' key from parameter file will affect this step. Now, we have all three integral components, i.e., code, data, and parameters, to maintain the reproducibility of this step.
+
+4. Adding training and evaluation stage
+02:33 - 03:35
+Similarly, we can add a training and evaluation stage that depends upon the processed data output from the previous step. Notice how we can skip specifying parameter file altogether and DVC will automatically default it to params.yaml. Connecting outputs from one step to inputs of another in dvc.yaml creates an upstream dependency between these two steps in the graph. Here, we use processed_data.csv, which is the output from preprocess step as an input to train-and-evaluate step, as shown on the right. A dependency graph is also referred to as a Directed Acyclic Graph, abbreviated as DAG, and forms a cohesive pipeline.
+
+5. Updating stages
+03:35 - 03:52
+Using 'dvc stage add' to update an existing step results in an error. In this case, we can use the dash-dash-force flag to overwrite that stage of dvc.yaml file.
+
+6. Visualizing DVC pipelines
+03:52 - 04:29
+Having built our pipeline, we can visualize it as a graph of connected stages by running the 'dvc dag' command. This command prints this dependency graph of the stages in one or more pipelines, as defined in the dvc.yaml files found in the project. The graph on the right should be read from top to bottom. We can optionally provide a target to show the pipeline up to that point.
+
+7. Visualizing DVC pipelines
+04:29 - 04:59
+The dvc dag dash-dash-outs command is used to visualize the pipeline defined in the dvc.yaml file. However, instead of showing the stages themselves, it displays a DAG of outputs. This can provide a different perspective on the pipeline, potentially making it easier to understand the workflow and identify any issues.
+
+8. Visualizing DVC pipelines
+04:59 - 05:29
+Additionally, we can use the dash-dash-dot flag to create the DOT script, which can then be used to create visualizations useful for documentation. DOT files are used to define and describe structure and relationships within graphs, such as flowcharts, dependency trees, and network diagrams. They are out of scope in this course.
+
+1 https://dreampuf.github.io/GraphvizOnline/
+9. Let's practice!
+05:29 - 05:38
+Good work learning about pipelines. Let's test your knowledge of adding stages and visualizing DAGs.

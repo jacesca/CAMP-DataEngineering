@@ -1,0 +1,27 @@
+1. Introduction to DVC
+00:00 - 00:09
+Hello again. In this video, we will learn about code and data versioning with Git and DVC.
+
+2. Git as Version Control
+00:09 - 00:46
+Git is a version control system used to track code changes in projects. Git allows users to work independently and make changes locally without needing a constant connection to a central server. Git's distributed nature provides advantages such as offline work, easy branching and merging, and robust version history management. Users can collaborate efficiently and maintain code integrity in a decentralized manner.
+
+3. Git as Version Control
+00:46 - 01:17
+We can interact with Git via its CLI, short for Command Line Interface. CLI commands are issued on terminal, or shell. Git can track contents inside a specific folder, called a repository. It consists of files and folders that are tracked, in addition to Git metadata. The metadata is stored in the .git folder.
+
+4. Data Version Control (DVC)
+01:17 - 01:48
+Now, let's learn about DVC, which is short for Data Version Control. DVC is an open source tool to manage data, similar to Git. One of the strengths of DVC is its integration with Git. While Git is great for code, DVC specializes in data. This means we can manage both code changes and data changes in a unified manner.
+
+5. Git vs DVC CLI
+01:48 - 03:21
+The DVC CLI follows very closely to the Git CLI, the latter of which we are familiar with from our prerequisite courses. Let's review common Git commands and compare them to DVC commands. To start a Git repository inside a folder, we use the 'git init' command. This also creates the .git folder. Similarly, we start by initializing a DVC repository in our working folder using 'dvc init'. Next, we can edit files as needed and use the 'git add' command to stage our changes for commit. To add data files to DVC, we use the 'dvc add' command followed by the path to the data file. This tells DVC to start tracking this data file for changes. To version stamp a state, we can use 'git commit' command followed by an informative commit message. Once we've made changes to our data files, we can update DVC's tracking information using 'dvc commit'. It captures the current state of all tracked data files and records it in DVC. 'dvc commit' doesn't allow usage of commit message like Git.
+
+6. Git vs DVC CLI
+03:21 - 04:37
+To send our committed changes to the remote repository, we use the 'git push' command. Similarly, when we want to send our data changes to a remote data server, we use 'dvc push'. Conversely, to keep our local repository up to date with changes made by others on the remote server, we can use 'git pull'. Similar to Git, to retrieve and synchronize data changes from the remote data server, we use 'dvc pull'. It fetches the latest data updates, keeping our local copies up to date. Finally, if we're starting fresh and want to clone an existing repository from a remote, such as GitHub, we can use the 'git clone' command. We just provide the repository URL, and Git will create a copy of the entire repository on our local machine. If we need to download a specific file or directory tracked by DVC from a remote source, we can use 'dvc get'.
+
+7. Let's practice!
+04:37 - 04:44
+Great work on learning about Git and DVC. Let's review what you have learned.

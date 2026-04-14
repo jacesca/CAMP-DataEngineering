@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/0/bbb0923295fb40bcb17dc7c9df0090bc/artifacts
+end_time: 1717533282041
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bbb0923295fb40bcb17dc7c9df0090bc
+run_name: skillful-squirrel-31
+run_uuid: bbb0923295fb40bcb17dc7c9df0090bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717533278916
+status: 3
+tags: []
+user_id: Jacqueline

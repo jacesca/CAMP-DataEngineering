@@ -1,0 +1,40 @@
+Transcript
+1. Configuring DVC Remotes
+00:00 - 00:12
+Welcome back! In this video, we are going to learn about DVC Remotes that are external storage locations where DVC stores data.
+
+2. Recap
+00:12 - 01:00
+So far, we have seen how to initialize a DVC repository in our workspace using 'dvc init'. Initializing a DVC repository also results in the creation of a DVC cache, which is a hidden storage for files and directories tracked by DVC, and their different versions. We also looked at how to add content to the DVC cache using the 'dvc add' command. To share our locally staged artifacts with our collaborators, we need to send them to centralized external locations. Such locations are called DVC remotes in an abstract sense.
+
+3. The Need for DVC Remotes
+01:00 - 02:13
+DVC remotes are used to share data and ML models. Once configured, we can move data staged in the DVC cache to and from the centralized storage locations. DVC remotes are similar to Git remotes but for cached data instead of files. Although Git excels in software version control, services like GitHub, that host Git repositories, often impose restrictive storage limits, making it a challenge to track large data assets with Git and necessitating the use of DVC remotes. Primary benefits of remote storage include: Syncing large files and directories monitored by DVC. Establishing a centralized data repository to facilitate sharing and collaboration. Archiving diverse iterations of datasets and models, thereby conserving local storage capacity.
+
+4. Supported Storage Types
+02:13 - 02:28
+DVC remotes support a variety of cloud-based providers like AWS, GCP, and Azure, in addition to on-prem storage accessible via SSH and HTTP.
+
+5. Setting up Remotes
+02:28 - 03:25
+We can set up one or more storage locations with 'dvc remote add' command, followed by a reference name and its location. For example, we can add an S3 bucket named "mys3bucket" as a DVC remote and name it as s3-underscore-remote, as shown. Upon execution, this command updates the remote section of the project's config file .dvc slash config. Similarly, we can add locations from other cloud providers like GCP and Azure. DVC reads existing local configurations for major cloud providers so that often, no additional setup is needed.
+
+6. Local Remotes
+03:25 - 04:31
+Local remotes in DVC offer greater autonomy, faster access, and enhanced security and are particularly suitable for learning, testing, and scenarios where external storage is impractical or unnecessary. We can use system directories, file systems on laptops, mounted drives, network resources, e.g., network-attached storage (NAS), and other external devices as storage. We can also set a default remote using the dash-d flag while running the 'dvc remote add' command. This way, we won't need to reference them explicitly while uploading and downloading artifacts. This command assigns the default remote in the core section of the DVC config file.
+
+7. Listing Remotes
+04:31 - 05:11
+The 'dvc remote list' command will display a list of the configured remote storage locations for our DVC project. Each entry in the list typically includes the name of the remote, the URL or path to the remote storage, and any additional configuration options we may have set for that remote. When we run this command, it parses the .dvc slash config file to retrieve the remote configurations and then displays them in the terminal output.
+
+8. Modifying Remote Configuration
+05:11 - 05:30
+Sometimes, we need to customize settings, and we can use 'dvc remote modify' command for that purpose. This results in an entry in .dvc slash config file where these settings are persisted.
+
+9. Summary
+05:30 - 06:00
+To summarize, DVC remotes are external storage used to share data and ML models. We can configure them in variety of ways. To add a given location as remote, we use the 'dvc remote add' command, specifying defaults with dash-d flag. Finally, we can also list and modify them with appropriate sub commands.
+
+10. Let's practice!
+06:00 - 06:07
+It's time to test your understanding of setting DVC remotes!

@@ -1,0 +1,37 @@
+1. Data Versioning Motivation
+00:00 - 00:14
+Hi, my name is Ravi. I am a Machine Learning Engineer with years of experience in model building, tuning, and deployment. In this course, we will learn about Data Version Control, also called DVC.
+
+2. What is Data Versioning?
+00:14 - 00:59
+Data Versioning is a technique used in data management that monitors modifications to data over time. This process entails generating and preserving various data iterations, similar to how we manage and version code. It enables users to retrieve and scrutinize particular versions as required, guarantees consistency and accountability, and maintains an archival record of changes applied to data collections. This applies to various domains, such as Data Science and Machine Learning, which will be our primary focus in this course, Data Engineering, and Financial Analysis, and Auditing and Compliance.
+
+3. Data vs Code Versioning
+00:59 - 01:35
+Data versioning and code versioning, while similar in concept, have distinct characteristics: Code versioning is a well-established practice in software development, compared to data versioning, where the first practical implementations appeared around 2012. Tools like Git are sufficient to version code, but data versioning requires additional software to work with Git. Code versioning is easier to manage due to the relatively smaller size of codebases compared to datasets.
+
+1 doi: 10.1109/ICDE.2012.102
+4. Why Data Versioning in ML?
+01:35 - 02:51
+Data versioning is important in ML because data impacts the quality of the ML model to the same extent as code and hyperparameters. Each component is critical in the model's development, training, and functioning. The code in a machine learning model includes the algorithms and the mathematical shape that defines how the model processes data and learns from it. Hyperparameters are the settings or configurations that govern the overall behavior of a machine-learning model but are not learned from the data. They are set before the training process and can significantly influence the model's performance. Data is the core upon which machine learning models are built. Data is used to train the model, allowing it to learn patterns, features, and relationships essential for making predictions or decisions. Proper versioning of ML experiments requires versioning of data, code, and hyperparameters. This is the domain that we would be concerned about in this course. Let's understand it with a concrete example.
+
+5. Dataset influence
+02:51 - 03:17
+For this example, we'll examine the Airbnb booking dataset. The dataset is suited for classification tasks to predict if someone would cancel a booking. It contains both numerical and categorical columns. We randomly divided the dataset into two training sets, A and B, and a test set. All three sets are mutually exclusive.
+
+6. Dataset influence
+03:17 - 03:46
+We train a random forest classifier model on each of these training sets independently and compare the performance of the model on the test sets, which shows that the model performance changes across a variety of metrics. The changes here are minor since the datasets are drawn from the same distribution but could be significant if a distribution shift occurs in the features.
+
+7. Hyperparameters influence
+03:46 - 04:29
+Similarly, model hyperparameters also influence the model performance. Here, we keep the same dataset but have changed a hyperparameter that increases model capacity. As expected, the model performance changes for the better because the model has more degrees of freedom to fit the data. It is also trivial to comprehend that the model architecture would impact the performance. Therefore, we need to version and track code, data, and hyperparameters. This course will teach us how tools like Git and DVC can help in these use cases.
+
+8. Editor Exercises Layout
+04:29 - 04:56
+In this course, you'll work in editor exercises. You can see the layout shown on the slide. The pink box shows folder contents that allow us to select and open files. The blue box highlights opened files and provides an area to edit these files. The green box outlines the terminal area that is used for running bash commands.
+
+9. Let's practice!
+04:56 - 05:03
+It is time to test your understanding of the ML workflow life cycle.
+

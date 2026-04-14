@@ -1,0 +1,40 @@
+1. DVC features and use cases
+00:00 - 00:09
+Hello again, and welcome back. In this video, we will take a quick tour of DVC's capabilities.
+
+2. DVC features and use cases
+00:09 - 00:42
+In this course, we'll learn how DVC can help us manage different versions of data and models. We'll Learn about DVC pipelines, a reproducible way of executing ML tasks, and monitoring metrics and plots in pipelines. Some of the advanced use cases of DVC are experiment tracking, CI/CD for ML, and data registry. We won't be covering these in this course. Let's get started.
+
+3. Versioning data and models
+00:42 - 01:20
+The combination of datasets, features, and hyperparameters results in an exponentially large space. Fortunately, DVC allows us to capture data and models in Git by versioning metadata files that only keep track of changes. Remember, a model is an output of data, features from code, and hyperparameters, and can be tracked in the same manner as data. It also allows us to switch between these data and model versions, working along with Git.
+
+1 https://dvc.org/doc/use-cases/versioning-data-and-models
+4. Pipelines
+01:20 - 02:25
+DVC offers a feature known as DVC pipelines, which can aid in defining and executing ML workflows. We can think of it as a step-by-step guide for a machine learning or data task. It shows what needs to be done, in what order, what we need as a dependency, and what we get at the end of each step. These dependencies are outlined in a YAML file as key-value pairs. For example, to train an ML model, we can define the training command using the `cmd` keyword, and dependencies such as code, data, and parameters using the keyword `deps`, outputs with the keyword `outs`. The pipelines can be run end to end and provide a mechanism to run reproducible workflows.
+
+5. Tracking metrics and plots
+02:25 - 03:09
+Besides the results, DVC pipelines can also track metrics and plots. We just need to list them in a YAML file. Once listed, DVC pipelines will automatically keep track of any changes in the data files related to these metrics and plots. Then, using the appropriate dvc sub-commands, we can display, compare, and track these outputs between different model training runs. For example, to compare metrics, we use 'dvc metrics diff' command.
+
+1 https://dvc.org/doc/command-reference/plots/diff
+6. Experiment tracking
+03:09 - 03:50
+Building on top of tracking metrics and plots, DVC provides efficient logging and retrieval of these metrics when running `dvc exp save` after `dvc repro` command. We can combine these steps using `dvc exp run`. Note that experiments are custom Git references that enable us from making unnecessary Git commits. We can save these experiments when needed using `dvc exp save`. We can visualize these experiments in a table by running `dvc exp show`.
+
+7. CI/CD for Machine Learning
+03:50 - 04:57
+DVC, in conjunction with CML, another open-source tool, can be used for ML CI/CD use cases. CI/CD, short for Continuous Integration/Continuous Deployment, in machine learning refers to the automated process of integrating code changes, running tests, and deploying machine learning models to production. It ensures that ML models are regularly updated, evaluated, and deployed to maintain their accuracy and relevance in real-world applications. DVC can manage data/models and reproducible pipelines, and CML helps run these pipelines when we do something in Git, like opening a pull request or pushing a commit. Together, both can also be used to compare metrics and plots, and print these comparisons as comments on pull requests for manual review.
+
+1 Picture credits: https://dvc.org/doc/use-cases/ci-cd-for-machine-learning
+8. Data registry
+04:57 - 05:32
+DVC can also act as data registry, where DVC acts as a middleware between ML projects and cloud storage. Since DVC can efficiently version data, we can leverage this capability to build a centralized data store that can serve multiple projects. With the help of Git, we can track the version metadata, where the actual data is backed in data storage such as S3 buckets.
+
+1 Picture credits: https://dvc.org/doc/use-cases/data-registry
+9. Let's practice!
+05:32 - 05:40
+Let's test your knowledge about DVC features and use cases.
+
