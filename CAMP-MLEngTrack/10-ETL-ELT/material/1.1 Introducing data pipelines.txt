@@ -1,0 +1,53 @@
+
+
+1. Introducing data pipelines
+00:00 - 00:18
+Welcome! In this course, we'll explore the ins-and-outs of data pipelines. You'll learn best practices for building, testing, and maintaining your own data pipelines, and how this provides value to data-driven teams. First, let's answer a simple question; "what is a data pipeline?".
+
+2. What is a data pipeline?
+00:18 - 01:01
+If you've spent time working with data, you've probably heard the phrase "data pipeline" before. But with all the different data sources, tools, and jargon that's used, knowing what a data pipeline is, and what it isn't, can get confusing. A data pipeline is an automated process that extracts data from a source system, transforms it into a desired model, and loads the transformed data into a file, database, or other data storage tool. Pipelines that extract, transform and load data are commonly referred to as ETL pipelines. Data pipelines are almost always automated, whether triggered by an event or a schedule.
+
+3. Data pipeline users
+01:01 - 01:51
+We now know what a data pipeline is; but who uses them? Chances are, anyone who works with data relies on data pipelines to help power the work they do. This population of data professionals include Data Analysts, Data Scientists, Machine Learning Engineers, and Business Intelligence Analysts. Another common "user" of data pipelines are other data pipelines. This sort of dependency is common in data ingestion and delivery workflows, especially between teams or businesses. Data pipeline users leverage the data that was extracted, transformed, and loaded by the pipeline to populate analytics and operational dashboards, train and refine machine learning models, support ad hoc analyses, and much more.
+
+4. Building data pipelines
+01:51 - 02:45
+So, who builds data pipelines? Data Engineers do! Building these automated processes helps to power data-driven insights and decision-making. Python and SQL are foundational tools for building and maintaining data pipelines. Data engineers will often leverage orchestration tools, such as Apache Airflow, to build production-ready data pipelines. Airflow is outside the scope of the course, but is a fantastic orchestration tool for building data pipelines. Data Engineers who specialize in building data pipelines are sometimes called ETL Developers. Data Architects work side-by-side with Data Engineers and ETL Developers to ensure that a data pipeline is designed in a way that fits within a company's larger data platform. In this course, we'll use Python and SQL to create effective and resilient data pipelines.
+
+5. Components of an ETL pipeline
+02:45 - 03:54
+In an ETL pipeline, extracting data is the first component of the pipeline. Here, data is pulled from a source system, which typically exposes data in the form of a file, database or API. After data is extracted, it's transformed from its raw format to a desired model. We'll explore both simple and advanced transformations to create a report-ready dataset. The final component of an ETL pipeline involves loading the newly-transformed data into a storage medium for downstream use. This final destination for the data could be anything from a file, data warehouse, or POST request to an API. What's important is ensuring that data pipeline users have stable access to the transformed data. Depending on the organization's architecture, the "load" and "transform" steps of a data pipeline may be swapped, resulting in an ELT pipeline. This is a totally viable architecture, and we'll discuss it briefly throughout the course. However, we'll spend most of our time building ETL pipelines!
+
+6. Let's practice!
+03:54 - 04:04
+Great job - that was a lot of content! Now, it's time to reinforce what you just learned with a little practice. Good luck!
+
+
+models = {
+    LinearRegression: {'fit_intercept': [True, False]},
+    DecisionTreeRegressor: {'criterion': ['squared_error', 'absolute_error'],
+                            'max_features': ['sqrt', 'log2', None],
+                            'max_depth': [3, 5, 10],
+                            'random_state': [SEED]},
+    RandomForestRegressor: {'max_features': ['sqrt', 'log2', None, 1],
+                            'max_depth': [3, 5, 10],
+                            'random_state': [SEED]}
+}
+
+for model, param_grid in models.items():
+    # Grid search
+    print(f'\n\nPIPELINE FOR {str(model()).upper()[:-2]}:')
+
+    # Parameter list
+    params = list(ParameterGrid(param_grid))
+    print(f'Total param combination: {len(params)}\n')
+    for param in params:
+        # Pipeline configuration
+        pipe = model(**param)
+
+        pipe.fit(X_train_sel, y_train)
+        y_pred = pipe.predict(X_test_sel)
+        mse, rmse, mae, r2 = calculate_regressionmetrics(y_test, y_pred)
+        break

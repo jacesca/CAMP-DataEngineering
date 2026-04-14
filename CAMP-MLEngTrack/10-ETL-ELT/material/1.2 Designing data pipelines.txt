@@ -1,0 +1,31 @@
+1. Designing data pipelines
+00:00 - 00:09
+Nice work! Before we can dive into developing data pipelines, it's important to understand what goes into designing one. Let's take a look!
+
+2. Architecture diagrams
+00:09 - 00:52
+In this course, we'll use architecture diagrams to help design and present data pipelines. These diagrams provide a visual representation of a data pipeline, illustrating dependencies between steps, and identifying potential technical or security vulnerabilities. Architecture diagrams are useful when determining where previous tooling can be applied to new problems as well as ensuring requirements are met before development begins. In addition to this, architecture diagrams make it easy to share designs with non-technical stakeholders. Being able to build and interpret an architecture diagram are valuable skills that help set data professionals apart from their peers.
+
+3. Architecture diagrams
+00:52 - 01:15
+When designing and building a data solution, architecture diagrams can become complicated. Here's an architecture diagram with multiple source systems, an orchestration tool, internal transformation and load logic, as well as data governance and observability tooling. Luckily, we'll keep architecture diagrams simple in this course. Let's check out a few now!
+
+4. Data delivery pipeline
+01:15 - 01:49
+In this ETL pipeline, individual transactions are extracted from an enterprise resource planning system, or ERP. Canceled transactions are removed from the dataset, and the results are loaded to a file, which is delivered to a client. This architecture diagram provides an easy-to-understand overview of the pipeline, showing where the data originates, how it is manipulated, and where the final dataset will be stored. Although basic, this diagram illustrates the different components of the data pipeline, as well the journey the data takes throughout.
+
+5. Data ingestion pipeline
+01:49 - 02:21
+In this pipeline, data is ingested from two disparate sources: a data warehouse, and a third-party weather API. Next, the weather data is joined to the sales data. The resulting dataset is rich with information, and provides data analysts and scientists a feature-rich dataset once persisted into a data mart. In this pipeline, data is pulled from two sources before being transformed. This is common when building a data pipeline, and is important to convey to stakeholders.
+
+6. Designing ELT pipelines
+02:21 - 03:05
+You might notice something a little different about this diagram - it's an ELT pipeline! In this example, data is first extracted from a flat file. Then, it's loaded into the data warehouse, and is transformed into a reporting model using a stored procedure. ELT pipelines are great when data is to be loaded in data warehouses or data marts. Leveraging built-in functionalities of these tools helps when transforming large datasets, where tools such as Python might get bogged down. When designing a data pipeline, make sure to keep ELT in mind. While we will focus on ETL pipelines for the rest of the course, being familiar with different pipeline architectures will never hurt!
+
+7. Designing data pipelines
+03:05 - 03:47
+Before a single line of code is written, every data pipeline project should begin with a careful design process. This helps to ensure the right solution is implemented, and can mitigate wasted time when development begins. During the design process, Data Engineers will explore and document how data is made available from source systems, including details around format, delivery method, and frequency. They'll also want to determine the nature and complexity of any transformations that will occur, and ensure data will be persisted so it's easily accessible by consumers. By the end of the design process, technical and non-technical stakeholders should be aligned on implementation details.
+
+8. Let's practice!
+03:47 - 03:59
+Awesome job! We've explored a few data pipelines and their architecture diagrams, and learned more about the importance of the design process. Time to practice!

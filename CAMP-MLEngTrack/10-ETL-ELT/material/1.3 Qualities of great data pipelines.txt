@@ -1,0 +1,24 @@
+1. Qualities of great data pipelines
+00:00 - 00:08
+Welcome back! In the final video of this chapter, we'll explore qualities of great data pipelines, and things to keep in mind when designing your own.
+
+2. Building quality data pipelines
+00:08 - 01:12
+When building data pipelines, it's important to ensure the pipeline is resilient, idempotent, scalable, and transparent. A resilient data pipeline handles routine failures or errors. Implementing logic to automatically retry on failures is a great way to handle exceptions when they arise. Idempotent data pipelines can be rerun multiple times, and the output should remain the same. Rerunning a pipeline should NOT cause duplicate values. This is a life-saver, especially when dealing with failures. The best data pipelines are scalable. Scalable data pipelines can both handle large amounts of data, as well as an increased frequency of runs. Transparent data pipelines avoid black-box operations on data, and are well-tested and documented. Data pipelines that exhibit transparency encourage stakeholder trust in a data solution. Next, we'll explore three more important features of data pipelines. First up, is data persistence!
+
+3. Data persistence
+01:12 - 02:05
+While data is typically loaded into a final destination for consumer access, it's important to capture multiple "snapshots" of the data, as it traverses a data pipeline. Storing data to a file or other storage medium is known as data persistence. Here, the green files show logical places to persist data within a data pipeline. When data is persisted between components of a data pipeline, the pipeline can be rerun from the last point of failure, rather than from the beginning. This practice is like laying bread crumbs behind you on a journey. It allows for you to revisit places that you've been, without having to go all the way back to the beginning and start again. Persisting data also makes it easy to document operations applied to data throughout the pipeline. This is the basis for data lineage, which we'll explore next.
+
+4. Data lineage
+02:05 - 02:44
+Data lineage is the practice of documenting the journey that data takes though a pipeline, from source to destination. Just like documenting all the places your ancestors have lived, and the things they have done, you can trace the changes and transformations that have occurred through an ETL process. As organizations have become more data mature, interest in data lineage has grown. Data lineage provides transparency into a data pipeline, and instills trust in data consumers. In addition to this, data lineage can help to provide a starting point when troubleshooting data quality issues.
+
+5. Ensuring a data pipeline works as expected
+02:44 - 03:50
+Before a pipeline can be deployed into production, we have to make sure it works! This can be done in a few ways. First, unit tests should be written against code used to build the pipeline. Unit tests are code that validate the functionality and output of other code. These are continuing to gain popularity in data engineering workflows. The pipeline should also be tested end-to-end, using both small and large data, empty files, and even bad data. At the end of the testing process, all code should be peer-reviewed before being shipped to production. This helps to reduce any oversights and mistakes that could easily be avoided. After a pipeline has been deployed, Data Engineers should check logs and alerts that arise upon failures, and communicate with consumers to ensure they are able to access data as expected. They should also check the final location where data is stored, to ensure pipelines are producing results as expected. Doing this helps to catch issues or bugs that may have been missed during development.
+
+6. Let's practice!
+03:50 - 03:55
+Great job! Let's wrap up this chapter with a few exercises.
+
