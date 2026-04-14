@@ -1,0 +1,3 @@
+# To start an ubuntu instance
+
+docker run -it ubuntu

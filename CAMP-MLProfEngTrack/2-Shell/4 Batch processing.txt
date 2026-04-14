@@ -1,0 +1,78 @@
+Batch processing
+
+# How to list environment variables?
+set
+
+# How to look for a specifiv environment variable?
+set | grep HISTFILESIZE
+# HISTFILESIZE determines how many old commands are stored in your command history.
+
+
+# How can I print a variable's value?
+echo hello DataCamp!
+echo "hello DataCamp!"
+echo $HISTFILESIZE
+echo $OSTYPE
+
+
+# How to create shell variables?
+$ training=seasonal/summer.csv
+$ echo $training
+seasonal/summer.csv
+$ head -n 1 $testing
+Date,Tooth
+
+
+# How can I repeat a command many times?
+$ for filetype in gif jpg png; do echo $filetype; done
+gif
+jpg
+png
+
+
+# How can I repeat a command once for each file?
+$ for filename in seasonal/*.csv; do echo $filename; done
+seasonal/autumn.csv
+seasonal/spring.csv
+seasonal/summer.csv
+seasonal/winter.csv
+
+
+# How can I record the names of a set of files?
+$ datasets=seasonal/*.csv
+$ echo $datasets
+seasonal/autumn.csv seasonal/spring.csv seasonal/summer.csv seasonal/winter.csv
+$ for filename in $datasets; do echo $filename; done
+seasonal/autumn.csv
+seasonal/spring.csv
+seasonal/summer.csv
+seasonal/winter.csv
+
+
+# How can I run many commands in a single loop?
+# This loop prints the second line of each data file.
+$ for file in seasonal/*.csv; do head -n 2 $file | tail -n 1; done
+2017-01-05,canine
+2017-01-25,wisdom
+2017-01-11,canine
+2017-01-03,bicuspid
+
+# This loop prints the last entry from July 2017 (2017-07) in every data file.
+$ for file in seasonal/*.csv; do grep 2017-07 $file | tail -n 1; done;
+2017-07-21,bicuspid
+2017-07-23,bicuspid
+2017-07-25,canine
+2017-07-17,canine
+
+
+# How can I do many things in a single loop?
+$ for f in seasonal/*.csv; do echo $f; head -n 2 $f | tail -n 1; done
+seasonal/autumn.csv
+2017-01-05,canine
+seasonal/spring.csv
+2017-01-25,wisdom
+seasonal/summer.csv
+2017-01-11,canine
+seasonal/winter.csv
+2017-01-03,bicuspid
+

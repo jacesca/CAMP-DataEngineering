@@ -1,0 +1,43 @@
+Manipulating files and directories
+
+# Where am I?
+pwd
+
+# How can I identify files and directories?
+ls -F
+
+# How can I list only files?
+ls -p | grep -v /
+
+# How can I move to another directory?
+cd
+
+# One special path is ~ (the tilde character), which means "your home directory", such as /home/repl (or C:\Users\user1 in windows). No matter where you are, ls ~ will always list the contents of your home directory, and cd ~ will always take you home.
+
+# How can I copy files?
+cp original.txt duplicate.txt
+
+# How can I move a file?
+mv file.txt new-location
+
+# How can I rename files? (with mv)
+mv file-name.txt new-name.txt
+
+# How can I delete files?
+rm file1 file2 ...
+
+# How can I create directories?
+mkdir directory-name
+
+# How can I delete directories?
+rm directory/*.*
+rmdir directory/
+
+# or
+
+rmdir directory -r
+
+# How can I list everything below a directory?
+ls -R
+
+
