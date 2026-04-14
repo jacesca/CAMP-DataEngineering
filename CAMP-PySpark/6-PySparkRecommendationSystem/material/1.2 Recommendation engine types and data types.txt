@@ -1,0 +1,55 @@
+1. Recommendation engine types and data types
+00:00 - 00:04
+In the world of recommendation engines, there are two basic types:
+
+2. Two types of recommendation engines:
+00:04 - 00:44
+Collaborative-filtering engines and content-based filtering engines. Both aim to offer meaningful recommendations, but they do so in slightly different ways. Content-based filtering, as the name suggests, tries to understand the content, or {{1}}features of the items, and makes recommendations based on your preferences for those specific features. For example, a movie streaming service might go to great lengths to add descriptive tags to their movies such as the genre, whether it's animated or not, the language spoken in the movie, the decade it was filmed, and which actors were in it, etc. So when a user like you
+
+3. Two types of recommendation engines
+00:44 - 00:53
+gives 5 stars to a really dramatic, Portuguese movie with specific actors from a specific decade, they can infer that you like movies like this and will also like
+
+4. Two types of recommendation engines
+00:53 - 00:57
+other dramatic movies in Portuguese with those same actors,
+
+5. Two types of recommendation engines
+00:57 - 01:07
+and recommend those movies to you. Collaborative filtering is a little bit different.
+
+6. Two types of recommendation engines
+01:07 - 02:02
+As explained in the previous video, collaborative filtering is based on user similarity. However, unlike content-based filtering, manually-created tags are not necessary. The features and groupings are created mathematically from patterns in the ratings provided by users. When you provide ratings for a product or item, whether it be a thumbs up or thumbs down, or even if you just watch a video without even giving it a rating, you are providing meaningful insight about your preferences. From this behavior, the ALS algorithm can mathematically group you with similar users, predict your behavior, and help you have a more effective customer experience. While ALS can have content-based applications, this course will focus on it's application to collaborative filtering, but many of the principles of collaborative filtering can be applied to content-based applications.
+
+7. Two types of ratings
+02:02 - 02:05
+Now let's talk about ratings. In the realm of recommendation engines, there are two main types of ratings:
+
+8. Two types of ratings
+02:05 - 02:06
+Explicit ratings
+
+9. Two types of ratings
+02:06 - 02:09
+and implicit ratings Explicit ratings are pretty straightforward. Examples of these are when you input
+
+10. Two types of ratings
+02:09 - 02:41
+a number of stars or something like a thumbs up or thumbs down. These are explicit ratings because users explicitly state how much they like or dislike something. Implicit ratings are a little bit different. They are based on the passive tracking of your behavior, like the number of movies you've seen in different genres. Fundamentally, implicit ratings are generated from the frequency of your actions. For example, if you watch 30 movies, and of those 30 movies,
+
+11. Two types of ratings
+02:41 - 02:47
+22 are action movies, and only 1 is a comedy, the low number of comedy views will be converted into
+
+12. Two types of ratings
+02:47 - 02:52
+low confidence that you like comedies, and the high number of action movie views will be converted into
+
+13. Two types of ratings
+02:52 - 03:42
+a high confidence that you like action movies. These probabilities are then used as ratings. The logic behind this is, in essence, the more you carry out a behavior, the higher the the likelihood that you like it, and thus a higher rating. Additionally, in some cases you may not have access to behavior counts like this. A simpler form of ratings that still works with the ALS algorithm is the use of simple binary ratings. Rather than having a count of user actions, binary ratings just show whether a user has done something, like watched a comedy, represented by a 1 or not watched a comedy, represented by a 0. These types of ratings aren't nearly as rich, but they still can provide meaningful insight and still work perfectly fine with the ALS algorithm.
+
+14. Let's practice!
+03:42 - 03:45
+Now, let's look at some actual data.

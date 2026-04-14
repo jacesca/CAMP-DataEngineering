@@ -1,0 +1,79 @@
+1. How ALS alternates to generate predictions
+00:00 - 00:15
+Now that we've covered matrix multiplication and matrix factorization, we're ready to begin exploring how ALS uses non-negative matrix factorization to predict how users will rate movies they haven't yet seen. Let's start at the beginning.
+
+2. Matrix R
+00:15 - 00:56
+Here is a portion of a matrix of users and their movie ratings. In total, there are 671 users and 9066 movies. Of the 6.1 million possible ratings we could have in this matrix with this many users and movies, we only have about 100,000. That means that 98% percent of the matrix is totally blank. This makes sense because 9066 movies is far too many movies for any normal person to watch in their lifetime. One of the benefits of ALS is that it works well with sparse matrices like this. Now, the first thing ALS does with a matrix like this is
+
+3. R -> U*P
+00:56 - 01:28
+factor it into two different matrices, as you see here. Remember that factorizations like this produce two matrices which, when multiplied back together, produce an approximation of the original matrix. In order to get the closest approximation of the original matrix R, ALS first fills in the factor matrices with random numbers and then makes slight adjustments to the matrices one at a time until it has the best approximation possible. In other words, ALS holds the matrix
+
+4. Alt 1
+01:28 - 01:40
+R and the matrix U constant, and makes adjustments to the matrix P. It then multiplies the two factor matrices together
+
+5. Alt 2
+01:40 - 02:06
+to see how far the predictions are from the original matrix using root means squared error or RMSE as an error metric. The RMSE basically tells you, on average, how far off your predictions are from the actual values. We'll talk more about this later in the course. Note that in calculating the RMSE, only the values that existed in the original matrix are considered. The missing values are not considered.
+
+6. Alt 3
+02:06 - 02:14
+It then holds P and R constant and adjusts values in the matrix U. The RMSE is calculated again, and ALS again switches, and calculates the RMSE again.
+
+7. Alt 4
+02:14 - 02:19
+ALS will continue to iterate until instructed to stop,
+
+8. Alt 5 - Min RMSE
+02:19 - 02:36
+at which point, ALS has the best possible approximation of the original matrix R. The beauty of all of this is that when the RMSE is fully minimized, ALS simply multiplies the matrices back together,
+
+9. Filled Blanks
+02:36 - 02:42
+and the blank cells are filled in with predictions.
+
+10. R (again)
+02:42 - 02:44
+In other words, when we take a sparse matrix
+
+11. R -> U*P (again)
+02:44 - 02:49
+and factor it into two matrices, every rating in the original matrix
+
+12. Full Factor Matrices
+02:49 - 02:51
+must have a respective row and column full
+
+13. Full Factor Matrices II
+02:51 - 02:53
+of values in the respective factor matrices that
+
+14. Full Factor Matrices III
+02:53 - 03:01
+can be multiplied back together to approximate that original value. And since there is at least
+
+15. Every Row in R
+03:01 - 03:03
+one rating in every row and at least
+
+16. Every Column in R
+03:03 - 03:11
+one rating in every column of the original matrix, when ALS creates the two respective factor matrices, there are values in
+
+17. Full Factor Matrices (again)
+03:11 - 03:16
+every cell of the two factor matrices, which allows us to then create predictions for the
+
+18. Blank Cell Factors
+03:16 - 03:28
+previously blank spaces. So when ALS iterates to make sure that it’s resulting product is as close to those original cells as possible, the result is that the previously blank cells are
+
+19. Blank Cells Filled In
+03:28 - 03:38
+now filled in with values that are based on how each user has behaved in the past relative to the behavior of similar users.
+
+20. Let's practice!
+03:38 - 03:42
+Let's jump into some examples to see how this is done in real life.

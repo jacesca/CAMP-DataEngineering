@@ -1,0 +1,80 @@
+1. Uses for recommendation engines
+00:00 - 00:55
+So far, we've only considered recommendations as the use case for the ALS algorithm, but there are other applications that are also useful. These include latent feature discovery, item grouping, dimensionality reduction and image compression. In this course we'll only talk about some of these. First let's talk about latent features. As mentioned earlier, people will go to great lengths to effectively categorize items. But some products span various categories making them difficult to organize. Movies are often like this. Horror movies can be comedies. Dramas can be satires. Documentaries can be romances or even mysteries. Because of this, they can sometimes be difficult to market. If we had a better understanding of how consumers categorize movies based on their experience watching them, we could add more power to marketing strategies. ALS can help with this.
+
+2. Basic factorization of ALS
+00:55 - 00:59
+When we have a matrix that contains users and movie ratings, ALS
+
+3. Basic factorization of ALS (cont.)
+00:59 - 01:01
+will factor that matrix into two matrices, one containing
+
+4. User matrix
+01:01 - 01:03
+user information and the other containing
+
+5. Product matrix
+01:03 - 01:09
+product information, or in this case, movie information. Each matrix takes the respective
+
+6. Factor matrix axes
+01:09 - 01:17
+labeled axis from the original matrix, and is given another axis that is unlabeled. The unlabeled axes contain what’s called
+
+7. Latent feature axes
+01:17 - 01:44
+latent features. The number of latent features is referred to as the "rank" of these matrices. In this case, the rank chosen is 3. You, as a data scientist get to choose how many of these ALS will create. These latent features represent groups that are created from patterns in the original ratings matrix and the values in these columns represent how much each item falls into these groups. For example,
+
+8. Horror vs drama
+01:44 - 01:48
+in the original ratings matrix, there might be a lot of people who like horror movies and don’t like dramas. They would rate
+
+9. Horror vs Drama Part II
+01:48 - 01:50
+horror movies high
+
+10. Horror vs Drama Part III
+01:50 - 01:56
+and dramas low. Likewise other people might like dramas and not like horror movies, and would rate
+
+11. Horror vs Drama Part IV
+01:56 - 01:57
+dramas high
+
+12. Horror vs Romance Part V
+01:57 - 02:09
+and horror films low. ALS can see this and determine that these are different types of movies.
+
+13. Horror vs Drama Part VI
+02:09 - 02:16
+And if we were to look at the movie factor matrix, we would likely see that in one of the latent feature rows the dramas would score high, and the horror movies would score low, while in another latent feature column we might see the
+
+14. Horror vs Drama Part VII
+02:16 - 02:35
+opposite. Knowing a little about these movies, we could determine that those latent features reflect those two genres. This allows us to mathematically see how users experience these movies and to what degree users feel each movie falls into each respective category. This concept goes a bit deeper though. For example, if we were to look at a
+
+15. Uncovering Features
+02:35 - 02:40
+movie matrix, we might see in one latent-feature column,
+
+16. Uncovering Features Part II
+02:40 - 02:43
+that several movies have scored very high, but they
+
+17. Uncovering Features Part III
+02:43 - 02:46
+don’t seem to have anything in common. If they are all popular movies,
+
+18. Uncovering Features Part IV
+02:46 - 02:54
+we might want to research what’s going on here to see if there's a business opportunity. Digging deeper,
+
+19. Shakespeare Adaptations
+02:54 - 03:26
+we find that these movies are all adaptations of Shakespeare plays, and that there seems to be a strong customer group that likes these types of movies. Now that we know this, we can use this information to inform how we choose what movies to make and hopefully give our customers more of what they want. It’s worth reiterating that in the original data set there was no column anywhere called “Shakespeare Adaptations”. It’s also worth noting that many or all of these customers may not even know that this is something that draws them to these movies. This is the type of powerful information that ALS can help us uncover.
+
+20. Let's practice!
+03:26 - 03:28
+Now lets try and actually use this.
+

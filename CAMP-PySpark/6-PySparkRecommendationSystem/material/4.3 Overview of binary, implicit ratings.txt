@@ -1,0 +1,23 @@
+1. Overview of binary, implicit ratings
+00:00 - 00:36
+So far we've covered sitautions when you have explicit ratings, and when you have implicit ratings from user behavior counts. Now we're going to cover the situation when you might not even have behavior counts. In some situations, you may only have binary data that tells you whether a user has or has not taken an action with no indication of how many times they've done so. To go back to the movie example, if you know whether customers have watched certain movies, but don't have information on how many times or how much they actually liked them, you could simply feed binary data to ALS that indicates which customers have watched each movie and which ones haven't. ALS can still pull signal from this type of data and make meaningful predictions. When taking this approach, the data will look like this.
+
+2. Binary ratings
+00:36 - 01:53
+Notice that all ratings are either a 1 or a 0. We must treat binary ratings like these as implicit ratings. If we treated them like explicit ratings and didn't include the 0's, the best performing model would simply predict 1 for everything, and deliver a deceivingly ideal RMSE of 0. Also, as with our previous Million Songs model, we can't use the RMSE as a model evaluation metric. Ultimately, when our machine learning process holds out random observations in the test set, we want our model to generate high predictions for those movies that users have actually watched. For this reason, we'll use our ROEM metric again. We'll apply the same concepts we've covered previously on this binary dataset. The convenience of using the MovieLens dataset is that we can see how our binary model performs against the original, true preference ratings of the original MovieLens dataset.
+
+3. Class imbalance
+01:53 - 02:22
+One word about binary models. While it's perfectly feasible to feed binary data like this into ALS and get meaningful recommendations, the data does have a sort of class imbalance where the vast majority of ratings are 0's with a small percentage of 1's. Since implicit ratings models use customized error metrics like ROEM and not RMSE, the class imbalance doesn't really pose a problem like it might in classification problems. ALS can still generate meaningful recommendations from this type of data but there are strategies that can be taken with the data to try and improve recommendations.
+
+4. Item weighting
+02:22 - 02:42
+For example, rather than treat unseen movies purely as 0's, you can weight them higher if more people have seen them. This assumes that if many people have seen a movie, it must be a pretty good movie and therefore should be treated with a little more weight, and vice versa. This is called item weighting.
+
+5. Item weighting and user weighting
+02:42 - 03:17
+Likewise you could weight movies by individual user behavior. For example, if a user has seen lots of movies, you could weight their unseen movies lower assuming that if a user has seen lots of movies, they know what they like and have deliberately chosen NOT to view the movies they haven't seen and therefore those movies deserve a lower weighting. While these methods are applicable, their methods haven't been implemented into the Pyspark framework, and therefore require a lot of manual work which is beyond the scope of this course. However, if you'd like to learn more about these types of approaches, you can read the paper referenced at the end of the course.
+
+6. Let's practice!
+03:17 - 03:20
+Let's build a binary ratings model.

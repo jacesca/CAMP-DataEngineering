@@ -1,0 +1,31 @@
+1. Binarizing, Bucketing & Encoding
+00:00 - 00:11
+This video will cover the basics of Binarizing, Bucketing & Encoding in Pyspark with spark ml transformers. These methods are great ways to get the most out of your features.
+
+2. Binarizing
+00:11 - 00:37
+Binarization of data is a is a helpful way to collapse some nuance in your model to just a yes/no. Homeowners often use yes/no filters to narrow their search for homes. For example, they may only consider homes that have a fireplace but may not care about how many fireplaces as long as its more than 1. Binarization takes values below or equal to a threshold and replaces them by 0, values above it by 1.
+
+3. Binarizing
+00:37 - 01:22
+For this example, we will leverage the spark ml feature transformer Binarizer. Introduction to Pyspark, showcased transformers in detail so we'll spend time just using them. After importing Binarizer we need to make sure the column we want to apply it to is of type double. We need to create a transformation called bin with the Binarizer class, setting the threshold to 0, so anything over 0 will be converted to 1, then set our input Col to FIREPLACES and output to FireplaceT. To apply the transformation we apply transform with our dataframe. We can see the transformation worked as expected below.
+
+4. Bucketing
+01:22 - 02:21
+If you are a homeowner you might want to know that a house has 1, 2, 3 or more bathrooms. But once you hit a certain point you don't really care whether the house has 7 or 8 bathrooms. Bucketing, also known as binning, is a way to create ordinal variables. Like the binarizer, we will import Bucketizer. Then we need to define our splits for buckets of values. We want 0 to 1, mapped to 1, greater than 1 to 2, mapped to 2, greater 2 to 3, mapped to 3 and lastly anything more than 4 to mapped to 4 by using the infinity value float INF for the upper bound. Then we can create the transformer buck with our splits, the input column, and the output column. We can then apply the transformer to our dataframe with transform As you can see the transformation created buckets for our values correctly.
+
+5. One Hot Encoding
+02:21 - 02:50
+Some algorithms cannot handle categorical data like the text field 'City', and it must be converted to a numeric format like the ones to the right to be evaluated correctly. One method to handle this is called One-Hot encoding where you pivot each categorical value into a True/False column of its own. Keep in mind for columns with a lot of different values this can create potentially hundreds or thousands of new columns!
+
+6. One Hot Encoding the PySpark Way
+02:50 - 03:08
+To apply OneHotEncoder transformer we will need to do it in two steps. First, we will need the stringIndexer transformer. The StringIndexer takes a string in and maps each word to a number. Then we can use the fit and transform methods perform the mapping and transform strings to numbers.
+
+7. One Hot Encoding the PySpark Way
+03:08 - 03:30
+Now we can apply the OneHotEncoder transformer on our indexed city values and output all the encoded indexes to a single column of type vector which is more efficient than storing them all individual columns. Another thing to note is that the last category is not included by default because it is linearly dependent on the other columns and not is needed.
+
+8. Get Transforming!
+03:30 - 03:42
+In this video, we learned how to group values together as well as how to convert categorical values to numeric. You will apply these transformers in the following examples, good luck!

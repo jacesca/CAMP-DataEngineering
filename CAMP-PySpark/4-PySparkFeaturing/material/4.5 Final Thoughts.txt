@@ -1,0 +1,11 @@
+1. Final Thoughts
+00:00 - 00:04
+Thank you for making it to the end of this course. Let's take a minute to review what we've learned!
+
+2. What you learned!
+00:04 - 00:39
+In this course you learned Many ways to inspect your data visually & statistically. Data manipulation techniques such as dropping rows and columns, scaling and adjusting data and handling missing values. You also learned about how to enrich your dataset by joining external datasets, generating features, extracting variables from messy fields and various encoding techniques. Lastly you learned a bit of how all this ties into modeling by training and evaluating a model and interpreting the results! Wow, that sure was a lot of stuff we covered in a short amount of time!
+
+3. Time to learn something new!
+00:39 - 00:49
+I hope that you will be able to take what you've learned here and apply it to real-world problems to make the world a better place with data science! John Hogue out!

@@ -1,0 +1,19 @@
+1. Data validation
+00:00 - 00:13
+Welcome back! Validation is one step of a data pipeline we haven't covered yet, but it is very important in verifying the quality of the data we're delivering. Let's look at how to implement validation steps in a data cleaning pipeline.
+
+2. Definition
+00:13 - 00:50
+In this context, validation is verifying that a dataset complies with an expected format. This can include verifying that the number of rows and columns is as expected. For example, is the row count within 2% of the previous month's row count? Another common test is do the data types match? If not specifically validated with a schema, does the content meet the requirements (only 9 characters or less, etc). Finally, you can validate against more complex rules. This includes verifying that the values of a set of sensor readings are within physically possible quantities.
+
+3. Validating via joins
+00:50 - 02:05
+One technique used to validate data in Spark is using joins to verify the content of a DataFrame matches a known set. Validating via a join will compare data against a set of known values. This could be a list of known ids, companies, addresses, etc. Joins make it easy to determine if data is present in a set. This could be only rows that are in one DataFrame, present in both, or present in neither. Joins are also comparatively fast, especially vs validating individual rows against a long list of entries. The simplest example of this is using an inner join of two DataFrames to validate the data. A new DataFrame, parsed_df, is loaded from a given parquet file. The second DataFrame is loaded containing a list of known company names. A new DataFrame is created by joining parsed_df and company_df on the company name. As this is an inner join, only rows from parsed_df with company names that are present in company_df would be included in the new DataFrame (verified_df). This has the effect of automatically filtering out any rows that don't meet the specified criteria. This is done without any kind of Spark filter or comparison code.
+
+4. Complex rule validation
+02:05 - 02:34
+Complex rule validation is the idea of using Spark components to validate logic. This may be as simple as using the various Spark calculations to verify the number of columns in an irregular data set. You've done something like this already in the previous lessons. The validation can also be applied against an external source: web service, local files, API calls. These rules are often implemented as a UDF to encapsulate the logic to one place and easily run against the content of a DataFrame.
+
+5. Let's practice!
+02:34 - 02:44
+Let's try validating our data against our specific requirements for this dataset. Enjoy the exercises and we'll get to the last lesson of this course!

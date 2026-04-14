@@ -1,0 +1,76 @@
+1. Model Performance Evaluation and Output Cleanup
+00:00 - 00:13
+Congratulations. You just built your first cross-validated ALS model. Now let's determine whether the model suits your needs or not. The primary way to do this is to examine
+
+2. Root mean squared error
+00:13 - 00:26
+the error metric, in this case, the RMSE. The RMSE tells us, on average, how far a given prediction is from it's corresponding actual value.
+
+3. Pred vs actual
+00:26 - 00:31
+It's fairly straightforward. If we have predictions and actual values,
+
+4. Pred vs actual: difference
+00:31 - 00:33
+the RMSE subtracts she actual value from the prediction,
+
+5. Difference squared
+00:33 - 00:37
+then squares those differences to make them positive.
+
+6. Sum of difference squared
+00:37 - 00:39
+It then sums those differences,
+
+7. Average of difference squared
+00:39 - 00:44
+takes the average by dividing by the number of observations, in this case N = 4,
+
+8. RMSE
+00:44 - 01:19
+and it then takes the square root to undo the squaring of the values that we did previously. So if we have an RMSE of .61, then on average, our predictions are either .61 above or below the original rating. Another way to evaluate our model is to look at it's recommendations. Remember, however, that ALS is often used to identify patterns and uncover latent features that are unobservable by humans, meaning that ALS can sometimes see things that may not initially make sense to us as humans. Bear this in mind as you move forward. To generate recommendations, we will use the native Spark function
+
+9. Recommend for all users
+01:19 - 01:32
+recommendForAllUsers() which generates the top recommendations for all users. ALS recommendation output has two challenges that need to be addressed. The first is that it is in a format like
+
+10. Unclean recommendation output
+01:32 - 01:42
+this which is perfectly usable in Pyspark, but isn't very human-readable. To resolve this, we save the dataframe as a temporary table and use
+
+11. Cleaning up recommendation output
+01:42 - 01:46
+this sql query to make it readable. The explode command essentially takes an array like our recommendation column and separates each item within it, like this:
+
+12. Explode function
+01:46 - 02:19
+Notice that only one movieId and it's respective recommendation value for each user is contained on each line, where previously, all recommendations for a given user were contained on one line. Also notice that ALS conveniently includes the movieId and rating column names with each value on each line. This makes it easy to separate them into different columns.
+
+13. Adding lateral view
+02:19 - 02:48
+Adding the LATERAL VIEW to the explode function allows us to treat the exploded column as a table, and extract the individual values as separate columns. We first name the lateral view, in this case we call it exploded_table and then give it a formal table name which we call movieIds_and_ratings. This allows us to SELECT userId, and then get the movieId and ratings by referencing the movieIds_and_ratings table in the beginning of our query. The output is now readable:
+
+14. Explode and lateral view together
+02:48 - 02:53
+And if we join it to the original movie information,
+
+15. Joining clean recs with movie info
+02:53 - 03:20
+we can see what's going on even better. The other challenge with these recommendations is that they include predictions for movies that have been already been watched. Remember how ALS creates two factor matrices that are multiplied together to produce an approximation of the original ratings matrix. That's essentially what the ALS output is, including all movies for all users, whether they've seen them or not. A simple way to address this is to filter out the movies that have already been seen. Since we already have our clean recommendations, and the original movie_ratings,
+
+16. Filtering recommendations
+03:20 - 03:37
+we can simply join these two dataframes together on "userId" and "movieId" using a "left" join.
+
+17. Filtering recommendations (cont.)
+03:37 - 03:46
+The movies that have already been seen are those that have a rating from the original movie_ratings dataframe,
+
+18. Filtering recommendations (cont.)
+03:46 - 03:52
+so if we simply add a filter so that the "rating" column of the movie_ratings dataframe is null, we'll only have predictions for movies that the individual users haven't seen.
+
+19. Let's practice!
+03:52 - 03:53
+Now let's evaluate your model.
+

@@ -1,0 +1,35 @@
+1. Adjusting Data
+00:00 - 00:12
+Jeff Hooper of Bell labs once said, "data does not give up its secrets easily, it must be tortured to confess." This lesson will arm you with the tools to get your data to behave.
+
+2. Why Transform Data?
+00:12 - 00:30
+Real data is ugly and rarely comes ready to be analyzed. Many algorithms and statistical methods have assumptions that a variable conforms to. If our data doesn't fit these criteria all hope isn't lost yet, we can try mathematical operations to adjust the data to become the beautiful butterflies our methods require.
+
+3. What is MinMax Scaling
+00:30 - 01:12
+One common transformation is scaling. For many algorithms like KNN or regression, you need to ensure all your variables are on the same scale. One variable can't be from -1000 to 5000 and another between point-01 and point-02, these algorithms will try to reduce the errors in the first variable much more than the second. We can avoid this by scaling each feature between 0 and 1. This is called Minmax scaling and doesn't change the shape of the distribution of only its range. To Minmax scale, take the variable to be scaled, subtract the minimum value and divide by the difference between the max and min.
+
+4. Minmax Scaling
+01:12 - 01:43
+To scale our data we need to first find the min and max values of the column we want to scale. Here we are using aggregate functions min and max. We will use collect to force the calculation to run and use the zero, zero index to access the values. To create a new column we will use withColumn that creates a new column based off some sort of transformation to an existing one, in this case, DAYSONMARKET. Lastly, we can see that our values are now all between 0 and 1.
+
+5. What is Standardization?
+01:43 - 02:12
+Another common restriction is that the data must closely follow the standard normal distribution. Standardization or z-transforming is the process of shifting and scaling your data to better resemble a standard normal distribution, which has mean of 0 and standard deviation 1. In the image, you can see how the original data in blue, shifts to the green where it has mean 0 and the final step scales it to the standard normal distribution in red.
+
+6. Standardization
+02:12 - 02:48
+To z transform our data, we calculate the aggregate functions mean and std deviation of the column we are transforming. Since want to use the values in the next step we will use collect to immediately calculate them and use the index values of [0][0] to access the returned values. We can then apply the standardization formula to our column and put the results in a new column ztrans_days by using withColumn. Lastly, we can verify that the transformed data does have approximate mean 0 and std deviation of 1.
+
+7. What is Log Scaling
+02:48 - 03:02
+Our data for SALESCLOSEPRICE is pushed to the left. This is called positive skew. One potential way to treat skewed data is to apply a log transformation on the data. This has the impact of making our data look more like a normal distribution.
+
+8. Log Scaling
+03:02 - 03:17
+To apply a log transformation you will need to import the log function from pyspark sql functions. We can then create a new column log_SalesClosePrice based on the application of the log function on SALESCLOSEPRICE.
+
+9. Let's practice!
+03:17 - 03:27
+In this video, you learned why and how to apply transformations to your data. Now its time for you to adjust some data!

@@ -1,0 +1,27 @@
+1. Getting More Data
+00:00 - 00:10
+The world of Big Data means having access to much more information to include in our analysis. In this video, we will cover how to connect additional data to our dataset.
+
+2. Thoughts on External Data Sets
+00:10 - 01:11
+External data is a wonderful way to boost model performance but there are pros and cons to choosing to include it. Adding external data may add excellent predictors for a model but adding too many features may impact the performance of the model. There is a serious risk of spurious correlations between variables in the world of big data. External data can be a great way to replace missing or aggregated values with a better feature. Adding data comes at the risk of inducing data leakage. If we wish to include local crime information, we will have to ensure that buyers would also have access to that information at the time of purchasing a home. To include data available later is leaking information from the future. Another consideration is how cheap and easy it is to obtain. Today we have many more datasets easily available to us but this may come at the cost of us needing to become the subject matter experts to know the meaning and credibility of our sources.
+
+3. About Joins
+01:11 - 01:41
+To understand the different kinds of joins we'll need to orient ourselves. We will call the original data set we started with the "Left" and the one we wish to incorporate our "Right". There are many ways to join data together most commonly the Inner or Left joins depending on your goals. For us, we want to make sure we ALWAYS keep the full LEFT dataset and add data where available from the RIGHT. This means we will be using a LEFT JOIN.
+
+4. PySpark DataFrame Joins
+01:41 - 02:04
+Joins can be done one of two ways in Pyspark. First is the dataframe join method. The dataframe that calls join is the LEFT dataframe. other is the right dataframe, in this case, the new dataset. on is the pairs of column conditions we will match on. how is the type of join to perform.
+
+5. PySpark Join Example
+02:04 - 02:41
+Suppose we want to see the impact of homes sold on bank holidays. We can join the dataframes together by creating a join condition where df OFFMARKETDATE equals hdf dt We then can put this condition into our join function and use 'left' to make sure we keep all the original records in df. Lastly, count holiday sales by using the tilde to take the NOT of isNull. Not surprising, no houses are sold on a bank holidays, perhaps later we can check if a holiday week impacts sales
+
+6. SparkSQL Join
+02:41 - 03:30
+The second way we can join dataframes together is to use Spark SQL which allows us to apply SQL statments directly to dataframes. This may be your preferred method if you are familiar with SQL or attempting to do complicated joins or filters. To do this we need to register the dataframe as temp table and give it a name. Once that's done we can then use spark sql to execute a query and return it back in the form of a dataframe. In this one, we are using SELECT star to get all of the columns available, using FROM df to create our starting table, LEFT JOIN hdf as the table we'd like to join with and using ON df OFFMARKETDATE equals hdf dt to create the join condition.
+
+7. Let's Join Some Data!
+03:30 - 03:45
+In this video, we learned combining datasets can be powerful but requires some caution. We also learned how to join data in two different ways. In the exercises, we will build on these and learn some things to watch out for!

@@ -1,0 +1,39 @@
+1. Time Features
+00:00 - 00:07
+In this video, we will talk about using Time in our models since it isn't as easy as throwing it into our model as a continuous variable.
+
+2. The Cyclical Nature of Things
+00:07 - 00:24
+Things repeat; each day has a noon, each week as a Monday and each year has a January. We want to help our model by building features that help it associate cyclical events with changes in our outcome variable. Such as summer having a higher volume of homes sold than in winter.
+
+3. Choosing the Right Level
+00:24 - 00:34
+Building the RIGHT time features is important. The high variation in the daily number of homes sold makes this pattern hard for us to see and the model to understand.
+
+4. Choosing the Right Level
+00:34 - 00:51
+If we change the aggregation to look at grouping by month we can see the pattern much more clearly. Choosing the right level to build out time-related features is important as too granular and they are too noisy for our model, too broad and our model misses trends.
+
+5. Treating Date Fields as Dates...
+00:51 - 01:05
+To work with dates we need them to be of Spark date type. We can do the conversion with the to_date function that takes a single column. If you wish to keep the time component use to_timestamp instead.
+
+6. Time Components
+01:05 - 01:35
+With our data typed correctly, we can use build-ins to get various time components. One popular way to handle dates is to convert them into ordinal features like year or month using the functions year and month respectively. We can also extract more complicated things like day number in the month with dayofmonth or the week number in the year with weekofyear to further build out our features. Many more functions can be found in the pyspark sql functions docs online.
+
+7. Basic Time Based Metrics
+01:35 - 02:00
+One simple time-based metric is the number of days a property remains in unsold from the date it was listed. Days on Market is an important feature to buyers. They may perceive that a house that has been on the market for a while has something wrong with it or that the seller may be more willing to give them a discount. We can create this metric by applying the datediff function to OFFMARKETDATE and LISTDATE columns.
+
+8. Lagging Features
+02:00 - 02:48
+Lagging Time Features is a very common approach to add propagation time for a variable's effect to impact the outcome variable. This is similar to how a drop creates waves that take time to hit the edge of a glass. To capture this, we will shift values forwards or backward until the timings line up. To create a lagged feature we will need a few new functions. First the window function. window allows you to return a value for each record based on some calculation against a group of records such as rank or moving average. The second function is lag a window function that returns the value that is offset by rows before the current row. It takes a dataframe column as an input. Count is how many periods you wish to lag. Let's see it in action.
+
+9. Lagging Features, the PySpark Way
+02:48 - 03:25
+For this example, we will look at lagging weekly Mortgage rates as it often takes time for people to adjust the price of their homes. To begin we will need to import our new functions. Then we create our window which will group things by our ordered DATE column, making the window weekly. Once that is done we can create a new column using the lag function, telling it to lag MORTGAGE-30-US rate by one period. The over function takes the window w so that lag knows how to compare the current record.
+
+10. It's TIME to practice!
+03:25 - 03:35
+Now it's your turn to create some of your own time-related features with built-in datetime functions as well as more complex ones using the window function.

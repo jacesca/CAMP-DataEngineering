@@ -1,0 +1,34 @@
+1. PySpark: Spark with Python
+00:00 - 00:17
+In the last video, you were introduced to Apache Spark which is a fast and general-purpose framework for Big data processing. Apache Spark provides high-level APIs in Scala, Java, Python, and R. In this video, you'll learn about PySpark which is Spark's version of Python.
+
+2. Overview of PySpark
+00:17 - 00:42
+Apache Spark is originally written in Scala programming language. To support Python with Spark, PySpark was developed. Unlike previous versions, the newest version of PySpark provides computation power similar to Scala. APIs in PySpark are similar to Pandas & Scikit-learn Python packages. Thus, the entry level barrier to PySpark is very low for beginners.
+
+3. What is Spark shell?
+00:42 - 01:26
+Spark comes with interactive shells that enable ad-hoc data analysis. Spark shell is an interactive environment through which one can access Spark's functionality quickly and conveniently. Spark shell is particularly helpful for fast interactive prototyping before running the jobs on clusters. Unlike most other shells, Spark shell allow you to interact with data that is distributed on disk or in memory across many machines, and Spark takes care of automatically distributing this processing. Spark provides the shell in three programming languages: spark-shell for Scala, PySpark for Python and sparkR for R. PySpark
+
+4. PySpark shell
+01:26 - 01:51
+shell is the Python-based command line tool to develop Spark's interactive applications in Python. PySpark helps data scientists interface with Spark data structures in Apache Spark and Python. Similar to Scala Shell, Pyspark shell has been augmented to support connecting to a cluster. In this course, you'll use PySpark Shell. In order
+
+5. Understanding SparkContext
+01:51 - 02:31
+to interact with Spark using PySpark shell, you need an entry point. SparkContext is an entry point to interact with underlying Spark functionality. Before understanding SparkContext, let’s understand what an entry point is. An entry point is where control is transferred from the Operating system to the provided program. In simpler terms, it's like a key to your house. Without the key you cannot enter the house, similarly, without an entry point, you cannot run any PySpark jobs. You can access the SparkContext in the PySpark shell as a variable named sc. Now let's take a look at some of the important attributes of SparkContext.
+
+1 https://www.datacamp.com/cheat-sheet/pyspark-cheat-sheet-spark-in-python
+6. Inspecting SparkContext
+02:31 - 03:20
+The first is the version. This attribute shows the version of spark that you are currently running. In this example, sc dot version shows the version of spark that is running in this course's environment. The second is the Python version. This attribute shows the version of Python that Spark is currently using. In this example, sc dot pythonVer shows the version of Python that is running in this course's environment. The final attribute is the Master. Master is the URL of the cluster or “local” string to run in local mode. In this example, sc dot master returns local meaning the SparkContext acts as a master on a local node using all available threads on the computer where it is running. You can load your raw data
+
+1 https://www.datacamp.com/cheat-sheet/pyspark-cheat-sheet-spark-in-python
+7. Loading data in PySpark
+03:20 - 03:47
+into PySpark using SparkContext by two different methods. The first is the SparkContext’s parallelize method on a list. For example, here is how to create parallelize collections holding the numbers 1 to 5. The second is the SparkContext’s textFile method on a file. For example, here’s a way to load a text file named "test-dot-txt" using SparkContext's textFile method. Now that you
+
+1 https://www.datacamp.com/cheat-sheet/pyspark-cheat-sheet-spark-in-python
+8. Let's practice
+03:47 - 03:53
+understand PySpark, let's write your first Spark code in PySpark shell.

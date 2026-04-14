@@ -1,0 +1,27 @@
+1. Preparing for Random Forest Regression
+00:00 - 00:17
+Each machine learning algorithm has its own assumptions you need take into account for it to work appropriately. In this video, we will cover what the assumptions are for Random Forest Regression, what features we have in our final dataset and lastly how to get them ready for building a model.
+
+2. Assumptions Needed for Features
+00:17 - 00:37
+The lack of assumptions needed for Random Forest Regression make it and its related methods some of the most popular choices for predicting continuous values! For example, Random Forests are able to work with non-normally distributed data or data that is unscaled. Missing and categorical data can be handled very easily with value replacements.
+
+3. Appended Features
+00:37 - 01:20
+Adding in external datasets is one of my personal favorite parts of modeling. It's where I find that you can often make huge improvements in your model relatively easily. Here are a few that I added. 30 year Mortgage Rate to see how much people are willing to pay depending on their rate. City data to see how unique a house is in the area or if it is exceptionally cheap or expensive. Transportation metrics can help us understand how much people are willing to pay for a convenient location. Lastly, I included bank holidays to see if that impacted how or when houses were sold. By all means, this is not an exhaustive list of datasets to include but just some I chose!
+
+4. Engineered Features
+01:20 - 02:02
+Even though we were able to avoid a lot of the onerous preprocessing steps by using Random Forest Regression there is still plenty of work to do with engineering features. Time components like the month or the week that a holiday falls on are needed help attribute seasonal effects. Valuable but often the hardest to create features are rates, ratios and other generated features that need either business or personal context to create. Lastly, choosing whether or not to expand compound fields is ultimately a judgment call and may be something to consider in the second iteration of modeling. Since PySpark DataFrames don't have a shape attribute we'll have to print our own to inspect the final set of information!
+
+5. Dataframe Columns to Feature Vectors
+02:02 - 02:44
+Pyspark ML algorithms require all of the features to be provided in a single column of type vector. We will need to convert our columns for Random Forest Regression to work. To do this we need to import the VectorAssembler transformer to use it later. Sadly, while Random Forest Regression can handle missing values, vectors cannot. Due to the nature of how tree-based machine learning partitions data, we can just assign missings a value that is outside the existing range of the variable to replace nulls with. But first, we need to know which columns to convert. We can take the list of column names and remove our dependent variable so the vector contains only features.
+
+6. Dataframe Columns to Feature Vectors
+02:44 - 03:01
+To create a VectorAssembler we need to supply it with our list of columns and a name for output. Applying the transformation is done via the transform method. Lastly, we need to create a new dataframe with just the columns that matter: SALESCLOSEPRICE and features.
+
+7. We are now ready for machine learning!
+03:01 - 03:15
+Finally, we are ready for machine learning; our features have been created and prepared for the algorithm we are running. Now it's your turn to convert the columns to vectors and get ready for applying Random Forest Regression!

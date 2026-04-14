@@ -1,0 +1,24 @@
+1. Building a Model
+00:00 - 00:09
+We've covered all the necessary steps to prepare ourselves for modeling. In this video we will cover training, predicting and evaluating a random forest regression model.
+
+2. RandomForestRegressor
+00:09 - 01:11
+The Pyspark RandomForestRegressor method has a TON of optional parameters and a few hyperparameters used for tuning. To have a minimally viable model you will only need to set a handful. First up is featuresCol which tells the model which column is the vector we created with VectorAssembler that now represents all of our feature data. Since we named the column 'features' we will use that to set featuresCol. Next up is labelCol which sets the dependent variable for the model, ours is named SALESCLOSEPRICE. Then we need to name our output column by setting predictionCol. I find it helpful to be explicit rather than leaving it the default value so have named it Prediction_Price. Last of the basic parameters is seed which by setting this to a value we can ensure that subsequent runs return the same model, without it, the random forest would be slightly different! I've set mine to 42 for good luck, but the specific number isn't important.
+
+3. Training a Random Forest
+01:11 - 01:48
+Enough talking, let's build our model! To start we need to import the Random Forest Regressor from PySpark's ML module. Once that's done we can initialize RandomForestRegressor with the appropriate columns to use for training and predicting, again setting the seed is crucial to repeatability. Lastly, we create a variable to hold our trained model, uninspiredly called model and train the RandomForestRegressor, rf by calling fit with our training dataframe, train_df. Congratulations you've created a model! Wait you want to predict new values with it?
+
+4. Predicting with a Model
+01:48 - 02:20
+Predicting house prices with the model we just trained is straightforward. To do so we need to call transform with the data withheld from training, the test set test_df. If you had new listings of homes and wanted to predict their prices you'd merely have to preprocess it in the same manner as test_df before using the model to predict prices. Given that test_df has the actual home sale prices we can inspect them side by side by using select to grab only the columns we care about and displaying them with show.
+
+5. Evaluating a Model
+02:20 - 03:33
+Predicting values is great, but if we don't know how good we are at it then what's the point? To evaluate the model we need import RegressionEvaluator which allows us to calculate various metrics to gauge model performance. To initialize it we need to provide the actual values, in this case, SALESCLOSEPRICE and the predicted values which we named Prediction_Price when we created the model. Once we have the instance of evaluator created we can call it with our predictions dataframe and a dictionary of the metric type we want it to evaluate with. Which metric you wish to optimize an important decision to make. We can see that our model's RMSE returns a value in the thousands while our R-squared is less than 1. R-squared easy to interpret regardless of what you are predicting, if it's 0, you are no better than random chance, if it's 1 you are predicting perfectly. On the other hand, RMSE provides an absolute number of unexplained variance in our model, it's even in the same units as our prediction, US dollars. So even though R-squared is really high, RMSE indicates that we have $22,000 of variance unexplained on average!
+
+6. Let's model some data!
+03:33 - 03:41
+This video showed little code is needed to train, predict and evaluate a model with Pyspark. Now it's your turn to build some models on your own!
+

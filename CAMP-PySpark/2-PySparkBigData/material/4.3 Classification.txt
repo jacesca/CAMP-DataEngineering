@@ -1,0 +1,31 @@
+1. Classification
+00:00 - 00:13
+In the previous video, you learned about Collaborative filtering which is the 1st C of Machine learning algorithms in PySpark MLlib. In this video, you'll learn about the 2nd C of Machine Learning which is Classification.
+
+2. Classification using PySpark MLlib
+00:13 - 01:29
+Classification is a popular machine learning algorithm that identifies which category an item belongs to. For example, whether an email is spam or non-spam, based on labeled examples of other items. Classification takes a set of data with known labels and pre-determined features and learns how to label new records based on that information. That is why Classification comes under a supervised learning technique. Classifications can be divided into two different types - Binary Classification and Multiclass Classification. In Binary classification, we want to classify entities into two distinct categories. For example, determining whether a cancer type is malignant or not. PySpark MLlib supports various methods for binary classification such as linear SVMs, logistic regression, decision trees, random forests, gradient-boosted trees, naive Bayes. In multiclass classification, we want to classify entities into more than two categories. For example, determining what category a news article belong to. PySpark MLlib supports various methods for multiclass classification such as logistic regression, decision trees, random forests, naive Bayes. Let's focus on Logistic regression which is the
+
+3. Introduction to Logistic Regression
+01:29 - 02:04
+most popular supervised machine learning method. Logistic regression is a classification method to predict a binary response given some independent variable. It measures the relationship between the “Label” on the Y-axis and "Features" on the X-axis using a logistic function as shown in this figure. In logistic regression, the output must be 0 or 1. The convention is if the probability is greater than 50% then the logistic regression output is 1 otherwise, it is 0. PySpark MLlib contains a few specific data types such
+
+4. Working with Vectors
+02:04 - 02:56
+as Vectors and LabelledPoint. Let's understand each of these data types. Vectors in PySpark MLlib comes in two flavors: dense and sparse. Dense vectors store all their entries in an array of floating point numbers. For examples, a vector of 100 will contain 100 double values. In contrast, sparse vectors store only the nonzero values and their indices. Here is an example of creating a dense vector of 1-point-0, 2-point-0, 3-point-0 using Vectors dense method. And here is an example of creating a sparse vector with size of the vector equal to 4 and Non-zero entries 1: 1-point-0, 3: 5-point-5, as a dictionary using Vectors sparse method.
+
+5. LabeledPoint() in PySpark MLlib
+02:56 - 03:29
+A Labeledpoint is a wrapper around the input features and predicted value. LabeledPoint includes a label and a feature vector. The label is a floating-point value and in the case of binary classification, it is either 1 (positive) or 0 (negative). This example shows a positive LabeledPoint with label “1” and a feature vector (1-point-0, 0-point-0, 3-point-0) and negative LabeledPoint with label “0” and a feature vector (2-point-0, 1-point-0, 1-point-0). PySpark MLlib has an
+
+6. HashingTF() in PySpark MLlib
+03:29 - 04:07
+algorithm called HashingTF that computes a term frequency vector of a given size from a document. Let's illustrate this with an example. In this simple example, first, we will split the sentence "hello hello world" into a list of words using the split method and we will create vectors of size 10000. Finally we compute the term frequency vector by using tf's transform method on the words. As you can see the sentence is turned into a sparse vector holding feature number and occurrences of each word. Among several algorithms, the
+
+7. Logistic Regression using LogisticRegressionWithLBFGS
+04:07 - 04:55
+popular algorithm available for Logistic Regression in PySpark MLlib is LBFGS. The minimum requirement for LogisticRegressionWithLBFGS is an RDD of LabeledPoint. To understand how LogisticRegressionworks, let's see a simple example. We first create a list of LabelPoints with labels 0 and 1 and then using SparkContext's parallelize method we will create an RDD. Then we will use LogisticRegressionWithLBFGS-dot-train method to train a logistic regression model on the RDD. Once the model is trained from LogisticRegressionWithLBFGS algorithm, the predict method computes a score between 0 and 1 for each point as shown here. Now it's your turn to
+
+8. Final Slide
+04:55 - 05:00
+practice Classification using PySpark MLlib!

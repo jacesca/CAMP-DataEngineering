@@ -1,0 +1,71 @@
+1. Data preparation for Spark ALS
+00:00 - 00:12
+Let's talk about data preparation. Data preparation will consist of two things: 1. Correct dataframe format 2. Correct schema First, dataframe format.
+
+2. Conventional Dataframe
+00:12 - 00:29
+Most dataframes you've seen probably look like this, with userId's in one column, all the features in the remaining columns, and the values of those features making up the contents of those columns. However, many Pyspark algorithms, ALS included, require your data to be in row-based format
+
+3. Row-based data format
+00:29 - 00:46
+like this. The data is the same. The first column contains userIds, but rather than a different feature in each column, column 2 contains feature names, and column 3 contains the value of that feature for that user. So a user's data can be spread
+
+4. Row-based data format (cont.)
+00:46 - 00:58
+across several rows, and rows contain no null values. Depending on your data, you may need to convert it to this format. Now let's talk about creating the right schema.
+
+5. Correct schema
+00:58 - 01:06
+As you see, our userId column and our generically named column of movie titles are strings. Pyspark's implementation of ALS can only consume
+
+6. Must be integers
+01:06 - 01:18
+userIds and movieIds as integers.So, again, you might need to convert your data to integers. Let's walk through an example of how to do all of this.
+
+7. Conventional Dataframe
+01:18 - 01:26
+Here's a conventional dataframe. To convert it to a "long" or "dense" matrix, we will use a user-defined function called "wide_to_long":
+
+8. Wide to long function
+01:26 - 01:33
+We won't go into the detail of how it works here, but it turns the conventional dataframe into a row-based dataframe like this:
+
+9. Long DF Output
+01:33 - 01:56
+If you'd like to access this function directly, a link will be provided at the end of the course. So we have the right dataframe format, let's get the right schema. In order to have integer user and movieId's we need to assign unique integers to the userId's and the movieId's. To do this, we will follow 3 steps
+
+10. Steps to get integer ID's
+01:56 - 02:10
+1. Extract unique userIds/movieIds 2. Assign unique integers to each id 3. Rejoin these unique integer id's back to the ratings data. Let's start with userIds.
+
+11. Extracting distinct user IDs
+02:10 - 02:17
+Let's first run this query to get all the distinct userIds into one dataframe and call it users.
+
+12. Monotonically increasing ID
+02:17 - 02:36
+Then we'll import a method called "monotonically_increasing_id()" which will assign a unique integer to each row of our users dataframe. We need to be careful when using this because it will treat each partition of data independently, meaning the same integer could be used in different partitions. In order to get around this, we'll convert our data into one partition using the coalesce method.
+
+13. Coalesce method
+02:36 - 02:55
+Also note that while the integers will be increasing by a value of 1 over each row, they may not necessarily start at 1. That's not super important here, what's really important is that they are unique. So now we can create a new column in our users dataframe
+
+14. Persist method
+02:55 - 03:23
+called userIntId, set it to monotonicallyIncreasingId, and we will have our new userIntegerIds. Note that the monotonically_increasing_id() method can be a bit tricky as the values it provides can change as you do different things to your dataset. For this reason, we've called the .persist() method to tell Spark to keep these values the same across all dataframe operations. We'll do the
+
+15. Movie integer IDs
+03:23 - 03:30
+same thing with the movie id's and now we have two dataframes, one with our userIds and one with our movieIds. So let's join
+
+16. Joining UserIds and MovieIds
+03:30 - 03:44
+them together along with our original dataframe on our userId and variable columns using the .join() method, specifying a "left" join. We can be even more thorough by creating a new dataframe with only the columns ALS needs, and renaming our columns using the .alias() method, which renames the column on which it is called. Like this:
+
+17. Joining User and Movie Integer Ids
+03:44 - 03:54
+like this.
+
+18. Let's practice!
+03:54 - 03:57
+Now let's prepare some data.

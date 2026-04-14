@@ -1,0 +1,47 @@
+1. Interacting with PySpark DataFrames
+00:00 - 00:10
+Just like RDDs, DataFrames also support both transformations and actions. In this video, you'll learn some DataFrame operations in PySpark.
+
+2. DataFrame operators in PySpark
+00:10 - 00:43
+Similar to RDD operations, the DataFrame operations in PySpark can be divided into Transformations and Actions. PySpark DataFrame provides operations to filter, group, or compute aggregates, and can be used with PySpark SQL. Let's explore some of the most common DataFrame Transformations such as select, filter, groupby, orderby, dropDuplicates, withColumnRenamed and some common DataFrame Actions such as printSchema, show, count, columns and describe in this video.
+
+3. select() and show() operations
+00:43 - 01:24
+Let's start with select and show operations. The select Transformation is used to extract one or more columns from a DataFrame. We need to pass the column name inside select operation. As an example, let’s select ‘Age’ columns from a test DataFrame. select is a Transformation and so it creates a new DataFrame and in order to print the rows from df_id_age DataFrame, we need to execute an Action. show is an Action that prints the first 20 rows by default. Let’s apply show(3) on df_id_age DataFrame and print the first 3 rows as shown in this example.
+
+4. filter() and show() operations
+01:24 - 01:56
+Unlike select, the filter Transformation selects only rows that pass the condition specified. The parameter you pass is the column name and the value of what you want to filter that column on. For example, if we want to filter out the rows with 'Age' greater than 21, we pass the column expression (new_df-dot-Age) and the condition (greater than 21) as shown in here. We can use show(3) action to print out the first 3 rows from the new DataFrame.
+
+5. groupby() and count() operations
+01:56 - 02:28
+The groupby Transformation groups the DataFrame using the specified columns, so we can run aggregation on them. To better understand, we will first group the 'Age' column and create another DataFrame. Then we will use count action that returns the total number of rows in the DataFrame and finally use show(3) operation to print the first 3 rows in the DataFrame. The result is a table that shows the first 3 Age groups and the corresponding number of members in each group.
+
+6. orderby() Transformations
+02:28 - 02:53
+Orderby transformation returns a DataFrame sorted by the given columns. Let’s sort the test_df_age_group-dot-count that we obtained in the previous example based on ‘Age’ column and print out the first 3 rows of the DataFrame using show(3) action. As you can see the age groups have been sorted in ascending order now.
+
+7. dropDuplicates()
+02:53 - 03:18
+The dropDuplicates transformation returns a new DataFrame with duplicate rows removed. Here is an example, where dropDuplicates transformation is used to remove duplicate rows in 'User_ID' 'Age' and 'Gender' columns and finally creating a new DataFrame. You can execute count action on this new DataFrame to print the number of non-duplicate rows.
+
+8. withColumnRenamed Transformations
+03:18 - 03:43
+The withColumnRenamed transformation returns a new DataFrame by renaming an existing column. It takes two arguments: the names of the old and new columns. In this example, we rename the column name "Gender" to "Sex" and create a test_df_sex. We can use show(3) Action to print out the first 3 rows from the new DataFrame.
+
+9. printSchema()
+03:43 - 04:10
+To check the types of columns in the DataFrame, we can use the printSchema action. Here is an example of printSchema action on test_df DataFrame that we used previously. printSchema prints out the schema in the tree format as shown here and helps to spot the issues with the schema of the data. As an example product_ID is shown as string even though it is supposed to be an integer.
+
+10. columns actions
+04:10 - 04:28
+The columns operation returns the names of all the columns in the DataFrame as an array of string. Let’s print the column names in the test_df DataFrame. In this example, the test_df DataFrame has three columns 'User_ID', 'Gender' and 'Age'.
+
+11. describe() actions
+04:28 - 04:45
+describe operation is used to calculate the summary statistics of the numerical columns in the DataFrame. If we don’t specify the name of columns it will calculate summary statistics for all numerical columns present in the DataFrame as shown in this example.
+
+12. Let's practice
+04:45 - 04:54
+Now that you are familiar with DataFrame operations, let's practice using some these operations on a real world data.

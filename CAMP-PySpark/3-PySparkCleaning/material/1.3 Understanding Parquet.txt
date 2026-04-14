@@ -1,0 +1,27 @@
+1. Understanding Parquet
+00:00 - 00:14
+Welcome back! As we've seen, Spark can read in text and CSV files. While this gives us access to many data sources, it's not always the most convenient format to work with. Let's take a look at a few problems with CSV files.
+
+2. Difficulties with CSV files
+00:14 - 00:41
+Some common issues with CSV files include: The schema is not defined: there are no data types included, nor column names (beyond a header row). Using content containing a comma (or another delimiter) requires escaping. Using the escape character within content requires even further escaping. The available encoding formats are limited depending on the language used.
+
+3. Spark and CSV files
+00:41 - 01:48
+In addition to the issues with CSV files in general, Spark has some specific problems processing CSV data. CSV files are quite slow to import and parse. The files cannot be shared between workers during the import process. If no schema is defined, all data must be read before a schema can be inferred. Spark has feature known as predicate pushdown. Basically, this is the idea of ordering tasks to do the least amount of work. Filtering data prior to processing is one of the primary optimizations of predicate pushdown. This drastically reduces the amount of information that must be processed in large data sets. Unfortunately, you cannot filter the CSV data via predicate pushdown. Finally, Spark processes are often multi-step and may utilize an intermediate file representation. These representations allow data to be used later without regenerating the data from source. Using CSV would instead require a significant amount of extra work defining schemas, encoding formats, etc.
+
+4. The Parquet Format
+01:48 - 02:36
+Parquet is a compressed columnar data format developed for use in any Hadoop based system. This includes Spark, Hadoop, Apache Impala, and so forth. The Parquet format is structured with data accessible in chunks, allowing efficient read / write operations without processing the entire file. This structured format supports Spark's predicate pushdown functionality, providing significant performance improvement. Finally, Parquet files automatically include schema information and handle data encoding. This is perfect for intermediary or on-disk representation of processed data. Note that Parquet files are a binary file format and can only be used with the proper tools. This is in contrast to CSV files which can be edited with any text editor.
+
+5. Working with Parquet
+02:36 - 03:34
+Interacting with Parquet files is very straightforward. To read a parquet file into a Data Frame, you have two options. The first is using the `spark.read.format` method we've seen previously. The Data Frame, df=spark.read.format('parquet').load('filename.parquet') The second option is the shortcut version: The Data Frame, df=spark.read.parquet('filename.parquet') Typically, the shortcut version is the easiest to use but you can use them interchangeably. Writing parquet files is similar, using either: df.write.format('parquet').save('filename.parquet') or df.write.parquet('filename.parquet') The long-form versions of each permit extra option flags, such as when overwriting an existing parquet file.
+
+6. Parquet and SQL
+03:34 - 04:22
+Parquet files have various uses within Spark. We've discussed using them as an intermediate data format, but they also are perfect for performing SQL operations. To perform a SQL query against a Parquet file, we first need to create a Data Frame via the spark.read.parquet method. Once we have the Data Frame, we can use the createOrReplaceTempView() method to add an alias of the Parquet data as a SQL table. Finally, we run our query using normal SQL syntax and the spark.sql method. In this case, we're looking for all flights with a duration under 100 minutes. Because we're using Parquet as the backing store, we get all the performance benefits we've discussed previously (primarily defined schemas and the available use of predicate pushdown).
+
+7. Let's Practice!
+04:22 - 04:30
+You've seen a bit about what a Parquet file is and why we'd want to use them. Now, let's practice working with Parquet files.

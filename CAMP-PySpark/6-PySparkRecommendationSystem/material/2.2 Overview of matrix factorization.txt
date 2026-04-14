@@ -1,0 +1,59 @@
+1. Overview of matrix factorization
+00:00 - 00:13
+Matrix factorization, or matrix decomposition, is essentially the opposite of matrix multiplication. Rather than multiplying two matrices together to get one new matrix, matrix factorization
+
+2. Matrix Factorization
+00:13 - 00:17
+splits a matrix into two or more matrices which, when multiplied back together,
+
+3. Matrix Factorization
+00:17 - 01:16
+produce an approximation of the original matrix. There are several different mathematical approaches for this, each of which has a different application. We aren't going to go into any of that here, we are simply going to review the factorization that ALS performs. Used in the context of collaborative filtering, ALS uses a factorization called non-negative matrix factorization. Because matrix factorization generally returns only approximations of the original matrix, in some cases, they can return negative values in the factor matrices, even when attempting to predict positive values. When predicting what rating a user will give to an item, negative values don't really make sense. Neither do they make sense in the context of latent features. For this reason, the version of ALS that we will use will require that the factorization return only positive values. Let's look at some sample factorizations.
+
+4. Matrix Factorization
+01:16 - 01:23
+Here is a sample matrix of possible item ratings. There are 5 rows and 5 columns. And here
+
+5. Matrix Factorization
+01:23 - 01:44
+is one factorization of that matrix called the LU factorization. Notice that the factor matrices are the same dimensions or rank as the original matrix. Also notice that some of the values in this factorization are negative. Using this type of factorization could result in negative predictions that wouldn't make sense in our context.
+
+6. Matrix Factorization
+01:44 - 02:18
+Here is another factorization. In this case, all the values are positive meaning the resulting product of these factor matrices is guaranteed to be positive. This is closer to what we need for our purposes. Notice here that the dimensions of the factor matrices are such that the first factor matrix has the same number of rows as the original matrix, but a different number of columns. Also, the second factor matrix has the same number of columns as the original matrix, but a different number of rows. The dimensions of the factor matrices that don't match the original matrix are called the "rank" or number of latent features. In this case, we have chosen the "rank" of the factor matrices to be 3. What that means is that the number of
+
+7. Rank of Factor Matrices
+02:18 - 02:43
+latent features of the factor matrices is 3. Remember that as a data scientist, when doing these types of factorizations, you get to choose the rank, or number of latent features the factor matrices will have.
+
+8. Filling in the Blanks
+02:43 - 02:49
+Now look at this matrix. Not all the cells have numbers in them. Despite this, we can still
+
+9. Filling in the Blanks
+02:49 - 02:53
+factor the values in the matrix. Also notice that because there is at least
+
+10. Filling In the Blanks
+02:53 - 02:55
+one value in
+
+11. Filling In the Blanks
+02:55 - 02:57
+every row and at
+
+12. Filling In the Blanks
+02:57 - 02:58
+least one value in every column
+
+13. Filling In the Blanks
+02:58 - 03:13
+that each of the factor matrices are totally full. Because of this, factoring a sparse matrix into two factor matrices gives us the means to not only approximate the original values that existed in the matrix to begin with, but to also
+
+14. Filling In the Blanks
+03:13 - 03:38
+provide predictions for the cells that were originally blank. And because the factorization is based on the values that existed previously, the blank cells are filled in based on those already-existing patterns. So when we do this with user ratings, the blanks are filled in with values that reflect the individual user behavior and the behavior of users similar to them. This is why this method is called collaborative filtering.
+
+15. Let's practice!
+03:38 - 03:41
+Let's look at some real-life examples of this.

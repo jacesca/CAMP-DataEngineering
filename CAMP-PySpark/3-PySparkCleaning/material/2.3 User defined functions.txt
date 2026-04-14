@@ -1,0 +1,19 @@
+1. User defined functions
+00:00 - 00:11
+We've looked at the built-in functions in Spark and have had great results using these. But let's consider what you would do if you needed to apply some custom logic to your data cleaning processes.
+
+2. Defined...
+00:11 - 00:32
+A user defined function, or UDF, is a Python method that the user writes to perform a specific bit of logic. Once written, the method is called via the pyspark.sql.functions.udf() method. The result is stored as a variable and can be called as a normal Spark function. Let's look at a couple examples.
+
+3. Reverse string UDF
+00:32 - 02:06
+Here is a fairly trivial example to illustrate how a UDF is defined. First, we define a python function. We'll call our function, reverseString(), with an argument called mystr. We'll use some python shorthand to reverse the string and return it. Don't worry about understanding how the return statement works, only that it will reverse the lettering of whatever is fed into it (ie, "help" becomes "pleh"). The next step is to wrap the function and store it in a variable for later use. We'll use the pyspark.sql.functions.udf() method. It takes two arguments - the name of the method you just defined, and the Spark data type it will return. This can be any of the options in pyspark.sql.types, and can even be a more complex type, including a fully defined schema object. Most often, you'll return either a simple object type, or perhaps an ArrayType. We'll call udf with our new method name, and use the StringType(), then store this as udfReverseString(). Finally, we use our new UDF to add a column to the user_df DataFrame within the .withColumn() method. Note that we pass the column we're interested in as the argument to udfReverseString(). The udf function is called for each row of the Data Frame. Under the hood, the udf function takes the value stored for the specified column (per row) and passes it to the python method. The result is fed back to the resulting DataFrame.
+
+4. Argument-less example
+02:06 - 02:30
+Another quick example is using a function that does not require an argument. We're defining our sortingCap() function to return one of the letters 'G', 'H', 'R', or 'S' at random. We still create our udf wrapped function, and define the return type as StringType(). The primary difference is calling the function, this time without passing in an argument as it is not required.
+
+5. Let's practice!
+02:30 - 02:36
+As always, the best way to learn is practice - let's create some user defined functions!

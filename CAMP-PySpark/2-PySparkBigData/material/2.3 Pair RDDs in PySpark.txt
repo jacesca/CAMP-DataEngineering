@@ -1,0 +1,35 @@
+1. Working with Pair RDDs in PySpark
+00:00 - 00:14
+In the last video, you were introduced to some basic RDD operations and in this video, you'll learn how to work with RDDs of key/value pairs, which are a common data type required for many operations in Spark
+
+2. Introduction to pair RDDs in PySpark
+00:14 - 00:46
+Most of the real world datasets are generally key/value pairs. An example of this kind of dataset has the team name as key and the list of players as values. The typical pattern of this kind of dataset is each row is a key that maps to one or more values. In order to deal with this kind of dataset, PySpark provides a special data structure called pair RDDs. In pair RDDs, the key refers to the identifier, whereas value refers to the data.
+
+3. Creating pair RDDs
+00:46 - 01:38
+There are a number of ways to create pair RDDs. The two most common ways are creating from a list of the key-value tuple or from a regular RDD. Irrespective of the method, the first step in creating pair RDDs is to get the data into key/value form. Here is an example of creating pair RDD from a list of the key-value tuple that contains the names as key and age as the value using SparkContext's parallelize method. And here is an example of creating pair RDD from regular RDDs. In this example, a regular RDD is created from a list that contains strings using SparkContext's parallelize method. Next, we create a pair RDD using map function which returns tuple with key/value pairs with key being the name and age being the value.
+
+4. Transformations on pair RDDs
+01:38 - 02:04
+Pair RDDs are still RDDs and thus use all the transformations available to regular RDDs. Since pair RDDs contain tuples, we need to pass functions that operate on key-value pairs. A few special operations are available for this kind such as reduceByKey, groupByKey, sortByKey and join. Let's take a look at each of these four pair RDD transformations in detail now.
+
+5. reduceByKey() transformation
+02:04 - 02:48
+The reduceByKey transformation is the most popular pair RDD transformation which combines values with the same key using a function. reduceByKey runs several parallel operations, one for each key in the dataset. Because datasets can have very large numbers of keys, reduceByKey is not implemented as an action. Instead, it returns a new RDD consisting of each key and the reduced value for that key. Here is an example of reducebykey transformation that uses a function to combine all the goals scored by each of the players. The result shows that player as key and total number of goals scored as value.
+
+6. sortByKey() transformation
+02:48 - 03:14
+Sorting of data is necessary for many downstream applications. We can sort pair RDD as long as there is an ordering defined in the key. The sortByKey transformation returns an RDD sorted by key in ascending or descending order. Continuing our reduceByKey example, here is an example that sorts the data based on the number of goals scored by each player. A common use case of
+
+7. groupByKey() transformation
+03:14 - 03:47
+pair RDDs is grouping the data by key. For example, viewing all of the airports for a particular country together. If the data is already keyed in the way that we want, the groupByKey operation groups all the values with the same key in the pair RDD. Here is an example of groupByKey transformation that groups all the airports for a particular country from an input list that contains list of tuples. Each tuple consists of country code and the corresponding airport code. Join transformation
+
+8. join() transformation
+03:47 - 04:25
+joins two pair RDDs based on their key. Let's demonstrate this with an example. First, we create two RDDs. RDD1 contains the list of tuples with each tuple consisting of name and age and RDD2 contains the list of tuples with each tuple consisting of name and income. Applying join transformation on RDD1 and RDD2 merges two RDDs together by grouping elements with the same key. Here is an example that shows the result of join transformation of RDD1 and RDD2.
+
+9. Let's practice
+04:25 - 04:30
+Now that you have learned all about pair RDDs, it's time for you to practice.

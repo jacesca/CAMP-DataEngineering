@@ -1,0 +1,67 @@
+1. Introduction to the MovieLens dataset
+00:00 - 00:07
+Up until now we've only been using sample datasets. Now we're going to begin using actual data using the
+
+2. MovieLens dataset
+00:07 - 00:15
+MovieLens dataset. This dataset is made available by the good people at GroupLens.org and contains
+
+3. MovieLens summary stats
+00:15 - 00:57
+roughly 20 million ratings for over 138,000 users and more than 27,000 movies. In order to provide you with a better learning experience, we will achieve shorter runtimes by using a subset of the original dataset including 100,000 ratings. In addition to the ratings data, Grouplens.org also provides additional datafiles that include information on movie genres and other types of tags that movie watchers have provided for them. We'll take what you've learned from the previous chapters and explore the data, prepare the data, build out a cross-validated ALS model, generate predictions and assess the model's performance. First we'll view the data using the
+
+4. Explore the data
+00:57 - 01:06
+.show() and .columns() methods, as well as some other methods to understand the nature of the dataset.
+
+5. MovieLens sparsity
+01:06 - 01:41
+Then we'll calculate it's sparsity using this sparsity formula, and then we'll assess whether further preparation is needed in order to adequately prepare it for ALS. If you're not familiar with the term sparsity, it simply provides a measure of how empty a matrix is, or what percentage of the matrix is empty. In essence, this formula is simply the number of ratings that a matrix contains divided by the number of ratings it could contain given the number of users and movies in the matrix.
+
+6. Sparsity: numerator
+01:41 - 01:47
+The code to calculate sparsity is pretty straightforward. We'll simply get the numerator by counting the number of ratings in the ratings dataframe
+
+7. Sparsity: users and movies
+01:47 - 01:51
+then we'll get the number of distinct users and the number of distinct items or movies.
+
+8. Sparsity: denominator
+01:51 - 01:57
+We'll then multiply the number of users and number of movies together to get the denominator
+
+9. Sparsity
+01:57 - 02:18
+and simply divide the numerator by the denominator, and substract the result from 1. Because division in Pyhton will return an integer, we multiply the numerator by 1.0 to ensure a decimal or float is returned. Let's go over some other techniques that may or may not be new to you.
+
+10. The .distinct() method
+02:18 - 02:35
+As you may already know, the .distinct() method simply returns all the unique values in a column. For example, if you want to know how many unique users there are in a table, you could simply select the userId column from the dataframe, then run the distinct and count methods like you see here.
+
+11. GroupBy method
+02:35 - 02:52
+The groupBy method organizes data by the unique values of a specific column to return subtotals for those unique values. For example{{1}}, if you wanted to look at total number of ratings each user has provided you would first need to groupBy userId as you see here, then
+
+12. GroupBy method
+02:52 - 02:56
+call the count method as you see here. With this, you could then
+
+13. GroupBy method min
+02:56 - 02:57
+get the min
+
+14. GroupBy method max
+02:57 - 02:59
+or max
+
+15. GroupBy method avg
+02:59 - 03:02
+or average of that same column.
+
+16. Filter method
+03:02 - 03:23
+The filter method allows you to filter out any data that doesn't meet your specified criteria. {{1}}For example if you wanted to only consider users that have rated at least 20 movies, you would simply apply the same groupby and count methods, and then add a filter method specifying that the count column should only include values greater than 20.
+
+17. Let's practice!
+03:23 - 03:25
+Let's apply what you've learned to a real data set.

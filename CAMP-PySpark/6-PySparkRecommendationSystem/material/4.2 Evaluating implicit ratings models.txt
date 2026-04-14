@@ -1,0 +1,51 @@
+1. Evaluating implicit ratings models
+00:00 - 00:33
+Now that we have an implicit ratings dataset, let's discuss these types of models. The first thing you should know is that implicit ratings models have an additional hyperparameter called alpha. Alpha is an integer value that tells Spark how much each additional song play should add to the model's confidence that a user actually likes a song. Like the other hyperparameters, this will need to be tuned through cross validation. The challenge of these models is the evaluation. With explicit ratings, we used was the RMSE. It made sense in that situation because we could
+
+2. Why RMSE worked before
+00:33 - 00:43
+match predictions back to a true measure of user preference. In the case of implicit ratings however,
+
+3. Why RMSE doesn't work now
+00:43 - 01:21
+we don’t have a true measure of user preference. We only have the number of times a user listened to a song and a measure of how confident our model is that that they like that song. These aren't the same thing and calculating an RMSE between them doesn't make sense. However, using a test set, we can see if our model is giving high predictions to the songs that users have actually listened to. The logic being that if our model is returning a high prediction for a song that the respective user has actually listened to, then the predictions make sense, especially if they've listened to it more than once. We can measure this using this
+
+4. (ROEM) Rank Ordering Error Metric
+01:21 - 01:34
+Rank Order Error Metric. In essence this metric checks to see if songs with higher numbers of plays have higher predictions.
+
+5. ROEM bad predictions
+01:34 - 02:03
+For example, here is a set of bad predictions. The perc_rank column has ranked the predictions for each individual user such that the lowest prediction is in the highest precentile and the highest prediction is in the lowest percentile. Notice that these bad predictions include low predictions and high predictions for songs with more than one play indicating that the predictions may not be any better than random. If we multiply the number of plays by the percentRank, we get
+
+6. ROEM: PercRank * plays
+02:03 - 02:08
+this np*rank column.
+
+7. ROEM: bad predictions
+02:08 - 02:26
+When we sum that column we get our ROEM numerator{{1}}, and the sum of the numPlays column gives us our ROEM denominator. Using these, we can calculate our ROEM{{3}} to be 0.556. Values close to .5 indicate that they aren't much better than random. If we were to look at good predictions where the model gave high predictions to songs that had more than 1 play, they might look like this:
+
+8. Good predictions
+02:26 - 02:40
+Notice that songs that have been played have high ratings indicating that the predictions are better than random. Which subsequently gives us an ROEM of
+
+9. ROEM: good predictions
+02:40 - 02:54
+0.1111. This is much closer to 0, where we want to be. Unfortunately Spark hasn't implemented an evaluator metric like this, so you'll need to build it manually. An ROEM function will be provided to you in subsequent exercises. And for your reference, the code to build it is provided at the end of this course
+
+10. ROEM: link to function on GitHub
+02:54 - 03:06
+Using this function, and a for loop
+
+11. Building several ROEM models
+03:06 - 03:18
+you can build several models as you see here, each with different hyperparameter values. You'll want to create a model for each combination of hyperparameter values that you want to try.
+
+12. Error output
+03:18 - 03:44
+You can then fit each one to the training data, extract each model's test predictions, and then calculate the ROEM for each one. This is a simplified way to do this. Full cross-validation is imperative to building good models. It is beyond the scope of this course to teach how to code a function that manually cross-validates and evaluates models like this, but doing so should be done, and code to do so is provided at the end of the course.
+
+13. Let's practice!
+03:44 - 03:46
+Let's put this into practice.

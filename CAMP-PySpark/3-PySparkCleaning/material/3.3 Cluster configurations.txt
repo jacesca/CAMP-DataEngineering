@@ -1,0 +1,23 @@
+1. Cluster sizing tips
+00:00 - 00:07
+We've just finished working with improving import performance in Spark. Let's take a look at cluster configurations.
+
+2. Configuration options
+00:07 - 00:45
+Spark has many available configuration settings controlling all aspects of the installation. These configurations can be modified to best match the specific needs for the cluster. The configurations are available in the configuration files, via the Spark web interface, and via the run-time code. Our test cluster is only accessible via command shell so we'll use the last option. To read a configuration setting, call spark.conf.get() with the name of the setting as the argument. To write a configuration setting, call spark.conf.set() with the name of the setting and the actual value as the function arguments.
+
+3. Cluster Types
+00:45 - 01:27
+Spark deployments can vary depending on the exact needs of the users. One large component of a deployment is the cluster management mechanism. Spark clusters can be: Single node clusters, deploying all components on a single system (physical / VM / container). Standalone clusters, with dedicated machines as the driver and workers. Managed clusters, meaning that the cluster components are handled by a third party cluster manager such as YARN, Mesos, or Kubernetes. In this course, we're using a single node cluster. Your production environment can vary wildly, but we'll discuss standalone clusters as the concepts flow across all management types.
+
+4. Driver
+01:27 - 02:22
+If you recall, there is one driver per Spark cluster. The driver is responsible for several things, including the following: Handling task assignment to the various nodes / processes in the cluster. The driver monitors the state of all processes and tasks and handles any task retries. The driver is also responsible for consolidating results from the other processes in the cluster. The driver handles any access to shared data and verifies each worker process has the necessary resources (code, data, etc). Given the importance of the driver, it is often worth increasing the specifications of the node compared to other systems. Doubling the memory compared to other nodes is recommended. This is useful for task monitoring and data consolidation tasks. As with all Spark systems, fast local storage is useful for running Spark in an ideal setup.
+
+5. Worker
+02:22 - 03:23
+A Spark worker handles running tasks assigned by the driver and communicates those results back to the driver. Ideally, the worker has a copy of all code, data, and access to the necessary resources required to complete a given task. If any of these are unavailable, the worker must pause to obtain the resources. When sizing a cluster, there are a few recommendations: Depending on the type of task, more worker nodes is often better than larger nodes. This can be especially obvious during import and export operations as there are more machines available to do the work. As with everything in Spark, test various configurations to find the correct balance for your workload. Assuming a cloud environment, 16 worker nodes may complete a job in an hour and cost $50 in resources. An 8 worker configuration might take 1.25 hrs but cost only half as much. Finally, workers can make use of fast local storage (SSD / NVMe) for caching, intermediate files, etc.
+
+6. Let's practice!
+03:23 - 03:30
+Now that we've discussed cluster sizing and configuration, let's practice working with these options!

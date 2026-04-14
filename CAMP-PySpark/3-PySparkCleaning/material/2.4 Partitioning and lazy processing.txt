@@ -1,0 +1,28 @@
+1. Partitioning and lazy processing
+00:00 - 00:14
+Welcome back to our discussion about modifying and cleaning DataFrames. We've discussed various transformations and methods to modify our data, but we haven't covered much about how Spark actually processes the data. Let's look at that now.
+
+2. Partitioning
+00:14 - 00:57
+Spark breaks DataFrames into partitions, or chunks of data. These partitions can be automatically defined, enlarged, shrunk, and can differ greatly based on the type of Spark cluster being used. The size of the partition does vary, but generally try to keep your partition sizes equal. We'll discuss more about optimizing partitioning and cluster details later on. For now, let's assume that each partition is handled independently. This is part of what provides the performance levels and horizontal scaling ability in Spark. If a Spark node doesn't need to compete for resources, nor consult with other Spark nodes for answers, it can reliably schedule the processing for the best performance.
+
+3. Lazy processing
+00:57 - 01:46
+In Spark, any transformation operation is lazy; it's more like a recipe than a command. It defines what should be done to a DataFrame rather than actually doing it. Most operations in Spark are actually transformations, including .withColumn(), .select(), .filter(), and so forth. The set of transformations you define are only executed when you run a Spark action. This includes .count(), .write(), etc - anything that requires the transformations to be run to properly obtain an answer. Spark can reorder transformations for the best performance. Usually this isn't noticeable, but can occasionally cause unexpected behavior, such as IDs not being added until after other transformations have completed. This doesn't actually cause a problem but the data can look unusual if you don't know what to expect.
+
+4. Adding IDs
+01:46 - 02:25
+Relational databases tend to have a field used to identify the row, whether it is for an actual relationship reference, or just for data identification. These IDs are typically an integer that increases in value, is sequential, and most importantly unique. The problem with these IDs is they're not very parallel in nature. Given that the values are given out sequentially, if there are multiple workers, they must all refer to a common source for the next entry. This is OK in a single server environment, but in a distributed platform such as Spark, it creates some undue bottlenecks. Let's take a look at how to generate ID's in Spark.
+
+5. Monotonically increasing IDs
+02:25 - 03:14
+Spark has a built-in function called monotonically_increasing_id(), designed to provide an integer ID that increases in value and is unique. These IDs are not necessarily sequential - there can be gaps, often quite large, between values. Unlike a normal relational ID, Spark's is completely parallel - each partition is allocated up to 8 billion IDs that can be assigned. Notice that the ID fields in the sample table are integers, increasing in value, but are not sequential. It's a little out scope, but the IDs are a 64-bit number effectively split into groups based on the Spark partition. Each group contains 8.4 billion IDs, and there are 2.1 billion possible groups, none of which overlap.
+
+6. Notes
+03:14 - 03:30
+There's a lot of nuance to how partitions and the monotonically increasing ID's work. Remembering that Spark is lazy: it often helps in troubleshooting what can happen. Operations are often out of order - especially if joins are involved. It's best to test your transformations.
+
+7. Let's practice!
+03:30 - 03:39
+We've discussed a lot of detail in this lesson - let's now take a look at a few exercises that will help solidify how everything works.
+

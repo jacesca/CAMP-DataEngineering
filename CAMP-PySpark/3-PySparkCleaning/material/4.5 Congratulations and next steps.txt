@@ -1,0 +1,11 @@
+1. Congratulations and next steps
+00:00 - 00:16
+Congratulations! You've successfully completed this course by performing data cleaning operations on several datasets using Python and Apache Spark. While we've touched on many topics, there is a great deal to learn about Spark and how best to perform data cleaning.
+
+2. Next Steps
+00:16 - 01:14
+To continue your journey with using Apache Spark, there are a few areas I'd advise you to focus on: Reading the Spark documentation is a great way to add to your knowledge and fill in gaps of understanding. Spark is constantly changing and often adds new features without a lot of fanfare. Seasoned Spark developers often find new techniques that removes a lot of complexity from existing code. Spark works on many platforms regardless of size, but it really shines when using it on multi-node clusters with a lot of RAM. You'll be surprised how quickly Spark processes data when given the resources to function as designed. I've personally processed multi-billion row datasets in a few hours on a relatively modest cluster. Finally, I'd suggest working with as many different datasets as you can find. Different types of data require different techniques in Spark and each has challenges when trying to process data in an efficient way. The datasets available within the various courses here on DataCamp are a great place to start.
+
+3. Thank you!
+01:14 - 01:19
+Thanks and good luck on your journey using Apache Spark!

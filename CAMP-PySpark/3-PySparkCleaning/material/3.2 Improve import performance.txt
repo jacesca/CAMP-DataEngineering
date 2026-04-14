@@ -1,0 +1,23 @@
+1. Improve import performance
+00:00 - 00:08
+We've discussed the benefits of caching when working with Spark DataFrames. Let's look at how to improve the speed when getting data into a DataFrame.
+
+2. Spark clusters
+00:08 - 00:48
+Spark clusters consist of two types of processes - one driver process and as many worker processes as required. The driver handles task assignments and consolidation of the data results from the workers. The workers typically handle the actual transformation / action tasks of a Spark job. Once assigned tasks, they operate fairly independently and report results back to the driver. It is possible to have a single node Spark cluster (this is what we're using for this course) but you'll rarely see this in a production environment. There are different ways to run Spark clusters - the method used depends on your specific environment.
+
+3. Import performance
+00:48 - 01:43
+When importing data to Spark DataFrames, it's important to understand how the cluster implements the job. The process varies depending on the type of task, but it's safe to assume that the more import objects available, the better the cluster can divvy up the job. This may not matter on a single node cluster, but with a larger cluster each worker can take part in the import process. In clearer terms, one large file will perform considerably worse than many smaller ones. Depending on the configuration of your cluster, you may not be able to process larger files, but could easily handle the same amount of data split between smaller files. Note you can define a single import statement, even if there are multiple files. You can use any form of standard wildcard symbol when defining the import filename. While less important, if objects are about the same size, the cluster will perform better than having a mix of very large and very small objects.
+
+4. Schemas
+01:43 - 02:14
+If you remember from chapter one, we discussed the importance of Spark schemas. Well-defined schemas in Spark drastically improve import performance. Without a schema defined, import tasks require reading the data multiple times to infer structure. This is very slow when you have a lot of data. Spark may not define the objects in the data the same as you would. Spark schemas also provide validation on import. This can save steps with data cleaning jobs and improve the overall processing time.
+
+5. How to split objects
+02:14 - 03:25
+There are various effective ways to split an object (files mostly) into more smaller objects. The first is to use built-in OS utilities such as split, cut, or awk. An example using split uses the -l argument with the number of lines to have per file (10000 in this case). The -d argument tells split to use numeric suffixes. The last two arguments are the name of the file to be split and the prefix to be used. Assuming 'largefile' has 10M records, we would have files named chunk-0000 through chunk-9999. Another method is to use python (or any other language) to split the objects up as we see fit. Sometimes you may not have the tools available to split a large file. If you're going to be working with a DataFrame often, a simple method is to read in the single file then write it back out as parquet. We've done this in previous examples and it works well for later analysis even if the initial import is slow. It's important to note that if you're hitting limitations due to cluster sizing, try to do as little processing as possible before writing to parquet.
+
+6. Let's practice!
+03:25 - 03:30
+Let's practice some of the import tricks we've discussed now.

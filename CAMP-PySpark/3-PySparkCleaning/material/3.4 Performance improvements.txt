@@ -1,0 +1,24 @@
+1. Performance improvements
+00:00 - 00:08
+We've discussed Spark clusters and improving import performance. Let's look at how to improve the performance of Spark tasks in general.
+
+2. Explaining the Spark execution plan
+00:08 - 00:35
+To understand performance implications of Spark, you must be able to see what it's doing under the hood. The easiest way to do this is to use the .explain() function on a DataFrame. This example is taken from an earlier exercise, simply requesting a single column and running distinct against it. The result is the estimated plan that will be run to generate results from the DataFrame. Don't worry about the specifics of the plan yet, just remember how to view it if needed.
+
+3. What is shuffling?
+00:35 - 01:20
+Spark distributes data amongst the various nodes in the cluster. A side effect of this is what is known as shuffling. Shuffling is the moving of data fragments to various workers as required to complete certain tasks. Shuffling is useful and hides overall complexity from the user (the user doesn't have to know which nodes have what data). That being said, it can be slow to complete the necessary transfers, especially if a few nodes require all the data. Shuffling lowers the overall throughput of the cluster as the workers must spend time waiting for the data to transfer. This limits the amount of available workers for the remaining tasks in the system. Shuffling is often a necessary component, but it's helpful to try to minimize it as much as possible.
+
+4. How to limit shuffling?
+01:20 - 02:33
+It can be tricky to remove shuffling operations entirely but there are a few things that can limit it. The DataFrame .repartition() function takes a single argument, the number of partitions requested. We've used this in an earlier chapter to illustrate the effect of partitions with the monotonically_increasing_id() function. Repartitioning requires a full shuffle of data between nodes & processes and is quite costly. If you need to reduce the number of partitions, use the .coalesce() function instead. It takes a number of partitions smaller than the current one and consolidates the data without requiring a full data shuffle. Note: calling .coalesce() with a larger number of partitions does not actually do anything. The .join() function is a great use of Spark and provides a lot of power. Calling .join() indiscriminately can often cause shuffle operations, leading to increased cluster load & slower processing times. To avoid some of the shuffle operations when joining Spark DataFrames you can use the .broadcast() function. We'll talk about this more in a moment. Finally, an important note about data cleaning operations is remembering to optimize for what matters. The speed of your initial code may be perfectly acceptable and time may be better spent elsewhere.
+
+5. Broadcasting
+02:33 - 03:23
+Broadcasting in Spark is a method to provide a copy of an object to each worker. When each worker has its own copy of the data, there is less need for communication between nodes. This limits data shuffles and it's more likely a node will fulfill tasks independently. Using broadcasting can drastically speed up .join() operations, especially if one of the DataFrames being joined is much smaller than the other. To implement broadcasting, you must import the broadcast function from pyspark.sql.functions. Once imported, simply call the broadcast function with the name of the DataFrame you wish to broadcast. Note broadcasting can slow operations when using very small DataFrames or if you broadcast the larger DataFrame in a join. Spark will often optimize this for you, but as usual, run tests in your environment for best performance.
+
+6. Let's practice!
+03:23 - 03:31
+We've looked how to limit shuffling and implement broadcasting for DataFrames. Let's practice utilizing these tools now!
+

@@ -1,0 +1,48 @@
+1. Visually Inspecting Data
+00:00 - 00:13
+Data comes in all shapes and sizes. In the field, you will be tasked with using less than perfect data. This means you will need to understand its strengths, weaknesses, and limitations to leverage it effectively.
+
+2. Getting Descriptive with DataFrame.describe()
+00:13 - 00:38
+To get started with understanding your data take a peek at each column to see what they contain. The describe function provides some bare bones basics of Count, Mean, Std Dev, Min and Max. You can run it on the whole dataframe, a single column or a list of columns. Remember to add show to the end if you wish to immediately display results.
+
+3. Many descriptive functions are already available
+00:38 - 00:45
+To further help us understand our data, Pyspark has many built-in descriptive functions available.
+
+4. Example with mean()
+00:45 - 00:59
+The Mean function is considered an aggregate function and as such needs to be passed to the agg method along with the column to run it on as a dictionary. Spark uses lazy evaluation, meaning that it waits to execute code until a specific type of command, called an action forces it to. To force it to return the results immediately, use the collect function.
+
+5. Example with cov()
+00:59 - 01:10
+Covariance is a function that let's us see how two variables vary together. This function is applied to a dataframe and takes two numeric columns and returns a value.
+
+6. seaborn: statistical data visualization
+01:10 - 01:26
+An excellent way to explore your data is through statistical plotting. Seaborn is a Python data visualization library designed specifically for this. We will look at a few plotting examples but there are many, many more for you to follow up on.
+
+7. Notes on plotting
+01:26 - 01:59
+We can plot data using non-Spark libraries like Seaborn but they require converting your pySpark DataFrame to a Pandas DataFrame. Be aware that converting large datasets can cause Pandas to crash. This is because PySpark is made for massive datasets, where pandas is not. The Sample function can help us get a smaller dataset to plot. Here, we will keep sampling with replacement off, take 50% of the data and set a random seed for reproducibility. Using count shows us that the number of records has changed.
+
+8. Prepping for plotting a distribution
+01:59 - 02:32
+We will leverage Seaborn's distplot which will show us the distribution of our dependent variable 'SalesClosePrice'. Please note there are many optional parameters which aren't covered here. Here we import seaborn, then filter the Spark DataFrame down to the SalesClosePrice column and sample it. Then we convert it into a pandas dataframe so we can use it with Seaborn. Lastly, call the distplot function with pandas underscore df to plot.
+
+9. Distribution plot of sales closing price
+02:32 - 02:47
+After plotting we can we can see that most of the data is pushed to the left, something that may need to be remedied depending on the model type we choose. We will cover one option, log scaling, in 'Adjusting Data' later in this course.
+
+10. Relationship plotting
+02:47 - 03:23
+Another great plot to use is lmplot. lm is short for linear model and allows us to quickly see if there is a linear relationship between two variables. For this example, we will look at how 'SalesClosePrice' changes depending on 'SQFTABOVEGROUND'. To do this we will import seaborn, filter our dataset to the two columns, sample it and then convert it to a pandas DataFrame. Lastly, use the sns lmplot function with our x and y columns and dataframe.
+
+11. Linear model plot between SQFT above ground and sales price
+03:23 - 03:38
+Here we can see there is what looks to be a strong relationship between the size of a home and the price it sells for. Therefore we might make the assumption that SQFTABOVEGROUND is a good variable to consider in predicting house prices!
+
+12. Let's practice!
+03:38 - 03:47
+In this video, we explored our data with numerical summaries and visualizations. Now it's your turn to try them out!
+

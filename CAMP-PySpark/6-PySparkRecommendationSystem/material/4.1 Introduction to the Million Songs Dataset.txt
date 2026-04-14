@@ -1,0 +1,48 @@
+1. Introduction to the Million Songs Dataset
+00:00 - 00:18
+By now you should be pretty comfortable with ALS. So far, we've only used explicit ratings. In most real-life situations, however, explicit ratings aren't available, and you'll have to get creative in building these types of models. One way to get around this is to use implicit ratings. Remember that while
+
+2. Explicit vs implicit
+00:18 - 00:23
+explicit ratings are explicitly provided by users in various forms, implicit ratings are data used to infer ratings. For example, if a news website sees that in the last month you clicked on
+
+3. Explicit vs implicit (cont.)
+00:23 - 00:49
+21 geopolitical articles and only 1 local news article, ALS can convert these numbers into scores indicating how confident it is that you like them. This approach assumes that the more you do something, the more you prefer it.
+
+4. Implicit refresher II
+00:49 - 00:55
+ALS can use these confidence ratings to generate recommendations and you're going to learn how to do this. First, let's talk about the dataset you will be using.
+
+5. Introduction to the Million Songs Dataset
+00:55 - 01:46
+The dataset this time comes from the Million Songs Dataset available from LabROSA at Columbia University. You're going to be using one file of this dataset called The Echo Nest Taste profile dataset. It contains information on over 1 million users including the number of times they've played nearly 400,000 songs. This is more data than we can use for this course, so we will only be using a portion of. We'll first examine the data, get summary statistics, and then build and evaluate our model. One thing to note here is that because the use of implicit ratings causes ALS to calculate a level of confidence that a user likes a song based on the number of times they've played it, the matrix will need to include zeros for the songs that each user has not yet listened to. In case your data doesn't already include the zeros, we'll walk through how to do this.
+
+6. Add zeros sample
+01:46 - 01:50
+Let's say we have a ratings dataframe like this:
+
+7. Cross join intro
+01:50 - 01:56
+You can use the .distinct() method to extract the unique userId's and songId's, like this.
+
+8. Cross join output
+01:56 - 02:07
+You can then performs a cross join which joins each user to each song like this: Notice that the 3 users and 3 songs we originally had now create 9 unique pairs. Using a left join,
+
+9. Joining back original ratings data
+02:07 - 02:20
+you can take that cross_join table, and join it with the original ratings to get the num_plays column. Notice it joins on both userId and songId. And because we want 0's in place of the null values, so that every user has a value for every song, we simply call the
+
+10. Filling in with zero
+02:20 - 02:31
+.fillna() method telling Spark to fill the null values with 0. And you have your final product to feed to ALS.
+
+11. Add zeros function
+02:31 - 02:35
+Here are all those steps in a clean function.
+
+12. Let's practice!
+02:35 - 02:38
+Let's do this with our Million Songs dataset.
+

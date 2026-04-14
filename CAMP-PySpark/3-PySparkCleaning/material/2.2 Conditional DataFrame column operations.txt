@@ -1,0 +1,23 @@
+1. Conditional DataFrame column operations
+00:00 - 00:09
+We've looked at some of the power available when using Spark's functions to filter and modify our Data Frames. Let's spend some time with some more advanced options.
+
+2. Conditional clauses
+00:09 - 00:51
+The DataFrame transformations we've covered thus far are blanket transformations, meaning they're applied regardless of the data. Often you'll want to conditionally change some aspect of the contents. Spark provides some built in conditional clauses which act similar to an if / then / else statement in a traditional programming environment. While it is possible to perform a traditional if / then / else style statement in Spark, it can lead to serious performance degradation as each row of a DataFrame would be evaluated independently. Using the optimized, built-in conditionals alleviates this. There are two components to the conditional clauses: .when(), and the optional .otherwise(). Let's look at them in more depth.
+
+3. Conditional example
+00:51 - 01:45
+The .when() clause is a method available from the pyspark.sql.functions library that is looking for two components: the if condition, and what to do if it evaluates to true. This is best seen from an example. Consider a DataFrame with the Name and Age columns. We can actually add an extra argument to our .select() method using the .when() clause. We select df.Name and df.Age as usual. For the third argument, we'll define a when conditional. If the Age column is 18 or up, we'll add the string "Adult". If the clause doesn't match, nothing is returned. Note that our returned DataFrame contains an unnamed column we didn't define using .withColumn(). The .select() function can create columns dynamically based on the arguments provided. Let's look at some more examples.
+
+4. Another example
+01:45 - 02:01
+You can chain multiple when statements together, similar to an if / else if structure. In this case, we define two .when() clauses and return Adult or Minor based on the Age column. You can chain as many when clauses together as required.
+
+5. Otherwise
+02:01 - 02:35
+In addition to .when() is the otherwise() clause. .otherwise() is analogous to the else statement. It takes a single argument, which is what to return, in case the when clause or clauses do not evaluate as True. In this example, we return "Adult" when the Age column is 18 or higher. Otherwise, we return "Minor". The resulting DataFrame is the same, but the method is different. While you can have multiple .when() statements chained together, you can only have a single .otherwise() per .when() chain.
+
+6. Let's practice!
+02:35 - 02:41
+Let's try a couple examples of using .when() and .otherwise() to modify some DataFrames!

@@ -1,0 +1,27 @@
+1. Defining A Problem
+00:00 - 00:10
+What's the point of doing an analysis if you aren't solving the right problem? In this video, we will define our problem and the context of our data.
+
+2. What’s Your Problem?
+00:10 - 00:37
+We are going to build a model to predict how much a house sells for. This question can be interpreted multiple ways which is why it's important to take the time formally define it. Let's assume we are real-estate tycoon's looking for the next best investment opportunity. For a given house on the market, with a listed price and series of attributes describing the home, what is it likely to actually sell for, aka the SALESCLOSEPRICE?
+
+3. Context & Limitations of our Real Estate
+00:37 - 01:20
+The dataset we have is a sample of homes that sold over the course of 2017. Using this sample we are to provide a quick proof of concept of whether it's worth investing in more data for the 5.5 million homes that sold in the US in 2017. To do this we need to understand some of the limitations of the data we have. First, we only have a small geographical area, so to apply our model to new areas, poses serious risk! We know that we only have residential data, so we shouldn't expect to predict how much a business location is worth! Lastly, we only have one year's worth of data which will make it hard to draw strong conclusions about seasonality in this dataset.
+
+4. What types of attributes are available?
+01:20 - 02:14
+The original dataset has hundreds of attributes available but in order to start simple we've already worked with our client to identify around 50 attributes they think are likely to influence the price of a home. These attributes generally fall into these groups. For Dates we have date listed, and the year the home was built. For locational data, we have the city that the home is in, its school district and its actual postal address. We also have many different metrics to gauge the size of the home like number of bed and bathrooms as well as the area of living space. For prices, we have the listing price and we wouldn't be able to predict anything without the sale price! We also have a lot of data available on amenities that a house has like a pool or a garage as well as the construction materials used to build the house.
+
+5. Validating Your Data Load
+02:14 - 02:30
+Big data means a lot can go wrong when loading data make sure you have the right number of records and columns! We can use df count to get the row count, df columns to get the list of columns and we can take the length of df columns to get the number of columns!
+
+6. Checking Datatypes
+02:30 - 02:50
+When we used Parquet, it set the data types for all of our fields which is a huge advantage over CSV. It's still worth checking especially if you weren't the one defining them! Here we can use dtypes on our dataframe to create a list of tuples containing a column name and its corresponding datatype.
+
+7. Let's Practice
+02:50 - 03:10
+In this video, we learned about the data set we will be using and the problem we will be trying to solve. Additionally, we learned how to check to see if our data loaded properly by checking rows, columns, and datatypes! Now it's your turn to apply what you've learned in the exercises to verify that our data got loaded correctly!

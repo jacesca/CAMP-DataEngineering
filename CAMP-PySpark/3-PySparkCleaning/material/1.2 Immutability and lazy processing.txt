@@ -1,0 +1,23 @@
+1. Immutability and Lazy Processing
+00:00 - 00:11
+Welcome back! We've had a quick discussion about data cleaning, data types and schemas. Let's move on to some further Spark concepts - Immutability and Lazy Processing.
+
+2. Variable review
+00:11 - 00:39
+Normally in Python, and most other languages, variables are fully mutable. The values can be changed at any given time, assuming the scope of the variable is valid. While very flexible, this does present problems anytime there are multiple concurrent components trying to modify the same data. Most languages work around these issues using constructs like mutexes, semaphores, etc. This can add complexity, especially with non-trivial programs.
+
+3. Immutability
+00:39 - 01:22
+Unlike typical Python variables, Spark Data Frames are immutable. While not strictly required, immutability is often a component of functional programming. We won't go into everything that implies here, but understand that Spark is designed to use immutable objects. Practically, this means Spark Data Frames are defined once and are not modifiable after initialization. If the variable name is reused, the original data is removed (assuming it's not in use elsewhere) and the variable name is reassigned to the new data. While this seems inefficient, it actually allows Spark to share data between all cluster components. It can do so without worry about concurrent data objects.
+
+4. Immutability Example
+01:22 - 02:35
+This is a quick example of the immutability of data frames in Spark. It's OK if you don't understand the actual code, this example is more about the concepts of what happens. First, we create a data frame from a CSV file called voterdata.csv. This creates a new data frame definition and assigns it to the variable name voter_df. Once created, we want to do two further operations. The first is to create a fullyear column by using a 2-digit year present in the data set and adding 2000 to each entry. This does not actually change the data frame at all. It copies the original definition, adds the transformation, and assigns it to the voter_df variable name. Our second operation is similar - now we want to drop the original year column from the data frame. Again, this copies the definition, adds a transformation and reassigns the variable name to this new object. The original objects are destroyed. Please note that the original year column is now permanently gone from this instance, though not from the underlying data (ie, you could simply reload it to a new dataframe if desired).
+
+5. Lazy Processing
+02:35 - 03:25
+You may be wondering how Spark does this so quickly, especially on large data sets. Spark can do this because of something called lazy processing. Lazy processing in Spark is the idea that very little actually happens until an action is performed. In our previous example, we read a CSV file, added a new column, and deleted another. The trick is that no data was actually read / added / modified, we only updated the instructions (aka, Transformations) for what we wanted Spark to do. This functionality allows Spark to perform the most efficient set of operations to get the desired result. The code example is the same as the previous slide, but with the added count() method call. This classifies as an action in Spark and will process all the transformation operations.
+
+6. Let's practice!
+03:25 - 03:33
+These concepts can be a little tricky to grasp without some examples. Let's practice these ideas in the coming exercises.

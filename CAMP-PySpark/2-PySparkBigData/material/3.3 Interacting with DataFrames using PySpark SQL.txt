@@ -1,0 +1,27 @@
+1. Interacting with DataFrames using PySpark SQL
+00:00 - 00:12
+Previously, you have seen how to interact with PySparkSQL using DataFrame API. In this video, you'll learn how to interact with PySparkSQL using SQL query.
+
+2. DataFrame API vs SQL queries
+00:12 - 01:05
+In addition to DataFrame API, PySpark SQL allows you to manipulate DataFrames with SQL queries. What you can do using DataFrames API, can be done using SQL queries and vice versa. So what are the differences between DataFrames API and SQL queries? The DataFrames API provides a programmatic interface – basically a domain-specific language (DSL) for interacting with data. DataFrame queries are much easier to construct programmatically. Plain SQL queries can be significantly more concise and easier to understand. They are also portable and can be used without any modifications with every supported language. Many of the DataFrame operations that you have seen in the previous chapter, can be done using SQL queries.
+
+3. Executing SQL Queries
+01:05 - 02:02
+The SparkSession provides a method called sql which can be used to execute a SQL query. The sql method takes a SQL statement as an argument and returns a DataFrame representing the result of the given query. Unfortunately, SQL queries cannot be run directly against a DataFrame. To issue SQL queries against an existing DataFrame we can leverage the createOrReplaceTempView function to build a temporary table as shown in this example. After creating the temporary table, we can simply use the sql method, which allows us to write SQL code to manipulate data within a DataFrame. In this example, we simply extract two columns field1 and field2 from the table using SELECT. Since the result is a DataFrame, you can run DataFrame actions such as collect, first, show etc. An example of collect action is shown here. In the previous
+
+4. SQL query to extract data
+02:02 - 02:40
+lesson, you have seen how to use select operation to subset the data from a DataFrame. Here is an example of how you can do the same with a SQL query. In this example, we will first construct the query for selecting the Product_ID column form the temporary table. Next we will pass the query to the SparkSession's sql method to create a new DataFrame. Because the result of SQL query returns a DataFrame, all the usual DataFrame operations are available. Here we can use show(5) action to print the first 5 rows of the DataFrame. The SQL queries are
+
+5. Summarizing and grouping data using SQL queries
+02:40 - 03:12
+not limited to extracting data as seen in the previous slide. We can also create SQL queries to run aggregations. In this example, we first construct a query for selecting 'Age' and 'Purchase' columns, then aggregate the total of all the purchases, the maximum per Age group. We can then provide the query to the SparkSession's sql method and use show(5) action to print out the first 5 rows as seen in here. In addition to extracting and summarizing the data,
+
+6. Filtering columns using SQL queries
+03:12 - 03:43
+Spark SQL queries can also be constructed for filtering the rows from a DataFrame. Suppose you want to filter out the rows of Age, Purchase and Gender columns where the Gender is Female and purchase is greater than 20000, you can construct a query as shown in this example. You can confirm whether or not query worked by providing the query to the SparkSession's sql method and using show(5) action to print out the first 5 rows as shown in this example. Let's practice some SQL
+
+7. Time to practice!
+03:43 - 03:47
+within PySpark shell now!

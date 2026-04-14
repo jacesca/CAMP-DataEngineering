@@ -1,0 +1,15 @@
+1. Final analysis and delivery
+00:00 - 00:08
+We've worked with a lot of Spark components while exploring data cleaning. Let's finish up this data cleaning pipeline with some final analysis calculations.
+
+2. Analysis calculations (UDF)
+00:08 - 00:47
+Analysis calculations are the process of using the columns of data in a DataFrame to compute some useful value using Spark's functionality. We've used UDFs in previous chapters, and this version illustrates calculating an average sale price from a given list of sales. A Python function takes a saleslist argument. For every sale in the saleslist, the function adds the sale entry (from value 2 and 3 in the sale tuple). Once complete, it calculates the actual average per row and returns it. The remaining code is what we've done previously when defining a UDF and using it within a DataFrame.
+
+3. Analysis calculations (inline)
+00:47 - 01:41
+Spark UDFs are very powerful and flexible and are sometimes the only way to handle certain types of data. Unfortunately UDFs do come at a performance penalty compared to the built-in Spark functions, especially for certain operations. The solution is to perform calculations inline if possible. Spark columns can be defined using in-line math operations, which can then be optimized for the best performance. In this case, we read in a datafile, then have two examples of adding calculated columns. The first is a simple average computed by using two columns in the DataFrame. The second option computes a square footage by multiplying the values in two columns together to create a third. The final line shows the option of mixing a UDF with an inline calculation. There is often a better way to do this, but it does illustrate Spark does not care about the source of the info as long as it conforms to the expected input format.
+
+4. Let's practice!
+01:41 - 01:49
+Let's finish up this course by performing some analysis on our DataFrame and add meaningful information to the data.

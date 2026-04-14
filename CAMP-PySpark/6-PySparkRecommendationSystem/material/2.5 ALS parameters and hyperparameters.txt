@@ -1,0 +1,59 @@
+1. ALS parameters and hyperparameters
+00:00 - 00:10
+As with most algorithms, ALS has arguments that we give it and hyperparameters which must be tuned in order to generate the best predictions.
+
+2. Example ALS model code
+00:10 - 00:16
+Here is what a built-out ALS model looks like. Let's review each argument and hyperparameter.
+
+3. Column names
+00:16 - 00:36
+The userCol, itemCol and ratingCol are straightforward. They simply tell spark which columns in your dataframe contain the respective userIds', itemIds' and ratings. The first ALS hyperparameter is the rank.
+
+4. Rank
+00:36 - 00:50
+As you already know, ALS will take a matrix of ratings, and it will factor that matrix into two different matrices, one representing the users, and the other representing the products, or items, or in our case, movies. In the process of doing this,
+
+5. Rank (cont.)
+00:50 - 00:57
+latent features are uncovered. ALS allows you to choose the number of latent features that are created, which is referred to as the "rank" hyperparameter, often represented by the letter k.
+
+6. Rank
+00:57 - 01:35
+Your objective with the data will be to determine the "rank". If you're trying to find meaningful groupings or categories of movies to see how similar or different movies are, you may want to experiment with different numbers of latent features. If you have too few or too many latent features, the groupings might be difficult to understand, so you'll want to look at different numbers of latent features and manually identify what makes the most sense. For purposes of recommendations however, the best number of latent features will be found through cross-validation.
+
+7. MaxIter
+01:35 - 02:01
+The number of iterations, or "maxIter" simply tells ALS how many times to iterate back and forth between the factors matrices, adjusting the values to reduce the RMSE. Obviously the higher number of iterations, the longer it will take to complete, and the fewer number of iterations, the higher the risk of not fully reducing the error. So you'll have to determine what works you.
+
+8. RegParam
+02:01 - 02:21
+Many other machine learning algorithms have a regularization parameter, often called lambda. A lambda is simply a number that is added to an error metric to keep the algorithm from converging too quickly and overfitting to the training data. The lambda for ALS in Pyspark is referred to as the "regParam".
+
+9. Alpha
+02:21 - 02:32
+We'll talk about alpha later in the course, but suffice it to say that alpha is only used when using implicit ratings, and not used with explicit ratings.
+
+10. Non-negative
+02:32 - 02:49
+Let's talk about the ALS arguments. As mentioned previously, there are several different factorizations that can be used to factor a matrix. The one that we are interested in is the non-negative factorization, so we set the nonnegative argument to True.
+
+11. Cold start strategy
+02:49 - 03:28
+You might be familiar with the term coldStartStrategy already. In the context of ALS, when splitting data into test and train sets, it's possible for a user to have all of their ratings inadvertantly put into the test set, leaving nothing in the train set to be used for making a prediction. In this case, ALS can't make meaningful predictions for that user, or calculate an error metric. To avoid this, we set the coldStartStrategy to "drop" which tells Spark that when these situations arise, to not use them to calculate the RMSE, and to only use users that have ratings in both the test AND training set.
+
+12. Implicit preferences
+03:28 - 03:35
+We also need to tell Spark whether our ratings are implicit or explicit. We do this by setting the implicitPrefs argument to True or False.
+
+13. Sample ALS model build
+03:35 - 03:44
+Once we have a built-out model like you see here, we can fit it to training data, and then generate test predictions to see how well it performs. We can do this by
+
+14. Fit and transform methods
+03:44 - 03:51
+calling the fit and transform methods as you see here. You'll do this yourself in subsequent exercises.
+
+15. Let's practice!
+03:51 - 03:53
+Now it's your turn to build some models.

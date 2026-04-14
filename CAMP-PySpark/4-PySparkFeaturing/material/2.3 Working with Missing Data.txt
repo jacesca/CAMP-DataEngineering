@@ -1,0 +1,35 @@
+1. Working with Missing Data
+00:00 - 00:05
+Missing data is frustrating, in this lesson we will touch on a few ways to handle it.
+
+2. How does data go missing in the digital age?
+00:05 - 00:54
+How does data go missing in the digital age? Sensors can fail, surveys can miss people or new ways to measure things can cause gaps in data sets. Data storage rules can force data that doesn't fit the specified type to be null. For example dates in different formats, abbreviations or a currency with a comma instead of a period. Joining datasets can enrich your model but can induce missing values if they are not at captured at the same granularity. If you combine daily data with monthly data, it will create gaps for all the days where the monthly data was not captured. Lastly, data can be missing intentionally, attributes used in combination might be enough to compromise privacy. This can be seen in government datasets like the census where they will omit data if there is a concern.
+
+3. Types of Missing
+00:54 - 01:40
+Understanding why your data is missing is important. Missing Completely at Random occurs when the data is missing with no pattern. Your data is likely still representative of the whole population. Missing at Random occurs when the probability of missing data on the Y variable is unrelated to the value of Y. For example, suppose males are less likely to answer a depression survey; this has no relationship with their level of depression, after accounting for maleness. Missing not at random is when the value that is missing is related to the reason why it is missing. Supposing that people with severe health problems do not answer a question asking them to rank their health would indicate missing not at random.
+
+4. Assessing Missing Values
+01:40 - 02:09
+Earlier we showed how to use the function dropna but we didn't talk about when to use it. If your data only has a few missing values and they are missing completely at random it may be fine to remove the rows. But how can we check to see how many missing values we have in our dataset though? We can use the isNull function. It returns true if the condition is true. Here we use it to filter our data to records where they are NULL and then count them.
+
+5. Plotting Missing Values
+02:09 - 02:31
+We can also use seaborn to help us visualize missing values by leveraging the heatmap function. Using the same steps as before where we sample our data, convert it and then use seaborn to plot the heat map. Note we use pandas DataFrame isnull to convert the dataframe into a T/F for null values.
+
+6. Missing Values Heatmap
+02:31 - 02:35
+Here we can see the missing values as white spaces in the chart.
+
+7. Imputation of Missing Values
+02:35 - 03:06
+Another way to handle missing values is to replace them. The replacement value might be based on business rules such as missing sales means there were no sales and replace with 0. If the data is missing completely at random, it may make sense to impute them using the mean or the median. Another option could be to use interpolation, creating another model to predict the values. Replacing values shouldn't be done without some serious considerations; make sure you research the appropriateness.
+
+8. Imputation of Missing Values
+03:06 - 03:29
+To replace missing values we will use pyspark's fillna which takes the value to use for replacement as well as a list of column names. Here we replace values with 0 We can also replace values with the mean by calculating it using an aggregate function and use collect to force the calculation immediately and then access the value by using the zero, zero index. Then col_mean only needs to be placed in the fillna function.
+
+9. Let's practice!
+03:29 - 03:42
+In this video, you learned about types of missing data, how to assess missing values and some methods to treat them. Take some time to do the exercises and try out what you learned.

@@ -1,0 +1,84 @@
+1. Matrix Multiplication
+00:00 - 00:12
+As you've probably realized, matrix operations are fundamental to the ALS algorithm. We're going to review matrix multiplication and matrix factorization here. Let's start with multiplication.
+
+2. Matrix Multiplication
+00:12 - 00:45
+Here we have two square matrices. In order to multiply them together, we make specific pairs of the values from the two matrices, and add the products of those pairs. We start at the top left-hand corner of each matrix, and create pairs moving to the right on the first matrix, and moving down on the second matrix one at a time. Each pair is multiplied, and the products from all pairs are added together. The final sum will make up one number of the resulting matrix. That's a lot to digest, so let's walk through an example. Starting at the top
+
+3. Matrix Multiplication
+00:45 - 00:55
+left number of each matrix we have a pair of numbers, 1 and 9. We will multiply those numbers together. Then moving to the right on the first matrix, and down on the second matrix we have
+
+4. Matrix Multiplication
+00:55 - 01:01
+2 and 6, then moving
+
+5. Matrix Multiplication
+01:01 - 01:16
+right again on the first matrix and down again on the second matrix we have 3 and 3. We have completed the first set of pairs, so let's add their products together. 1 times 9, plus 2 times 6 plus 3 times 3 is
+
+6. Matrix Multiplication
+01:16 - 01:18
+9 plus 12 plus 9, which gives us
+
+7. Matrix Multiplication
+01:18 - 01:27
+30. 30 is the first number in our final matrix. From here we stay on the first row of the first matrix, but move on to the second column of the
+
+8. Matrix Multiplication
+01:27 - 01:33
+second matrix. These pairs give us 1 and 8,
+
+9. Matrix Multiplication
+01:33 - 01:35
+2 and 5,
+
+10. Matrix Multiplication
+01:35 - 01:44
+and 3 and 2. 1 times 8 plus 2 times 5 plus 3 times 2 is equal to 8 plus 10 plus 6, which is
+
+11. Matrix Multiplication
+01:44 - 01:47
+24. Moving to the next set of pairs, we multiply
+
+12. Matrix Multiplication
+01:47 - 01:57
+1 and 7, 2 and 4, and 3 and 1. Their products are 7, 8 and 3 which makes
+
+13. Matrix Multiplication
+01:57 - 02:05
+18. Once we've multiplied the first row of the first matrix by all columns of the second matrix, we then go through the same process for
+
+14. Matrix Multiplication
+02:05 - 02:10
+the second row of the first matrix with all the columns of the second matrix,
+
+15. Matrix Multiplication
+02:10 - 02:13
+and so on
+
+16. Matrix Multiplication
+02:13 - 02:14
+until all rows of the
+
+17. Matrix Multiplication
+02:14 - 02:16
+first matrix have been multiplied
+
+18. Matrix Multiplication
+02:16 - 02:26
+by all columns of the second matrix. In this example, we multiplied two square matrices of the same dimensions. In reality, you can multiply any two matrices as long as the
+
+19. Matrix Multiplication
+02:26 - 02:33
+number of columns of the first matrix matches the number of rows of the second matrix,
+
+20. Matrix Multiplication
+02:33 - 02:41
+If they don't, then some values in one of the matrixces won't be paired, and multiplication can't be completed.
+
+21. Let's practice!
+02:41 - 02:44
+Let's look at some examples, and practice matrix multiplication.
+

@@ -1,0 +1,19 @@
+1. Course recap
+00:00 - 00:22
+Congratulations. You've now completed this course on building Collaborative Filtering recommendation engines in Pyspark. We've covered a number of things from why these are important to matrix multiplication and factorization and latent features. But most importantly, you've learned how to build and interpret recommendation engines with three different data types:
+
+2. Course summary
+00:22 - 00:43
+* Explicit Ratings * Implicit Ratings using user behavior counts{{1}} * Implicit Ratings using binary user behavior{{2}} With this information you'll be well-prepared to build a collaborative-filtering recommendation engine with the relevant data available to you as a data scientist. Some things to bear in mind about these types of models:
+
+3. Things to bear in mind
+00:43 - 01:03
+If users don't have a lot of ratings, and ALS can't infer much about them, it's likely that ALS will make broad general recommendations that aren't really personalized. You might have seen this if you spent extra time exploring some of the recommendation output. Like all models, the more data there is, the better the model performs.
+
+4. Things to bear in mind (cont.)
+01:03 - 01:28
+While we've gone over different ways of evaluating recommendations engines, the only way to really know if your model performs well is to test it on users and see if they actually take your recommendations. It's entirely possible that a simple binary implicit ratings model provides better recommendations for users than an explicit model, but the only way to know is to test it. Bear this in mind as you move forward.
+
+5. Resources
+01:28 - 02:33
+Here are some resources to help you as you continue to learn about these models and begin to build them on your own. The {{1}} first is a paper published by McKinsey and Company discussing the power of recommendation engines like ALS based models. The {[2}} second is the code to build the wide_to_long function discussed in the section about preparing data for ALS. The {[3}} third is the white paper that provides the academic background for building ALS models using implicit ratings. I highly recommend reading this paper as it provides a lot of context and insight into how these models work and alternative ways to evaluate them. The {{4}} fourth is a GitHub link for code that manages the cross validation and model evaluation for implicit ratings models using ALS in Pyspark. The {[5}} last resource listed here is a paper that discusses the math and intuition behind the user-based weighting and item-based weighting methodologies for addressing the class imbalance present in binary ratings models. Congratulations on completing this course, and best of luck as you move forward.

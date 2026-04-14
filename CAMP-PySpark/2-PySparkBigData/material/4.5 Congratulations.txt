@@ -1,0 +1,15 @@
+1. Congratulations!
+00:00 - 00:25
+Congratulations on successfully completing Fundamentals of BigData via PySpark course. Our goal through this course was to equip you with a basic understanding of Big Data and show how Apache Spark can be used to perform powerful data analysis at scale. Let's quickly review what you have learned so far in this course and recommend you few courses that you can take next.
+
+2. Fundamentals of BigData and Apache Spark
+00:25 - 01:28
+Analyzing BigData is equivalent to conducting both descriptive and inferential analyses using distributed computing techniques such as Spark, with the hopes that the volume, variety, and velocity of BigData that makes distributed computing necessary will lead to deeper or more targeted insights. Chapter 1 started with the fundamentals of BigData and introduced Apache Spark as an open source distributed BigData processing engine, as well as its different components namely Spark Core, Spark SQL, Spark MLlib, Graphx, and Spark Streaming. Because Python is one of the most popular languages for data science, we looked specifically at how you might use PySpark which is Spark’s Python API to execute Spark jobs, and PySpark shell to develop Spark's interactive applications in Python. Finally you learned about the two different modes of running Spark namely local mode and cluster mode.
+
+3. Spark components
+01:28 - 02:33
+Chapter 2 introduced PySpark RDD which is the main API in Spark Core for processing unstructured data. We learned about the different features of RDDs, different methods of creating RDDs and finally, RDD operations namely Transformations and Actions. Chapter 3 explored PySpark SQL which is Spark's high-level API for working with structured data. PySpark SQL creates DataFrames which provides more information about the structure of data and the computation being performed. We looked at the different methods of creating DataFrames, DataFrame operations and finally different methods of visualizing Big Data using DataFrames. Chapter 4 delved deep into PySpark MLlib, Spark's built-in library for machine learning, and discussed how PySpark MLlib makes practical machine learning scalable and easy. This chapter introduced the three C's of MLlib - Collaborative filtering, Classification, and Clustering. The ecosystem of
+
+4. Where to go next?
+02:33 - 03:25
+Apache Spark is vast and ever-expanding, but throughout the course, we’ve discussed the essential underlying concepts. Where you choose to go from here, whether that be experimenting and applying some of these tools and patterns on your own, or investigating Spark components such as Spark SQL or Spark MLlib more deeply, is up to you. But we hope that the concepts, tools, and techniques that we’ve introduced in this course have provided a well-informed starting point, and can continue to serve as a basis for you to refer back to throughout your distributed data analysis journey. With this general understanding of PySpark, we would encourage you to look at other DataCamp PySpark courses focused on feature engineering and recommendation engines to further your knowledge.

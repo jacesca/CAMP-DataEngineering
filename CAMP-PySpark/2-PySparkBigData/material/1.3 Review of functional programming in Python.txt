@@ -1,0 +1,27 @@
+1. Use of Lambda function in python - filter()
+00:00 - 00:12
+Understanding PySpark becomes a lot easier if we understand functional programming principles in Python. In this video, let's review some of the Python functions such as lambda, map and filter.
+
+2. What are anonymous functions in Python?
+00:12 - 00:55
+Python supports the creation of anonymous functions. That is functions that are not bound to a name at runtime, using a construct called the lambda. lambda functions are very powerful, well integrated into Python, and are often used in conjunction with typical functional concepts like map and filter functions. Like def, the lambda creates a function to be called later in the program. However, it returns the function instead of assigning it to a name. This is why lambdas are known as anonymous functions. In practice, they are used as a way to inline a function definition, or to defer execution of a code. Lambda functions can be used
+
+3. Lambda function syntax
+00:55 - 01:39
+whenever function objects are required. They can have any number of arguments but only one expression and the expression is evaluated and returned. The general syntax of lambda function is shown here. Here is an example of a lambda function. In this example, lambda x: x * 2, x is the argument and x * 2 is the expression that gets evaluated and returned. This function has no name. It returns a function object which is assigned to the identifier "double" here. Applying the lambda function to a number such as 3 returns 6 which is the double of the original number. Let's take a look at the differences between
+
+4. Difference between def vs lambda functions
+01:39 - 02:18
+def and lambda. Here is the Python code to illustrate cube of a number showing the difference between normal Python function using def and anonymous function using lambda. As you can see, both def and lambda do exactly the same. The main difference is that the lambda definition does not include a return statement and it always contains an expression which is returned. Also note that we can put a lambda definition anywhere a function is expected, and we don't have to assign it to a variable at all, unlike normal Python function using def. We use lambda functions when we
+
+5. Use of Lambda function in Python - map()
+02:18 - 02:58
+require a nameless function for a short period of time. Most of the times we use lambdas with built-in functions like map and filter. The map function is called with all the items in the list and a new list is returned which contains items returned by that function for each item. The general syntax of map function is shown here. It takes in a function and a list. Here is an example of map function with lambda to add the number 2 to all the items in a list. The result indicates that the number 2 is added to 1, 2, 3, 4 resulting in 3, 4, 5, 6. The filter
+
+6. Use of Lambda function in python - filter()
+02:58 - 03:39
+function in Python takes in a function and a list as arguments. The function is called with all the items in the list and a new list is returned which contains items for which the function evaluates to True. Here is the general syntax of filter function in Python. Similar to map, it takes a function and a list as arguments. Here is an example use of filter with lambda to filter out only odd numbers from a list. As shown in the example, filtering the items list containing number 1, 2, 3, 4 resulted in 1 and 3 which are the only odd numbers for the input list. Lambda functions
+
+7. Let's practice
+03:39 - 03:48
+are incredibly useful and before going deep into Pyspark, let's practice some lambda functions in PySpark shell.

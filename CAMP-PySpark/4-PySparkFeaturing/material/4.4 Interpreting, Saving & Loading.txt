@@ -1,0 +1,19 @@
+1. Interpreting, Saving & Loading Models
+00:00 - 00:06
+In this video, we will go over how to interpret the model and then how to save and load it for later use!
+
+2. Interpreting a Model
+00:06 - 01:10
+Now that we've evaluated our model we will want to understand what features are important in predicting a homes' selling price. To do this we need to import pandas library to manipulate this tiny array easier. To use Spark on this would be using a sledge hammer for a delicate task. We will create a dataframe fi_df to hold our feature importances. These feature importances can be accessed by calling featureImportances on the model and converting them to an array with toArray. Since this is just an array of numbers, we will need to name the new column in the dataframe importance. Now we just have a single column dataframe. We want to create another column using the list of feature names we fed into the VectorAssembler earlier. We can convert this list into a series by wrapping it with pd Series. Next we since we have over a hundred features we only want to look at the most important ones so we will use pandas sort_values to sort the column importance in descending order.
+
+3. Interpreting a Model
+01:10 - 01:30
+Now it's as simple as out displaying the results to the screen. Here we can see the biggest predictor of how much your house will sell for is how much you listed it for. Intuitively this makes a lot of sense, realtors are skilled in setting the value of the house and it has the effect of anchoring the price, meaning it will likely only marginally increase or decrease from that value.
+
+4. Saving & Loading Models
+01:30 - 01:56
+Last but not least it important to know how to save and load the model. Luckily this is very simple now, to save it just call save on your model and give the model a name. Note that the model isn't a single file but a directory containing many files defining your model. To load your data you need to import RandomForestRegressionModel from pyspark ml regression and provide it the location and name of your model.
+
+5. On to your last set of exercises!
+01:56 - 02:04
+In this video we learned how to interpret result and save and load your model for later use. Let's see you give it a try!

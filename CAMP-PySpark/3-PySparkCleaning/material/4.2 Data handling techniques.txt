@@ -1,0 +1,23 @@
+1. Data handling techniques
+00:00 - 00:09
+We've worked with many aspects of Spark when it comes to data cleaning operations. Let's look at how to use some of the methods we've learned to parse unconventional data.
+
+2. What are we trying to parse?
+00:09 - 01:01
+When reading data into Spark, you're rarely given a fully uniform file. Often there is content that needs to be removed or reformatted. Some common issues include: Incorrect data, consisting of empty rows, commented lines, headers, or even rows that don't match the intended schema. Real world data often includes nested structures, including columns that use different delimiters. This could include the primary columns separated via a comma, but including some components separated via a semi-colon. Real data often won't fit into a tabular format, sometimes consisting of a differing number of columns per row. There are various ways to parse data in all of these situations. The way you choose will depend on your specific needs. We are focusing on CSV data for this course, but the general scenarios described apply to other formats as well.
+
+3. Stanford ImageNet annotations
+01:01 - 01:52
+For this chapter we're going to use the Stanford ImageNet annotations which focus on finding and identifying dogs in various ImageNet images. The annotations provide a list of all identified dogs in an image, including when multiple dogs are in the same image. Other metadata is included, including the folder within the ImageNet dataset, the image dimensions, and the bounding box(es) of the dog(s) in the image. In the example rows, we have the folder names, the ImageNet image reference, width, and height. Then there is the image data for the type of dog (or dogs) in each image. Each breed "column" consists of the breed name and the bounding box in the image. The first row contains one Newfoundland, but notice that the 2nd row actually has two Bull Mastiffs identified and has an addition "column" defined.
+
+4. Removing blank lines, headers, and comments
+01:52 - 02:37
+Spark's CSV parser can handle many common data issues via optional parameters. Blank lines are automatically removed (unless specifically instructed otherwise) when using the CSV parsing. Comments can be removed with an optional named argument, comment, and specifying the character that any comment line would be defined by. Note that this handles lines that begin with a specific comment. Parsing more complex comment usage requires more involved procedures. Header rows can be parsed via an optional parameter named header, and set to 'True' or 'False'. If no schema is defined, column names will be initially set as defined by the header. If a schema is defined, the row is not used as data, but the header names are otherwise ignored.
+
+5. Automatic column creation
+02:37 - 03:11
+When importing CSV data into Spark, it will automatically create DataFrame columns if it can. It will split a row of text from the CSV on a defined separator argument named 'sep'. If sep is not defined, it will default to using a comma. The CSV parser will still succeed in parsing data if the separator character is not within the string. It will store the entire row in a column named _c0 by default. Using this trick allows parsing of nested or complex data. We'll look at this more later on.
+
+6. Let's practice!
+03:11 - 03:16
+Let's practice working with this data and extending our data pipeline further!

@@ -1,0 +1,36 @@
+1. Introduction to Clustering
+00:00 - 00:16
+In the previous video, you learned about Classification, a type of supervised learning method. But what if we want to make sense of unlabeled data? In this video, you'll learn about Clustering which is a type of unsupervised learning method to group unlabeled data together.
+
+2. What is Clustering?
+00:16 - 00:59
+So what exactly is Clustering? Clustering is the unsupervised learning task that involves grouping objects into clusters of high similarity with no labels. Unlike the supervised learning methods that you have seen before such as Collaborative filtering and Classification, where data is labeled, Clustering can be used to make sense of unlabeled data. PySpark MLlib library offers a handful of clustering models such as K-means clustering, Gaussian mixture clustering, Power iteration clustering (PIC), Bisecting k-means clustering and Streaming k-means clustering. In this video, we will focus on K-means clustering because of its simplicity and popularity.
+
+3. K-means Clustering
+00:59 - 01:37
+K-means is an unsupervised method that takes data points in an input data and will identify which data points belong to each one of the clusters. As shown in the left side of the figure, we provide 'n' data points and a predefined number of 'k' clusters. The K-means algorithm through a series of iterations creates clusters as shown on the right side of the figure. The K-means clustering minimally requires that the data is a set of numerical features and that we specify the target number of 'K' clusters ahead. The first step in implementing the
+
+4. K-means with Spark MLLib
+01:37 - 02:20
+K-means clustering algorithm using PySpark MLlib is loading the numerical data into an RDD, and then parsing the data based on a delimiter. Here is an example of how you load a CSV file into an RDD using SparkContext's textFile method, then parsing the RDD based on comma delimiter and finally converting the floats to integers. The contents of the first five lines of RDD can be printed using take(5). As you can see, the dataset contains 2 columns, each column indicating a feature loaded into an RDD. Like other algorithms, you invoke K-means by calling KMeans-dot-train method
+
+5. Train a K-means clustering model
+02:20 - 03:00
+which takes an RDD, the number of clusters we expect and the maximum number of iterations allowed. Continuing our previous example, first, we can import the KMeans class from pyspark-dot-mllib-dot-clustering submodule. Next, we call KMeans-dot-train method on RDD and the two parameters k equals 2, and maxIterations equals 10. KMeans-dot-train returns a KMeansModel that lets you access the cluster centers using the model-dot-clusterCenters attribute. An example of cluster centers for k equals 2 is shown here. The next step in K-means clustering is to
+
+6. Evaluating the K-means Model
+03:00 - 03:34
+evaluate the model by computing the error function. Unfortunately, PySpark K-means algorithm doesn't have a method already, so we have to write a function by ourselves as shown here. We will next apply the error function on the RDD and calculate Within Set Sum of Squared Error. Continuing our previous example, we apply map transformation of error function to our input RDD to calculate Within Set Sum of Squared Error which is 77-point-96 in this example. An optional but highly
+
+7. Visualizing K-means clusters
+03:34 - 04:13
+recommended step in K-means clustering is cluster visualization. Continuing from our previous example, let's first create a scatter plot of the two feature columns in the sample data. Next, overlay it with the cluster centers from the KMeans model which are indicated by colored "x"'s in this figure. The purple and yellow colors here represent the labels created from the model based on the K which is 2 in this example. As you can see, the overlaid scatter plot shows a reasonable clustering with the 2 centroids placed in the center of the each of the cluster. Now let's quickly
+
+8. Visualizing clusters
+04:13 - 04:45
+take a look at the code to generate the previous plot. As seen previously, plotting libraries doesn't work directly on RDDs and DataFrames. As shown here, we first convert RDD to Spark DataFrame and then to Pandas DataFrame. We also convert cluster centers from KMeans model into a Pandas DataFrame. Finally, we use plt function in matplotlib library to create a overlaid scatter plot as shown in the previous slide. Let's use a real world
+
+9. Clustering practice
+04:45 - 04:52
+data and generate some nice clusters using PySpark's MLlib KMeans clustering algorithm.
+

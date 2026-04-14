@@ -1,0 +1,43 @@
+1. RDD operations in PySpark
+00:00 - 00:11
+In the last video, you have learned how to load your data into RDDs. In this video, you'll learn about the various operations that support RDDs in PySpark. RDDs
+
+2. Overview of PySpark operations
+00:11 - 00:27
+in PySpark supports two different types of operations - Transformations and Actions. Transformations are operations on RDDs that return a new RDD and Actions are operations that perform some computation on the RDD. The most important
+
+3. RDD Transformations
+00:27 - 00:59
+feature which helps RDDs in fault tolerance and optimizing resource use is the lazy evaluation. So what is lazy evaluation? Spark creates a graph from all the operations you perform on an RDD and execution of the graph starts only when an action is performed on RDD as shown in this figure. This is called lazy evaluation in Spark. The RDD transformations we will look in this video are map, filter, flatMap and union. The map
+
+4. map() Transformation
+00:59 - 01:42
+transformation takes in a function and applies it to each element in the RDD. Say you have an input RDD with elements 1,2,3,4. The map transformation takes in a function and applies it to each element in the RDD with the result of the function being the new value of each element in the resulting RDD. In this example, the square function is applied to each element of the RDD. Let's understand this with an example. We first create an RDD using SparkContext's parallelize method on a list containing elements 1,2,3,4. Next, we apply map transformation for squaring each element of the RDD. The
+
+5. filter() Transformation
+01:42 - 02:11
+filter transformation takes in a function and returns an RDD that only has elements that pass the condition. Suppose we have an input RDD with numbers 1,2,3,4 and we want to select numbers greater than 2, we can apply the filter transformation. Here is an example of the filter transformation wherein we use the same RDD as before to apply the filter transformation to filter out the numbers that are greater than 2. flatMap
+
+6. flatMap() Transformation
+02:11 - 02:59
+is similar to map transformation except it returns multiple values for each element in the source RDD. A simple usage of flatMap is splitting up an input string into words. Here, you have an input RDD with two elements - "hello world" and "how are you". Applying the split function of the flatMap transformation results in 5 elements in the resulting RDD - "hello", "world", "how", "are", "you". As you can see, even though the input RDD has 2 elements, the output RDD now contains 5 elements. In this example, we create an RDD from a list containing the words "hello world" and "how are you". Next, we apply flatmap along with split function on the RDD to split the input string into individual words.
+
+7. union() Transformation
+02:59 - 03:50
+union Transformation returns the union of one RDD with another RDD. In this figure, we are filtering the inputRDD and creating two RDDs - errorsRDD and warningsRDD and next we are combining both the RDDs using union transformation. To illustrate this using PySpark code, let's first create an inputRDD from a local file using SparkContext's textFile method, next we will use two filter transformations to create two RDDs errorRDD and warningsRDD and finally using union transformation we will combine them both. So far you have seen how RDD Transformations but after applying Transformations at some point, you'll want to actually do something with your dataset. This is when Actions come into picture.
+
+8. RDD Actions
+03:50 - 04:07
+Actions are the operations that are applied on RDDs to return a value after running a computation. The four basic actions that you'll learn in this lesson are collect, take, first and count. Collect
+
+9. collect() and take() Actions
+04:07 - 04:41
+action returns complete list of elements from the RDD. Whereas take(N) print an 'N' number of elements from the RDD. Continuing the map transformation example, executing collect returns all elements i.e 1, 4, 9, 16 from the RDD_map RDD that you created earlier. Similarly here is an example of take(2) action that prints the first 2 elements i.e 1 and 4 from the RDD_map RDD. Sometimes you just want to print the first element of
+
+10. first() and count() Actions
+04:41 - 05:17
+the RDD. first action returns the first element in an RDD. It is similar to take(1). Here is an example of first action which prints the first element i.e 1 from the RDD_map RDD. Finally, the count action is used to return the total number of rows/elements in the RDD. Here is an example of count action to count the number of elements in the RDD_flatmap RDD. The result here indicates that there are 5 elements in the RDD_flatmap RDD. It's time for you to practice
+
+11. Let's practice RDD operations
+05:17 - 05:21
+RDD operations in PySpark shell now.

@@ -1,0 +1,43 @@
+1. Why learn how to build recommendation engines?
+00:00 - 00:09
+Hi. Welcome to this course on building recommendation engines using Alternating Least Squares or "ALS" in PySpark.
+
+2. What recommendations look like
+00:09 - 00:34
+You're probably already familiar with the output of these types of recommendation engines where a website tells you something along the lines of, "If you like that, then you'll probably like this." You've likely seen these types of recommendations on your favorite retail or media streaming websites. These recommendations are generated through different types of data that you as a user or customer provide either directly or indirectly.
+
+3. Learning about you
+00:34 - 00:59
+When you purchase something online, or watch a movie, or even read an article, you are often given a chance to rate that item on a scale of 1 to 5 stars, a thumbs up or thumbs down, or some other type of rating scale. Based on your feedback from these types of rating systems, companies can learn a lot about your preferences, and offer you recommendations based on preferences of users that are similar to you.
+
+4. How recommendation engines work
+00:59 - 01:07
+For example, if your movie streaming service sees that you liked Dark Knight and Iron Man, and did not like Tangled, and it also sees
+
+5. How recommendation engines work
+01:07 - 01:16
+other users that also liked Dark Knight and Iron Man and also did not like Tangled, the ALS algorithm would see that you and these other users have
+
+6. How recommendation engines work
+01:16 - 01:21
+similar tastes. It would then look at the movies that you have not yet seen, and see which ones are the
+
+7. How recommendation engines work
+01:21 - 01:25
+highest rated among those similar users, and offer them as
+
+8. How recommendation engines work
+01:25 - 01:42
+recommendations to you. This is why websites will often say things like, "Because you liked that movie, we think you'll like this movie." Or "Users like you also watched this movie."
+
+9. The Power of Recommendation Engines
+01:42 - 02:30
+These types of rating systems are extremely powerful. In fact, an article published by McKinsey & Company in October of 2013 stated that 35% of what customers buy on Amazon and 75% of what they watch on Netflix come from product recommendations based on algorithms such as the one you are going to be learning in this course. That's a powerful use of data, and with this course, you will learn how to do this. In addition to this, there are alternate uses for recommendation algorithms that can be extremely useful for purposes as broad as feature space reduction, image compression, mathematical user and product grouping, latent feature discovery and you're going to learn some of these in this course.
+
+10. Prerequisites
+02:30 - 02:44
+This tutorial is intended for those that have experience with Spark and Python, and understand the fundamentals of machine learning. If needed, some good introductory resources are DataCamp's Introduction to PySpark course, their Intermediate Python for Data Science course, and their Supervised Machine Learning with Python's SciKitLearn course.
+
+11. Let's practice!
+02:44 - 02:44
+Let's jump in.
