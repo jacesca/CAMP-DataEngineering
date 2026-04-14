@@ -1,0 +1,49 @@
+1. Model deployment
+00:00 - 00:11
+Now that we have learned how to register models to MLflow Model Registry to effectively manage the lifecycle of models, we will now explore how to use the Model Registry for model deployment.
+
+2. ML lifecycle
+00:11 - 00:19
+The MLflow Model Registry can be used to aid in the "Model Deployment" phase of the ML Lifecycle by enabling the deployment of models.
+
+1 datacamp.com
+3. Model versions and stages
+00:19 - 00:37
+Because the Model Registry provides a centralized repository that helps manage models across the entire development lifecycle, it also provides a simplified model deployment process. Using the Model Registry for deploying models can utilize both model versions or model stages.
+
+4. Ways to deploy models
+00:37 - 00:55
+MLflow provides two options for deploying models from the Model Registry. A model can be fetched from the Model Registry using the load_model function from the model flavor. A model can also be served from the Model Registry using the serve command from the MLflow command line tool.
+
+5. Models URI
+00:55 - 01:09
+To specify model deployment from the MLflow Model Registry, MLflow uses a convention as the model URI. The full model URI consists of a model name and either a model version or model stage.
+
+6. Load models
+01:09 - 01:27
+To fetch a model from the Model Registry using the load model function, begin by importing the model flavor. Using the flavors load_model function, pass in a model's URI from the model registry reflecting either the version we wish to deploy or the model stage.
+
+7. Load models example
+01:27 - 01:53
+In the following example, we will load a Unicorn model in the stage of Staging. We are using the scikit-learn flavor's load model function. Our model's URI contains the model name of Unicorn and contains Staging. Printing the model displays LogisticRegression as expected and it is loaded without issue. Once loaded, we can use the predict function on the model for inference.
+
+8. Serving models
+01:53 - 02:29
+Models can also be served from the Model Registry, using the serve command from the MLFlow command line tool. Serving a model is the process of setting up an endpoint that can receive input data and return predictions. Let's deploy the Production stage Unicorn model. Using the MLflow command line, we use the models and the serve command. We pass in the model name with the dash-m argument and use the models convention with the name of Unicorn and the stage of Production. Once the model is deployed, we can send inference to the invocations endpoint.
+
+9. Invocations endpoint
+02:29 - 02:49
+Remember, when using the serve command for model deployment, MLflow serves the model as an API service. The invocations endpoint for model serving is an HTTP endpoint of the API using a default port of 5000. The API expects either a CSV or JSON input.
+
+1 Flaticon.com
+10. CSV and JSON
+02:49 - 03:12
+When using CSV input, the input must be a valid pandas DataFrame. pandas has a to_csv method for CSV format representation. JSON input must be a dictionary with exactly one of dataframe_split or dataframe_records fields specified. The fields specify the type of input data being passed to the REST API.
+
+11. Model prediction
+03:12 - 03:26
+Whether deploying our model using the load_model function or with the serving command line tool, we receive a return from our models during inference. The output here shows the predicted profit from our Unicorn model using test data.
+
+12. Let's practice!
+03:26 - 03:33
+Now, let's test our knowledge of using the MLflow Model Registry to deploy models.

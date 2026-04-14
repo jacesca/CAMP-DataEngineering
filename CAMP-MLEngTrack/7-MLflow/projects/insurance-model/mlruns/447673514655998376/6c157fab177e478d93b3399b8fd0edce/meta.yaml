@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/447673514655998376/6c157fab177e478d93b3399b8fd0edce/artifacts
+end_time: 1717528688936
+entry_point_name: ''
+experiment_id: '447673514655998376'
+lifecycle_stage: active
+run_id: 6c157fab177e478d93b3399b8fd0edce
+run_name: loud-cow-761
+run_uuid: 6c157fab177e478d93b3399b8fd0edce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717528688820
+status: 4
+tags: []
+user_id: Jacqueline

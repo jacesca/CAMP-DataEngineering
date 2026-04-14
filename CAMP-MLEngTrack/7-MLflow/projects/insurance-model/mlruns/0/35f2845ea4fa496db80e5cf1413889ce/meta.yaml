@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/0/35f2845ea4fa496db80e5cf1413889ce/artifacts
+end_time: 1717529485382
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 35f2845ea4fa496db80e5cf1413889ce
+run_name: crawling-snipe-809
+run_uuid: 35f2845ea4fa496db80e5cf1413889ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717529482217
+status: 3
+tags: []
+user_id: Jacqueline

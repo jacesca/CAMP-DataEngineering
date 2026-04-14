@@ -1,0 +1,54 @@
+1. Introduction to MLflow Models
+00:00 - 00:06
+MLflow uses the component MLflow Models as a way to standardize packaging machine learning models.
+
+2. MLflow Models
+00:06 - 00:31
+Standardizing models allows for easy integration between popular ML libraries and deployment tools. Packaging models refers to the process of placing all application files and resources in a strategic way that can be distributed more easily. Standards are defined in a format convention used for saving models in different model "Flavors" that can be understood by different downstream tools.
+
+1 unsplash.com
+3. Built-In Flavors
+00:31 - 00:56
+MLflow Models use a powerful concept called Flavors. Flavors make it possible to write tools to work with models from the most popular ML libraries using MLflow. Flavors simplify the process of logging, packaging, and loading models minimizing the need to write custom code. To use a flavor, just import the Flavor directly from MLflow using mlflow-dot-Flavor
+
+1 mlflow.org
+4. Autolog
+00:56 - 01:21
+Some of MLflow's built-in Flavors support a method called "auto logging" by using Flavor-dot-autolog from the MLflow module. Auto logging can be used to handle automatic logging of metrics, parameters, and models to MLflow Tracking without the need for defining explicit logging statements. The scikit-learn Flavor can utilize the autolog method when calling the model-dot-fit estimator.
+
+5. Scikit-learn Flavor
+01:21 - 01:47
+We can train a LinearRegression model and track the training run to our MLflow Tracking server. We import the mlflow module and LinearRegression directly from scikit-learn. Notice here, using the scikit-learn Flavor, we use the autolog method. The autolog method automatically logs a variety of model metrics and parameters as well as the model to MLflow Tracking when the dot-fit estimator is called.
+
+6. Autolog common metrics and parameters
+01:47 - 02:28
+Before viewing an example for scikit-learn, let's review common metrics and parameters for autolog. Remember, autolog automatically logs metrics, parameters, and models without the need to define explicit logging statements. Autolog supports both regression and classification models. Common metrics logged via autolog for regression include mean squared error, root mean squared error, mean absolute error, and r2 score. Metrics for classification include precision score, recall score, f1 score, and accuracy score. Common parameters are obtained by the get_params method from our model.
+
+7. Common parameters
+02:28 - 02:35
+Here we get the parameters from our model using the get_params function and print the values to be logged to MLflow.
+
+8. Autolog parameters
+02:35 - 02:41
+In the MLflow Tracking UI, the autolog method automatically logged default parameters for us.
+
+9. Autolog metrics
+02:41 - 02:51
+For metrics we can see that, although we did not specify which metrics to log to MLflow Tracking, autolog automatically logged several common metrics.
+
+10. Storage format
+02:51 - 03:06
+MLflow packages models using the following directory structure as a standardized storage format for all MLflow models. In our example, we utilized MLFlow's Scikit-learn Flavor to autolog our model to an MLflow tracking server.
+
+11. Contents of MLmodel
+03:06 - 03:33
+The MLmodel file is a yaml file that defines important information about the model. A yaml file is a human-readable serialization format used for configuration files. When we want to load the example model, MLflow will take a look at the MLmodel file inside the directory for how the model can be loaded. MLmodel also contains the virtual environment, Python version, and scikit-learn version used to build the model
+
+12. MLmodel
+03:33 - 03:55
+In the following image, we can see that the MLmodel file contains two Flavors: Scikit-learn and python_function. This means that we can load the model using either of the supported flavors. python_function is a generic flavor from MLflow used for customization that still provides all the same utilities as other flavors for loading and saving models.
+
+13. Let's practice!
+03:55 - 04:05
+Now that you have a better understanding of the MLflow Models concept, let us test our understanding and practice using one of the "built-in flavors".
+

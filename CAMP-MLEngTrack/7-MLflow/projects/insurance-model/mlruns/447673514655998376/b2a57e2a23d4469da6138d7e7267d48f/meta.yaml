@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/447673514655998376/b2a57e2a23d4469da6138d7e7267d48f/artifacts
+end_time: 1717528865582
+entry_point_name: ''
+experiment_id: '447673514655998376'
+lifecycle_stage: active
+run_id: b2a57e2a23d4469da6138d7e7267d48f
+run_name: caring-horse-202
+run_uuid: b2a57e2a23d4469da6138d7e7267d48f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717528859303
+status: 3
+tags: []
+user_id: Jacqueline

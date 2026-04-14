@@ -1,0 +1,10 @@
+digest: 17fda50a
+name: dataset
+profile: '{"num_rows": 14, "num_elements": 42}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "experience", "required":
+  true}, {"type": "double", "name": "age", "required": true}, {"type": "double", "name":
+  "interview_score", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Jacqueline", "mlflow.source.name": "c:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7
+  - Introduction to MLflow/projects/salary-model/train_salary_model.py", "mlflow.source.type":
+  "LOCAL"}}'
+source_type: code

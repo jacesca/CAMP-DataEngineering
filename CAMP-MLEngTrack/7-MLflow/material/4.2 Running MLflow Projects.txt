@@ -1,0 +1,52 @@
+1. Running MLflow Projects
+00:00 - 00:07
+Now that we have learned the basic structure for creating an MLflow Project, let's learn how to execute it.
+
+2. API and command line
+00:07 - 00:24
+MLflow Projects can be executed programmatically using an API from MLflow and can also be run from the command line. Offering both programmatic and command-line provides flexibility for automation and allows the possibility of chaining multiple Projects together into workflows.
+
+3. Projects API
+00:24 - 01:09
+MLflow has a module called MLflow-dot-projects that provides an API for running MLflow Projects. The MLflow-dot-projects module contains a run method for running either a local or Git-stored project. The run method accepts several arguments such as: URI which points to the URI of the Project. entry_point which is used to point to the entry_point in the MLproject that the run method should execute. experiment_name is used to specify which experiment the training run should belong to if the code is used for a training run. env_manager is used to specify which Python environment manager to use such as local, virtualenv, or conda.
+
+4. MLproject
+01:09 - 01:27
+Before executing our Project using the run method, let's review our local MLproject file which defines our MLflow Project. We are using an entry point called main that executes a Python file called train_model-dot-py. We also specify a python_env-dot-yaml file to specify our Python environment.
+
+5. train_model.py
+01:27 - 01:45
+The train_model-dot-py file is used to train a linear regression model to predict the salary of someone based on experience, age, and an interview score. Here we define all needed Python libraries and modules as well as set up training data from a Salary_predict-dot-csv file.
+
+6. train_model.py
+01:45 - 01:57
+In our code, we split our data into training and test data. Then we use the autolog method from our model flavor to automatically log metrics and parameters to MLflow Tracking during the training run.
+
+7. Projects run
+01:57 - 02:26
+To execute our MLflow Project with the run method from the MLflow-dot-projects module, we begin by importing MLflow. When we call MLflow-dot-projects-dot-run, we set the uri argument equal to dot-forward slash, which represents the same directory as where the code is executed. We define the entry_point as main which will execute the train_model-dot-py file. We also define the experiment_name as "Salary Model" to log our run to the specified experiment.
+
+8. Run output
+02:26 - 02:42
+When our Project is executed, MLflow Projects API begins by creating a new experiment since it did not exist. Then a new Python environment is created and dependencies are installed according to the python_env argument in our MLprojects file.
+
+9. Run output
+02:42 - 02:55
+Once dependencies are installed, our train_model.py script is executed and a new run is created. Once our script has completed and our model is trained, we receive a message that the run succeeded.
+
+10. MLflow Tracking
+02:55 - 03:00
+Checking the Tracking UI, our run and model were logged to MLflow Tracking successfully.
+
+11. Command line
+03:00 - 03:12
+MLflow Projects can also be executed using the MLflow command line using the run command. The run command supports the same options as the MLflow-dot-projects module.
+
+12. Run command
+03:12 - 03:37
+Here we use the mlflow run command with dash-dash-entry-point main to specify the main entry point and dash-dash-experiment-dash-name Salary Model to specify the experiment name to use. When executed, it uses the already created Python environment from the previous run. The train_model.py script is then executed to create a new training run and returns a message when completed.
+
+13. Let's practice!
+03:37 - 03:42
+Now let's test what we learned about running MLflow Projects.
+

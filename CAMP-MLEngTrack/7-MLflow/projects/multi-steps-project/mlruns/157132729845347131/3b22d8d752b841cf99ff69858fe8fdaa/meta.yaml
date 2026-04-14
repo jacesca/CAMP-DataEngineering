@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/multi-steps-project/mlruns/157132729845347131/3b22d8d752b841cf99ff69858fe8fdaa/artifacts
+end_time: 1717550223536
+entry_point_name: ''
+experiment_id: '157132729845347131'
+lifecycle_stage: active
+run_id: 3b22d8d752b841cf99ff69858fe8fdaa
+run_name: traveling-mole-750
+run_uuid: 3b22d8d752b841cf99ff69858fe8fdaa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717550217288
+status: 3
+tags: []
+user_id: Jacqueline

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/0/aeb928436f85414d8d82ed6c37ba3319/artifacts
+end_time: 1717528758169
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aeb928436f85414d8d82ed6c37ba3319
+run_name: orderly-lark-430
+run_uuid: aeb928436f85414d8d82ed6c37ba3319
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717528754823
+status: 3
+tags: []
+user_id: Jacqueline

@@ -1,0 +1,34 @@
+1. Wrap-up
+00:00 - 00:03
+Congratulations on completing this course!
+
+2. MLflow Components
+00:03 - 00:11
+You have gained the skills necessary to utilize MLflow's four components to combat the hardships of the machine learning lifecycle.
+
+1 mlflow.org
+3. Chapter 1 - MLflow Tracking
+00:11 - 00:21
+In Chapter 1, you learned how to create experiments and track training runs to MLflow Tracking, which enables easy comparison and visualization of machine learning experiments.
+
+4. Chapter 2 - MLflow Models
+00:21 - 00:33
+Next, you saw the creation and use of MLflow Models, which establishes a standard format for packaging machine learning models for easier deployment and evaluation.
+
+5. Chapter 3 - Model Registry
+00:33 - 00:46
+Chapter 3 introduced you to the Model Registry, which provides a central location for storing and collaborating on machine learning models, and covers versioning to track a model's progress from development to production.
+
+6. Chapter 4 - MLflow Projects
+00:46 - 01:00
+Finally, you discovered MLflow Projects, which is used to package ML code in a reusable and reproducible way. You also created a multi-step workflow with a single Python program.
+
+7. Congratulations!
+01:00 - 01:07
+With these tools and techniques, you are equipped to overcome many of the challenges in building machine-learning applications.
+
+1 giphy.com
+8. Thank you!
+01:07 - 01:13
+I hope you enjoyed this course and wish you all the best on your journey.
+

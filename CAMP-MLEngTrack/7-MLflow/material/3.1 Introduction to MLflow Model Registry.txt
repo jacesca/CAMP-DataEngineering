@@ -1,0 +1,56 @@
+1. Introduction to MLflow Model Registry
+00:00 - 00:07
+So far we have learned how to track MLflow Models using the Model API and by using MLflow's built-in Flavors.
+
+2. Model lifecycle
+00:07 - 00:25
+Tracking and logging models are useful during the Model Engineering and Model Evaluation steps of the ML lifecycle. Moving past these steps, we need to begin thinking about model deployment. This includes managing the lifecycle of the model through different software environments such as development, staging, and production.
+
+3. MLflow Model Registry
+00:25 - 00:39
+The MLflow Model Registry provides access to models for collaboration through a UI and the MLflow Client module. It also provides a way to manage the lifecycle of models through model versioning and model staging.
+
+4. MLflow Model Registry
+00:39 - 01:08
+The MLflow Model Registry consists of four major concepts that are used to describe and facilitate the lifecycle of an MLflow Model. Model is an MLflow Model that is created and logged to MLFlow Tracking through a run or experiment. A model is eligible to then be registered with the MLflow Model Registry. Once a model is registered to the MLflow Model Registry, the model obtains a version and can then be assigned a stage.
+
+5. MLflow Model Registry
+01:08 - 01:27
+Every registered model can have one or many associated versions. Each time a model is registered with the same name, the version increments starting at version 1. A registered model can also be assigned a model stage of "Staging", "Production" or "Archived" at any given time.
+
+6. Working with the Model Registry
+01:27 - 01:50
+Interacting with the Model Registry can be done programmatically using the MLflow client module or through the MLflow UI. The Model Registry UI can be accessed through the "Models" tab next to "Experiments". The example shows our current registered models with their associated versions and assigned stages. Currently, there are no registered models in the Model Registry.
+
+7. MLflow Client module
+01:50 - 02:03
+The MLflow client module provides a programmatic way to interact with Experiments, Runs, Model Versions, and Registered Models. We will use the client module to get started using the MLflow Model Registry.
+
+1 Flaticon.com
+8. Using MLflow client module
+02:03 - 02:22
+Using the MLflow client module is similar to using the MLflow module. To use the client module, import the MlflowClient class from the MLflow module. Then create an instance of the MlflowClient class. When we print the instance, we can see the object that was created.
+
+9. Registering a model
+02:22 - 02:39
+To use the Model Registry we create a new empty model, which is done using the client object's create_registered_model function. Inside the call, we pass the name of our model. We will learn how to register existing models in the next video.
+
+10. Model UI
+02:39 - 02:47
+The recently created Model can be viewed in the MLflow UI. We will use this Model to register MLflow Models to the Model Registry.
+
+11. Searching registered models
+02:47 - 03:01
+Models in the MLflow Model Registry can also be searched using the MLflow client module. This is useful as the number of registered models increase or when we need to search for several registered models that fit certain criteria.
+
+12. Searching registered models
+03:01 - 03:28
+The search_registered_models function searches for registered models that fit certain search criteria. The search criteria accepts a filter_string argument with identifiers and comparators. Identifiers include attributes such as names or tags. Comparators include pattern matching comparators such as equal to, not equal to, and also case-sensitive and insensitive matches.
+
+13. Example search
+03:28 - 04:03
+To search for all Models that contain the name "Unicorn", we can set a variable named unicorn_filter_string and set a pattern prefix using the name identifier with the LIKE comparator. Here we also include a % to filter for all models that contain "Unicorn" as part of model name. We can then pass the unicorn_filter_string variable to the MLflow client module to return a list of pattern matches. The search returns two registered models, Unicorn and Unicorn two-point-zero.
+
+14. Let's practice!
+04:03 - 04:09
+Now that we have a better understanding of the MLflow Model Registry, let's test our knowledge.

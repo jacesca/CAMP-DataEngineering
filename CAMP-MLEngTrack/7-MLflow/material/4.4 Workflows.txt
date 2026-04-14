@@ -1,0 +1,36 @@
+1. Workflows
+00:00 - 00:08
+So far we have learned how MLflow Projects are used to package ML code into a format that can be easily reproduced and run in different environments.
+
+2. MLflow Projects
+00:08 - 00:31
+We have also learned how using parameters with MLflow Projects can improve the flexibility and usability of ML experiments. MLflow Projects also make it possible to run multi-step workflows. A multi-step workflow is the process of combining multiple steps together. When the first step finishes, a second step automatically executes.
+
+1 unsplash.com
+3. MLproject
+00:31 - 00:47
+Because the MLproject file can hold a list of different entry points, it is possible to call each entry point individually as a step and execute that code in a single Python program. Note that step 2 is expecting a string parameter called run_id.
+
+4. Workflows
+00:47 - 01:02
+To run each entry point in a single program, we use the run method from the MLflow Projects module. Then for each step of the workflow, we assign mlflow-dot-projects-dot-run as a variable and simply specify which entry point to execute.
+
+5. Projects run
+01:02 - 01:23
+Each call to the run method returns a run object. The run object attributes can then be passed to other steps in the workflow as parameters. This makes it possible to build complex workflows that can take inputs and generate outputs that can be consumed by subsequent steps in the workflow.
+
+6. Projects run
+01:23 - 01:56
+Attributes returned by the run object include: The cancel function, which can be called to terminate a current run. The get_status function, which can be called to get the status of a run. The run_id. Each run is started with a run_id. Run_id is helpful if we need to track down artifacts created by an entry point such as a model. And finally, the wait function, which can be called to wait until the run is completed, returning True if the run succeeded and False otherwise.
+
+7. Projects run
+01:56 - 02:12
+In our Python program for our workflow, we can now set a variable called step_1_run_id and set it equal to step_1-dot-run_id. This variable will get passed as an input parameter in step_2 entry point.
+
+8. ML Lifecycle
+02:12 - 02:24
+Because of the flexibility, MLflow Projects is ideal for managing several steps of the ML Lifecycle. An example multi-step workflow could consist of Model Engineering and Model Evaluation.
+
+9. Let's practice!
+02:24 - 02:36
+Now that we have an understanding of how to use MLflow Projects to run multi-step workflows, let's practice by creating a multi-step workflow to manage several steps of the ML lifecycle.

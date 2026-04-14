@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/447673514655998376/99a542669767403b96069bec0708809b/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '447673514655998376'
+lifecycle_stage: active
+run_id: 99a542669767403b96069bec0708809b
+run_name: sneaky-zebra-221
+run_uuid: 99a542669767403b96069bec0708809b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717529676509
+status: 1
+tags: []
+user_id: Jacqueline

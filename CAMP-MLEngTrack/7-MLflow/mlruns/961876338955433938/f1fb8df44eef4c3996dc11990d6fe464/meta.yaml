@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/f1fb8df44eef4c3996dc11990d6fe464/artifacts
+end_time: 1717222360361
+entry_point_name: ''
+experiment_id: '961876338955433938'
+lifecycle_stage: active
+run_id: f1fb8df44eef4c3996dc11990d6fe464
+run_name: DecisionTreeClassifier()
+run_uuid: f1fb8df44eef4c3996dc11990d6fe464
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717222358134
+status: 3
+tags: []
+user_id: Jacqueline

@@ -1,0 +1,49 @@
+1. MLflow Tracking
+00:00 - 00:10
+Model engineering and evaluation are two key processes of the ML lifecycle. Most models are built and reiterated several times to ensure the best performance.
+
+2. Tracking data about models
+00:10 - 00:32
+Model performance is based on key metrics from model training through changing code, data, and/or model parameters. Each time a new model is trained, how are we supposed to keep track of metrics for performance? How do we track the code, parameters, or other artifacts used during training? Each time we train a new model the information gets harder to maintain.
+
+1 istock.com
+3. What is MLflow Tracking?
+00:32 - 00:54
+This is where MLflow Tracking comes into play. MLflow Tracking is a component of MLflow that allows users to track metrics and parameters through an API. MLflow Tracking also allows users to save artifacts such as code or other file types. MLflow uses the term “logging” when data or an artifact is saved to MLflow Tracking.
+
+4. Training runs
+00:54 - 01:12
+MLflow Tracking is organized around a concept called “runs”. A new run means new model training and information about the model is logged to MLflow. Each run is also placed within an experiment. A run can be started with the start_run function from the mlflow module.
+
+1 unsplash.com
+5. Starting a training run
+01:12 - 01:32
+When a training run is started, the mlflow module sets the run as active. When a run is active all metrics, parameters, and artifacts will be logged under the current active run. The mlflow module will continue logging to the active run until the code exits or the end_run function is called.
+
+6. Setting a training run variable
+01:32 - 02:15
+The return value of the start_run function can also be set as a variable to get metadata about the current active run. The example uses run-dot-info to get helpful information such as the artifact_uri or run_id. A URI is a universal identifier used to describe a logical or physical location of resources. MLflow uses the suffix "uri" in many ways to describe the location of different resources. Notice the example also uses the set_experiment function from the mlflow module. The start_run function set the specified experiment_id of "My Experiment" in the active run. This will ensure everything is logged under the desired experiment.
+
+7. Logging to MLflow Tracking
+02:15 - 02:55
+Logging is the process of saving metrics, parameters, and artifacts to MLflow Tracking for an active run. There are several functions within the mlflow module that are used to log to MLflow Tracking. For a single metric use the log_metric function. For multiple metrics, we can pass a dictionary to log_metrics() function. To log parameters use log_param function for a single parameter or log_params function for multiple parameters. For logging artifacts use log_artifact function for a single file or log_artifacts function pointing to a directory containing multiple files.
+
+8. Logging a run
+02:55 - 03:28
+To log a run to MLflow Tracking, we begin by setting the desired experiment in which to log the run. Use the start_run function to make a run active. Then we train our model. Once model training completes, we can log results to MLflow Tracking. The example logs a score metric and the n_jobs parameter for the number of cores used to train the LogisticRegression model. The example also logs the Python file we used for training. It can be beneficial to refer to the training code if it changes frequently.
+
+9. Open MLflow UI
+03:28 - 03:39
+You can open the MLflow tracking UI by issuing the following command from the command line. You can then view the UI in your favorite browser at localhost port 5000.
+
+10. Tracking UI experiment view
+03:39 - 03:57
+In the UI we can see our training run from the view of the experiment. This view will contain all runs for the specified experiment. Here metrics can be viewed for all runs belonging to the same experiment.
+
+11. Tracking UI run view
+03:57 - 04:10
+The MLflow UI also allows for diving deeper into individual runs simply by clicking on the desired run. Here the metrics, parameters, artifacts, and state of the run are displayed.
+
+12. Let's practice!
+04:10 - 04:18
+Now, let's check our understanding of MLflow Tracking by logging a training run to an experiment.

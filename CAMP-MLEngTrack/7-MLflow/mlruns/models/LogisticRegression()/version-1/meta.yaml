@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1717222355780
+current_stage: None
+description: null
+last_updated_timestamp: 1717222355780
+name: LogisticRegression()
+run_id: 7ce9a6e9fab14e1facaefb6e0f8ec7aa
+run_link: null
+source: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/7ce9a6e9fab14e1facaefb6e0f8ec7aa/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/7ce9a6e9fab14e1facaefb6e0f8ec7aa/artifacts/model
+user_id: null
+version: 1

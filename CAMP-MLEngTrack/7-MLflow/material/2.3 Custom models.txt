@@ -1,0 +1,49 @@
+1. Custom models
+00:00 - 00:17
+MLflow models and the Model API provide a powerful combination that makes building, logging, and loading models in many popular ML libraries simple. Although using MLflow makes many of these processes convenient, it's impossible for MLflow to cover every use case.
+
+2. Example use cases
+00:17 - 00:51
+Every machine learning application is different and has different requirements. For example, a natural language processing model likely requires one or more tokenizers to be loaded alongside the model. A classification model may need need to include a label encoder. Or maybe our model needs to do pre or post-processing before or after model inference. What if we choose an ML library that is not part of MLflow's built-in flavors? Luckily MLflow has a solution for these not-so-simple use cases.
+
+1 unsplash.com
+3. Custom Python models
+00:51 - 01:15
+MLflow provides what is called "Model Customization" using custom Python models to allow users to customize models to fit their use cases. The custom Python model is included as a built-in flavor called the python_function flavor. The mlflow-dot-pyfunc module provides many of the same functions as other built-in flavors such as save_model, log_model, and load_model.
+
+4. Custom model class
+01:15 - 01:50
+To create a custom model, users begin by creating a Python Class that inherits PythonModel Class from MLflow. Inheritance allows us to define a class that inherits all the methods and properties from another class. PythonModel Class provides two functions for customization. load_context is used to define artifacts to be loaded when the load_model method is called. predict function takes model input and performs user-defined evaluation on the model. This provides the ability to do pre and post-inference tasks.
+
+5. Python class
+01:50 - 02:16
+A Python Class is a blueprint for creating objects. Objects in Python are a collection of data and methods. We define methods within a Class as a function. To create a new object, simply create a variable set to the Class. The Object can then call all the methods within the Class. The example Object calls the my_func method that prints the string "Hello!".
+
+6. Example custom Class
+02:16 - 02:35
+The following is an example Class called CustomPredict. The Class provides a load_context method that defines artifacts to be loaded when the model is loaded with mlflow-dot-pyfunc-dot-load_model. The predict method calls a function called custom_function as part of the inference.
+
+7. Saving and logging a custom model
+02:35 - 02:51
+To save a custom model to the local filesystem use mlflow-dot-pyfunc-dot-save_model. To log a model to MLflow Tracking use mlflow-dot-pyfunc-dot-log_model. Both log and save use the custom model Class to create our custom model.
+
+8. Loading custom models
+02:51 - 03:02
+Loading custom models is the same as other built-in flavors. Just call the load_model function from the mlflow-dot-pyfunc module and point to the correct URI.
+
+9. Model Evaluation
+03:02 - 03:22
+MLflow also provides a mechanism for evaluating models based on performance from a dataset of our choosing. We can use the evaluate function, which supports MLflow Models for both classification and regression model types. Model evaluation is used to help understand and explain the machine learning model.
+
+10. Evaluation Example
+03:22 - 03:45
+The following example shows how to use the evaluate function to evaluate a linear regression model and a training dataset. In the example, the model is being evaluated against a dataset called eval_data and the model type regressor. The y_test column is targeted. MLflow requires the test features and labels to be in the same dataset as training.
+
+11. Tracking UI
+03:45 - 04:04
+When investigating the evaluation in MLflow Tracking, several shap plot files were added as artifacts automatically by the evaluate API. Shap is a popular ML tool used to explain machine learning models. These plots are helpful visuals when evaluating our model.
+
+1 shap.readthedocs.io
+12. Let's practice!
+04:04 - 04:11
+Now that you have a better understanding of custom Python models and how to evaluate them, let's practice.

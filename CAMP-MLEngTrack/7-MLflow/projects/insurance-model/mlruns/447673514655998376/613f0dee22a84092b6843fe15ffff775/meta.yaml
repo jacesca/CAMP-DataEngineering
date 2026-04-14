@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/insurance-model/mlruns/447673514655998376/613f0dee22a84092b6843fe15ffff775/artifacts
+end_time: 1717529187384
+entry_point_name: ''
+experiment_id: '447673514655998376'
+lifecycle_stage: active
+run_id: 613f0dee22a84092b6843fe15ffff775
+run_name: resilient-sloth-986
+run_uuid: 613f0dee22a84092b6843fe15ffff775
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717529181126
+status: 3
+tags: []
+user_id: Jacqueline

@@ -1,0 +1,51 @@
+1. Model stages
+00:00 - 00:08
+The Model Registry in combination with the Model version provides a meaningful way to manage the lifecycle of models as we move through the ML lifecycle.
+
+2. Software envrironments
+00:08 - 00:20
+Although model versioning is helpful and provides many benefits, the MLflow Model Registry also provides a way to manage the model lifecycle as it pertains to progression through different software environments.
+
+3. MLflow model stages
+00:20 - 00:46
+To transition through the different software development environments, MLflow provides "Model Stages". A Model Stage can be assigned to a registered model version. MLflow provides predefined stages of "None", Staging", "Production" and "Archived". A versioned model can be transitioned from one stage to another but can only have one assigned stage at any given time.
+
+4. Predefined stages
+00:46 - 01:00
+Model stages are used to represent the different phases in the model lifecycle. Each stage can be considered a set of rules defined within an individual organization as to how they handle software development environments.
+
+5. None
+01:00 - 01:07
+None is the default assigned stage which means that the model has not yet received a stage.
+
+6. Staging
+01:07 - 01:12
+Staging is assigned when a model is going through testing and evaluation.
+
+7. Production
+01:12 - 01:19
+Production is assigned when a model has passed all tests and is ready to be used in production.
+
+8. Archived
+01:19 - 01:24
+Archived is assigned when a model is no longer in use and should be archived.
+
+9. Transitioning models
+01:24 - 02:00
+Transitioning model stages can be done either from the Registry UI or by calling the transition_model_version_stage function from the MLflow client module. In the Registry UI, we can transition a model using a dropdown selection for Stage from a specific model version. Using MLflow Client, we can transition model stages by calling the transition_model_version_stage function. We assign the model name to the name argument, the version number to the version argument, and the model stage we want to set to the stage argument.
+
+10. Transition model version staging
+02:00 - 02:11
+Here we are going to transition the Unicorn model version 3 to Staging. Running this code, we get an output showing the current stage is now "Staging".
+
+11. Registry UI
+02:11 - 02:17
+We can also confirm from the UI that version 3 was transitioned to Staging.
+
+12. Transitioning to production
+02:17 - 02:38
+Once we have passed all tests and evaluations of our new Staging model, we can use the same function to transition our same model version to Production. The output shows that now our current model stage has been transitioned from Staging to Production. This model is now ready to be used in production environments.
+
+13. Let's practice!
+02:38 - 02:45
+Now that we understand how to manage the model lifecycle with Model Stages, let's practice.

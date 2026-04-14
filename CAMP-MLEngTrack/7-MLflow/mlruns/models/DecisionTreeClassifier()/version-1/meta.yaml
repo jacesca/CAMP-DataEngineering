@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1717222360335
+current_stage: Staging
+description: null
+last_updated_timestamp: 1717227798050
+name: DecisionTreeClassifier()
+run_id: f1fb8df44eef4c3996dc11990d6fe464
+run_link: null
+source: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/f1fb8df44eef4c3996dc11990d6fe464/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/f1fb8df44eef4c3996dc11990d6fe464/artifacts/model
+user_id: null
+version: 1

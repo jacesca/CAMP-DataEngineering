@@ -1,0 +1,9 @@
+digest: 018fc14d
+name: dataset
+profile: '{"num_rows": 1, "num_elements": 3}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "R&D Spend", "required": true},
+  {"type": "double", "name": "Administration", "required": true}, {"type": "double",
+  "name": "Marketing Spend", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Jacqueline", "mlflow.source.name": "c:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7
+  - Introduction to MLflow/autologging.py", "mlflow.source.type": "LOCAL"}}'
+source_type: code

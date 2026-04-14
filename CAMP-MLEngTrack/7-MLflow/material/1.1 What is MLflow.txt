@@ -1,0 +1,43 @@
+1. What is MLflow?
+00:00 - 00:07
+Hi and welcome! My name is Weston Bassler and I'll be the instructor for this introductory course on MLflow.
+
+2. The machine learning lifecycle
+00:07 - 00:28
+Let's start by recapping what the machine learning lifecycle is and some of the challenges it creates. The machine learning lifecycle follows the same core principles as traditional software development but also requires additional challenging steps in the process. These steps include but are not limited to: Model engineering, model evaluation, and model deployment.
+
+1 datacamp.com
+3. Difficulties of machine learning
+00:28 - 00:50
+These additional steps are complicated and have a proven track record of being difficult for many organizations. Experimentation and models are hard to track and compare. It's difficult to reproduce code and results across different development platforms, environments, and user workspaces. Models can also be hard to deploy and there is currently no set standard.
+
+4. What is MLflow?
+00:50 - 01:08
+MLflow attempts to simplify and automate these difficult but required steps of the machine learning lifecycle. MLflow is an open-source platform that is used to help users manage the ML lifecycle by providing experiment tracking, reproducibility, deployment, and a centralized model registry.
+
+1 www.mlflow.org
+5. Components of MLflow
+01:08 - 02:03
+In order to assist in the machine learning lifecycle, the MLflow platform consists of four major components. These components are: MLflow Tracking which is used to record and query data from model experimentation. It is also used to store models, code, and other artifacts that can be easily retrieved when needed. MLflow Models allows users to standardize the way models are packaged to enable a more streamlined deployment process. This component also provides a way to build customization such as model loading and model inference. Model Registry provides centralized storage for Models that can be version controlled and tagged for certain development environments. MLflow Projects is used to standardize packaging ML code so that it can be reproduced across a variety of environments, platforms, and user workspaces. Projects also provide repeatability to aid in automation.
+
+6. MLflow adoption
+02:03 - 02:17
+MLflow has become tool of choice by many organizations across many different industries. It has become widely adopted and integrated into many projects due to its simplicity and success in assisting users with the ML lifecycle.
+
+1 www.mlflow.org
+7. MLflow experiments
+02:17 - 02:39
+Before we begin using MLflow, we must understand how MLflow is structured. The most basic concept of MLflow is an experiment. An experiment is a way that MLflow organizes tracking of model training runs. When we begin tracking we must specify which experiment to use so that we know where to find that data later.
+
+8. Working with experiments
+02:39 - 03:26
+MLflow provides a couple of ways to work with experiments. One way is through the MLflow client which is a lower-level API for interacting directly with different aspects of MLflow. The other way is through the MLflow module which is a higher-level API used for starting and directly managing current training runs. Both ways allow us to create new experiments with the dot-create_experiments function, tag experiments with key-value pairs with the dot-set_experiment_tag function, and delete experiments from MLflow with the dot-delete_experiment function when they are no longer needed. In addition, the MLflow module allows for setting an experiment with the dot-set_experiment function for a current training run so all data is tracked to the specified experiment.
+
+9. Starting a new experiment
+03:26 - 03:54
+The following code shows an example of interacting with experiments using the MLflow module. When starting a new ML application it is useful to start with a new experiment using the dot-create_experiment function. This may include adding some useful tags with the dot-set_experiment_tag function so we can search for similar experiments at a later time. Before tracking a particular experiment, the experiment must also be set with the dot-set_experiment function so MLflow knows where to place data.
+
+10. Let's practice!
+03:54 - 04:02
+Now that we have learned the basics of MLflow, let's check our understanding and begin working with experiments.
+

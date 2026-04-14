@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1717222358113
+current_stage: Production
+description: null
+last_updated_timestamp: 1717229120623
+name: KNeighborsClassifier()
+run_id: af8a389f019b49aeba3b923242221d9f
+run_link: null
+source: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/af8a389f019b49aeba3b923242221d9f/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/mlruns/961876338955433938/af8a389f019b49aeba3b923242221d9f/artifacts/model
+user_id: null
+version: 1

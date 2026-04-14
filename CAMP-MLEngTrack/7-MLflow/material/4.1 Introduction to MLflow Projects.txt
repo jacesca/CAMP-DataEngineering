@@ -1,0 +1,42 @@
+1. Introduction to MLflow Projects
+00:00 - 00:08
+So far, we have explored multiple components of MLflow that aim to mitigate the challenges encountered during the machine learning lifecycle.
+
+2. MLflow Projects
+00:08 - 00:48
+In this chapter we will explore another component of MLflow called MLflow Projects. MLflow Projects simplifies the ML lifecycle by providing a way to organize and run ML code in a reproducible manner. This includes code used to train and build models, track experiments and register models to the Model Registry. Projects are used to package code into reusable units that allow for simple collaboration among users. MLflow Projects provide portability to run our code in different environments like local machines and in the cloud. Overall, MLflow Projects improve and accelerate productivity.
+
+1 unsplash.com
+3. MLproject
+00:48 - 01:05
+At its core, a Project is a directory of files containing our ML code. This directory can be stored locally or in a Git repository such as Github. MLflow Projects use a file called MLproject to describe a Project.
+
+1 github.com
+4. MLproject file
+01:05 - 01:49
+An MLproject file is a yaml file. A yaml file is a human-readable data format that uses indentation as structure and is commonly used for configuration files. The MLproject file specifies several properties to describe a Project. A Name, which defines the name of the Project. Entry Points, which are used to define commands to be run. Projects can contain several entry points and can be any Python or shell file. Multiple entry points can be defined to run multiple different steps in order. Environment is used to describe the environment and dependencies needed to run the code in the Project. An environment can be conda or virtualenv.
+
+1 wikipedia.org
+5. MLproject example
+01:49 - 02:15
+In the following MLproject file, we create a new MLflow Project called "salary_model". We define an entry_point named main that executes the command "python train_model.py". This command executes our Python code to train our model. Our Python environment is going to use the python_env.yaml file. This will reproduce our Python environment if it is run on a machine elsewhere.
+
+6. train_model.py
+02:15 - 02:33
+Looking further into our train_model.py file, we import all necessary modules and libraries to train a linear regression model. Our linear regression model is trained on salary data in order to predict the salary of a person based on experience, age, and interview score.
+
+7. train_model.py
+02:33 - 02:50
+We will use the autolog function from our scikit-learn flavor to automatically log metrics and parameters to MLflow Tracking. Finally, we train our model using linear regression. When the dot-fit method is called, autolog will log our metrics and parameters.
+
+8. python_env.yaml
+02:50 - 03:19
+Our python_env.yaml file is used to set up a virtual Python environment so it can be reproducible for other users or when run in a different environment. In our environment, we use version 3-dot-10-dot-8 of Python. We have build_dependencies for pip, setuptools, and wheel. Finally, we use a requirements.txt file that defines all other Python libraries that need to be installed in order to run our Project.
+
+9. requirements.txt
+03:19 - 03:34
+Inside the requirements-dot-txt file we specify mlflow and scikit-learn libraries to be installed when our Project is run. Installing mlflow will allow for interacting with MLflow and scikit-learn will be used to train our model.
+
+10. Let's practice!
+03:34 - 03:41
+Now that we have been introduced to MLflow Projects, let's test our knowledge of what we learned.

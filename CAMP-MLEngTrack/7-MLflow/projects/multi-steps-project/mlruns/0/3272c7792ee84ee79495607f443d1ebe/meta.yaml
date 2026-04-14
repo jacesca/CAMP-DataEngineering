@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jacqueline/Documents/projects/CAMP-MLEngTrack/7%20-%20Introduction%20to%20MLflow/projects/multi-steps-project/mlruns/0/3272c7792ee84ee79495607f443d1ebe/artifacts
+end_time: 1717549242452
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3272c7792ee84ee79495607f443d1ebe
+run_name: crawling-doe-151
+run_uuid: 3272c7792ee84ee79495607f443d1ebe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717549239162
+status: 3
+tags: []
+user_id: Jacqueline
