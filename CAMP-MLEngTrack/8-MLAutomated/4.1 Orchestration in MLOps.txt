@@ -1,0 +1,35 @@
+1. Orchestration in MLOps
+00:00 - 00:03
+Welcome to this video on orchestration in MLOps.
+
+2. A core component in MLOps systems
+00:03 - 00:27
+Machine learning pipelines are a core component in MLOps systems. In our reference architecture for the fully automated MLOps system, we have seen that they appear in two of our environments: development & experimentation and also in production. In this video, we will discuss the importance of ML pipelines as a core component in achieving full automation in MLOps.
+
+3. Modularity & reusability
+00:27 - 01:05
+ML pipelines are typically designed in a modular fashion, where individual components or steps of the pipeline can be developed and maintained independently. This approach enables developers to make changes or improvements to specific parts of the pipeline without having to modify the entire pipeline. As a result, ML pipelines can be easily adapted to different tasks and data sets, making them highly reusable and efficient in MLOps systems. Promoting improvements from development to production is taken care by the CI/CD capabilities of our system.
+
+4. Orchestration & automation
+01:05 - 01:45
+ML pipelines in the development and experimentation environments serve as a testing ground for new models and algorithms. They allow data scientists to make changes and iterate on their models quickly. In the production environment, pipelines are used to automate the deployment of machine learning models into production. They can be run automatically or triggered by specific events. This allows organizations to streamline the model deployment process, reduce errors, and ensure that the models are always up-to-date and performing optimally in production. We will explore each of these functions in more detail later in this video.
+
+5. Direct Acyclic Graphs in MLOps
+01:45 - 02:27
+Let's introduce an important concept in orchestration: Direct Acyclic Graphs (DAGs) are graphical representations of the sequence of steps that make up an ML pipeline, where each step is represented as a node and the dependencies between steps as edges. DAGs allow clear visualization of the entire pipeline, making understanding the relationships between steps and their dependencies easier. With the ability to clearly define and visualize the flow of steps in a pipeline, DAGs allow to implement and manage complex ML workflows in a controlled and reproducible manner, which is essential for MLOps.
+
+6. What is orchestration in MLOps?
+02:27 - 02:49
+But what is orchestration in MLOps? Pipeline orchestration in MLOps refers to managing and automating the flow of tasks within an ML pipeline. This includes scheduling, coordinating, and monitoring the execution of tasks, as well as managing data dependencies and ensuring the flow of information between the different stages of the pipeline.
+
+7. ML pipelines - development & experimentation
+02:49 - 03:28
+In the development and experimentation environment of an MLOps system, pipeline orchestration helps manage the end-to-end flow of tasks involved in training and evaluating our machine learning models. By orchestrating these tasks, we ensure that all of the necessary steps are executed in the correct order and that the results are properly recorded and tracked. In addition, orchestration allows us to run the pipelines in parallel, reducing the time and effort required for experimentation. This results in faster and more efficient model development, enabling data scientists to bring their models to production more quickly.
+
+8. ML pipelines - production
+03:28 - 04:10
+In production, orchestrated automated ML pipelines play a crucial role in ensuring the seamless deployment of ML models by automating the deployment process without manual intervention. Similarly, the orchestrator will manage and execute the steps involved in deploying new machine learning models. This ensures that models are deployed consistently and reliably, reducing the risk of human error and ensuring that the models are up-to-date. Additionally, pipeline orchestration provides a centralized way to manage and monitor the deployment process, making it easier to troubleshoot and resolve issues if they arise.
+
+9. Let's practice!
+04:10 - 04:16
+Great work completing this lesson! Now, let's practice!

@@ -1,0 +1,46 @@
+1. The metadata store
+00:00 - 00:09
+We turn now to metadata in MLOps, its importance and how a metadata store can enable a fully automated MLOps workflow.
+
+2. What is metadata in MLOps?
+00:09 - 01:09
+Metadata is information about artifacts created during execution of the different components of an ML pipeline, such as the data sources used by our pipelines. An example of metadata is the version of data used in our system. In ML systems we can keep different versions of the same data. It is important to keep logs about creation, modifications, and updates to the data sources we use. When we train a machine learning model, we typically have a set of hyperparameters associated with the training. These can be logged as metadata together with the model type and version. Different models and hyperparameters will produce different results when we evaluate them. These results are also metadata. In MLOps, an automated pipeline will be executed several times during its lifetime. Therefore, the logs about the execution of the pipeline are also metadata we should track. Hardware utilization is an example of this type of metadata.
+
+1 https://datacentricai.org/
+3. Important aspects of metadata in ML
+01:09 - 01:16
+Next, let's go through 4 important aspects that make metadata key in the ML process.
+
+4. The importance of metadata - Data lineage
+01:16 - 01:37
+Data lineage metadata tracks the information about data from its creation to its consumption. With data lineage, we observe the entire lifecycle of data. For example, data lineage for customer data would describe how the data is registered, the multiple transformations it suffers, aggregations, for example, and how it is consumed.
+
+5. The importance of metadata - Reproducibility
+01:37 - 01:54
+Metadata about machine learning experiments allows others to reproduce our results. This reproducibility is important to generate trust and introduces scientific rigor to the process. Hyperparameters settings are important examples of experiment metadata.
+
+6. The importance of metadata - Monitoring
+01:54 - 02:06
+Keeping track of metadata allows ML engineers, monitoring systems, and components of the MLOps architecture, to follow the execution status of the different parts of the pipeline.
+
+7. Example monitoring tool
+02:06 - 02:11
+Here, we can see an example of a typical monitoring tool.
+
+1 https://cloud.google.com/stackdriver/docs/solutions/gke/observing
+8. The metadata store
+02:11 - 02:41
+What is the metadata store? The metadata store is a centralized place to manage all metadata about MLOps experiments, including experiment logs, artifacts, models, and pipelines. It holds metadata about ML artifacts but not the actual artifacts themselves. It has a user interface for reading and writing model-related metadata. The actual models and their artifacts are stored in the model registry. The actual data is handled by the feature store.
+
+1 https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning
+9. The metadata store in an MLOps architecture
+02:41 - 02:55
+The metadata store is the centralized store for all the metadata produced by the automated ML pipeline. It interacts with all the steps in the pipeline, reading, and writing logs as part of the pipeline's automatic operation.
+
+10. Metadata store in fully automated MLOps
+02:55 - 03:52
+The metadata store has a crucial role in keeping track of the functioning of our whole system by keeping logs about its functioning. This facilitates the full automation of the MLOps process. It enables the automatic monitoring of an MLOps pipeline, facilitating automatic incident response. For example, the automated retraining of models when the system detects drift. Evaluation metrics are logged in the metadata store, allowing us to monitor model performance continuously. If decay in model performance is detected, the MLOps system can trigger the retraining of the models affected by such performance decay. If a critical error happens while running components of the automated pipeline, information from the metadata store can be used to trigger automated rollbacks of data or models to their last fully functioning version. This allows the MLOps system to run until a root cause analysis is performed.
+
+11. Let's practice!
+03:52 - 03:57
+Let's practice these concepts in the next exercises.

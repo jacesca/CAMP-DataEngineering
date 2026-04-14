@@ -1,0 +1,75 @@
+1. The automation, monitoring, incident response pattern
+00:00 - 00:05
+Welcome, now we will discuss an important design pattern in MLOps.
+
+2. What is a software design pattern?
+00:05 - 00:30
+Let's start by defining what a design pattern is: A design pattern is a reusable solution to a recurring problem in a specific field. In software development, it provides a template for alleviating common challenges. When applied in the context of machine learning system design, they offer a standardized approach to addressing common issues that arise when developing ML systems.
+
+3. Automate, monitor, respond
+00:30 - 00:52
+We focus on the Automation, Monitoring, Incident response pattern. This pattern is critical for MLOps system reliability and efficiency. It involves automating deployment, operation, and maintenance of ML models and pipelines, monitoring performance, and implementing fail-safe measures.
+
+4. Three examples of a design pattern in MLOps
+00:52 - 01:04
+We will present three examples of the use of this pattern in the design of MLOps systems: automated model retraining, model rollback, and feature imputation.
+
+5. 1. Automated model retraining
+01:04 - 01:24
+In MLOps systems, maintaining the performance of machine learning models over time is a common challenge. Changes in data and other factors can cause models to become outdated and less effective, leading to declining performance. To address this, we use continuous training. Let's go back to our reference architecture.
+
+6. 1. Automated model retraining - running predictions
+01:24 - 01:34
+In our system, the updates and deployments of the automated pipeline are performed automatically. Our architecture will have a prediction service.
+
+7. 1. Automated model retraining - Monitoring
+01:34 - 01:43
+This prediction service will be constantly monitored, and statistics about the performance of the prediction models service will be logged.
+
+8. 1. Automated model retraining - Trigger
+01:43 - 01:50
+Whenever the performance of the models goes below a predefined threshold, a trigger will be activated.
+
+9. 1. Automated model retraining - Automated pipeline
+01:50 - 02:04
+The trigger will activate the automated ML pipeline, which will extract data from the feature store to retrain the model. Once retrained, the pipeline will deliver a new model to the registry.
+
+10. 1. Automated model retraining - Deployment
+02:04 - 02:13
+The updated model that is registered, will be automatically deployed, and the prediction service will be automatically updated.
+
+11. 2. Model rollback
+02:13 - 02:24
+For our second example, let's go back to step four discussed previously, right after the automated pipeline is triggered due to a performance decay in the prediction system.
+
+12. 2. Model rollback - Validation fail
+02:24 - 02:39
+A common issue in ML pipelines is that the model evaluation step may indicate poor performance, preventing the update of the system with a new model. A failed validation step can also prevent this update.
+
+13. 2. Model rollback - Last functional model
+02:39 - 02:53
+For this reason, it is crucial to establish model rollbacks. A model rollback is a mechanism that allows us to go back to the latest model known to perform according to our specifications.
+
+14. 2. Model rollback - Redeployment
+02:53 - 03:13
+After rolling back the model, this can be automatically deployed to update the prediction service. The decision to use model rollback versus model retraining in an automated MLOps system depends on the severity and frequency of issues encountered, as well as the availability of fresh training data.
+
+15. 3. Feature imputation - Data intensive pipeline
+03:13 - 03:20
+For our last example, let's consider the data-intensive part of the automated ML pipeline.
+
+16. 3. Feature imputation - Data quality
+03:20 - 03:54
+Our automated pipeline can use different features to train the ML models in our system. These features can be numerical or categorical. What happens when the quality of the data the system uses decay? Let's consider the simple example of missing data. We can predefine a quality threshold, let's say, for example, that we don't want to use any features with more than 30% of missing data. Any feature with missing values above the threshold would trigger an alarm.
+
+17. 3. Feature imputation - Defective features
+03:54 - 04:07
+After detecting the failing features and triggering the alarm, the incident response can be automated feature imputation: replacing missing data with statistical estimates of the missing values.
+
+18. 3. Feature imputation - Potential fixes
+04:07 - 04:22
+For numerical features, we can use, for example, mean/median imputation and KNN imputation. For categorical features, frequent category imputation and adding a "missing" category.
+
+19. Let's practice!
+04:22 - 04:28
+Great work completing this lesson. Now, let's practice!

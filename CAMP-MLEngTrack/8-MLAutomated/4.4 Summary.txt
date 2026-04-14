@@ -1,0 +1,31 @@
+1. Summary
+00:00 - 00:03
+Congratulations on completing the course!
+
+2. Congratulations!!!
+00:03 - 00:10
+You are now equipped with the knowledge and skills necessary to streamline and automate the machine learning lifecycle.
+
+3. Chapter 1 - Introduction to fully automated MLOps
+00:10 - 00:29
+During chapter one, you learned about technical debt in ML systems and how MLOps helps you reduce hidden technical debt. You learned about methods to automate different steps in the ML lifecycle and became familiar with the fully automated MLOps reference architecture.
+
+4. Chapter 2 - Fully automated MLOps architecture
+00:29 - 00:45
+In chapter two, you went deeper into the components of the reference architecture. You learned about experiment tracking, the model registry, the feature, and the metadata store. And more importantly, you learned about their interactions.
+
+5. Chapter 3 - Automation patterns
+00:45 - 01:08
+In chapter three, you explored automation best practices in addition to a vital design pattern to make your MLOPs systems more robust and reliable: the automate, monitor, incident-response pattern. You learned about the importance of extending automated testing in ML systems and how automatic hyperparameter tuning works.
+
+6. Chapter 4 - Automation in MLOps deployments
+01:08 - 01:25
+Finally, you learned about orchestration and its role in automation. You learned about deployment types and strategies and how CI/CD/CT/CM is a natural extension of the DevOps world into the MLOps realm.
+
+7. Congratulations!
+01:25 - 01:30
+Remember that MLOps is a journey and a continuously evolving field!
+
+8. Let's practice!
+01:30 - 01:33
+Keep on learning!

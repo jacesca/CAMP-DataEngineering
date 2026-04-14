@@ -1,0 +1,43 @@
+1. Automated hyperparameter tuning
+00:00 - 00:04
+Welcome to this video on automated hyperparameter tuning!
+
+2. What is a hyperparameter?
+00:04 - 00:43
+We start by defining hyperparameters, a tunable value in an ML model that is set prior to training and cannot be learned from data. It affects the model's performance and must be chosen carefully to optimize the model's accuracy. Model parameters, such as weights and biases, are derived via model training. Hyperparameters, in contrast, need to be set before training. Examples of hyperparameters include: model architecture in a neural network, the number of branches of a decision tree, or the learning rate used in many machine learning techniques.
+
+3. What is hyperparameter tuning?
+00:43 - 01:03
+Tuning hyperparameters is key to improving a model's performance. Hyperparameters provide additional options to optimize. A data scientist can adjust factors such as the number of layers, neurons, and learning rate before training the ML model. This is a common starting point for teams experimenting with ML.
+
+4. Hyperparameter tuning methods
+01:03 - 01:33
+Methods used to find the best set of hyperparameters include grid search, a basic method of hyperparameter tuning that involves evaluating combinations in a defined grid; random search, where random combinations of hyperparameters are evaluated for the best performance; and Bayesian search. which uses Bayesian methods to find the best hyperparameters for a model by updating its belief about the distributions of hyperparameters based on observed trials.
+
+5. Automate hyperparameter tuning
+01:33 - 01:55
+Identifying the best combination from the large space of possible hyperparameters is a repetitive task that can quickly become unpractical. For this reason, it is best practice to automate the process of finding the set of hyperparameters that, together with the best collection of model parameters, produces the best-performing machine learning models.
+
+6. Automated hyperparameter tuning steps
+01:55 - 02:37
+Automating hyperparameter tuning requires several steps. First, specify the set of hyperparameters to tune. Then, define a search space, which can be discrete values or a value range, for each hyperparameter. Next, provide a performance metric to optimize, like recall or precision. Lastly, define a stopping criteria, such as a specific number of trials. This is important to ensure that our automated tuning routine will be properly finalized. These defined settings are used by the tuning method to run the automated search and find the optimal set of hyperparameters for our target.
+
+7. Automatically finding the best set of hyperparameters
+02:37 - 02:47
+After the automatic hyperparameter routine is finished, we will have the set of parameters, from the searched space, that delivers the best model performance.
+
+8. Hyperparameters and environment symmetry
+02:47 - 03:06
+As you probably recall, in MLOps, it's important to ensure symmetry between the dev, stage, and prod environments to prevent unexpected behavior during deployment. After hyperparameter tuning, hyperparameters should be set consistently across all environments to ensure the same behavior of the model.
+
+9. Hyperparameter tuning - Experiment tracking
+03:06 - 03:30
+As with tuning hyperparameters, the tracking and logging of our hyperparameter experimentations should also be automated. The automated experiment tracking module takes this task in our MLOps systems. This module logs all the set of hyperparameters that are explored during the tuning process. This is part of the metadata that is written to the metadata store.
+
+10. Example - Hyperparameter visualization
+03:30 - 03:50
+Most automated experiment tracking solutions have the possibility of visualizing the experiments we have performed, this can help us understanding the effect that different values for different hyperparameters have in the performance of our models. The image in this slide is an example of such a visualization.
+
+11. Let's practice!
+03:50 - 03:57
+Great work completing this video on hyperparameter tuning. Now, let's practice!

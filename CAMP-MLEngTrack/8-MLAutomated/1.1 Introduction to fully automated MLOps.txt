@@ -1,0 +1,41 @@
+1. Introduction to fully automated MLOps
+00:00 - 00:14
+Welcome! My name is Arturo Opsetmoen Amador, I will be your instructor through this course. I’ve worked with data and analytics since 2010 with a focus on ML systems and their productionalization.
+
+2. MLOps in an industrial setting
+00:14 - 00:48
+Nowadays, numerous companies are undergoing digital transformation processes. As a result, the industry is producing a vast amount of valuable data. ML can serve a range of purposes for a company. For instance, it can help the company build systems and products that can analyze data relevant to the company's processes. By delivering predictions, these systems can aid the company in achieving its business goals. In particular, ML can be used to enhance customer service and optimize internal operations.
+
+3. Optimizing for value generation
+00:48 - 01:06
+Companies usually seek to squeeze out as much profit as possible. For example, after considering costs and revenues, a company can estimate that a maximum profit of approximately $25M will come after deploying 6 machine learning use cases from their portfolio.
+
+4. Costs in software development
+01:06 - 01:40
+Machine learning systems fall under the umbrella of software solutions. To maximize profits, it is essential to accurately estimate how much it will cost to develop a software solution. Even if different projects will have different costs, it is possible to list some of the most common costs found in traditional software development. These include development costs, project management, UI/UX, and quality assurance. In addition to all these, we can have technical debt.
+
+5. Technical debt in software development
+01:40 - 01:54
+In software development, technical debt or design debt is the cost of additional rework caused by choosing an easy, limited solution now instead of using a better approach that would take longer.
+
+1 https://vincentdnl.com/drawings/
+6. Hidden technical debt in ML systems
+01:54 - 02:55
+Machine Learning has been referred to as "The high-interest credit card of technical debt". Issues specific to building ML systems can be related to: The data used to train the ML models used in the system. The behavior of ML systems is not specified directly in the code but is learned from data. This dependency introduces nuances not present in traditional software systems. The models powering the ML system. The set of standards and practices for developing ML models in a rigorous fashion is yet to be developed. The infrastructure used by the ML system. ML systems commonly rely on complex pipelines, which translate into complex infrastructure requirements. The monitoring of the ML system. Monitoring is critical for ML systems that automatically continuously integrate new data. It is also crucial for ML systems that serve predictions on demand.
+
+1 https://research.google/pubs/pub43146/
+7. Costs of machine learning projects
+02:55 - 03:24
+All these issues give rise to hidden costs and technical debt that is not evident at first. All in all, when considering hidden technical debt in ML solutions, our business cases can be heavily affected. As the example in the image shows, hidden technical debt can be negatively affected dramatically, reducing the profitability produced by ML solutions. In our example, from $25M to a $10M profit.
+
+8. The high-interest credit card of technical debt
+03:24 - 03:32
+As we have seen, ML systems can become unruly as they grow, with many things to consider.
+
+9. MLOps: The best-known way to pay
+03:32 - 04:19
+MLOps is the best-known method to pay for such a credit card. It involves using different technologies and tools to streamline and standardize the ML lifecycle. By minimizing hidden technical debt, MLOps ensures that ML systems can deliver sustained business value. Fully automated MLOps further leverages automation tools and processes to streamline and standardize the machine learning lifecycle. It involves integrating various components, including data preparation, model development, testing, and deployment, into a unified workflow that can be triggered automatically. This improves efficiency, reduces errors, and enables frequent and reliable updates to machine learning models.
+
+10. Let's practice!
+04:19 - 04:24
+Let's practice the concepts we have just learned in the next exercises!

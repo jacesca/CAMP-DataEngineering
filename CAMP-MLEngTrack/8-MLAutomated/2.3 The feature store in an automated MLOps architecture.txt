@@ -1,0 +1,44 @@
+1. The feature store in an automated MLOps architecture
+00:00 - 00:07
+Welcome to the video! We will learn about the Feature Store and its role in an automated MLOps architecture.
+
+2. Features in machine learning
+00:07 - 00:42
+When engineering features, we select, manipulate, and transform raw data sources to create features that can be used as input for our ML algorithms. These features are new variables not present in the original training set. The transformations we use when engineering features can, for example, include numerical transformations like standardizing or recoding categorical variables such as one-hot encoding. It can further include grouping values or building new features based on knowledge from domain experts.
+
+3. Feature engineering in the enterprise
+00:42 - 01:02
+Let's now consider an enterprise with a team of data scientists developing ML algorithms. This team will take raw data from different sources, batch or streaming, and apply data transformations to engineer features. This team will also need to store these features somewhere.
+
+4. Feature engineering in the enterprise
+01:02 - 01:20
+In the same company, another team is also developing ML algorithms. When it comes to internal data sources, this team will likely have the same sources available to them. They will use their domain knowledge to engineer features for their models. After this, they will also have to store their features somewhere.
+
+5. Feature engineering in the enterprise
+01:20 - 01:53
+A third team in this company is developing yet another ML system. You see where this is going, right? In this setup, there is a high chance of duplication of efforts. Different teams could be engineering the same features from the same data sources. They are likely also saving their features in storage infrastructure. When any of these teams start working on a new ML project, there is no way to explore the features developed earlier by the other teams. There are better ways of working!
+
+6. The feature store
+01:53 - 02:36
+This is where the feature store comes to save the day! A feature store is a centralized repository where you standardize the definition, storage, and access of features for orchestrated experimentation, automated training, and serving. With it, we can detect if multiple teams perform similar manual transformations. We can automate these, which will, in turn, introduce transformation standardization. A feature store ingests raw data sources, applies the transformations needed to create features, offers centralized storage, and provides an API for both high-throughput batch serving and low-latency or real-time serving.
+
+7. The feature store - Accelerated experimentation
+02:36 - 03:07
+The use of a feature store can be a game changer. For experimentation, data scientists can get an extract from the feature store to run their experiments. They can discover and reuse available feature sets for their domain instead of re-creating the same or similar ones. Finally, they can avoid having similar features that have different definitions by maintaining features and their related metadata. This metadata can include data versioning and lineage information.
+
+8. The feature store - Continuous training
+03:07 - 03:18
+When it comes to continuous training, the automated ML training pipeline can extract the up-to-date feature values of the input datasets used for the training task.
+
+9. The feature store - Online predictions
+03:18 - 03:35
+For predictions in production, the prediction service can take a batch of the feature values related to the prognosis requested, such as customer segment features, geographical features, and any other previously engineered transformation necessary to recreate features.
+
+10. The feature store - Environment symmetry
+03:35 - 04:07
+Sometimes, features used for training can differ from the ones used during serving. This problem is called data skew. Environment symmetry in MLOps refers to ensuring that all environments involved in the ML pipeline are identical, preventing problems such as data skew. Having a centralized feature store helps us achieve environment symmetry. This is done by using the feature store as the data source for experimentation, continuous training, and online serving.
+
+11. Let's practice!
+04:07 - 04:13
+Ok, let's practice these concepts in the following exercises!
+

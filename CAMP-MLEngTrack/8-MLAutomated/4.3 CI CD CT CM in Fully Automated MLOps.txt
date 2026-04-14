@@ -1,0 +1,59 @@
+1. CI/CD/CT/CM in Fully Automated MLOps
+00:00 - 00:07
+Welcome! Now, we will talk about crucial techniques necessary in a fully automated MLOps system.
+
+2. DevOps
+00:07 - 00:22
+Let's start by recalling the concept of DevOps, a software engineering practice that emphasizes collaboration and communication between software developers and IT operations professionals to automate and optimize the software delivery process.
+
+3. CI/CD in DevOps
+00:22 - 00:58
+DevOps integrates essential techniques such as continuous integration (CI) and continuous deployment (CD). CI/CD allows us to integrate the work of multiple developers into a single source repository with frequent commits. Automated tests, such as unit and integration tests, are run on each commit to ensure code quality. Finally, the code is deployed to production if it passes all tests. This cycle is repeated constantly, enabling faster development, reduced errors, and improved overall quality of software.
+
+4. Fully automated MLOps
+00:58 - 01:15
+DevOps has revolutionized how we develop software applications. Further, DevOps and MLOps share a focus on automation and streamlined processes for efficient and effective development and deployment of software applications powered by ML.
+
+5. Considerations about ML - Changing world
+01:15 - 01:54
+As we have heard before, ML applications fundamentally differ from traditional ones. ML software learns its behavior based on the data it gets. The world is constantly changing, so the data used by our application also changes. When we build ML systems, we need to account for this, and we do it by introducing continuous monitoring (CM) into our system. CM involves regularly tracking the performance and quality of the components that make up our MLOps systems to ensure their accuracy and reliability over time.
+
+6. Considerations about ML - Decaying performance
+01:54 - 02:31
+An additional consequence of the constantly changing world and data is the fact that the performance of ML models starts decaying after they are trained and deployed to production environments. To account for this, we need to introduce constant training (CT) into the design of our systems. CT plays a crucial role in a fully automated MLOps system. It ensures that the ML models remain up-to-date and effective by continually retraining them either through a scheduled approach or triggered by specific events.
+
+7. CI/CD/CT/CM in MLOps
+02:31 - 02:56
+We can conclude that CI/CD must be implemented in a fully automated MLOps system. But in addition, we also need to include ML-specific tests in the testing suit in the continuous integration pipeline. With CI/CD, data scientists and ML engineers can integrate upgrades and fixes into the production pipelines seamlessly.
+
+8. CI/CD/CT/CM in MLOps
+02:56 - 03:10
+Continuous training enables the retraining of models as new data becomes available, ensuring that they remain accurate and up-to-date, even as the world and data inputs constantly evolve.
+
+9. CI/CD/CT/CM in MLOps
+03:10 - 03:30
+Continuous monitoring should be implemented across the whole system. In this way, we can monitor different components in the system. From data quality monitoring to the performance of deployed models, CM will enable us to catch data drift or model performance degradation and trigger the necessary actions to fix these.
+
+10. Fully automated MLOps
+03:30 - 03:45
+Together with thinking automation first and the automate-monitor-incident response pattern, CI/CD/CT/CM form the basis necessary to build a fully automated MLOps application.
+
+11. Fully automated MLOps - Automation first
+03:45 - 03:54
+Thinking automation first through the ML lifecycle ensures that the models can be quickly and easily updated and maintained.
+
+12. Fully automated MLOps - Automated response pattern
+03:54 - 04:01
+The automated incident response pattern can address incidents that may arise in the system.
+
+13. Fully automated MLOps - CI/CD/CT/CM
+04:01 - 04:15
+Finally, CI/CD/CT/CM ensures that the entire process, from model development to deployment and maintenance, is continuously integrated, tested, and deployed.
+
+14. Fully automated MLOps
+04:15 - 04:25
+Together, these components form a robust and effective MLOps system that can handle the complexities of ML applications.
+
+15. Let's practice!
+04:25 - 04:29
+Now, let's practice!
