@@ -1,0 +1,36 @@
+1. Exploratory Data Analysis
+00:00 - 00:17
+Welcome back! Let's continue constructing a model for CardioCare Clinic, aimed at predicting heart disease from patient data. We previously discussed the ML lifecycle and data collection. Now, we'll discuss Exploratory Data Analysis, abbreviated as EDA.
+
+2. The EDA process
+00:17 - 00:49
+We'll focus on understanding and performing EDA on a heart disease dataset provided to us by CardioCare. EDA is the process of examining and analyzing data to gain insights, discover patterns, and understand the characteristics of the data. For example, during EDA, we'll visualize components of our dataset, such as the proportion of missing values. EDA is a critical stage in ML projects; it helps us understand the dataset and identify any issues that could affect model performance downstream.
+
+3. Understanding our data
+00:49 - 01:11
+To understand our data, we can use methods from pandas such as dot-head and dot-info. dot-head gives us the first few rows of the dataset, providing a snapshot. dot-info offers a summary of the DataFrame, including the number of non-null entries and type of data in each feature column. Here we see example usage.
+
+4. Class (im)balance
+01:11 - 01:39
+Class imbalance can significantly impact the performance of our ML model, for example, by causing the model to always predict the majority class. To understand class balance, we'll use the dot-value_counts method. This method counts the number of occurrences of each unique value in a column: in our case, the number of patients with and without heart disease. We obtain the proportions of each class by passing Normalize equals True.
+
+5. Missing values
+01:39 - 02:17
+Another vital part of EDA is checking for missing values. Assume, for example, that we have less information about healthier patients because their screening is shorter. This might bias results. We can use the dot-isnull method to check for missing data. Here, we check whether the oldpeak column - a measure of patient exercise - has missing values. dot-isnull can be applied to the whole DataFrame, or a collection of columns, and returns true if a given value is null, and false otherwise. We can chain dot-all methods to check whether a given condition applies for an entire object.
+
+6. Outliers
+02:17 - 03:01
+During EDA, we must also consider outliers. Outliers are data points that are significantly different from other observations in our dataset. They can be caused by measurement or data entry errors or represent rare events. For example, we assume that a value of 500 for patient age is anomalous. Outliers can significantly skew the model's performance and cause the model to learn from extreme values, which aren't representative of the general data trend. Sometimes outliers can be interesting, as in the case of rare, but unanomalous values. In this case, it is up to us whether to keep them. We can identify outliers using tools like a box plot or the interquartile range.
+
+7. Visualizing our data
+03:01 - 03:25
+Visualizations are another great way to better understand data. They make it easy to see the general trend and spot missing values and outliers. We can use the pandas dot-plot method to generate a visualization of a given column in a DataFrame. Please refer to DataCamp's course on data visualization with Seaborn to learn more about plotting!
+
+1 https://seaborn.pydata.org/tutorial/distributions.html, https://app.datacamp.com/learn/courses/intermediate-data-visualization-with-seaborn
+8. Goals of EDA
+03:25 - 03:59
+The goals of EDA are numerous. We must aim to understand the data and unearth patterns - for example, do men have higher rates of heart disease than women? We must try to detect outliers - does data fall outside acceptable ranges? Designing hypotheses to validate and check assumptions is vital - does what we expect line up with reality? The EDA stage often influences the choice of ML algorithm, the selection of specific features, and the need for feature engineering; these questions are vital to the future success of the project.
+
+9. Let's practice!
+03:59 - 04:08
+Let's dive in and start exploring our healthcare dataset. Remember, practice makes perfect!

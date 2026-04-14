@@ -1,0 +1,31 @@
+1. Packaging and containerization
+00:00 - 00:09
+Welcome back! After building, training, and validating our model, our next step in the machine learning pipeline is to package our model for clinical deployment.
+
+2. Deployment and containerization
+00:09 - 00:27
+The deployment phase of the ML lifecycle involves packaging our model and its dependencies into a standalone unit that can be easily run in different environments. This practice is called containerization, and today we will explore how we can achieve this using Docker.
+
+3. Docker
+00:27 - 01:02
+Docker is a platform that makes it easy to create and deploy using containers. Containers allow us to package an application with the libraries and dependencies it needs and ship it all out as one package. Containers are designed to be platform-agnostic; the developer can rest assured that the application or model should run on any other machine regardless of any customized settings the device might have. You can download Docker from this link - if you would like to learn more, please check out the Introduction to Docker course, right here on DataCamp!
+
+4. Docker usage part 1
+01:02 - 01:56
+We can start the process of containerization by creating a Dockerfile. A Dockerfile is a text document that contains all the commands a user could run to create an image. Using docker build, users can create an automated build that runs several command-line instructions. It's like a recipe for our application. We begin by specifying the base image we want to use. An image in this context is a read-only template for creating a container, which is a runnable instance of an image. For instance, we might choose a Python 3.7 base image if our application is written in Python. We then instruct Docker to copy the necessary files into the Docker image, such as our Python script and a requirements.txt file with the necessary dependencies. After this, we tell Docker to install the required dependencies by running pip install.
+
+5. Docker usage part 2
+01:56 - 02:38
+Finally, we specify the port to run on, define any environment variables - or sensitive pieces of information - and specify the command that should run when a container is launched from our Docker image. After the Dockerfile is set up, we build the Docker image by running the docker build command followed by an image name. For example, we could run docker build dash-t heart_disease_model dot in the command line, where heart_disease_model is the name of our Docker image, and dot tells docker to search our current directory for a Dockerfile to build the image from. Ensure to run this build command in the root directory of the project that contains ML_pipeline-dot-py script and the Dockerfile.
+
+6. Tagging containers
+02:38 - 03:03
+Next, we can tag our Docker image using docker tag. This adds a tag to our image that makes it easier to identify and manage. Tagging containerized Docker images can help us maintain a detailed and robust model registry as discussed in the previous video. After our image is built and tagged, we are ready to deploy it. We will cover containerized model deployment in the next video so stay tuned!
+
+7. Best practices
+03:03 - 03:33
+Let's now take a moment to focus on security considerations. Overall, it's important to note that although Docker makes packaging your models easier, you should always consider the security of your Docker images, especially in a healthcare context. Don't include sensitive data in your Docker images, and only use trusted base images. Also be sure to define environment variables as shown in the Dockerfile for any sensitive information, such as connection strings or passwords to clinical databases.
+
+8. Let's practice!
+03:33 - 03:54
+Great. This has been a brief introduction to Docker and how it can be used to containerize models. Next, we will discuss continuous integration and continuous deployment using AWS Elastic Beanstalk and Azure Machine Learning. Until then, let's try out some exercises to improve our understanding of Docker.

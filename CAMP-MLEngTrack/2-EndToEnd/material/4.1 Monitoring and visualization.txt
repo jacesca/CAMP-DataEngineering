@@ -1,0 +1,35 @@
+1. Monitoring and visualization
+00:00 - 00:10
+Welcome back! Today, we're looking at an essential aspect of maintaining and improving machine learning models after deployment: monitoring and visualization.
+
+2. What's next?
+00:10 - 00:46
+So, we've trained your model, optimized it, deployed it, and even made some predictions. But your jobs as a machine learning and data scientist doesn't stop there. To ensure the ongoing efficacy of your model, it's crucial to monitor your model's performance over time to ensure performance isn't degrading. This is done through logging and visualizing the performance metrics at inference time and beyond. Monitoring can help in the development of a feedback loop, which we will discuss in an upcoming video.
+
+3. Logging with python
+00:46 - 01:10
+We've touched on how logging is a crucial part of an ML workflow, especially for projects like ours. Logging is essential not just for debugging, but for keeping track of model predictions and analyzing its performance over time. Here, we use the built-in python logging library to log events from our program - recording every prediction our model makes on the test set, helping us identify any trends or anomalies.
+
+4. Logging with python (cont.)
+01:10 - 01:22
+Here, we read log outputs for later processing and visualization. Monitoring these logs will help ensure our model is functioning as expected, allowing us to address potential issues.
+
+5. Visualization
+01:22 - 01:49
+To better understand the behavior of our model, we can visualize its performance over time. Visualization helps transform raw data, such as model inputs and outputs, into insights by representing data in a graphical and intuitive manner. There are many ways to visualize model performance. A line plot showing changes in accuracy over time is one common method. We can use a matplotlib line graph showing the change in accuracy over time.
+
+6. Visualization example
+01:49 - 02:01
+Here is an example visualization of model accuracy over a 12-month period. It's best to visualize these types of metrics throughout the ML lifecycle - especially during training and production.
+
+7. Logging
+02:01 - 02:34
+Logging is the process of recording events occurring in our programs, including tracking variable values, function calls, or any information that helps us understand the execution flow and performance of systems. Model logs allow us to track the usage of the model, the performance of the model, and any potential errors or anomalies that might crop up. Any significant changes to a given metric should be investigated, especially for a deployed model in a production environment. Here are some example outputs from running the eb logs command.
+
+8. Visualization examples
+02:34 - 03:24
+For our deployed heart disease binary classification model, we might visualize the balanced accuracy of predictions over time - here is an example plot of prediction frequencies for a given time period. By visualizing our model's performance, we'll be able to spot trends, patterns, and anomalies that could inform us of when our model is starting to drift from its expected behavior or when retraining might be necessary. As practitioners, we should monitor the most important metrics for our use case. Say our model's balanced accuracy drastically changes - especially in contrast to expected rates of this metric. This could indicate a problem. Choosing metrics to monitor shouldn't be done without support; if possible, we should consult heart disease clinicians to check if ongoing diagnosis performance lines up with reality.
+
+9. Let's practice!
+03:24 - 03:50
+Remember, monitoring and visualization form the basis of understanding how our models are performing in the real world. These are not just one-time tasks, but continuous processes that ensure the longevity and reliability of our models. In the next video, we'll build upon this knowledge to discuss data drift and how to handle it. But for now, let's start by putting these concepts into practice with our models!

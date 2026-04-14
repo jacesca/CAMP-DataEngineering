@@ -1,0 +1,39 @@
+1. Testing a model
+00:00 - 00:09
+Hello and welcome back to our end-to-end ML course. This chapter, we will focus on model deployment, with our first video on testing.
+
+2. Deployment
+00:09 - 00:18
+After we have trained and evaluated our model, the next step in the ML lifecycle is for us to deploy it and make it available for productive use.
+
+3. Testing
+00:18 - 00:33
+One crucial part of pre-deployment is testing. Before we deploy our model for use by cardiologists, it's essential to test that the model is not crashing, and performing inference as expected in reasonable time.
+
+4. Unittest
+00:33 - 01:07
+In order to check our model is performing as expected before deploying for clinical use, we can write various tests to flag anomalous or unexpected events. These tests can be set up to run automatically at various points during deployment. To write unit tests for our system and model, we can use Python's built-in library unittest. Unittest defines test cases that are meant to cover a particular type of test - such as an inference test. Each test case then defines a number of individual test methods, such as tests for model failures.
+
+5. Unittest usage
+01:07 - 01:57
+With unit test-dot-TestCase, we create a new test by subclassing TestCase. Subclassing means creating a sub-class from the TestCase class or inheriting from it. After creating our subclass, we add test methods to it; these methods should always start with the word "test". We might have a test case that verifies if the endpoint is correctly returning a diagnosis prediction when valid input data is given for our model. Here, we write a model inference class, create a setup function to load our fitted model and testing dataset, and then add a test case to ensure our model predictions are being returned in the correct shape. The assertEqual method checks that two arguments are the same. We can run the test case by calling the main method of unittest.
+
+6. Unittest usage (cont.)
+01:57 - 02:09
+We can use other built-in methods like assertIn to check a value is in an expected range. Here, we check that input values, such as cholesterol, fall within expectations.
+
+7. Testing in Python
+02:09 - 02:18
+If you want to learn more about testing, feel free to check out DataCamp's interactive course on Unit Testing for Data Science in Python!
+
+8. Testing do's and dont's
+02:18 - 03:01
+Writing unit tests might seem like a lot of work, but it's an invaluable part of maintaining reliable and robust systems. Every time we make system changes, we should run unit tests to make sure everything still works as expected. New functionality should also come with its own unit tests. It's unhelpful to write too many tests, or redundant tests, as this can slow down development. It's also unhelpful to write tests for highly reliable components, or for their own sake. For instance, it's not useful to write a test to check if a trusted libraries implementation of linear regression, is correctly computing coefficients. That would be like testing that 1 + 1 always equals 2.
+
+9. Testing benefits
+03:01 - 03:29
+Regular testing and documentation allow us to confidently iterate and improve our model over time, without worrying about accidentally introducing issues. This methodology is often referred to as test-driven development, or TDD. In TDD, we often write tests before developing new functionality. TDD ensures the model's long-term reliability and performance in production, making it an indispensable part of the ML lifecycle.
+
+10. Let's practice!
+03:29 - 03:52
+Great! We now know how to write tests to ensure our model is working as expected. Remember, tests don't have to be confined to deployment; it's helpful to write tests throughout the ML development lifecycle to ensure all components and phases are working as intended. Try coming up with your own tests to ensure everything continues to run smoothly.

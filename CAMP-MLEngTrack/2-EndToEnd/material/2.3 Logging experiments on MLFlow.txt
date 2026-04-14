@@ -1,0 +1,35 @@
+1. Logging experiments on MLFlow
+00:00 - 00:12
+Welcome back. In the previous video, we learned how to train machine learning models. Today, we'll focus on another essential aspect of the machine learning lifecycle: logging and managing experiments.
+
+2. MLFlow
+00:12 - 01:02
+As machine learning practitioners, it is quite common to run experiments, which are basically like tests to validate various hypotheses and ideas. Experiments can involve tweaking the model parameters, changing the features we select, or using different algorithms entirely. Keeping track of all these experiments can be a challenge, as runs can be disorganized and unreproducible. For clinical settings, in particular, it is important to be able to reproduce previous results. This is where MLflow steps in, helping us to keep our machine learning experiments organized. MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. It's designed to help ML engineers track and compare experiment results, package code into reproducible runs, and share and deploy models.
+
+3. Creating experiments
+01:02 - 01:19
+To create an experiment in MLflow, we first need to set the experiment name using the mlflow-dot-set_experiment method. This creates an experiment under the specified name, providing a workspace for all experiments in that particular category or project.
+
+4. Running experiments
+01:19 - 02:03
+Once our experiment is set, we can start a new run using mlflow-dot-start_run. A run represents a single execution of our code, and it can contain parameters, metrics, tags, and a lot more information. Remember that every run is associated with the currently active experiment, the one we set earlier. We will use our trained logistic regression model as before. We can use mlflow-dot-log_param or mlflow-dot-log_metric to display various results. We just need to specify the name of the parameter or metric and its value. We can call these methods as many times as we need during a single run to log multiple metrics or to log the same metric multiple times.
+
+5. Retrieving experiments
+02:03 - 02:37
+Retrieving experiment data is also quite straightforward with MLflow. We can pass the run_id to mlflow-dot-get_run to fetch the metadata of a specific run, where run_id is a unique identifier for the run. If we want to fetch data across multiple runs, we can use mlflow-dot-search_runs. This method returns a pandas DataFrame that contains all the metrics, parameters, and tags of our runs. Once the experiments' results have been retrieved, we can print out all associated parameters and metrics.
+
+6. MLFlow UI
+02:37 - 02:58
+Comparing different runs is an integral part of machine learning, helping us identify the most promising models or settings. MLFlow offers a very intuitive web-based user interface to compare and visualize the experiment results. In the interface, we can sort and filter runs, view run details, and compare runs with each other.
+
+7. MLFlow UI (cont.)
+02:58 - 03:23
+The real power of MLflow comes from its ability to provide a central hub for all our machine learning experiments, making our workflow more organized, more manageable, and, ultimately, more effective. The ability to track and manage our machine learning experiments can drastically streamline our workflow, making it easier for us to identify successful model configurations and build on them.
+
+8. MLflow resources
+03:23 - 03:31
+To learn more about MLflow, you can check out DataCamp's very own course on it. Also feel free to have a look at MLflow's official website.
+
+9. Let's practice!
+03:31 - 03:41
+Alright! This has been a brief introduction to MLFlow. Now, it's time to test some of your new knowledge. Happy experimenting!

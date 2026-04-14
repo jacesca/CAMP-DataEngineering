@@ -1,0 +1,27 @@
+1. Architectural components in end-to-end machine learning frameworks
+00:00 - 00:12
+Welcome back. Today, we will be delving into the architectural components of end-to-end machine learning frameworks. Specifically, we will discuss the importance of feature stores and model registries.
+
+2. Feature stores
+00:12 - 01:04
+In an ML pipeline, feature engineering and selection is a crucial step, as it enhances the efficacy of our machine learning models. Once we have engineered our features, we need an efficient way to manage them for consistent use across different models. This is where feature stores come in. Feature stores serve as a central repository that stores curated and transformed features: essentially a version-controlled feature database. This can be helpful if we wanted to reuse features, say, for predicting a different disease. Feature stores ensure consistency in features across different models, preventing feature calculation duplication, and enabling feature sharing and discovery. Feature stores also have the added benefit of ensuring the same feature transformations and calculations done during training are performed during production.
+
+3. Feast
+01:04 - 01:43
+The Feast platform can be used to implement feature stores. Feast is an open-source project developed by Gojek. It provides a unified means of managing and storing ML features. In Feast, you can define and register your features using a feature set. A feature set is a grouping of related features, along with the metadata describing those features. For example, our heart disease dataset contains a patient entity with groups of related features such as cholesterol, age, and sex. We can think of a patient entity as an object representing a patient in our CardioCare clinic with various attributes or features.
+
+4. Feast feature stores part 1
+01:43 - 02:25
+To implement a feature store and model registry in Feast, we first define the relationships between features in our dataset using the Entity and Field functions and specify the datatype of the feature. In our heart disease dataset, each row corresponds to a patient entity, and each patient has features like cholesterol and age. After this, we point to the source data, which can be a local file. The timestamp arguments detail when records were created and in what order they should be stored; this becomes especially important if we are dealing with time-series data. Feast also offers options to load data from other sources, such as remote databases.
+
+5. Feast feature stores part 2
+02:25 - 02:56
+After defining our feature relationships and pointing Feast to our dataset, we create a FeatureView of the data using the loaded dataset. A FeatureView helps us organize the structure of our data in terms of features and entities, explicitly allowing us to set the name, entity, features, timestamps, and inputs. After this, we load and register the feature view as a feature store using a repo_path with dot-apply, so it can be retrieved to train additional machine learning models.
+
+6. Model registries
+02:56 - 03:52
+Just as it is important to manage and store the features as model inputs, it is crucial to manage and store the models' outputs themselves - our patients need timely, accurate, and persistent access to their diagnoses as they become available. Model registries are a form of version control system for machine learning models. They help us manage and keep track of different versions of our machine learning models. Model registries allow us to annotate our models with rich metadata, compare different models, and track their performance over time. This not only makes our work more organized but it also increases transparency and reproducibility in our machine learning workflows. We have already been exposed to model registries in the form of MLflow. Remember that MLflow allows us to manage and track machine learning experiments, log model performance metrics, and even store trained model artifacts for cross-comparison.
+
+7. Let's practice!
+03:52 - 04:01
+Alright! That's it for today's video. I hope this gives you a good understanding of the importance of feature stores and model registries and how to implement them.

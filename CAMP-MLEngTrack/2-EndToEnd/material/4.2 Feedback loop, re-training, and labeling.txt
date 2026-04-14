@@ -1,0 +1,23 @@
+1. Feedback loop, re-training, and labeling
+00:00 - 00:16
+Hello again! In this video, we're going to discuss an essential aspect of maintaining and improving the effectiveness of our machine learning models, the feedback loop. We'll also look at techniques that can be used to implement it and some potential dangers involved.
+
+2. Feedback loop
+00:16 - 01:01
+The feedback loop is a system in which various measurements from the system, like model predictions or performance data, are sent back into the system as input. Instead of actually making model predictions on those outputs, this means that the system continually uses its current results or statistics to guide and shape its future behavior; the ongoing outputs or measurements are used to help the system adapt and evolve over time. These outputs can be recorded and used through various model monitoring techniques as discussed in an earlier video. The feedback loop is an integral part of ML systems because it allows for rapid learning and adjustment. By applying this continuous learning approach, we can better adapt our model to changing conditions, trends, or user behaviors.
+
+3. Feedback loop implementation
+01:01 - 02:07
+We can use several helpful techniques to implement a manual, semi-automated, or fully-automated feedback loop. Previously, we learned about methods for detecting data drift, a phenomenon where the input data's distribution changes over time. It is possible to set up a feedback loop that retrains the model on portions of newer labeled data to avoid it becoming outdated. One approach is to acquire new labels for our productive model. These labels will help the model adapt to the changes in data distribution. New labels can be acquired in several ways, including manual labeling by domain experts, crowd-sourcing, or using supervised learning techniques. Online learning is another common technique used in feedback loops, where the model is periodically retrained based on changing data trends. This is beyond just data drift and can include scenarios where new categories of data appear or when the relationships between variables change over time. There are many other ways to implement feedback loops for your deployed system - feel free to research how you could do this for your specific use case!
+
+4. Dangers of feedback loops
+02:07 - 02:49
+In some cases, a feedback loop can be negative. Feedback loops are dangerous when the model's outputs can directly or indirectly affect its inputs. A classic example of this is in social media. Say a given recommendation algorithm or model is trained to maximize user engagement. If a model recommends a particular type of content to a user, this could directly influence their content preferences, which in turn would cause the model to serve them more of the same. Over time, this can develop nasty echo chambers or propagate the spread of misinformed, inflammatory content. ML engineers should be all the more wary of setting up systems where feedback loops are automated.
+
+5. Better usage of feedback loop
+02:49 - 03:20
+For our heart disease model, the feedback loop is more reactive; we choose when to adjust or retrain the model, and it's unlikely that our model's predictions will strongly influence input data or patient health metrics. If anything, a heart disease diagnosis should promote healthier lifestyle choices for the diagnosed patient. Regardless, it is still essential to be cautious when setting up feedback loops and even more careful when automating them. As practitioners, we must prioritize alignment with human values in all parts of a system!
+
+6. Let's practice!
+03:20 - 03:48
+Designing and maintaining a feedback loop, understanding when to retrain your model, and acquiring new labels when needed are all critical in ensuring the robustness and adaptability of your machine learning model. They are vital to ensuring your model continues to perform well in the face of changing data and trends. Above all, keep ethical considerations in mind, and always remember that ML systems are ultimately designed for humans.

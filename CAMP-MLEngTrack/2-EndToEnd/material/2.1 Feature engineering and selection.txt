@@ -1,0 +1,31 @@
+1. Feature engineering and selection
+00:00 - 00:16
+Welcome back. Today, we will learn how to handle feature engineering and selection, a crucial step in the ML pipeline. Feature engineering builds upon data preparation; some data preparation steps overlap with feature engineering steps.
+
+2. Feature engineering
+00:16 - 00:50
+Feature engineering is the process of creating features that enhance the performance of ML models. Feature engineering techniques allow ML engineers to modify preexisting features, as well as design completely new ones, enabling the selection of a simpler model. This can lead to easier deployment and maintenance, faster training times, interpretability gain, and in some cases, improved model performance. Remember, more isn't always better; it's about selecting the right features that capture the essential aspects of our data.
+
+3. Normalization
+00:50 - 01:27
+One common feature engineering technique is normalization. Normalization scales numeric features to a scale of 0 to 1, ensuring that no particular feature can dominate the model due to its scale. This is beneficial when features have different ranges and you use algorithms sensitive to the inputs' scale like K-Nearest Neighbors (KNN) or Neural Networks. We can use the sklearn-dot-preprocessing-dot-Normalizer function for normalization. We first create a normalizer object and then pass our DataFrame as an argument, returning the normalized DataFrame.
+
+4. Standardization
+01:27 - 02:05
+Another common feature engineering technique is standardization. Standardization scales features to have a mean of zero and a variance of one. Standardization benefits algorithms that assume features are centered around zero and have variance in the same order, like in Support Vector Machines (SVMs) and Linear Regression. We can use the sklearn-dot-preprocessing-dot-StandardScaler function for standardization. Similarly to normalization, we create a standard scaler object, pass our heart disease DataFrame as an argument, and get a standardized version of the data back.
+
+5. What constitutes a good feature?
+02:05 - 02:41
+In order to improve our prediction accuracy, we need to use relevant features for modeling. It also doesn't help to use multiple features which represent similar metrics. For our heart disease dataset, it wouldn't be beneficial to include a feature like the weather on the day of appointment; this should have no bearing on the diagnosis. Furthermore, it isn't helpful to include both age in years and age in months as features, as both measures capture similar things. In this way, we can visualize dissimilar features as being perpendicular, or orthogonal to each other.
+
+6. sklearn.feature_selection
+02:41 - 03:02
+A popular feature selection tool is sklearn's feature_selection. Feature_selection offers a robust toolbox that helps select significant, non-redundant features in our dataset. We need to split our data beforehand to avoid data leakage, ensuring that the model is not exposed to the test data during feature selection.
+
+7. sklearn.feature_selection (cont.)
+03:02 - 04:14
+Sklearn-dot-feature_selection-dot-SelectFromModel is one helpful method for feature selection. We can use a Random Forest classifier as the underlying model to estimate the importance of each feature. The Random Forest model eliminates features considered irrelevant until it can no longer improve its target variable predictions. Prefit equals true tells SelectFromModel that the model has already been fitted. When constructing our Random Forest classifier, the parameters n_jobs equals -1 allows us to use all available processors on our machine, class_weight balances class frequencies, and max_depth limits the tree's depth to five. We use the dot-fit function to get critical features. In this scenario, heart_disease_x represents our features, while heart_disease_y signifies our target. Both need to be provided because the Random Forest classifier calculates feature importance based on the capability of the features x to predict the target y. The model-dot-get_support function returns a Boolean array that indicates which features are considered essential and which are not.
+
+8. Let's practice!
+04:14 - 04:30
+Feature engineering and selection are vital steps in the ML pipeline. Correctly applying these techniques can simplify your model and boost its performance predicting heart disease. Now, it's time to showcase your new skills. Happy coding!

@@ -1,0 +1,28 @@
+1. Designing an end-to-end machine learning use case
+00:00 - 00:17
+Hello, my name is Josh. I'm a machine learning engineer and educator, and I'm excited to be taking you through this course on end-to-end machine learning. In this introductory video, we will explain the case study - a project in which we will train a machine learning model to predict heart disease!
+
+2. The case study
+00:17 - 00:36
+We will also discuss the business requirements of the end user - a cardiologist clinic that we will call CardioCare. Doctors or cardiologists will use this product at CardioCare to inform their decision-making by providing a binary prediction as to whether a given patient has heart disease.
+
+1 Image source: https://www.flaticon.com/free-icons/doctor
+3. The model's role
+00:36 - 00:47
+The doctors can choose to factor this prediction into their decision-making. It is always important that models are informing decisions, not making them, especially in healthcare.
+
+4. The machine learning lifecycle
+00:47 - 01:43
+In order to build this product successfully, we will follow the typical machine learning lifecycle. The machine learning lifecycle includes several stages. It begins with problem understanding and definition and setting clear objectives. This initial phase usually involves alignment with stakeholders in the project - in this case, the medical personnel at CardioCare clinic. This is followed by data collection and preparation, which consists of gathering and preparing necessary patient data. Subsequent steps include model development and tuning, model evaluation, deployment, and finally, monitoring. The process is iterative; for example, patient data could change over time due to the emergence of new heart-related diseases, which could cause the model's performance to deteriorate. Usually, we will cycle through the lifecycle in various ways as the project and dataset evolve.
+
+5. Understanding end user requirements
+01:43 - 02:38
+As discussed, the end user in our case study is CardioCare clinic. The requirement is a machine learning model that can predict the risk of heart disease accurately and reliably using patient health data. As such, the model must match or exceed the performance of a human expert cardiologist. It must generalize to unseen data outside of its training set, such as new patient data, returning timeous predictions whenever required - even in the middle of the night when the ML engineer is unavailable. The model design process should be secure - sensitive training data should be handled in a safe and private environment, and the deployed model should be monitored continuously and retrained whenever necessary. Finally, the model should also be as interpretable as possible: cardiologists should be able to understand the model's prediction, and disregard or overwrite it when necessary.
+
+6. Data collection
+02:38 - 03:20
+Now that we have understood the general details of the end user requirements, we move on to the data collection stage. Here, we gather data relevant to our problem. This might involve collecting patient health data, such as age, cholesterol levels, blood pressure, and other relevant health indicators. This data could come from electronic health records provided by the company we work with or public health databases. Data collection isn't just about gathering data. It also involves understanding the data and its context. For example, are there any potential sources of bias in the data, such as possible error-prone self-reported measurements? These are critical questions to answer for the success of our machine learning project.
+
+7. Let's practice!
+03:20 - 03:39
+You learned about our case study and CardioCare's requirements and gained a high-level understanding of the machine learning lifecycle and the data collection process. Next, we'll delve deeper into the next stage of the lifecycle - data preparation. Stay tuned! But first, let's practice!

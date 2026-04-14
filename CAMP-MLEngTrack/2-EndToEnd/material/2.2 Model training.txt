@@ -1,0 +1,35 @@
+1. Model training
+00:00 - 00:07
+Welcome back. After learning how to handle dataset features, we'll now focus on training our models.
+
+2. Occam's Razor
+00:07 - 00:27
+At the core of model training lies an essential concept: Occam's Razor. This principle suggests that the simplest explanation or model that fits the data is usually best. Because of this, when selecting our models, we should lean towards simple models that provide a good fit to our data.
+
+3. Modeling options
+00:27 - 01:07
+After performing feature selection on our dataset, we need to choose an appropriate model for predicting diagnoses. We can get started with four simple sklearn models. For our problem, we might select a binary classifier model such as logistic regression. This model finds a decision boundary to separate classes; in our case, the patients with a positive or negative diagnosis. A similar model is a support vector classifier or SVC. Another great model is a decision tree, which learns rules to categorize data, and we can also use a random forest model to base predictions on the diagnoses of many decision tree models.
+
+4. Other models
+01:07 - 01:29
+There are many other powerful model classes available, such as deep learning models, which include neural networks and GPTs. Other popular models are KNN and XGBoost. Occam's razor suggests that we should start with simple models, only moving to more complex alternatives if we are sure the simple models aren't a good fit for our project.
+
+5. Training principles
+01:29 - 02:16
+After selecting an appropriate model, we train it using our prepared data. The training goal is for our model to learn patterns from the data to predict our target - the heart disease diagnosis. We want our model to generalize to unseen data, so we split our dataset into two parts, one for training and another for testing. It's important that the model sees none of the testing data when training - we achieve this by holding out some data. We generally choose a 70/30 or 80/20 percentage split of training to testing data. Sometimes, we can also employ a third hold-out dataset, often called a 'validation set'. This set is used during model development to fine-tune model parameters and select the best-performing model.
+
+6. Training a model
+02:16 - 03:14
+We can train our model using sklearn. First, we split our dataset into train and test portions using the train_test_split function. We pass in features X and targets y and set the testing set size. Here, we use an 80:20 split of training to test data. Next, we define the logistic regression model. Logistic regression is a good choice here because of its simplicity. We pass in a parameter for logistic regression to set training iterations, which is the maximum number of training steps we expect modeling to take. We start the training procedure by calling model-dot-fit on our training features and targets. In training, the model aims to minimize the error or 'loss' of it's predictions when compared to the actual diagnosis for each patient. The loss function of logistic regression is called log loss; it ensures that all predictions fall between 0 and 1.
+
+7. Getting model predictions
+03:14 - 03:30
+After training, we can make predictions with the model. Here, a patient is represented by a dataset row. We can get model predictions by calling model-dot-predict on the patient, and model prediction probabilities by calling model-dot-predict_proba.
+
+8. Getting model predictions (cont.)
+03:30 - 03:51
+We can think of predictions percentages as being roughly analogous to model confidence. We binarize outputs using a threshold of 0.5, above which predictions are classified as positive, and below which they are negative. Here, the model predicts an 80% chance of Jane Doe having heart disease.
+
+9. Let's practice!
+03:51 - 04:04
+Alright! Now we know how to train a logistic regression model on our heart disease dataset. This is the core of the machine learning lifecycle, so keep practicing. See you in the next video!

@@ -1,0 +1,40 @@
+1. Model evaluation and visualization
+00:00 - 00:09
+Welcome back. Today, we will cover model evaluation and visualization, including techniques for checking our models perform as intended.
+
+2. Accuracy
+00:09 - 00:49
+There are many ways to measure model accuracy. Selecting an appropriate accuracy measure is vital; it's easy to obscure or misinterpret a model's capabilities by using the wrong metric. Standard accuracy is usually measured as the ratio of correct classifications to the total classifications. For example, if we get 70 out of 100 questions right, our accuracy is 70%. However, this measure of accuracy is often unhelpful; if our dataset contained 1 negative diagnosis and 99 positive diagnoses, a model could achieve 99% accuracy by predicting positive for everyone.
+
+3. Confusion matrix
+00:49 - 01:16
+A confusion matrix is another tool for evaluating binary classification model accuracy. It's a 2x2 grid which compares the model's classifications to the actual classifications. These 4 cells highlight the model's performance for all combinations of positive and negative classifications, telling us the accuracy of the model in predicting the positive and negative classes in relation to the actual classes.
+
+4. Balanced accuracy
+01:16 - 01:36
+Balanced accuracy is another great accuracy metric that looks at the accuracy across both classes, providing a weighted average between them. This ensures better results in one class don't overshadow results in the other. Consequently, balanced accuracy is often more reliable than standard accuracy.
+
+5. Confusion matrix usage
+01:36 - 01:57
+Here, positive and negative refers to the presence or absence of heart disease in a given patient. Here is a confusion matrix showing model predictions for the patients in our dataset. For our case, we want to particularly focus on minimizing false negatives - wrongly classifying patients as healthy when they may have heart disease.
+
+6. Cross validation
+01:57 - 02:48
+When it comes to validating our models, cross-validation provides another robust way to estimate performance by providing an average score across different splits on our dataset. This way, we ensure our performance is not dependent on one arbitrary split. k_fold cross_validation is a resampling procedure used to evaluate models on limited data. The procedure has a single parameter, k, for the number of groups that the data sample will be split into. Since our heart disease dataset is quite small, k_fold cross_validation is a good choice. Here is a visualization of k-fold cross-validation with k equals five. We partition the data into five equal groups, and for each different group, we train the model with four parts training data and one part testing data.
+
+7. Cross validation usage
+02:48 - 03:17
+sklearn offers a straightforward, model-agnostic implementation of k-fold cross-validation through the KFold function. We create a kFold cross-validation object by setting the number of splits k. We also have the cross_val_score function, which helps calculate the scores of our cross-validation. We pass in a given sklearn model, a kfold object, the dataset's features and target, and set how we want to score results.
+
+8. Hyperparameter tuning
+03:17 - 03:44
+Model evaluation should ultimately inform model improvement. A hyperparameter is a global model parameter that can be adjusted to improve model performance. For example, sklearn's logistic regression model has a hyperparameter C, which at a high level tells the model how much to regulate it's outputs, making them less extreme. We can try different values for this parameter in order to create the best-performing model.
+
+9. Hyperparameter tuning example
+03:44 - 04:06
+Here is the example output for hyperparameter tuning on various values of C. Hyperparameter tuning is not an exact science, we often have to play around with different hyperparameters to form intuitions about what works for our dataset. We will not go into detail on hyperparameter tuning - but this is an important element of MLOPs.
+
+10. Let's practice!
+04:06 - 04:19
+Great! You now know some powerful techniques for evaluating models. In the following exercises, you will implement some to ensure models are thoroughly evaluated before deploying.
+

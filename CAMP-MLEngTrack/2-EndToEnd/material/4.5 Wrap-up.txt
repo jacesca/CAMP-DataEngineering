@@ -1,0 +1,19 @@
+1. Wrap-up
+00:00 - 00:11
+Welcome back to the final video in this course! Well done on making it this far! In this video, we'll recap everything we have covered and discuss the future of our project.
+
+2. How far we've come
+00:11 - 00:33
+Up to this point, we've built a ML pipeline starting from problem definition, EDA, and data cleaning. We've trained and evaluated the model, deployed it using TDD and CI/CD, and set up monitoring systems to check it is performing as intended. We've even discussed the feedback loop and various system metrics that can be used to automate system improvements.
+
+3. What's next?
+00:33 - 00:43
+But are we done? Now that we have a performant model making potentially life-changing predictions in a real-world environment, is our job complete?
+
+4. So much more to do!
+00:43 - 01:01
+As you've probably guessed... not at all! The ML lifecycle isn't a singular pathway to follow: it's an iterative, organic process. As long as you work on the project, you should continue to move around the cycle, monitoring, re-deploying, simplifying, and improving your system.
+
+5. Let's practice!
+01:01 - 01:15
+I'm confident that you are now well-equipped to handle complex challenges in your ML journey. Remember, always keep learning, stay curious, and don't be afraid to ask questions.

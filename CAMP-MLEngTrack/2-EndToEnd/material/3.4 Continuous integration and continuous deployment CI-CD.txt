@@ -1,0 +1,40 @@
+1. Continuous integration and continuous deployment (CI/CD)
+00:00 - 00:13
+Welcome back. Today, we're learning the concepts of Continuous Integration and Continuous Deployment, commonly known as CI/CD, and how we can leverage these practices to deploy containerized models.
+
+2. CI/CD in the ML lifecycle
+00:13 - 00:23
+CI/CD is widely used throughout software development and deployment, and is also a core part of the deployment phase in the ML lifecycle.
+
+3. CI/CD principles
+00:23 - 00:55
+Continuous Integration involves regularly merging code changes into a central, non-production repository. This is often paired with automated testing that helps identify bugs early on, and ties into DevOps, which streamlines the production process. Continuous Deployment, on the other hand, usually follows Continuous Integration and automatically deploys updates or changes in the codebase to production. Combined, these practices significantly speed up development, minimizing production risk.
+
+4. CI/CD in machine learning
+00:55 - 01:34
+When working on ML initiatives like our heart disease project, CI/CD is critical for improving and maintaining a production-ready ML model. For example, we might automate the deployment of models trained on new patient data. In a machine learning context, CI/CD can involve regularly training models on new data, testing the model for performance, and deploying the model if it performs as expected or better. For example, if we regularly retrain models, we should halt a deployment if a newly-trained model's performance is below a certain threshold to avoid providing inaccurate predictions to healthcare practitioners.
+
+5. CI/CD with AWS Elastic Beanstalk
+01:34 - 02:42
+Let's look at how to set up a CI/CD pipeline for containerized model deployment on AWS Elastic Beanstalk. You can download EB from this link. First, we initialize our application environment using the terminal command 'eb init'. This command sets up a new Elastic Beanstalk application and configures our local repository to manage application deployments. Next, we create an environment where our application will live. This can be done using 'eb create' followed by the environment name. AWS Elastic Beanstalk will handle the details such as provisioning an Amazon EC2 instance. After creating the environment, we deploy our application using 'eb deploy'. This command packages the application container and deploys it to the Elastic Beanstalk environment. Finally, to open the application in a web browser, we can use 'eb open'. These commands help to establish a CI/CD pipeline for deploying ML models. For a fully automated pipeline, we would incorporate these commands into scripts that are triggered when changes are pushed to the code repository.
+
+6. Alternatives to EB (1)
+02:42 - 03:07
+While AWS Elastic Beanstalk provides a great platform for deploying machine learning models, many alternatives exist, especially if you're working in a different cloud environment. For instance, Azure Machine Learning provides similar functionality for deploying ML models. It has tools to create real-time scoring services for models, manage compute resources for training, and monitor the performance of models in production.
+
+7. Alternatives to EB (2)
+03:07 - 03:15
+Google Cloud Platform also has a similar solution called App Engine, which can be used as an alternative.
+
+8. Alternatives to EB (3)
+03:15 - 03:39
+Another option is Kubernetes, an open-source container orchestration system for automating the deployment, scaling, and management of containerized applications. Kubernetes works on many cloud platforms, including GCP, Microsoft Azure, and AWS. Kubernetes might have a steeper learning curve than some platform-specific tools, but it offers much flexibility and control over your deployments.
+
+9. Alternatives to EB (4)
+03:39 - 03:45
+Feel free to explore other alternatives - there is a whole universe of CI/CD solutions out there.
+
+10. Let's practice!
+03:45 - 04:10
+That concludes our video on CI/CD. Remember, the world of model deployment is vast and full of options, but the principles remain the same. Always make sure to create and maintain a safe, repeatable, and efficient deployment pipeline that ensures your models are operating at their best and are easily updated when necessary. Now, it's time to put your knowledge into practice!
+

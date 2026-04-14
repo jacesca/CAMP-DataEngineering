@@ -1,0 +1,24 @@
+1. Serving the model
+00:00 - 00:07
+Welcome back to one of the last videos in our course! Today we will be talking about serving our model.
+
+2. Model-as-a-service
+00:07 - 00:56
+Up until now, we have operated under the assumption that our stakeholders or model users will access the model over the internet. This architecture is usually called model-as-a-service; essentially, after deployment, we surface the model to the users through some secure portal. They would then post their queries and/or patient data, and receive diagnosis predictions back over the internet. However, what if our clinic was rural? What if, for some reason, they did not have access to the internet? We could also imagine, for example, that our stakeholders had to operate in a highly secure environment, and that model predictions or patient data was sensitive, and could not be passed over the internet for security reasons. This is very common in healthcare especially, considering that patient data is highly sensitive and personal.
+
+3. On-device serving
+00:56 - 01:20
+In this case, it might make more sense to serve the model on-device, or as a part of a given application, instead of an external service to be queried. In this type of serving architecture, the model is integrated into the device or application itself. This is often done for edge computing applications, where the model needs to run on a device without a reliable network connection.
+
+4. Pros and cons of on-device serving
+01:20 - 02:47
+On device model serving has a number of benefits. For example, on-device models often have faster response times as they don't have to rely on an external server. This is particularly useful for applications that require real-time predictions. Additionally, as mentioned before, on-device serving means internet access is not required. This minimizes the risk of data breaches, especially with sensitive information. Offline access also allows for a wider range of applications, especially in remote or disconnected areas. Edge devices, however, can have limited memory and processing power. This means the model has to be optimized and lightweight, potentially compromising accuracy for speed. On-device models might not benefit from the kind of scalability cloud infrastructure offers. If an application with an on-device model becomes popular, it won't face the traditional server-side scaling issues but might face challenges related to diverse device capabilities and OS versions. Without a connection to a central server, pushing model updates now poses a challenge. There might be a need for physical updates or limited periodic connectivity to fetch updates. It's also harder to aggregate usage statistics, performance metrics, and potential model drift when the model is on a device. Special strategies must be in place for this.
+
+5. Implementation strategies
+02:47 - 03:25
+As with model-as-a-service, on-device model serving also involves many different deployment and implementation techniques. For example, pruning parts of a large model can make the model lighter and faster. Instead of training a big model from scratch, we can leverage pre-trained models and fine-tune them for specific tasks - this is called transfer learning. There are also many machine learning frameworks tailored for on-device and edge deployment, such as TensorFlow Lite, Core ML (for Apple devices), and ONNX Runtime. We won't go into detail on these techniques! However, feel free to research them further on your own time.
+
+6. Let's practice!
+03:25 - 03:57
+As with nearly everything else in this course, the specific architectural decisions for a system depend on our specific use case! While on-device model serving offers a myriad of benefits, especially in terms of privacy and low latency, it comes with its own set of challenges. As a data scientist or ML engineer, it's essential to be aware of these factors and make informed decisions based on the use-case and the resources available.
+

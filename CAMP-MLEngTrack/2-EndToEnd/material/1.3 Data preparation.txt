@@ -1,0 +1,31 @@
+1. Data preparation
+00:00 - 00:09
+Welcome back! After learning about EDA in our last video, we are moving to the next step in the ML lifecycle: data preparation.
+
+2. Data preparation steps
+00:09 - 00:32
+Let's recall that our dataset may have missing values, outliers, and imbalances. There might be empty columns or duplicates that need addressing. Data preparation involves identifying and carrying out the data-cleaning steps derived from EDA. Handling mentioned issues in our dataset is critical to avoid skewing our model's performance downstream.
+
+3. Null / empty values
+00:32 - 01:04
+Missing values can cause model failures, but there are two main ways to mitigate this. We can use the pandas dot-drop method to remove sparse or empty rows or columns from our DataFrame based on null value count. We pass in the axis argument to specify whether we want to remove rows or columns. We can also use the dot-dropna method with a keyword argument of how equals all to drop all rows that are sparse or empty. Only completely empty rows will be dropped.
+
+4. Dealing with null / empty values
+01:04 - 01:27
+Deciding to drop values depends on EDA findings. For example, the oldpeak feature in our dataset refers to electrocardiogram measure. If we find that the oldpeak column has many missing values, we can drop it. If the target column has missing values, it is generally best to drop those rows, or treat them as a separate category.
+
+5. Imputation
+01:27 - 02:20
+Often, we have rows or columns with just a few missing values. We wouldn't want to drop an entire patient record just because they forgot to record their age. We also cannot drop columns like the target, as they are essential to prediction. One common technique used here is imputation. Imputation involves filling missing values with substitutes. Choosing an imputation strategy depends on the data. Sometimes it's best to fill with the mean or median. Other times, it makes sense to fill missing values with a constant, or the previous value in the dataset for timeseries. We can perform imputation using the pandas dot-fillna method. The inplace argument means that the operation directly modifies the original DataFrame. For instance, if we have missing values in the cholesterol column, we could fill them with the mean cholesterol level of all patients.
+
+6. Advanced imputation
+02:20 - 02:47
+Sometimes, using a summary statistic value for imputation does not capture the nuance required for successful modeling. In this case, we can use more complex ML techniques such as K-nearest neighbors or SMOTE to impute missing values if they can be predicted from features in the dataset. Here, we instantiate a KNN imputer object then use the fit_transform method on the column we want to impute values into.
+
+7. Dropping duplicates
+02:47 - 03:37
+During modeling, we want each row to represent a unique patient. Often, real-world datasets contain duplicated data, which can bias a model's standard errors and confidence intervals. Usually, we drop rows with duplicated values across all columns, but sometimes we only need to check a subset of columns for duplicates. For example, if two patients have duplicated patient ids, we might want to drop one of the records, as they probably represent the same patient. For timeseries, we should check the time in addition to the ID. On the other hand, we should not drop rows with expected duplicates, such as age. During data preparation, we can remove duplicate entries using the dot-drop_duplicates method, which returns a DataFrame with duplicate rows removed.
+
+8. Let's practice!
+03:37 - 03:56
+Data preparation is an iterative process that may need to be repeated as we delve further into model training and evaluation. It's essential to conduct it thoroughly as it sets the stage for subsequent steps in the ML pipeline. With that in mind, let's start cleaning our CardioCare dataset.
