@@ -1,0 +1,28 @@
+1. Adopting an MLOps mindset
+00:00 - 00:17
+In this video, we will discuss why nearly 90% of machine learning experiments don't make it to production. We will see how to adopt an MLOps mindset and what makes an ML experiment ready to be moved into production. We will also discuss machine learning technical debt.
+
+2. MLOps
+00:17 - 00:40
+MLOps stands for Machine Learning Operations. MLOps is a practice that focuses on collaborating between data scientists and operations teams to ensure the successful deployment and management of machine learning models in production. Proper MLOps helps ensure that machine learning experiments are properly tested and ready to be deployed and scaled.
+
+3. ML experiments
+00:40 - 01:25
+A significant aspect of MLOps is the continuous experimentation and testing of different machine learning models. These experiments involve training and evaluating the models on various datasets to determine which one produces the most accurate and reliable results. In machine learning, it is crucial to carefully consider the selection of models, as the performance of a model can greatly impact the overall project's success. Therefore, it is essential to carefully evaluate the different options and choose the model that performs the best on the given data. This process of experimentation and model selection can be time-consuming, but it is a crucial step in ensuring the success of any machine learning project.
+
+4. From experiments to production
+01:25 - 02:00
+An ML experiment is ready to be moved from the experimentation phase into production when it has been thoroughly documented, tested, and validated to ensure accuracy and reliability. This may include running the model on various data sets and parameters and testing the model in a real-world environment. Additionally, the model should be monitored closely to ensure that it performs as expected and that any changes align with the desired results. Finally, the model should be deployed in a secure, scalable environment to handle large volumes of data and traffic.
+
+5. Why most ML experiments fail
+02:00 - 02:27
+Unfortunately, most machine learning experiments fail to make it to production. Some common reasons include a lack of clear goals and objectives, poor data quality, overly complex model architectures, insufficient training data, and overfitting or underfitting models. It is essential to carefully consider these factors and address any issues before moving an experiment into production to increase the chances of success.
+
+6. Technical debt
+02:27 - 03:04
+Technical debt occurs when code is rushed and not thoroughly tested or validated, leading to errors or bugs that can be costly and time-consuming to resolve. Technical debt can also be incurred with out-of-date or missing documentation on any coding / ML model selection process. To avoid incurring technical debt, it is essential to prioritize the quality and correctness of code and documentation from the outset. By following best practices and taking the time to test and validate code properly, we can ensure our machine learning projects' long-term success and sustainability.
+
+7. Let's practice!
+03:04 - 03:20
+We discussed how nearly 90% of machine learning experiments don't make it to production, what makes an ML experiment ready to be moved into production, and the causes of technical debt. Now let's do some practice!
+

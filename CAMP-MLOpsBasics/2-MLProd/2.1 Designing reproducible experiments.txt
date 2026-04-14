@@ -1,0 +1,40 @@
+1. Designing reproducible experiments
+00:00 - 00:05
+In this video we will talk about designing reproducible ML experiments.
+
+2. Reproducible experiments
+00:05 - 00:40
+Reproducibility in machine learning is essential for building trust and ensuring accuracy in the results of machine learning models. Reproducibility allows for the replication of results, as well as enhances collaboration with other developers and researchers. Reproducible experiments help reduce the risk of bias and ensure the integrity of the research process and the results it produces. Simply put, by adhering to the principles of reproducibility, we can be more confident in the accuracy and reliability of the models developed.
+
+3. MLflow
+00:40 - 01:13
+MLflow is an open-source platform developed by Databricks that helps to track and manage machine learning experiments. It enables users to easily track and manage dependencies, code versions, and experiment settings, making it easy to create reproducible ML pipelines. MLflow is also a great platform for collaboration, as multiple users can access experiments and view the results. MLflow makes it easy to reproduce entire ML pipelines in a quick and efficient manner.
+
+1 https://www.databricks.com/blog/2018/06/05/introducing-mlflow-an-open-source-machine-learning-platform.html
+4. Example of using Mlflow
+01:13 - 01:29
+Let's take a look at an example of using mlflow with scikit-learn. Here we have some standard imports for building a RandomForest classifier with two additional imports from mlflow. We can see that mlflow has built-in scikit-learn support, which is great!
+
+5. Example of using MLflow cont.
+01:29 - 01:59
+This code demonstrates the basic usage of MLflow to log parameters, model information, and metrics of a scikit-learn model. It starts an MLflow run with mlflow.start_run(), logs parameters and model information, and logs metrics such as accuracy. These logged values can be tracked, stored, and compared in the mlflow UI, which is an important step in reproducibility.
+
+6. Tracking code
+01:59 - 02:32
+MLflow makes it easy to track code versions and changes by logging them, as well as comparing different versions of the code. This helps to ensure that experiments can be reproduced exactly, as it allows you to identify which version of the code was used to produce a given set of results. This makes it much easier to debug and troubleshoot code, as well as to reproduce experiments. Tracking code with MLflow is essential for creating reproducible experiments in machine learning.
+
+7. Model registries
+02:32 - 03:13
+Model registries are centralized repositories of models and their metadata, such as model versions, performance metrics, and environment details. MLflow can be used to manage model registries by logging, storing, and comparing different versions of models, allowing for the reproduction of entire ML pipelines. This also allows for the comparison of models, ensuring the accuracy and reliability of the models produced. By using MLflow to manage model registries, researchers can be confident that their experiments are reproducible and their results are accurate.
+
+8. Experiment reproducibility
+03:13 - 03:33
+MLflow can be used to ensure experiment reproducibility by tracking and logging input data, code, and settings. This allows for the validation of findings and replication of results, allowing others to verify and build upon work, and ensuring consistent results across different runs.
+
+9. Revisiting documentation
+03:33 - 04:05
+Good documentation is essential for reproducible ML research and development. Proper documentation should include clear and detailed documentation of the input data, code, settings used in an experiment, and the results of the experiment. It is also important to make the documentation accessible for others to view, and to keep an up to date record of the experiment. Following these principles of good documentation will ensure that experiments are reproducible and that others can verify and build upon the work.
+
+10. Let's practice!
+04:05 - 04:14
+Let's put our new knowledge of MLflow and reproducibility to the test with some quick exercises!

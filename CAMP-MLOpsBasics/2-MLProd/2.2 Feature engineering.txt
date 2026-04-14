@@ -1,0 +1,45 @@
+1. Feature engineering
+00:00 - 00:15
+Welcome to feature engineering! In this video, we will look at some of the common methods that ML engineers use to aggregate and transform data into its most optimal state to help our learning algorithms make better and more accurate predictions.
+
+2. Introduction to feature engineering
+00:15 - 00:45
+Feature engineering is the process of transforming training data to maximize machine learning pipeline performance and reduce computation complexity. It involves, for example, aggregating data from multiple sources, constructing new features, and applying feature transformations. We will explore all of these topics briefly in the coming slides. By engineering our features this way, ML pipelines can be optimized to improve the accuracy and efficiency of the models developed.
+
+1 https://www.manning.com/books/feature-engineering-bookcamp
+3. Aggregating data from multiple sources
+00:45 - 01:04
+Aggregating data from multiple sources is an important aspect of feature engineering. We can combine data from different datasets and include multiple types of data in our training set. This can greatly improve the accuracy of models and enable the use of more complex models using more complex data.
+
+4. Example of data aggregation
+01:04 - 01:33
+This is an example of a simple DataAggregator class that loads data from three separate sources using the pd.read_csv method. It combines all the data into a single Dataframe using the pd.concat method. Our class has two methods: fit and transform. The fit method doesn't do anything and is included for compatibility with scikit-learn. The transform method is where the real work happens.
+
+5. Feature construction
+01:33 - 01:59
+Feature construction is the process of combining existing features to create new features. For example we can add two numeric features together to construct a feature. Construction is often done with the help of domain experts who know the data well. Construction can help improve model performance and interpretability by considering more relevant new features.
+
+6. Example of feature construction
+01:59 - 02:31
+This is an example of a Feature Constructor. Like the DataAggregator class, we only use the transform method to do our work. The transform method constructs two new features by subtracting the mean of two columns from every value in those columns. The new features represent the deviation of each data point from the mean in each column. You can create new features using a wide range of operations such as calculating differences or creating interactions between multiple features.
+
+7. Feature transformations
+02:31 - 03:10
+Feature transformation is the process of transforming existing features in place into features more usable for ML. Examples of how to do this include normalizing data and removing outliers. Just like with construction and learning, our goal with transforming features is to improve model performance. For example, the StandardScaler transformer in scikit-learn scales the features to have a mean of 0 and a standard deviation of 1 and is used to get data all living on the same scale as each other which can help some ML models.
+
+8. Feature selection
+03:10 - 03:30
+Feature selection is done by selecting a subset of features from a larger set of features. This is often done by removing redundant and irrelevant features. Feature selection helps to reduce overfitting, enhance model performance and improve model interpretability.
+
+1 https://www.manning.com/books/feature-engineering-bookcamp
+9. Example of feature engineering cont.
+03:30 - 04:11
+Let's take a look at an example feature engineering pipeline. This pipeline puts many feature engineering steps into one executable class. We see our data aggregator, feature constructor, and the standard scaler being used here. The pipeline uses a technique called the Chi-squared test to perform feature selection by determining which features are most relevant for the task. The best 10 features are selected. Once the pipeline has been fit to the data, it can be used to transform future data in the same way.
+
+10. Learn more about feature engineering
+04:11 - 04:18
+You can learn more about feature engineering in books that focus on modern and up to date case studies!
+
+11. Let's practice!
+04:18 - 04:27
+We've seen a lot of feature engineering example and it's time to put our new skills to the test!

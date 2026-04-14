@@ -1,0 +1,35 @@
+1. Automated experiment tracking
+00:00 - 00:07
+Great work so far! We will now discuss a very important topic in MLOps: Automated Experiment Tracking.
+
+2. Machine learning has an experimental nature
+00:07 - 00:34
+ML is experimental in nature. Data Scientists and ML engineers have the possibility to tweak many aspects of their ML pipelines. Always trying to find the best-performing models. For example, they can apply different transformations to their data sources or train their models using different algorithms. Even identifying the best performing model depends on which metric we use to evaluate our models.
+
+3. A large space of possibilities!
+00:34 - 00:44
+How do we keep track of this vast space of possibilities? Manually logging every single aspect of the pipeline becomes immediately impractical.
+
+4. Problems of Manual Machine Learning Workflows
+00:44 - 01:20
+The lack of automated experiment tracking can cause significant problems in ML workflows. Without automated tracking, it can be difficult to keep track of experiments and their results. This can lead to wasted time and resources as well as difficulty reproducing and sharing results. This is why it is critical to have automated logging when running experiments in our system. Automating the logging of experiment tracking in our MLOps system helps us tame the complexity of the large space of possibilities we have at hand.
+
+5. Automated logging in ML
+01:20 - 01:58
+What we need to log varies depending on the specifics of our projects. It can include the code used to generate the experiment, configuration files that specify the experiment environment, and specifications of the data used to create the ML model. Examples of data specification include data source, data type, data format, data cleaning steps, and data augmentation methods. The model's parameters and hyperparameters, and the metrics used to evaluate our models should also be included in the logs.
+
+6. The importance of logging
+01:58 - 02:32
+Logging these things have an important goal: the reproducibility of our experiments. In addition, logging is crucial for ML system performance tracking, comparison of model results, and informed decision making. It provides valuable insights and helps identify potential issues for improvement. Due to its nature and potential impact, we cannot simply trust that results are correct in ML systems. When we ensure reproducibility, we provide transparency with our experiment and allow others to understand what was done.
+
+7. Automated experiment tracking system
+02:32 - 03:15
+So, we automatically log all necessary information to reproduce our many experiments. How do we make sense of all this information? This is where the automated experiment tracking system comes into the picture. This system organizes the information we log so we can see model training metadata, compare model training runs, and reproduce model training runs. We can interact with the experiment tracking system via dashboards or programmatic access. In the upcoming lessons, we'll find that the experiment tracking system can assist us in adding the top-performing model to the model registry, promoting it to a registered model.
+
+8. Automated experiment tracking - Today's market
+03:15 - 03:43
+Even though it is possible to code automated tracking in our ML systems ourselves, this can be a rather complex task. There are many options in the market when it comes to automated experiment tracking. Some of these are end-to-end solutions that automate keeping track of the different choices taken through the whole ML pipeline. Some of these solutions are open-source and free to use, while others are paid products.
+
+9. Let's practice!
+03:43 - 03:48
+Now, let's practice these concepts!

@@ -1,0 +1,39 @@
+1. Feature engineering and the feature store
+00:00 - 00:07
+Well done on the exercises! We will now look into feature engineering and the feature store.
+
+2. Feature engineering
+00:07 - 00:16
+After the design phase, feature engineering is the next step in the machine learning development process. Feature engineering is a key component of machine learning development.
+
+3. Feature engineering
+00:16 - 00:38
+Feature engineering is the process of selecting, manipulating, and transforming raw data into features. A feature is a variable, such as a column in a table. How we create features from the data is an important part of machine learning development. We can use the features as they appear in the raw data, but we can also build our own. Let's look at an example.
+
+4. Customer data
+00:38 - 00:52
+In this example dataset, we have a set of customers and some information about their orders. The number of orders and total expenditure of each customer are two different features. To build a new feature, we could calculate the average expenditure per customer.
+
+5. Customer data
+00:52 - 01:14
+In this way, we have engineered a new feature. Apart from the order data in this example, there is often much more data available in actual machine learning projects, and thus a lot of possibilities to engineer features. Therefore, feature engineering is an extensive part of machine learning development.
+
+6. Feature engineering weigh-off
+01:14 - 01:48
+An important weigh-off in feature engineering is when to keep engineering or when to stop engineering. Doing comprehensive feature engineering may produce a very accurate model or achieve more stability. However, doing comprehensive feature engineering also comes at a cost, which can impact the success of our machine learning project. More features can be more expensive, since this might require costly pre-processing steps. More features also require more maintenance. And lastly, more features can also lead to noise or over-engineering.
+
+7. What if the number of ML projects increases?
+01:48 - 02:24
+Imagine that a data scientist is working on a new machine learning project. For the first project, they might simply do the feature engineering once and train the model. But what if the amount of machine learning projects grows? As the number of projects and thus the number of machine learning models grows, storing features in a structured and centralized way can greatly accelerate the development of machine learning models. In order to do this, an important tool in MLOps is the feature store. A feature store, as the name says, is a tool for storing commonly used features or variables relevant to the machine learning model.
+
+8. The feature store
+02:24 - 02:52
+The feature store is the central place where features can be managed. Using a feature store, a data scientist can find the appropriate features for their project, define new features, and use the features for training the model. It's also the place where features can be monitored. Simultaneously, by using a feature store, we ensure that features are ready to be used as input for the machine learning model in production when new samples come in.
+
+9. When to use a feature store?
+02:52 - 03:21
+We don't have to use a feature store when developing a machine learning model. In some cases, it might be redundant to use a feature store. Factors to consider when you are deciding to use a feature store are the computational cost of features. Sometimes the features will be ready as input for the machine learning model as-is. Whether to use a feature store also depends on the amount of projects we have. The answers to these questions will determine whether the current machine learning development benefits from a feature store or not.
+
+10. Let's practice!
+03:21 - 03:26
+Now that we've learned about the feature store, let's dive into some exercises.

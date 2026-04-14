@@ -1,0 +1,35 @@
+1. Monitoring machine learning models
+00:00 - 00:09
+Great job on finishing the exercises about deployment of machine learning models. We will now dive into the monitoring of machine learning models.
+
+2. Monitoring & retraining
+00:09 - 00:18
+The monitoring and retraining of machine learning models is the last part of the deployment phase. We will first look into monitoring.
+
+3. Monitoring
+00:18 - 00:33
+When a machine learning model is deployed in production, we are not done yet. In production, the machine learning model will start making predictions based on new, unseen input. To make sure that the model is working as expected, we need to monitor the model.
+
+4. Types of monitoring
+00:33 - 00:48
+We can monitor the model by looking into the input data, and the model output, its predictions. This is called statistical monitoring. For instance, we could monitor the predicted probability that a customer will churn.
+
+5. Types of monitoring
+00:48 - 01:02
+We can also look into more technical metrics of the model. This is called computational monitoring. This could be the number of incoming requests that are made, the network usage of the model, or the number of resources a server uses to keep the model running.
+
+6. Statistical and computational monitoring
+01:02 - 01:40
+We can see it in this way. We can monitor the kitchen we're cooking in in two ways. Firstly, we can monitor whether all appliances are still running, if the gas and electricity is on, and whether people are working in the kitchen. Anything that does not have to do with food. This would be computational monitoring. Secondly, we can monitor the input and output of the kitchen in terms of what it is about, the food. What the quality of the ingredients that go into the kitchen is, and whether the taste of the dishes that come out of the kitchen are okay. This is called statistical monitoring.
+
+7. Feedback loop
+01:40 - 02:19
+Over time, we will find out whether that customer has actually churned. The actual result is also known as the ground truth. Using the ground truth, we can find out whether the model is performing as expected or if the model quality deteriorated over time. This loop in which we compare the output of the model to the ground truth is called the feedback loop. The feedback loop is a crucial part of improving the machine learning model. Using the feedback loop, we can find out when and why the model was wrong. We could, for instance, see that the model makes a wrong prediction for particular customer groups.
+
+8. Monitoring in production
+02:19 - 02:31
+It is wise to monitor both statistical and computational metrics. This will help to see where the machine learning model might be having problems and enables us to mitigate those problems, which we will look into in the next lesson.
+
+9. Let's practice!
+02:31 - 02:37
+Let's first put the learnings regarding monitoring to the test in some exercises.

@@ -1,0 +1,35 @@
+1. Packaging ML models
+00:00 - 00:16
+Welcome to the video about packaging ML Models. In this section, we will delve into methods of preparing ML models for deployment. We will examine the importance of serializing and containerizing the models and their environments.
+
+2. Why packaging matters
+00:16 - 00:50
+ML models must be packaged and deployed to a production environment, so they perform better, are compatible with different systems, and are easy to deploy. Packaging methods include serialization, environment packaging, and containerization. Serialization is simple and lightweight but may not be suitable for complex models. Environment packaging captures the entire software environment, but it can be heavy. Containerization provides a portable and isolated environment, but requires expertise in container technologies.
+
+3. How to package ML models
+00:50 - 01:22
+Serialization is the process of converting an ML model into a format that can be stored and retrieved. Environment packaging involves creating a consistent and reproducible environment in which the ML model can run. Containerization involves packaging the model, its dependencies, and the environment in which it runs into a container that can be easily deployed. We will discuss all three concepts in more detail in the following slides.
+
+4. Serializing scikit-learn models
+01:22 - 01:34
+Serialized models can be loaded into memory and used for prediction or scoring. Scikit-learn models can be easily serialized using the pickle library, as shown on the left and using the HDf5 format on the right.
+
+5. Serializing PyTorch and Tensorflow models
+01:34 - 02:22
+PyTorch and Tensorflow are popular Python libraries for deep learning and provide a variety of tools for training and deploying ML models. In PyTorch, serialization can be done through the use of torch.save and torch.load functions, which enable saving and loading PyTorch models to and from files. Similarly, in Tensorflow, serialization can be achieved using the Tensorflow SavedModel API. This API allows users to save and load models in a variety of formats, including the Tensorflow SavedModel format, which is optimized for serving models in production environments. Either option makes it possible to store the model and use for prediction or further training at a later time.
+
+6. ML environment packaging with Docker
+02:22 - 03:12
+Environment packaging is an important step in deploying ML models, as it helps to ensure that the model will run consistently anywhere, regardless of any changes to the underlying system or dependencies. Virtual environments, such as conda or virtualenv, can be used to create a consistent and reproducible environment in which the ML model can run. Virtual environments allow different projects to have their own isolated environments, ensuring that changes to one project do not affect other projects. Docker can also be used for environment packaging. Docker containers are self-contained units that can be easily deployed and run in any environment. Docker containers provide a consistent and reproducible environment for ML models, ensuring that the model will run consistently wherever we deploy it.
+
+7. Example Dockerfile
+03:12 - 03:45
+In this example Dockerfile, we start with a Python 3.8 image as the base image. The requirements file is copied to the image and the required dependencies are installed using pip. The ML model and its dependencies are then copied to the image, and the entrypoint is set to run the model using the run_model.py script. This Dockerfile can be built into an image using the docker build command, and the image can then be run as a container using the Docker run command.
+
+8. Experiment -> Docker workflow
+03:45 - 04:20
+Here is an example workflow for experimenting, serializing, containerizing an ML model and its environment, and deploying it using Docker. In this workflow, the ML model is first trained, then serialized to a file format that can be easily loaded into memory. The serialized model, its dependencies, and the environment are then containerized using Docker. The Docker image is then deployed to a target environment, and a Docker container is started from the image. The ML model can then be run from within the Docker container.
+
+9. Let's practice!
+04:20 - 04:27
+Let's practice this new knowledge with a few exercises!

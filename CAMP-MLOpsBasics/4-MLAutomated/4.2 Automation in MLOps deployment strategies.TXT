@@ -1,0 +1,67 @@
+1. Automation in MLOps deployment strategies
+00:00 - 00:05
+Welcome to this video about MLOps deployment strategies.
+
+2. Model deployment - prediction service
+00:05 - 00:08
+We will focus on the prediction services component in our reference architecture.
+
+3. Prediction services - modes recap
+00:08 - 00:35
+Our prediction service delivers machine learning predictions to end consumers with varying requirements. We can configure it to support batch predictions, streams, real-time, and on-the-edge predictions. The prediction service should be backed by a fully automated MLOps architecture. With this, we ensure scalability, reliability, and real-time performance to handle the demands of different consumers.
+
+4. Prediction service - batch serving
+00:35 - 00:41
+In batch serving, we usually make many predictions in one go, typically on periodic schedules.
+
+5. Prediction service - streaming serving
+00:41 - 00:52
+Another type of prediction service is stream predictions, where the prediction service continuously processes incoming data records and generates back ML predictions.
+
+6. Prediction service - real time
+00:52 - 00:59
+In the real-time case, the prediction service processes a single record and returns the prediction instantly.
+
+7. Prediction service - on the edge
+00:59 - 01:11
+Finally, ML prediction services can run directly on edge devices, such as mobile or IoT devices, and make predictions locally, reducing latency and communication costs.
+
+8. Deployment strategies
+01:11 - 01:41
+In MLOps, a ML model's serving type determines how we should deploy and update our prediction services. Different serving types have varying requirements for data processing, resource allocation, and response time. We, therefore, need to design the deployment strategy accordingly. Deployment strategies include shadow deployment, canary deployment, A/B testing, and blue/green deployment. Let us go through some the different deployment strategies.
+
+9. A/B testing
+01:41 - 02:16
+In A/B testing, we have two models, A and B, running in parallel. The prediction requests from the clients are directed to a load balancer responsible for distributing incoming requests between A and B. The performance of each model is continuously monitored, and the load balancer uses this information to adjust the distribution of requests between the two models. The goal is to ensure that the model with the best performance handles most of the prediction requests while the other model is used for validation purposes.
+
+10. A/B testing
+02:16 - 02:31
+By automatically shifting requests to the better-performing model over time, an A/B testing deployment strategy allows the deployment to automatically adjust and use the best-performing model, ensuring the highest quality of predictions.
+
+11. Shadow deployment
+02:31 - 02:53
+In a shadow deployment, a new model runs parallel to the production model. Requests are split between them, but only the live model delivers predictions to the client. Outputs from both are compared and monitored for performance differences. If the shadow model performs better, it can replace the live model as the new production model.
+
+12. Blue/Green deployment
+02:53 - 02:58
+In blue/green deployments, we start with a model running in prod in a "blue" environment.
+
+13. Blue/Green deployment
+02:58 - 03:15
+We wish to deploy an updated model. We do this via a replica of the blue environment. This is the green environment. The prediction requests gradually, after our specifications, switch traffic from the blue to the green environment.
+
+14. Blue/Green deployment
+03:15 - 03:22
+After a while, if the system runs without issues, most traffic will have switched to the green environment.
+
+15. Blue/Green deployment
+03:22 - 03:27
+Until finally, all traffic can be handled by this newly updated system.
+
+16. Deploying and updating prediction services
+03:27 - 04:16
+When selecting a deployment strategy in MLOps, important dimensions to consider include downtime during deployment, condition-based deployment, rollback time in case of failure, and additional deployment costs. These factors can be used to evaluate and compare various deployment strategies such as shadow, canary, A/B testing, and blue/green. By carefully weighing each of these dimensions, organizations can select the optimal deployment strategy for their needs, ensuring a smooth and efficient deployment process with minimal risk and downtime. In summary, the deployment strategy must be chosen based on the serving type to ensure the efficient and effective delivery of ML predictions.
+
+17. Let's practice!
+04:16 - 04:20
+Great work completing this video! Let's practice!

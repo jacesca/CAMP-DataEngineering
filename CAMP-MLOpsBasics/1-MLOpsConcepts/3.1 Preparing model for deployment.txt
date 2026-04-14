@@ -1,0 +1,47 @@
+1. Preparing model for deployment
+00:00 - 00:08
+Now that we have looked into the design and development of the machine learning lifecycle, it's time to look into the last phase: deployment.
+
+2. Runtime environment
+00:08 - 00:16
+During the development phase, data scientists have used training data to develop a machine learning model.
+
+3. Development to deployment
+00:16 - 00:29
+The development takes place in the development environment, which is usually a data scientist's local computer or a virtual computer that can be controlled remotely, for example, in the cloud.
+
+4. Development to deployment
+00:29 - 00:54
+Once the machine learning model is developed, we need to move the machine learning model into the production environment. In the production environment, the machine learning model will make predictions based on actual, incoming data. Once deployed, the model is live and will create actual business impact.
+
+5. Development to deployment
+00:54 - 01:07
+However, deploying a model to the production environment is not that simple because they are set in different runtime environments. A runtime environment is the environment in which the model is running. During the development, the model runs in the development runtime environment.
+
+6. Runtime environments
+01:07 - 01:29
+Working in different runtime environments is similar to working in different kitchens. If we create a recipe in one kitchen, the results of the same recipe can be very different in another kitchen. There is a different set of pans, maybe one kitchen has different appliances, or a different group of chefs is running the kitchen. This can all affect the dish we are making.
+
+7. Runtime environments
+01:29 - 01:44
+Similarly, in a development runtime environment, we may use different versions of Python and certain libraries. This causes problems because the same code may not work in the different runtime environments or may produce differing results.
+
+8. Mitigate different environments
+01:44 - 02:16
+To mitigate having different environments, we can use separate but identically set up machines. This is similar to a regular computer. It has the physical hardware, operating system, libraries, and the application. The libraries and application contain the production environment and machine learning model. This is a straightforward solution, but hard to maintain and not scalable. With each update, we have to update the whole machine.
+
+9. Mitigate different environments
+02:16 - 02:46
+We can also use one or more virtual machines on one separate machine. Each virtual machine is like a virtual version of the regular physical computer with an operating system, libraries, and the application. A computer that is running virtual machines has a hypervisor. This helps distribute the resources, the hardware of the computer, over different virtual machines. This is easier to maintain but does require a lot of resources, because we need a virtual computer for each application.
+
+10. Mitigate different environments
+02:46 - 03:12
+Lastly, we could use something called a container. This allows us to run multiple applications on one machine. Containers use less resources than a virtual machine and are more portable than the applications on a virtual machine. It can be seen as a more lightweight version of the virtual machine. Deploying the machine learning model as a container is currently the standard for MLOps.
+
+11. Benefits containers
+03:12 - 03:51
+Using containers provides numerous benefits. Firstly, they are easier to maintain. Secondly, containers are very portable, since we only have to build them once, and then we can run them anywhere. Lastly, containers are fast to start up, since it just contains the required application and not a hypervisor or virtualized operating system, like we would need in a separate or virtual machine. However, these benefits do not mean that each application should be deployed as a container. If the application has worked well on a virtual machine and does not suffer from problems of different environments, it's fine to not use containers.
+
+12. Let's practice!
+03:51 - 03:59
+We have just learned all about preparing the machine learning model for deployment; let's go into some exercises.

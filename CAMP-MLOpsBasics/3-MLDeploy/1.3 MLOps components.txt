@@ -1,0 +1,149 @@
+1. MLOps components
+00:00 - 00:08
+In this video, we will talk about the fundamental components of an MLOps framework and their mutual interaction.
+
+2. Concepts
+00:08 - 00:22
+We will cover general software development concepts such as workflows, pipelines, and artifacts; and ML-specific ones such as the model registry, feature store, and metadata store.
+
+3. DevOps
+00:22 - 00:26
+MLOps is a extension of the DevOps software development principles
+
+4. to MLOps
+00:26 - 00:29
+to include ML workflows.
+
+5. Workflows
+00:29 - 00:37
+A workflow is a generic business term for any sequence of tasks that, starting from certain inputs, produces certain outputs.
+
+6. Workflow execution
+00:37 - 00:39
+Workflows can be executed
+
+7. Manual
+00:39 - 00:41
+manually,
+
+8. Automatic
+00:41 - 00:42
+automatically,
+
+9. Semi-automatic
+00:42 - 00:45
+or semi-automatically.
+
+10. Workflow to Pipeline
+00:45 - 00:47
+To automate a workflow
+
+11. Scripting
+00:47 - 00:51
+we need to write a program, often called "a script," for every action within it.
+
+12. Pipeline definition
+00:51 - 01:05
+We call this program a “pipeline,” and it has become a catch-all term for any end-to-end automated workflow in IT, be it in Dev-, Data- or MLOps.
+
+13. Artifacts
+01:05 - 01:11
+The outputs of pipelines are called artifacts, which is actually another catch-all term
+
+1 https://en.wikipedia.org/wiki/Artifact_%28software_development%29
+14. Artifacts II
+01:11 - 01:15
+for any output of the software development process.
+
+1 https://en.wikipedia.org/wiki/Artifact_%28software_development%29
+15. ML build pipelines
+01:15 - 01:24
+Let's talk about ML-specific pipelines now. We said that the model life cycle starts with the deployment
+
+16. To have something to deploy
+01:24 - 01:27
+but to have something to deploy,
+
+17. We must build it first
+01:27 - 01:50
+we must build it first. To build means to transform pure code and data into deployable applications and models. Think of something like a software installer that you would download from the Internet, but for ML applications. That is the purpose of so-called build pipelines. In MLOps we have at least two separate build workflows:
+
+18. One for the model
+01:50 - 01:53
+one for building the model itself
+
+19. One for the app
+01:53 - 01:58
+and one for building the ML application that will serve our model.
+
+20. App build pipeline
+01:58 - 02:14
+The app build process is the classical DevOps software build. It takes our scripts from a central repository, where we manage all our code, makes a few automated transformations that package our app for deployment, and stores that package in a dedicated repository.
+
+21. Model build pipeline
+02:14 - 02:26
+But the model build pipeline, also known as the model training pipeline, is a completely different thing. Apart from the code containing the model definition and the training script
+
+22. We now also need the data
+02:26 - 02:36
+we now also need the data to train on. This single extra ingredient adds a whole set of complexities.
+
+23. We can start from raw
+02:36 - 02:37
+Our training pipeline can start from raw
+
+24. Or already processed
+02:37 - 02:42
+or already processed data.
+
+25. Feature store
+02:42 - 02:47
+We call processed variables for model training "features" and a database that stores them a "feature store".
+
+26. Model build artifacts
+02:47 - 02:49
+After the pipeline is
+
+27. Successfully executed
+02:49 - 02:51
+successfully executed, we end up with the
+
+28. Trained model artifact
+02:51 - 02:53
+trained model object and
+
+29. collection of data and scripts
+02:53 - 03:02
+complementary data necessary for its deployment and life-cycling. We call this complementary data "model metadata".
+
+30. Model registry
+03:02 - 03:09
+We now push the model object into our model registry, which is a specialized registry for storing and versioning ML models,
+
+31. Metadata store
+03:09 - 03:20
+and the metadata into the so-called metadata store, whose purpose is to store all important information about the different models we build and deploy.
+
+32. Deployment pipeline
+03:20 - 03:27
+Now we have something to deploy, but we need the how. That's the job of, you guessed it: deployment pipelines.
+
+33. Take the build
+03:27 - 03:33
+Their job is to take the build artifacts -- in our case the ML app package and the model package --
+
+34. Set them in place
+03:33 - 03:43
+and set them in place on the target serving platform. Once their job is done, we're locked, loaded, and ready to go.
+
+35. Monitoring
+03:43 - 03:48
+We can now start our service and monitor if it runs and performs as expected.
+
+36. The whole picture
+03:48 - 04:01
+And that is a typical high-level MLOps architecture. If this is a lot of new concepts all at once, don't worry: we will take enough time to explain each of them in the following chapters.
+
+37. Let's practice!
+04:01 - 04:05
+Now, let's see how much you have managed to absorb.

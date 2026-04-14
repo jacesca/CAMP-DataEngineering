@@ -1,0 +1,31 @@
+1. Experiment tracking
+00:00 - 00:08
+Now we will discuss machine learning experiments, what experiment tracking is, and why this is an important concept in MLOps.
+
+2. The machine learning experiment
+00:08 - 00:24
+Part of machine learning model development is performing machine learning experiments. In a machine learning experiment, we train and evaluate multiple machine learning models to find the best one. As in any experiment, we test different configurations to see what works best.
+
+3. Why is experiment tracking important?
+00:24 - 01:08
+During machine learning experiments, we can configure different machine learning models, for example, linear regression or deep neural networks. We can alter the model hyperparameters, like the number of layers in a neural network. We could use different versions of the data and different scripts to run the experiment. We can also use different environment configuration files per experiment, like what version of Python or R are used and what libraries. When altering each of these factors during experiments, the amount of different configurations can become huge. Each experiment also has a different outcome. This is why it is a good idea to track the configurations and the results of each experiment.
+
+4. Using experiment tracking in the ML lifecycle
+01:08 - 01:25
+Apart from tracking all the different experiment configurations, experiment tracking can help to compare and evaluate experiments, reproduce results from earlier experiments, collaborate with developers and stakeholders, and report on results to the stakeholders.
+
+5. How to track experiments?
+01:25 - 02:16
+Depending on the maturity of our machine learning development, there are different options to track experiments. We could start by using a spreadsheet in Excel, where we write down the details of each experiment on each row. If we do a lot of experiments, this requires a lot of manual work. We could also build our own experiment platform that automatically tracks the experiment during model training. Having our own experiment platform allows us to build a custom solution for our specific process. However, this can cost time and effort. This can be solved by using modern experiment tracking tools, since these are designed for the majority of experiment tracking use-cases. Be aware that this can become expensive. Results of experiment tracking can be stored in a metadata store.
+
+6. A machine learning experiment
+02:16 - 02:37
+Imagine we are developing a classifier that classifies whether there is a dog or a cat in an image. We can start the first experiment with training a neural network with one hidden layer on a thousand images. In the second experiment, we include puppies and kittens, increasing the dataset to two thousand images, and train a neural network with two hidden layers.
+
+7. The experiment process
+02:37 - 03:41
+If we run the experiment in the example of classifying a dog or cat, we will go through the following steps. First, we formulate a hypothesis based on the business objectives. Then, we gather the required data and define the initial hyperparameters we wish to test. Before we start the model training, we set up the experiment tracking. Then we are all set for running the first model training. During model training, we fit the machine learning model to the dataset we have set up for training during that experiment. Information about the dataset used for training should be stored. After the model training, we evaluate the results by testing the model. This is usually done on a hold-out test set that was not included in the training. When we have found the best-performing model, we register the model. This is similar to saving the model, just like we have saved the information from the experiment. Lastly, we visualize and report these results back to the team or stakeholders to determine the next steps.
+
+8. Let's practice!
+03:41 - 03:51
+Now that you have learned all about machine learning experiments and why and how to carefully track them, it is your turn to apply these concepts in the coming exercises!

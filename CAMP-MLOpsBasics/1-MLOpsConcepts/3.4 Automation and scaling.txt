@@ -1,0 +1,43 @@
+1. Automation and scaling
+00:00 - 00:07
+Nice work on the exercises so far. We will now dive into the concepts of automation and scaling.
+
+2. Automation and scaling
+00:07 - 00:36
+So far, we've looked at the components of the design, development, and deployment of machine learning. The machine learning lifecycle is an experimental process, which means we frequently have to go back and forth through the different phases. Therefore, automation can greatly help to speed up the lifecycle. For example, it enables us to easily repeat the same experiments multiple times.
+
+3. Automation and scaling
+00:36 - 00:44
+Since machine learning often works with large amounts of data, it is also required to set up a scalable system. Therefore, automation and scaling are crucial concepts in MLOps.
+
+4. Design phase
+00:44 - 01:21
+The design phase is the most important phase within the machine learning lifecycle. Without a decent objective and high-quality data, the other two phases might fail. Since machine learning is multidisciplinary, as we've seen by the different roles involved, it is important to have everyone aligned. In terms of automation and scaling, the design phase remains a manual process. However, the design can be templated to get the added value, business requirements, and key metrics. This turns the design phase into a structured process in line with MLOps practices.
+
+5. Design phase
+01:21 - 01:36
+Data acquisition and data quality checks can be automated. Since the quality of the machine learning model is reliant on the quality of the data, automating the data acquisition process improves the chances of successfully using machine learning in production.
+
+6. Development phase
+01:36 - 01:48
+In the development phase, we use a feature store to track and develop features. A feature store saves time that would have been spent building the same features used in previous experiments.
+
+7. Development phase
+01:48 - 02:08
+We use experiment tracking to automate tracking the machine learning development. This also helps in evaluating the models and aligning them with the key metrics set in the design phase. The experiment tracking also makes sure that the development process is reproducible. We can find which configurations were used and what the results were.
+
+8. Deployment phase
+02:08 - 02:30
+In the deployment phase, we can make use of containerization to mitigate different runtime environments. In terms of scaling, having applications in containers makes it easy to start up multiple versions of the same application when more requests come in. For instance, when the company grows and we need to predict customer churn for a lot of customers at the same time.
+
+9. Deployment phase
+02:30 - 02:46
+A CI/CD pipeline is used to enable fast incremental changes during development by using automation. This allows multiple developers to work on the same code and helps in automating the development and deployment process.
+
+10. Deployment phase
+02:46 - 02:57
+A microservices architecture can greatly help in scaling machine learning. Each new service can be developed and integrated independently without affecting other services.
+
+11. Let's practice!
+02:57 - 03:04
+Now that we have seen how these components help in automation and scaling of the machine learning lifecycle, let's put it to the test.

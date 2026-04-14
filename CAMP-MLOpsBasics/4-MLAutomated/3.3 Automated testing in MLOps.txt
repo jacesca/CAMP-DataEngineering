@@ -1,0 +1,36 @@
+1. Automated testing in MLOps
+00:00 - 00:02
+Welcome back!
+
+2. What is software testing?
+00:02 - 00:41
+We start this lesson defining what software testing is: the process of evaluating and verifying that a software product or application does what it is supposed to do. The three common software tests are: unit tests, integration tests, and end-to-end tests. Unit tests are performed for the individual components of the application. Integration tests are used to find any irregularities between the interactions of different components of the application. Finally, end-to-end tests are used to check if the application is doing what is intended to do, end-to-end.
+
+3. ML software has a different nature
+00:41 - 01:10
+Though ML systems are software systems, they fundamentally differ from traditional applications. Unlike traditional software applications, we do not directly code the behavior of our ML solutions. Its behavior is learned from the training data we use to create our ML models. This makes the behavior of ML applications dependent on the data they use and the models they produce.
+
+4. Testing in an MLOps system is different
+01:10 - 01:19
+Testing ML applications is, therefore, inherently more complex than traditional systems, as this figure shows.
+
+1 https://research.google/pubs/pub46555/
+5. Testing ML systems
+01:19 - 01:35
+In addition to traditional software testing, ML systems testing must include data tests, model tests, and infrastructure tests. Let's focus on these tests particular to ML applications.
+
+6. Testing the data
+01:35 - 02:24
+Let's start with the tests related to data. We need to test that our features meet certain expectations. For example, if a feature comes from temperature measurements, we should check that these fall in the expected range; this is a deterministic test. In addition, we could expect that these measurements follow a known distribution, which would require a statistical test. We should ensure that each feature provides enough value to justify the costs associated with their use, such as additional computational complexity. We can accomplish this with feature-importance methods defined as tests. Testing privacy controls on data and ensuring lawful use of data sources is also crucial.
+
+7. Testing the models
+02:24 - 03:28
+Our ML solutions impact end-users and aim to enhance their experience. ML algorithms optimize our models using statistical metrics like log-loss. At the end of the day, we care about end-user satisfaction. Therefore, we should test that the mathematical improvement of our models helps ensure better end-user satisfaction. It's important to test the use of the best set of hyperparameters in ML models after tuning all available options, as they can greatly improve performance. We should ensure model accuracy by using proper validation techniques and monitoring metrics to avoid overfitting. A stale ML model is one that's not kept up-to-date. To understand the impact on predictions, we need to assess the effects of staleness and determine when and how often to update the model. It is also important to test regularly against a basic model with few features to assess the benefits of more advanced techniques.
+
+8. Testing ML pipelines
+03:28 - 04:07
+Testing ML pipelines is essential. Complex workflows, instead of a single library, are often used in ML apps, so it's vital to ensure the pipelines in our system perform as intended. To guarantee end-to-end training reproducibility, we should aim for the same model after training on the same data twice. We must also conduct integration tests that include data and model tests, for the components of the ML pipelines. Debugging should be possible by observing the step-by-step computation of the model during training or inference on a single example.
+
+9. Let's practice!
+04:07 - 04:13
+Great work completing this video. Now, let's practice!

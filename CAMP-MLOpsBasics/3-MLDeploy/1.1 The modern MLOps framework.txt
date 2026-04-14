@@ -1,0 +1,90 @@
+1. The modern MLOps framework
+00:00 - 00:06
+Hello and welcome to the course on MLOps deployment and life-cycling.
+
+2. About me
+00:06 - 00:21
+My name is Nemanja. I am a Senior Machine Learning Engineer with almost 10 years of experience in various ML tasks. Currently I focus exclusively on model deployment and life-cycling and I'm here to help you onboard on the same journey.
+
+1 www.linkedin.com/in/radojkovic
+3. Conceptual course
+00:21 - 00:30
+This is a conceptual course, meaning we will focus on a high-level understanding of relevant concepts, not on acquiring hands-on skills.
+
+4. MLOps
+00:30 - 00:46
+The key term we'll use is MLOps, which stands for Machine Learning Operations. It is a set of principles, practices and tools for making our Machine Learning tasks and services automated, reproducible, and integrated with each other.
+
+5. Course objective
+00:46 - 00:50
+Our goal is to make you familiar with MLOps concepts specifically related to the
+
+6. Course objective II
+00:50 - 00:55
+Operations stage of the ML process, but never forget
+
+7. Course objective III
+00:55 - 00:59
+that MLOps starts already in the development phase.
+
+8. Chapter I
+00:59 - 01:17
+In this first chapter, we will once again paint the big picture of MLOps, so expect to re-encounter some familiar terms. We will explain the value and necessity of MLOps and give a high-level glimpse into the model life cycle stages and core components of a standard MLOps framework.
+
+9. MLOps > DevOps
+01:17 - 01:31
+Machine Learning is a subtype of software development But, whereas classical software development starts with pure source code and finishes with a running application, Machine Learning adds significant complexity by
+
+10. MLOps > DevOps II
+01:31 - 01:34
+adding data and models into the mix.
+
+11. High cost of ML without the Ops
+01:34 - 01:53
+Of course, most organizations start playing with ML without the Ops, manually executing all workflows and monitoring models only ad hoc. Many, unfortunately, don't evolve much further than that, paying dearly down the line. This causes the accumulation of so-called technical debt
+
+12. Technical Debt
+01:53 - 02:27
+which Wikipedia defines as: the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. With each day and each new model in production, the amount of technical debt and model risk will rise exponentially, making the process ever slower, more frustrating, and error-prone, ultimately impairing our ability to deliver value through Machine Learning. This has been the topic of a famous paper by Google called "Machine Learning: The high-interest credit card of technical debt".
+
+1 https://en.wikipedia.org/wiki/Technical_debt
+2 https://research.google/pubs/pub43146/
+13. ML workflows
+02:27 - 02:48
+Most typical ML workflows are data collection and preparation, data-labeling, model selection, model training, model packaging, model deployment, model monitoring and maintenance. The more these workflows are automated and integrated into the overarching IT framework, the higher the MLOps maturity of an organization.
+
+14. MLOps implemented
+02:48 - 03:03
+Implementing MLOps tools and practices will, on the other hand, make your processes automated, fast, reproducible, and explainable – producing the highest quality of service and earning the trust of your customers.
+
+15. Focus on Operations
+03:03 - 03:15
+Again, this course focuses on the Operations part of MLOps. That is the part of the ML process that starts after the model training, with model deployment as a service to the end user.
+
+16. Nonlinear
+03:15 - 03:19
+We are leaving the non-linear, exploratory phase of model selection and entering
+
+17. to linear
+03:19 - 03:25
+the streamlined, structured domain of running, monitoring, and maintaining our model in production.
+
+18. In the spotlight
+03:25 - 03:29
+Our model is now in the spotlight, and every unexpected behavior is
+
+19. Spotlight II
+03:29 - 03:40
+immediately visible to the customer, making the margins for error very narrow and giving little time to fix bugs and update models, so we need to be at the top of our game.
+
+20. No panic!
+03:40 - 03:45
+But do not panic. That's what this course is for, so stay tuned.
+
+21. Coming up!
+03:45 - 03:53
+In the remainder of this chapter, we will dissect life-cycling and MLOps architecture in slightly more detail
+
+22. Let's practice!
+03:53 - 03:57
+but before that – let's practice what we have just learned.

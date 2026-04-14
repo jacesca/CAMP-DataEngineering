@@ -1,0 +1,125 @@
+1. Building the API
+00:00 - 00:05
+Now it’s time to make our model available to the outside world.
+
+2. ML Server
+00:05 - 00:11
+We do that by running an application that exposes our model through a so-called API,
+
+3. ML Server II
+00:11 - 00:24
+which stands for Application Programming Interface. Where humans communicate with applications via graphical user interfaces, applications communicate with each other via APIs.
+
+4. ML Server III
+00:24 - 00:31
+In this relationship, the application that exposes our ML model is called the server
+
+5. ML Server IV
+00:31 - 00:36
+and the application that uses it for making predictions is called the client.
+
+6. Service to the client
+00:36 - 00:57
+Through an API, a client can do two things: One, run procedures on a server. That's for example what the Amazon Comprehend API for sentiment analysis provides. And two, access remote databases. An example would be the Twitter or The New York Times API.
+
+7. API architectures
+00:57 - 01:15
+There are many architectural styles for building APIs, like REST, RPC, SOAP etc. Each of them would take a full course to explain, so we’ll give an architecture-agnostic view and explain the fundamental functional components that every API should possess.
+
+8. Example: Navigation app
+01:15 - 01:27
+Let’s imagine we're building an API for a Navigation app, which client apps use to calculate the estimated time of arrival from their current location to the destination.
+
+1 Image: Pixabay, https://www.stockvault.net/user/profile/161904
+9. Simplest form
+01:27 - 01:28
+In the simplest form
+
+10. Simplest form II
+01:28 - 01:34
+our API would accept whatever the client provides as velocity and distance
+
+11. Simplest form III
+01:34 - 01:36
+run that through the model
+
+12. Simplest form IV
+01:36 - 01:41
+and return the estimated time of arrival back to the client.
+
+13. Not your fault, but...
+01:41 - 01:48
+If a client makes an invalid request - for example, by providing a non-numeric value for velocity
+
+14. Not your fault II
+01:48 - 01:51
+our server would not be able to handle it
+
+15. Not your fault III
+01:51 - 01:57
+and would return a so-called Internal Server Error, which would make us look bad.
+
+16. Input validation
+01:57 - 02:11
+For this reason, it is standard practice to implement input data validation. In its simplest form, that means checking if the request contains all required input attributes and do their values have expected types.
+
+17. Input validation II
+02:11 - 02:19
+In our example, we expect the field's velocity and distance, which should both be positive real numbers.
+
+18. Input validation III
+02:19 - 02:22
+This allows us to spot bad requests immediately
+
+19. Input validation IV
+02:22 - 02:28
+and provide users with an informative error message, pinpointing the exact issue.
+
+20. Input validation V
+02:28 - 02:35
+We call this the request model, and it must be included in the API documentation provided to the users.
+
+21. Output validation
+02:35 - 02:40
+Similarly, we don't want to return any data our model produces blindly.
+
+22. Output validation II
+02:40 - 02:47
+A bug in the code could suddenly result in the model returning the estimated time of arrival as a negative number.
+
+23. Output validation III
+02:47 - 02:52
+This could crash our client's application and damage our reputation.
+
+24. Output validation IV
+02:52 - 02:59
+We should therefore implement a reference specification of output values, called the response model.
+
+25. Output validation V
+02:59 - 03:08
+That will allow us to validate all outputs before sending them to the client and generate informative error messages when needed.
+
+26. Output validation VI
+03:08 - 03:20
+Now our clients know exactly what data we expect from them, and they know exactly what to expect from us in the case of both successful and unsuccessful requests.
+
+27. Authentication
+03:20 - 03:25
+Lastly, we want to allow only specific clients to use our API.
+
+28. Authentication II
+03:25 - 03:37
+For this we need an authentication layer even before our input validation. And even for authorized users, we want to control the number of requests they can make per unit of time.
+
+29. Throttling
+03:37 - 03:40
+This is called API throttling.
+
+30. FastAPI
+03:40 - 03:57
+In a Python-based ML stack, a fantastic open-source framework for building APIs is called FastAPI. It provides all essential features out of the box and lets us build and launch APIs in no time. Check out the footnote of this slide for its official documentation.
+
+1 https://fastapi.tiangolo.com
+31. Let's practice!
+03:57 - 04:07
+APIs should be much less of a mystery for us now, so let us do a quick knowledge check to solidify the concepts we have just encountered.

@@ -1,0 +1,88 @@
+1. Monitoring ML services
+00:00 - 00:19
+Welcome to the last chapter of this course, which is dedicated to monitoring and maintaining our models. Our ML service is now up and running, delivering thousands of predictions each minute. We've even got several paying customers.
+
+2. Maintaining quality
+00:19 - 00:33
+But when users start paying for our service, they also expect us to guarantee a certain level of quality. Quality assurance starts with quality control, that is, in this case, monitoring.
+
+3. Performance indicators
+00:33 - 01:02
+First of all, we must keep track of the fundamental health indicators of our service, such as: is the service up and running? How many requests are we receiving and successfully handling? Is the latency acceptable? But the ultimate quality we need to deliver, is that of our predictions. You may have heard that "machine learning models deteriorate over time", but what does that actually mean?
+
+4. Predictive performance
+01:02 - 01:12
+Let's illustrate it with an example. Say we're building a classifier that uses two input features to separate certain objects into two classes, as depicted on the diagram.
+
+5. Learned boundary
+01:12 - 01:18
+During training, this classifier learns the decision boundary between these two classes.
+
+6. From then on
+01:18 - 01:28
+From then on, every new object that falls to the left of it will be assigned class one, and the ones on the right will be assigned class two.
+
+7. But the world is changing
+01:28 - 01:32
+But, as the real world is constantly changing
+
+8. Change 2
+01:32 - 01:35
+the properties of these classes can soon change
+
+9. Change 3
+01:35 - 01:40
+so that the actual boundary moves elsewhere in this feature space.
+
+10. Concept drift
+01:40 - 01:56
+We call this "concept drift" and define it as any "significant change in the actual relationship between the input and output features". As our model keeps making predictions based on the old boundary, it will make more and more incorrect predictions.
+
+11. Degrading by not changing
+01:56 - 02:06
+So, interestingly, the model deteriorates by staying the same while the reality it should represent is changing.
+
+12. Detecting concept drift
+02:06 - 02:13
+We need to detect concept drift as soon as possible, but how do we do it?
+
+13. Compare against ground truth
+02:13 - 02:23
+In theory, it's as simple as checking if our model's predictions match the ground truth as often as expected. But in practice, things are never that simple.
+
+14. Verification latency
+02:23 - 02:34
+The main catch is that the ground truth is only available after a certain amount of time after the prediction. We call this delay the verification latency.
+
+15. Verification by use case
+02:34 - 02:59
+In cases such as stock prediction, the ground truth may be available in less than a second. In financial fraud detection, we're talking about months. In other areas, we might never see the ground truth: if a bank denied somebody a loan based on the model's prediction, we would NEVER know if that decision was, in fact, wrong.
+
+16. Never free
+02:59 - 03:10
+But even when it's available, obtaining it can be a slow and expensive process. So what other options do we have?
+
+17. Input feature monitoring
+03:10 - 03:15
+We can work with what we have and monitor the input features.
+
+18. Input monitoring 2
+03:15 - 03:21
+If we notice that the relationships between the inputs have changed since the model was trained
+
+19. Covariate shift
+03:21 - 03:35
+we call this the "covariate shift", because features are also called "covariates" in statistical jargon. In practice, covariate shift is a good indicator of concept drift but it is not perfect.
+
+20. Limitations of input monitoring
+03:35 - 03:49
+Covariate shift can happen without any concept drift And we can have concept drift without any covariate shift. And, of course, we can have both phenomena simultaneously.
+
+21. Output monitoring
+03:49 - 04:10
+Input monitoring should, for those reasons, be supplemented with output monitoring. Again, nothing is better than having the ground truth. Still, in its absence, changes in the distribution of model outputs are a solid indicator of reality changing and our model requiring maintenance.
+
+22. Let's practice!
+04:10 - 04:18
+These are some essential concepts, so let's take a moment to practice them!
+

@@ -1,0 +1,137 @@
+1. Deployment-driven development
+00:00 - 00:03
+Welcome to Chapter 2.
+
+2. Risk
+00:03 - 00:13
+To highlight it again: This course focuses on the Operations part of MLOps, but that does not mean that MLOps starts there.
+
+3. MLOps starts here
+00:13 - 00:20
+If operations are just an afterthought, we risk ending up with a useless model that cannot be deployed at all.
+
+4. Looking ahead
+00:20 - 00:22
+To use an analogy:
+
+5. Race car analogy II
+00:22 - 00:27
+Like a race car driver adjusts his speed and steering well before he reaches a challenging curve,
+
+6. Race car analogy III
+00:27 - 00:34
+We need to think about deployment from the earliest stages of development. What do we mean by that?
+
+7. Scenario: Deploy a colleague's model and app
+00:34 - 00:39
+Imagine we must deploy and maintain another colleague's machine-learning app and model.
+
+8. Please, deploy
+00:39 - 00:40
+9. Concerns
+00:40 - 00:43
+Immediately, a number of concerns should come to our mind:
+
+10. Concerns listed
+00:43 - 00:55
+infrastructure compatibility, transparency, reproducibility, data validation, monitoring, debugging. Phew. Let's unpack them, one by one.
+
+11. Concern: Deployment infra?
+00:55 - 01:05
+First, can this even run on the target infrastructure? It’s easy to get carried away building a model that takes gigabytes of memory and runs on 16 cores in parallel
+
+12. Deploy infra smartphone
+01:05 - 01:09
+only to realize you’re supposed to deploy it on a smartphone.
+
+13. Deployment infra broken
+01:09 - 01:16
+To prevent such show-stoppers, make sure to understand the target infrastructure as soon as possible.
+
+14. Concern: Transparency and reproducibility?
+01:16 - 01:28
+Then we wonder about transparency and reproducibility. Is it obvious who trained this model, when, using which script, data and hyper-parameters?
+
+15. Transparency 2
+01:28 - 01:33
+Deploying models without a clear origin is a big no-go.
+
+16. Transparency 3
+01:33 - 01:43
+Training production models should only be done using versioned datasets, which we can retrieve unchanged at any time, and fully transparent pipelines.
+
+17. Transparency 4
+01:43 - 01:51
+Transparency means there is absolutely no dilemma about how we go from code and the raw data to the fully trained model; and reproducibility means
+
+18. Transparency 5
+01:51 - 01:58
+it is simple and straightforward to recreate this exact model at any later time.
+
+19. Transparency 6
+01:58 - 02:12
+On top of that, it is hugely beneficial to log the experiments carried out during the exploration phase, so that future maintainers don't reinvent the wheel. For this we can use the metadata store.
+
+20. Concern: Input data validation?
+02:12 - 02:25
+Next, when future users make an invalid request, say, by providing a negative value where a strictly positive one is expected -- how will we catch this and return them an error message?
+
+21. Validation 2
+02:25 - 02:32
+To tackle this, we need references for comparison, which we call data profiles or expectations.
+
+22. Validation 3
+02:32 - 02:40
+The best approach is to ensure that our model build pipeline creates and saves them within the model metadata.
+
+23. Concern: Performance deterioration?
+02:40 - 02:42
+Then, how will we know
+
+24. Deterioration 2
+02:42 - 02:44
+if our model's predictive performance
+
+25. Deterioration 3
+02:44 - 02:47
+has deteriorated over time?
+
+26. Deterioration 4
+02:47 - 02:55
+To allow such monitoring, we must ensure that our app logs in some form the inputs it receives and predictions it produces.
+
+27. Concern: Debugging
+02:55 - 03:03
+Also, will we be able to precisely locate errors in the code, a.k.a. bugs, when incidents occur?
+
+28. Debugging 2
+03:03 - 03:05
+The answer is: Logging
+
+29. Debugging 3
+03:05 - 03:06
+logging
+
+30. Debugging 4
+03:06 - 03:13
+logging. There is no debugging without a detailed logging system in place.
+
+31. Debugging 5
+03:13 - 03:17
+We should not improvise, but use tools built for this purpose.
+
+32. Concern: Making changes to the code
+03:17 - 03:34
+Last but not least: Do I feel comfortable making changes to this code? We will inevitably have to fix some bugs in our ML app. We better have an elaborate collection of tests already built when that time comes. Otherwise, we may easily end up with more bugs than we started.
+
+33. Test types
+03:34 - 03:54
+We can write numerous tests: unit tests, integration tests, load tests, stress tests, deployment tests, and so forth, but that deserves a whole course. We wholeheartedly encourage you to explore and master this topic, as it will pay significant dividends and allow you to sleep calmly while your model runs.
+
+34. Keep calm and MLOps
+03:54 - 04:00
+All clear? No worries, this will all become second nature soon.
+
+35. Let's practice!
+04:00 - 04:03
+Let’s practice now.

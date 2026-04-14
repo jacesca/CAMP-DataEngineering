@@ -1,0 +1,83 @@
+1. Model deployment strategies
+00:00 - 00:08
+Ok, we have successfully passed all the testing phases and deployment stages and launched our model in production!
+
+2. Deployment successful!
+00:08 - 00:33
+The ML app is running, our API handles thousands of requests per hour, and nothing is crashing. Amazing! But, one month after our initial deployment, we designed several new features that significantly improve the model performance. So we prepared a new batch of training data, ran our model build pipeline and got our new model package, ready for deployment.
+
+3. Simple swap
+00:33 - 00:37
+Now we swap the old model with the new one, and that's it, right?
+
+4. Offline deployment
+00:37 - 00:42
+If we run our prediction service once a day in batch mode, then sure.
+
+5. Offline deployment 2
+00:42 - 00:50
+We have lots of time to deploy the new model between two runs, so the risk of service disturbance to the user is minimal.
+
+6. Expensive downtime
+00:50 - 00:57
+But what if we have a real-time prediction service, providing thousands of predictions each minute?
+
+7. Expensive downtime 2
+00:57 - 01:01
+Each second of downtime is expensive in such cases.
+
+8. Blue/green deployment
+01:01 - 01:15
+This is where the separation of the ML model and ML application really shows its value. With a decoupled approach, the ML app can load the new model while serving the old one without interruptions. Then
+
+9. Blue/green 2
+01:15 - 01:22
+at the click of a button, it can redirect the incoming requests toward the new model, ignoring the old one completely.
+
+10. Blue/green 3
+01:22 - 01:34
+This instantaneous switching from one model to another in production is called the blue/green deployment strategy. The colors represent the models between which we are switching.
+
+11. Blue/green 4
+01:34 - 01:48
+The advantage of this approach is obvious simplicity. The disadvantage is that we suddenly serve the new model to all our users. If that model starts crashing or returns weird predictions, all our users will suffer.
+
+12. Rollback
+01:48 - 01:59
+The good news is that, just as we could rapidly switch to the new model, we can also roll back to the old one and keep running it until we resolve the issue.
+
+13. Canary deployment
+01:59 - 02:11
+Still, we could consider the so-called canary deployment for a less risky deployment strategy. The canary deployment also involves the old and the new model, but it has several steps.
+
+14. Canary 2
+02:11 - 02:15
+First, we start redirecting a small percentage of the requests to the new model.
+
+15. Canary 3
+02:15 - 02:27
+If all works well, we will increase the percentage of traffic toward the new model by a notch. We can repeat this several times until we are confident all relevant client requests have been successfully handled.
+
+16. Canary 4
+02:27 - 02:32
+We then start directing the entire traffic to the new model.
+
+17. Shadow deployment
+02:32 - 02:43
+Lastly, we have the “shadow deployment”. This is when we send user requests to both models in parallel, but the user gets only the responses of the old model
+
+18. Shadow 2
+02:43 - 02:47
+while the new model’s outputs are saved for validation.
+
+19. Shadow 3
+02:47 - 02:58
+This deployment strategy is the safest, but if executed in real-time, it might affect our performance because we now have two model executions for each request.
+
+20. Shadow 4
+02:58 - 03:09
+We could reduce this excess load by running the shadow model on only a small percentage of requests or in a scheduled batch mode outside peak service hours.
+
+21. Let's practice!
+03:09 - 03:23
+Many variations exist, but these are the fundamental deployment strategies, which make deployments and rollbacks smooth when implemented properly. Let’s practice what we learned now. Next stop: Monitoring!

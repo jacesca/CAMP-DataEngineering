@@ -1,0 +1,104 @@
+1. Profiling, versioning, and feature stores
+00:00 - 00:12
+In this lesson we will talk about data profiling, versioning, and feature stores. We will explain what they are and how they make our life easier. Let's begin.
+
+2. Data profiling
+00:12 - 00:27
+Within MLOps, data profiling refers to the automated data analysis and creation of high-level summaries, called data profiles, or expectations, which we use for validating and monitoring data in production.
+
+3. Purpose of profiles 1
+00:27 - 00:29
+Data profiles allow us to
+
+4. Purpose of profiles 2
+00:29 - 00:33
+give feedback to the user if they are providing wrong inputs.
+
+5. Purpose of profiles 3
+00:33 - 00:37
+make decisions on when to retrain our model.
+
+6. Risk of NOT using data profiles
+00:37 - 00:52
+Without them, for one, we risk getting blamed by clients for unexpected predictions, when in fact they submitted erroneous inputs to the model and, two, we simply have no way to identify that the data has drifted and our model needs to be retrained.
+
+7. Checklist: Profile
+00:52 - 01:04
+To summarize, our model training pipeline should include a data profiling step, and we should store data profiles together with other model metadata. in the metadata store.
+
+8. great_expectations
+01:04 - 01:13
+One of the most famous contemporary tools for data profiling is great_expectations and it belongs to the Python open source ecosystem.
+
+9. Data Versioning
+01:13 - 01:22
+Now, what our training pipeline should also record, is the exact version of the input data we used to train our model.
+
+10. We call this versioning
+01:22 - 01:24
+We call this data versioning
+
+11. To ensure reproducibility
+01:24 - 01:28
+and we need it most of all to ensure reproducibility.
+
+12. Not saving a copy
+01:28 - 01:35
+This doesn't mean we should store a copy of the full training dataset within each model deployment package.
+
+13. Data stays in place
+01:35 - 01:38
+We usually leave that data in some centralized location
+
+14. Just a pointer
+01:38 - 01:57
+and just record a pointer to it together with the model metadata. We should also make sure to save some kind of a dataset fingerprint, that allows us to verify that not a single record in this dataset has changed in the meantime. If it has, our model is no longer reproducible.
+
+15. Bonus: train/test
+01:57 - 02:08
+For bonus MLOps points, we will have our training pipeline also record metadata that allows us to reconstruct the exact train-test split used for performance estimation.
+
+16. DVC
+02:08 - 02:15
+A very popular tool for data versioning is DVC, which stands simply for Data Version Control.
+
+17. Feature stores
+02:15 - 02:24
+Lastly, let's talk about feature stores. This is a novel concept that is gaining more and more acceptance in the world of MLOps engineering.
+
+18. Essentially a DB
+02:24 - 02:31
+Essentially, it's a central database that stores data specifically prepared for ML training and inference
+
+19. Cross-project
+02:31 - 02:36
+which enables us to reuse features across models and projects.
+
+20. Dual DB
+02:36 - 02:39
+They are often implemented as so-called "dual databases"
+
+21. High-volume DB
+02:39 - 02:44
+where one is highly optimized for grabbing large volumes of data for training
+
+22. Row DB
+02:44 - 02:49
+and the other for fast retrieval of individual records at prediction time.
+
+23. Reusability
+02:49 - 02:53
+Apart from the obvious benefit of reducing the time needed for feature engineering,
+
+24. Train-serve skew
+02:53 - 03:14
+a feature store also greatly helps to avoid the so-called training-serving skew. Training-serving skew is when our model performs significantly worse in production, than it did at training time. This will, for example, happen if we clean the input data during training, but forget to also do it production.
+
+25. Emails
+03:14 - 03:35
+Imagine training a spam filter on clean text emails, unaware that your model will mostly receive HTML emails in production. This is a widespread mistake in practice, and it can take a long time to identify, during which your performance is suffering. Luckily, MLOps practices are there to help and mitigate such risks.
+
+26. Let's practice!
+03:35 - 03:42
+Well, we covered some exciting concepts here. Let's practice and make them stick!
+

@@ -1,0 +1,60 @@
+1. MLOps lifecycle stages
+00:00 - 00:05
+Great work so far! We will now take a look at the MLOps lifecycle.
+
+2. The MLOps lifecycle
+00:05 - 00:34
+The MLOps life cycle includes three broad stages: “Designing the ML System”, “ML Experimentation and Development”, and “ML Deployment & Operations". This makes up an iterative and incremental process. The different stages are interconnected and rely on each other. It is normal to go back and forth between stages. We will discuss automation and process streamlining across the three stages next.
+
+3. MLOps in the ML lifecycle - Design
+00:34 - 00:44
+The design stage includes activities such as business understanding, data understanding, and designing the ML solution.
+
+4. MLOps in the ML lifecycle - Design
+00:44 - 00:52
+It is important to acquire a good understanding of the business context. For example, establishing the business goals and success criteria.
+
+5. MLOps in the ML lifecycle - Design
+00:52 - 01:05
+To get an understanding of the data available we can use data exploration and visualizations. This is to ensure the data available and the business context aligns with the project goals.
+
+6. MLOps in the ML lifecycle - Design
+01:05 - 01:17
+We use the business context and data requirements to design the architecture of our ML system. Here, we consider requirements such as data security and privacy regulations.
+
+7. MLOps in the ML lifecycle - Design
+01:17 - 01:58
+MLOps prioritizes automation. For example, in the design phase we can automate data quality checks, to ensure data is fit to fulfill our business goals. However, the design phase also presents cases where domain experts, business developers, end-users, and developers must collaborate. This is an example of a case where experts' domain knowledge cannot be automated. When automation is not possible, process frameworks like CRISP-DM can streamline manual processes, reduce errors, and improve the quality of ML systems.
+
+8. MLOps in the ML lifecycle - Development
+01:58 - 02:08
+The development phase can include developing Proof-of-Concepts (PoCs), data engineering, and model development.
+
+9. MLOps in the ML lifecycle - Development
+02:08 - 02:24
+During the experimentation and development stage, we can use a good combination of process streamlining and automation. The development of PoCs, is an example. We can, establish frameworks for fast prototyping to accelerate our proofs-of-concept.
+
+10. MLOps in the ML lifecycle - Development
+02:24 - 02:36
+Data engineering lends itself to automation, and the more standardized and automated our data engineering process is, the higher the quality of the input data will be.
+
+11. MLOps in the ML lifecycle - Development
+02:36 - 02:56
+As we will see along the course, many activities, technologies, and tools necessary for model development can be fully automated. This can be accomplished by: automatic experiment tracking, building automated model training pipelines, automated hyperparameter tuning, and more!
+
+12. MLOps in the ML lifecycle - Deployment
+02:56 - 03:22
+The deployment phase includes activities necessary to deploy and operate ML systems in production. We accomplish this by using practices such as testing, versioning, continuous delivery, and monitoring. This is the stage where automation really shines. As we will see, thinking automation first in this stage can enable the development of fully automated MLOps systems.
+
+13. Building for scale: Automation first
+03:22 - 04:06
+To achieve scalable machine learning systems, we prioritize process streamlining, best practices, and automation. Adopting an automation-first approach helps us avoid hidden technical debt that can limit scalability. MLOps enables us to create high-value ML solutions that are updated frequently and reliably. While full automation is not always possible, we use transparent and reproducible processes like CRISP-DM and Microsoft's TDSP to ensure the quality and reliability of our ML systems. These processes reduce errors, promote collaboration, and improve decision-making, which supports scalability.
+
+1 https://www.ibm.com/docs/en/spss-modeler/saas?topic=dm-crisp-help-overview
+14. Process streamlining and best practices
+04:06 - 04:37
+We should include the use of best practices, especially during the Design and Development phases. In the design phase, we can include domain expertise, involve key business stakeholders, and get early feedback from end-users of the ML system. In the development phase, we could focus on writing clean code that is well-organized, easy to read and understand, and easy to maintain. We mention finally, it is important to focus on writing good documentation.
+
+15. Let's practice!
+04:37 - 04:44
+We learned quite a few key concepts. Let's practice these in the following exercises!

@@ -1,0 +1,104 @@
+1. Deployment progression and testing
+00:00 - 00:08
+Good job with that lesson! So, we have built a web API to serve our model, and we can deploy it now.
+
+2. Not so fast!
+00:08 - 00:16
+But let's not rush. We must first thoroughly test our service before making it available to the end-users.
+
+3. Agenda
+00:16 - 00:59
+In this lesson we will talk about unit tests, integration tests, smoke tests, load and acceptance tests. We will also explain what different environments we use to develop, deploy and test our code, such as development, test, staging, and production environments. To be clear, here we are not talking about testing the predictive performance of our model. We handled that during the model development phase. The focus is now on testing the overall ML application, by, for example, testing the database communication, user authentication, logging, and so forth.
+
+4. Environment
+00:59 - 01:09
+Environments in this context are isolated groups of computers and applications which we use for different tasks in our development process.
+
+5. Unit testing
+01:09 - 01:28
+Let's start from the bottom of the complexity hierarchy. When we check if independent units of our code, like functions, behave as expected, we call this "unit testing". Unit tests should be simple and fast, allowing us to run them quickly whenever we make minor code changes.
+
+6. Dev constantly changing 0
+01:28 - 01:31
+As development environments are used for experimentation
+
+7. Dev constantly changing 1
+01:31 - 01:32
+they are constantly
+
+8. Dev constantly changing 2
+01:32 - 01:33
+changing, while our tests
+
+9. Dev constantly changing 3
+01:33 - 01:37
+require stability.
+
+10. Test env
+01:37 - 01:43
+It is the best practice, therefore, to run unit tests in a stable, dedicated TEST environment.
+
+11. Test env 2
+01:43 - 01:48
+This also frees up the resources of the dev environment for actual development.
+
+12. Integration testing
+01:48 - 01:55
+If unit-testing is successful, we go to the next step and test how components of our solution work together.
+
+13. Integration testing 2
+01:55 - 02:04
+We also check if our app can communicate with external services, such as databases and other APIs it might use.
+
+14. Integration testing 3
+02:04 - 02:06
+This is called integration testing
+
+15. Integration testing 4
+02:06 - 02:10
+and is usually executed in a so-called staging environment.
+
+16. Staging
+02:10 - 02:12
+Staging should be an
+
+17. Staging 2
+02:12 - 02:15
+exact copy of the production environment.
+
+18. Staging 3
+02:15 - 02:28
+If in production our app uses an XYZ database, version 1-point-2-point-3, the exact same database version should also be available in staging.
+
+19. Staging 4
+02:28 - 02:42
+The data in Staging databases should be a copy of the actual production data, but it can be just a representative subset. It doesn’t have to be synchronized with production databases in real-time.
+
+20. Smoke tests
+02:42 - 02:53
+Staging is where we also run so-called "smoke tests", which basically check if the application can be deployed and started without crashing and burning.
+
+21. Load tests
+02:53 - 03:07
+If it can, we proceed with load tests, which check whether the application operates normally under an expected user load, in terms of request frequency and input size.
+
+22. Stress tests
+03:07 - 03:10
+When load testing is pushed to extremes, it is called stress testing.
+
+23. UAT
+03:10 - 03:29
+Finally, when we are confident in our application, we invite a small group of end users to perform the so-called user-acceptance testing, or UAT. Successful UAT gives us the final seal of approval to go and deploy our application to production.
+
+24. A single weak link breaks the system
+03:29 - 03:52
+If you're a Data Scientist, you are probably not used to this, so it might be overwhelming, but we must be careful what we introduce in production. The impact of one malfunctioning element can bring down the whole system. Remember that it was just a faulty sealing ring that caused the Challenger shuttle disaster in 1986.
+
+25. Prioritize!
+03:52 - 04:06
+Of course, getting lost in trying to test every single edge-case is also counter-productive. You should know which parts of your application are the most critical and prioritize testing them before anything else.
+
+26. Let's practice!
+04:06 - 04:10
+Now let's practice!
+

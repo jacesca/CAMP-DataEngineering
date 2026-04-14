@@ -1,0 +1,55 @@
+1. MLOps design
+00:00 - 00:09
+Good work on finishing the first chapter, where we focused on a high-level overview of the different phases. We will now take a more detailed look into the design phase.
+
+2. Machine learning design
+00:09 - 00:19
+We will now look into the start of the design phase, in which we investigate the added value, business requirements, and the key metrics that we need to track.
+
+3. Added value
+00:19 - 00:37
+Typically, the machine learning lifecycle starts with determining the added value of building and running the machine learning model. This is often expressed in terms of money or time. Determining the value of a machine learning model can be a bit of a ballpark, but it is wise to estimate the potential a certain project has.
+
+4. Added value estimation
+00:37 - 00:43
+Let’s say we have a machine learning model that predicts whether a customer is going to churn.
+
+5. Added value estimation
+00:43 - 00:50
+We have a customer base of 100K customers that have a subscription of $10 each month.
+
+6. Added value estimation
+00:50 - 01:00
+If we can predict this correctly for 80% of the 1000 customers that usually churn, we can send these customers a discounted subscription such that they will stay 50% of the time.
+
+7. Added value estimation
+01:00 - 01:16
+This results in 1000 customers times eighty percent times fifty percent is 400 customers that do not churn. If we give these 400 customers a discounted subscription of eight dollars, we can save a total of 3200 per month.
+
+8. Business requirements
+01:16 - 02:12
+Apart from the added value of the machine learning model, we must also consider the business requirements. Especially in the design phase, it is critical to think about the end user of the machine learning model. Let's say we are building a machine learning model that predicts the number of sales of a specific product, such that we can purchase the right amount to put in our shop. The machine learning model will output a predicted amount of sales. We must consider the frequency of the predictions and how fast we need them. We must also evaluate the model's accuracy and whether its results are explainable to non-experts. Transparency is becoming a more and more important factor in machine learning development, since it enables us to find why the model makes its predictions, why it is wrong, and how we can improve the model. These requirements all have an impact on what algorithm we will use.
+
+9. Business requirements
+02:12 - 02:20
+Depending on the problem we are trying to solve, there could also be compliance and regulatory requirements to the usage of machine learning. For instance, in finance, when the law requires an explanation from the system.
+
+10. Business requirements
+02:20 - 02:26
+We should also take the available budget and team size into account.
+
+11. Key metrics
+02:26 - 02:48
+To see if the machine learning lifecycle progresses as expected, it is often wise to track the performance of the model. However, as we’ve seen earlier, the roles involved in MLOps processes are multidisciplinary and thus also have their own way of tracking performance. The data scientist looks at the accuracy of a model, how many times the algorithm is correct.
+
+12. Key metrics
+02:48 - 03:00
+The subject matter expert is interested in the model's impact on the business, for instance, how their work improves due to the use of machine learning. They are primarily interested in domain-specific metrics.
+
+13. Key metrics
+03:00 - 03:17
+The business stakeholder is more interested in the monetary value of the model, in how many cases do we actually generate revenue. This is often expressed in money or time. To get the most out of machine learning, we must align the different metrics to make sure everyone is on the same page.
+
+14. Let's practice!
+03:17 - 03:23
+Now that we've looked into the design phase of the machine learning lifecycle, let's go into some exercises.

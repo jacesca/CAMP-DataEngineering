@@ -1,0 +1,29 @@
+1. Scalability
+00:00 - 00:28
+In this video, we will learn about scaling strategies for ML models. Scaling is important for ensuring that machine learning models can handle larger and more complex datasets as well as increased usage. We will consider the long-term costs of serving, re-training, and velocity of deployments while exploring the concept of compute restraints and model complexity and their impact on the overall scalability of an ML pipeline.
+
+2. Compute constraints in scalability
+00:28 - 01:11
+Compute constraints, such as CPU, memory, and disk requirements, can impact the scalability of an ML model. If the model requires more computational resources than are available, it may become slow or unresponsive, making it difficult to use in real-world applications. Compute constraints can be identified by measuring the CPU, memory, and disk usage of the model during training and matching those requirements on the machine serving the models. It is important to identify these constraints early, as they can impact the scalability and performance of the model later when it is in production and serving people in real-time.
+
+3. Model complexity and scalability
+01:11 - 01:50
+Model complexity can impact scalability, as more complex models may require more computational resources. Balancing model complexity and scalability can be tricky but we have several strategies. For example, we could implement feature selection techniques during model training time, such as Chi-squared tests or principal component analysis, to reduce the size of our data and our model. More advanced model compression techniques such as pruning can also be used to reduce the size of the model by removing redundant parameters while preserving performance.
+
+4. Velocity of deployments and scalability
+01:50 - 02:28
+The velocity, or speed, of deployments measures how quickly new models are deployed and updated and is a critical factor in scalability. Rapid model deployment and iteration helps ensure that ML models remain relevant and accurate in real-world applications even as the data changes over time. Strategies for managing velocity of deployments include continuous integration and deployment, which we will cover in our next video, or online learning which is the ability to update an ML model as new data becomes available without having to re-train the entire model from scratch.
+
+5. Optimal scaling strategies
+02:28 - 03:17
+Overall, scaling ML models involves balancing a number of trade-offs, including the cost of serving the model often measured in how much money it would cost for the serving machines, the cost of re-training the model, and the velocity of deployments. It is important to consider these trade-offs when choosing scaling strategies to ensure that the model is both scalable and cost-effective. There are several scaling strategies available, including horizontal scaling, vertical scaling, and auto-scaling. Horizontal scaling involves adding more machines to the system, while vertical scaling involves increasing the size of the machine. Auto-scaling dynamically adjusts the number of machines based on the current workload.
+
+1 https://www.spiceworks.com/tech/cloud/articles/horizontal-vs-vertical-cloud-scaling
+6. Considering your optimal scaling strategy
+03:17 - 04:16
+Horizontal scaling can be implemented by using load balancing techniques, such as round-robin or least connections, to distribute the workload across multiple machines. Partitioning techniques can also be used to distribute the data across multiple machines. Horizontal scaling increases pipeline complexity and increased costs, as more machines are required to run the model. Vertical scaling involves increasing the size of the machine, which can help to increase the scalability of the model. Vertical scaling can be implemented by increasing the size of the machine, such as adding more RAM or a faster CPU, or by using high-performance hardware, such as GPUs. Vertical scaling also leads to increased costs, as more powerful and expensive hardware generally costs more money. In an ideal world, we would implement an auto-scaling policy to automatically scale both horizontally and vertically.
+
+1 https://www.spiceworks.com/tech/cloud/articles/horizontal-vs-vertical-cloud-scaling
+7. Let's practice!
+04:16 - 04:21
+Let's see how we can put these new scaling techniques to work!

@@ -1,0 +1,27 @@
+1. Writing maintainable ML code
+00:00 - 00:12
+This video will discuss how we can address technical debt with proper project structure, versioning, and documentation and how maintainable code leads to adaptable ML applications.
+
+2. Project structuring
+00:12 - 00:33
+The first step in writing maintainable ML code is to organize project files into a logical structure. This means grouping related files together in separate folders, such as data sets and ML models. It's also important to ensure that files are properly named and labeled. This makes it easier to identify and locate files when needed.
+
+3. Sample project structure
+00:33 - 01:43
+This is an example of a good structure for a machine learning repository. It keeps relevant files organized and easy to access. The README.md file provides a high-level overview of the repository, making it easy for someone new to understand its purpose and how to use it. The data directory contains all the data used for training and evaluating the models. It is organized into subdirectories for raw, processed, and interim data. This makes it easy to see where the data is coming from, what has been done, and how it is used. The models directory contains all the scripts for creating and training different models, allowing to see what models have been tried and how well they perform. The notebooks directory helps explore and visualize the data. We might also want to include a "source" directory, which would contain all of the source code for the project. The source directory would include code for data preprocessing, feature engineering, model training and evaluation. This structure keeps everything organized and easy to understand, which is important when working with complex machine learning projects.
+
+4. Code versioning
+01:43 - 02:30
+One way to keep your machine learning code maintainable is to use a version control system. This allows you to track the changes made to your code, which is very useful. For example, it enables you to roll back a change you made quickly. In addition, if you encounter a bug or error in your code, a version control system can help you to identify the source of the problem by comparing the current version of the code to previous versions to see what changes may have caused it. Another advantage is that it enables developers to work on a codebase in parallel, with the system handling merging the changes made by each team member. A version control system is an invaluable tool for any software development project, not only for those involving machine learning.
+
+5. Documentation
+02:30 - 02:51
+It's also essential to document code and project structure. This includes explaining the purpose of each file and function, describing how to use the code, and providing instructions on deploying the ML model. This makes it easier for others to understand and use the code.
+
+6. Adaptability of code
+02:51 - 03:42
+One of the key benefits of maintainable code is that it is easier to understand, modify, and update. If the code is well-structured and easy to read, it will be easier for developers to know how it works and make changes as needed. Maintainability can also save time and resources in the long run. When code is well-structured and well-documented, it is easier to make changes without introducing new bugs. This saves time and resources otherwise spent on debugging and fixing issues. Maintainable code is essential for building adaptable ML applications. Keeping our codebases clean and well-organized makes it easier to integrate new features or technologies as needed. This can help your ML applications keep up with changing requirements and data sources, setting us up for long-term success.
+
+7. Let's practice!
+03:42 - 03:58
+In this video, we discussed how to address technical debt with project structure and documentation and how maintainable code leads to adaptable ML applications. It's time to put these ideas to the test with some practice questions!

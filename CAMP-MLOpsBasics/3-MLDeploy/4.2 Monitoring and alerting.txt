@@ -1,0 +1,77 @@
+1. Monitoring and alerting
+00:00 - 00:02
+Welcome back.
+
+2. Recap
+00:02 - 00:14
+In the previous video, we focused on monitoring the changes in the outside, real-world process, which may negatively impact the predictive performance of our ML service.
+
+3. Intro
+00:14 - 00:23
+In this lesson, we will focus on the enemy within: bugs in the code, data errors, and all types of failures happening within the service itself.
+
+4. Intro 2
+00:23 - 00:34
+Whether they happen by fault or accident, we need to catch and fix them as soon as possible, and the key to that is a good monitoring and alerting system.
+
+5. Many moving pieces
+00:34 - 00:46
+Our ML service consists of many moving parts: the model, the data pipeline, the API, the hardware on which everything is running, et cetera.
+
+6. Points of failure 2
+00:46 - 00:50
+and each of these can be a point of failure.
+
+7. What and where?
+00:50 - 00:56
+So, a good monitoring system is not one that just tells us that SOMETHING is wrong
+
+8. What and where 2
+00:56 - 01:04
+but one that also tells us WHAT is wrong. Or at least where we should look further to find the root cause.
+
+9. Granular logging
+01:04 - 01:12
+One of the keys to achieving that is detailed logging throughout the code comprising our ML service.
+
+10. Granular logging 2
+01:12 - 01:19
+If we see that for 5% of requests, the latency is extremely high, we would want to analyze
+
+11. Granular logging 3
+01:19 - 01:32
+from which users those requests are coming, what was the volume of data they were sending with each request, et cetera. If our API module isn't logging all of that, we're lost in the dark.
+
+12. Pipeline monitoring
+01:32 - 01:46
+The other crucial component is detailed validation and monitoring all data going in and out of the service. If the data pipeline that feeds our model combines three different input tables into one
+
+13. Pipeline monitoring 2
+01:46 - 01:53
+we want to validate each of those tables individually, not just the final result.
+
+14. Data profiles
+01:53 - 02:37
+This is where the so-called "data profiles", also known as "data expectations", come into play. At the most basic level, a profile can contain the list of acceptable values of each input feature, whether they may have missing values, and how many. To enable more advanced data monitoring we mentioned in the previous lesson, it should also capture the relationships BETWEEN the features and their statistical distributions. We then monitor new input and output data by comparing it against this profile. Validating data against hard constraints, such as lists of valid values, is quick and straightforward.
+
+15. Statistical validation
+02:37 - 03:09
+But statistical validation techniques are a tricky kind. By their very nature, they can be overly sensitive to minor changes and not informative enough to pinpoint the issue. Like in the story of "the boy who cried wolf", if you generate an endless stream of alerts for every trivial change, you risk inducing the so-called "alert fatigue", which can make critical alerts go unnoticed. So choose the monitoring metrics and alert thresholds carefully.
+
+16. Alerting
+03:09 - 03:19
+Once an incident is spotted, however, the monitoring system must ensure that alerts reach all necessary people in time.
+
+17. Learn from your history
+03:19 - 03:50
+And, finally, after each incident has been treated, we should record what caused it and what steps were taken to resolve it. Google analyzed 10+ years of incidents related to one single ML training pipeline. It turned out that more than two-thirds of them were not ML-related at all. Of course, that's just that single pipeline, but it's a valuable insight.
+
+1 How ML Breaks: A Decade of Outages for One Large ML Pipeline, https://www.usenix.org/conference/opml20/presentation/papasian
+18. Centralized service
+03:50 - 04:09
+For maximum robustness and reusability, the monitoring system should be an independent, centralized service, running on a dedicated infrastructure. That way we can monitor all separate ML services in one place and guarantee our users the highest possible standard of service quality.
+
+19. Let's practice!
+04:09 - 04:16
+Next stop is model maintenance, but first, practice time!
+

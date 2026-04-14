@@ -1,0 +1,39 @@
+1. The model registry
+00:00 - 00:07
+Great work so far! Let us now turn to another vital component, the Model Registry.
+
+2. The ML model lifecycle
+00:07 - 00:47
+Let's start by recalling that ML models have a lifecycle from the model's creation to archiving. A model is the product of an orchestrated manual pipeline or an automated one. If the model is created in the development environment by an orchestrated manual pipeline, the model must go through the system's different environments: development, staging, and production. Suppose the automated pipeline creates the model after a retraining iteration. In that case, the model deployment can be tested and validated in the staging environment before deploying it to production. How do we manage these transitions between environments?
+
+3. Throwing a model over the fence
+00:47 - 01:11
+The starting point in many ML journeys is to "throw the model over the fence". Here, a lone data scientist can train a model and is happy with its performance. So he delivers the model from Development (Dev) to the Operations (or Ops) team so that they can deploy it. This transfer can be made by sending the trained model artifacts via e-mail or handing over a USB stick.
+
+4. A first step towards automated MLOps
+01:11 - 01:49
+A first step towards automation and breaking the ML/Ops barrier is establishing an ad-hoc model registry. In this setup, the data scientists find the best-performing model after several rounds of experimentation using the orchestrated manual pipeline. After this, they register this model in the model registry. To register a model means to save a model and its artifacts necessary for deployment into a central repository, the model registry, to indicate that this model is ready to transition to production.
+
+5. What is the model registry?
+01:49 - 02:05
+But what is a model registry? Well, it is a central repository that allows us to publish production-ready models. It is the component in the MLOps architecture that will enable us to manage the lifecycle of our models.
+
+6. What is the model registry? - Experimentation
+02:05 - 02:16
+After running several experimentation iterations, these are handled by the experiment tracking system. All metadata associated to the experiments is saved in the metadata store.
+
+7. What is the model registry? - Registering a model
+02:16 - 02:54
+We can select the model with the best performance. Then, we register it, meaning we promote it into our model registry. This indicates to the system that the model is ready to be tested, validated, and deployed to production. The model registry integrates with the system's CI/CD workflows. It is also integrated with the staging environment. This allows the model registry to trigger the initiation of, for example, automated tests to ensure that the model can be properly deployed to production.
+
+8. What is the model registry? - Updated deployment
+02:54 - 03:04
+After these automated checks are successfully completed, the CD capabilities in our system will be ready to update the downstream prediction services with our newly registered model.
+
+9. What is the model registry? - Model decommission
+03:04 - 03:58
+Finally, the model that was in operation before the registration of the newly deployed model will be decommissioned and archived in the model registry. It is important to mention that we have freedom regarding our system's design. In this reference design, the model registry does not store metadata produced by our orchestrated experiments. The experiment tracking and the metadata store handle this. Alternatively, the model registry could host the experiment tracking and metadata store as a unified system. As we can see, the model registry is the component in the system that is core to managing the lifecycle of the models we produce! In essence, it has two roles: centralized storage for models and their artifacts and a collaborative unit to manage the model's lifecycle.
+
+10. Let's practice!
+03:58 - 04:02
+Let's practice these new concepts with some exercises!

@@ -1,0 +1,47 @@
+1. CI/CD and deployment strategy
+00:00 - 00:07
+Good job on finishing those exercises. We will now look into CI/CD and deployment strategies.
+
+2. CI/CD pipeline
+00:07 - 00:13
+The CI/CD pipeline is also part of the deployment phase.
+
+3. CI/CD
+00:13 - 00:47
+The use of continuous integration and continuous deployment (or CI/CD) is an important concept within software development. CI/CD originated from DevOps, and focuses on automating the deployment of code. It is a series of steps in developing, testing, and deploying the code. Using a CI/CD pipeline, software developers can easily make incremental changes and then push these changes to the production environment. These same principles can be applied to developing and deploying code for machine learning models.
+
+4. Continuous Integration
+00:47 - 01:09
+Continuous integration is the practice where code changes are continuously integrated quickly and frequently. Each change is automatically tested when these are committed and merged. In this way, we can identify errors and bugs easily and make sure that many developers can work together on the same code.
+
+5. Continuous Deployment
+01:09 - 01:25
+Continuous deployment works together with continuous integration by automating the release of the code that was validated during the continuous integration process. The goal of the practice of continuous deployment is to always have production-ready code.
+
+6. CI/CD pipeline
+01:25 - 01:58
+Setting up a CI/CD pipeline can be tedious at the start, but it can greatly speed up the deployment process. It is like having a list of checks to do before the launch of a new recipe in a restaurant. We can easily make a new recipe, make changes to the recipe, and check whether it is in accordance with the current processes. To summarize, continuous integration is a set of practices while the code for running the machine learning model is being written. Continuous deployment is a set of practices after the code is completed.
+
+7. Deployment strategies
+01:58 - 02:18
+Once a machine learning model is ready to be deployed, we can choose different deployment strategies. Each strategy has a different way of replacing the old machine learning model with the new machine learning model. We will look into three deployment strategies, namely, basic, shadow, and canary deployment.
+
+8. Deployment strategies
+02:18 - 02:29
+In a basic deployment strategy, we simply replace the old model with the new model in production. All new input data will be sent to the new model instead of the old model.
+
+9. Deployment strategies
+02:29 - 02:45
+In the shadow deployment, we send new data both to the new model, as well as to the old model. We still use the old model in production. The result of both models will be tested in order to make sure the new model works as expected.
+
+10. Deployment strategies
+02:45 - 03:02
+Using canary deployment, we use the new model in production, but only for a small part of new incoming data. In this way, we do use the new model right away, but in case the new model fails, only a small number of users is affected.
+
+11. Deployment strategies
+03:02 - 03:41
+The basic deployment is the easiest to implement and uses the least amount of resources because the new model fully replaces the old one. This does come with a high risk in case the model does not work as expected. The shadow deployment is similar in terms of implementation but uses more resources as we fully run both models instead of replacing one with the other. There is no risk when the model does not work as expected. The canary deployment is a bit harder to implement but uses less resources than having two fully deployed models. However, the risk is slightly higher when the new model does not work as expected.
+
+12. Let's practice!
+03:41 - 03:48
+We have now looked into the CI/CD pipeline and deployment strategies. Let's put it to the test!

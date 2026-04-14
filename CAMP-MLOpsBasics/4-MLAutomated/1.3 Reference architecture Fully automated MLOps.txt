@@ -1,0 +1,80 @@
+1. Reference architecture: Fully automated MLOps
+00:00 - 00:08
+Great work! Let's now present a central concept for this course: The reference architecture for a fully automated MLOps system.
+
+2. What is a reference architecture?
+00:08 - 00:48
+Let's start by visiting the question: What is a reference architecture? A reference architecture is a blueprint used to design IT solutions, including ML systems. It provides structures and integrations of IT elements and patterns commonly used in solution design. By adopting a reference architecture, such as the one we adapt, we can leverage experience and best practices used by industry players to streamline development and minimize technical debt. This results in high-quality, scalable, and maintainable ML solutions built using a consistent and repeatable approach.
+
+3. Fully automated MLOps architecture
+00:48 - 01:11
+We will be referring to this architecture as we explore full automation in MLOps throughout this course. A fully automated MLOps solution has CI/CD capabilities as well as two more capabilities: continuous monitoring and continuous training. We will define these in more detail later in the course. Let's walk through the different components of the architecture.
+
+1 https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning
+4. Reference architecture - Orchestrated experiments
+01:11 - 01:20
+We start our walkthrough in the experiment/development environment. We can start with the execution of orchestrated ML experiments.
+
+5. Reference architecture - Source code & CI
+01:20 - 01:46
+The result of this stage is source code which is pushed to a source repository, where the source code is stored and managed during the development process. After this, we enter the Continuous Integration (CI) in our system. We build from source code while running various automated tests. From this stage, artifacts such as packages and executables can be produced.
+
+6. Reference architecture - Artifacts & CD
+01:46 - 02:01
+These artifacts can be used in the next stage: the Continuous Delivery (CD) in our system. The pipeline deployment module will deploy the artifacts produced in the CI stage to the production environment.
+
+7. Reference architecture - ML pipeline deployment
+02:01 - 02:15
+After this, we have a new version of our automated ML pipeline deployed to our system. This pipeline is now powered by the new implementation of the model, delivered with automated CI/CD mechanisms.
+
+8. Reference architecture - The metadata store
+02:15 - 02:31
+The generated information through the different steps of the ML pipeline is recorded in the metadata store. The metadata recorded can include pipeline execution logs and metadata about the training artifacts such as hyperparameters.
+
+9. Reference architecture - The model registry
+02:31 - 02:36
+Models produced by the ML pipeline are pushed to the model registry.
+
+10. Reference architecture - Prediction services
+02:36 - 02:48
+Our system continuously delivers new models that, in turn, trigger the automated deployment of prediction services. We can refer to this as continuous model delivery.
+
+11. Reference architecture - Continuous monitoring
+02:48 - 02:54
+The predictions are continuously monitored. We collect statistics on model performance.
+
+12. Reference architecture - Automated trigger
+02:54 - 03:09
+These statistics can be used to set up an automated trigger. In this context, an automated trigger is a component in our system that will automatically start the execution of the ML pipeline.
+
+13. Reference architecture - Automated retraining
+03:09 - 03:22
+Once the trigger starts the execution of the ML pipeline, a new model will be trained. As an alternative, a mechanism to fall back to a backup model or heuristic can be activated.
+
+14. Reference architecture
+03:22 - 03:26
+Let us take a look at an essential part of this reference architecture.
+
+15. Reference architecture - The feature store
+03:26 - 03:39
+The feature store. Used to feed data through our ML system in a reusable and reproducible way. We will go through this critical component in more detail later in the course.
+
+16. Reference architecture - The feature store
+03:39 - 03:55
+For now, let us mention that the feature store is used to feed data, features to the automated ML pipeline. It help us provide data to our system in a consistent manner in development as in operations.
+
+17. Reference architecture - The feature store
+03:55 - 04:00
+to our orchestrated experiments in the development environment,
+
+18. Reference architecture - The feature store
+04:00 - 04:07
+and to the prediction service in this reference architecture.
+
+19. Fully automated MLOps architecture
+04:07 - 04:14
+In this lesson, we introduced a lot of new concepts. Don't worry. We will come back to several of the components and concepts introduced in this exercise!
+
+20. Let's practice!
+04:14 - 04:19
+Let's practice these concepts in the following exercise!
