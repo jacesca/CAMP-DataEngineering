@@ -1,0 +1,45 @@
+Transcript
+1. Convolutional layers for images
+00:00 - 00:04
+We’re now going to take a closer look at convolutional layers for images.
+
+2. Convolutional layers for images
+00:04 - 00:28
+These layers play a key role in our models for object detection and image segmentation. In this video, we’ll review what we know about convolutional layers and apply that to image data. We’ll also see how to access, add, and create blocks with these layers, which are all tools that can be used to adapt an existing model to a specific task. Let’s begin by reviewing their structure and how they work.
+
+3. Conv2d: input channels
+00:28 - 01:16
+The first parameter in the conv2d layer is the input channels. These channels refer to the image color channels. Grayscale images have one channel, like the cat image on the left. RGB images, like the colored dog image, have three channels: red, green, and blue. Images with transparency will have four channels, due to an additional alpha channel. We can check the number of channels an image has with the functional module from torchvision-dot-transforms. We load an image using the image-dot-open method from the Python library PIL and apply the functional-dot-get image num channels method to the loaded image. The output shows that we have an RGB image with three channels. Knowing this will help us design the right model!
+
+4. Conv2d: kernel
+01:16 - 01:36
+Next we’ll explore the kernel. The convolutional layer learns image patterns by applying a small kernel (shown in green) to the input tensors, or channels, and creating an output tensor with learned features. In the forward pass, this kernel slides from left to right and top to bottom.
+
+1 Thevenot, Axel. 2020. A visual and mathematical explanation of the 2D convolution layer.
+5. Kernel sizes
+01:36 - 01:58
+A kernel is a convolutional matrix with commonly used sizes of three-by-three for conv2d layers and two-by-two for max pooling layers. Convolutions involve a dot product between the kernel weights (shown in green) and the image pixel values (shown in pink), and the sum of this dot product creates a feature map (shown in blue).
+
+6. Kernel is a filter
+01:58 - 02:19
+This feature map captures essential patterns like edges, boundaries, or shapes. To illustrate, the first filter marks the bird's body. The second filter identifies lines in the building image. These two filters are handcrafted, but in convolutional layers, the filters are trained based on the data.
+
+7. Conv2d: output channels
+02:19 - 02:51
+In a convolutional layer, the number of output channels determines how many filters are applied. In this example, there are two output channels with two corresponding filters. Each output channel corresponds to a distinct filter learned during training. Increasing the number of output channels allows the network to learn more complex features. Typically, the number of output channels is a power of two (for example, 16 or 32). It simplifies the process of combining and dividing channels in subsequent layers.
+
+8. Adding convolutional layers
+02:51 - 03:28
+Let's explore how to add more convolutional layers to our model. This comes in handy when the goal is to capture more complex features. We have a model called Net with one layer, conv1. Now, we create an additional layer, conv2. Remember that the in_channels of conv2 should match the out_channels of conv1. For conv2, we increase the number of filters to 32. To add the new layer to a model, we first need to instantiate the model. Then, we can incorporate conv2 into the model using the add_module function with two parameters: the layer's name and the layer.
+
+9. Accessing convolutional layers
+03:28 - 03:49
+Now let's check our model. The model is a two-layer CNN with 3 input channels and 16 output channels in the first convolutional layer, and 16 input channels and 32 output channels in the second convolutional layer. We can also access individual layers, for example, our conv2 layer - this will be handy when we learn about pre-trained models.
+
+10. Creating convolutional blocks
+03:49 - 04:12
+We can also define a sequential block of convolutional layers. This will make our model more flexible to adapt to a different dataset. We use nn-dot-sequential and place the two nn-dot-conv2d layers inside the block along with nn-dot-relu and nn-dot-maxpool2d. The forward method can now pass the input to the conv block instead of separate layers.
+
+11. Let's practice!
+04:12 - 04:20
+Now it is your turn to practice with convolutional layers.

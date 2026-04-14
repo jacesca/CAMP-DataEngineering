@@ -1,0 +1,39 @@
+1. Evaluating object recognition models
+00:00 - 00:05
+Welcome back! Let's talk about evaluating object recognition models.
+
+2. Classification and localization
+00:05 - 00:17
+Object recognition requires predicting two things: the class and location of an object in an image. The classification task is similar to the standard image classification we learned earlier.
+
+3. Classification and localization
+00:17 - 00:26
+Additionally, the model learns the bounding box coordinates to properly fit the target object. These coordinates are continuous values making this a regression task.
+
+4. Intersection over union (IoU)
+00:26 - 01:21
+Suppose we are interested in detecting dogs - this is our object of interest. We annotated the test dataset with the accurate bounding boxes - these will be our ground truth boxes. Now, our object recognition model predicted a bounding box like this red one for a dog in the image. The ground truth box is colored black. We can see some overlap between these two boxes. How good is our prediction? Intersection over Union, or IoU, is a common metric in object recognition to evaluate the degree of overlap between two boxes. The overlap called an intersection is divided by the area of their union. IoU ranges from zero (no overlap) to one (perfect overlap). The common threshold is point five. Any prediction greater than point five is considered a good prediction.
+
+5. IoU in PyTorch
+01:21 - 01:56
+Let's see how we can calculate IoU with PyTorch. Consider this ground truth red box and the predicted blue box. We store their coordinates in two lists called bbox1 and bbox2. To calculate the IoU, we convert them into tensors and reshape them using the unsqueeze method. We import the box iou function from the torchvision-dot-ops module and pass our tensors as arguments. The result is point 14 which is less than the threshold of point five. So the predicted box is not very accurate.
+
+6. Predicting bounding boxes
+01:56 - 02:46
+Let's see how to use a trained recognition model to predict bounding boxes. We will look at the model architecture in the next video. We switch the model to evaluation mode to use it for prediction and disable gradients calculation. Then, we pass the input image through the model to get the output predictions. The output is often a list of dictionaries with tensors containing bounding box coordinates of multiple boxes, their associated confidence scores indicating how confident the model is about each box, and predicted class labels for each box. Let's create a variable named boxes and extract coordinates from the output by accessing the first dictionary in the list with the key word boxes. Next, we create a variable named scores and extract confidence scores with the key word scores.
+
+7. Non-max suppression (NMS)
+02:46 - 02:54
+As we just saw, object recognition models may generate many bounding boxes and some of them may be overlapping near-duplicates.
+
+8. Non-max suppression (NMS)
+02:54 - 03:11
+Our goal is to discard unnecessary boxes. Non-max suppression, or NMS, is a common technique in object recognition to select the most relevant box for our object of interest by discarding boxes with low confidence scores and below the IoU threshold.
+
+9. Non-max suppression in PyTorch
+03:11 - 03:56
+Let's apply nms in PyTorch. We start with importing the nms function from torchvision-dot-ops. We then pass it three arguments: boxes, a two-dimensional tensor with the four bounding box coordinates for N boxes, scores, a one-dimensional tensor with a confidence score for each box, and the iou threshold, which we set to point five here. As a result, we get a list of the most relevant bounding boxes with no overlapping duplicates. The output of the nms function is a tensor containing the indices of the filtered boxes after non-maximum suppression. We can use these indices to filter our bounding boxes by retaining only the selected boxes.
+
+10. Let's practice!
+03:56 - 04:02
+Let's practice evaluating recognition models!

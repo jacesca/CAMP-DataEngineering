@@ -1,0 +1,62 @@
+1. Object detection using R-CNN
+00:00 - 00:07
+In this video, we will apply what we have learned about bounding boxes and detect objects using R-CNN models.
+
+2. Region-based CNN family: R-CNN
+00:07 - 00:24
+R-CNN is a family of region-based convolutional models for object detection. These models consist of three modules. First, the R-CNN model generates many region proposals. These are potential bounding boxes that might contain objects.
+
+1 Citation: Jason Brownlee. 2019. Deep Learning for Computer Vision.
+3. Region-based CNN family: R-CNN
+00:24 - 00:30
+The second module uses a convolutional neural network to extract features from each region.
+
+1 Citation: Jason Brownlee. 2019. Deep Learning for Computer Vision.
+4. Region-based CNN family: R-CNN
+00:30 - 00:37
+In the third module, features from each region proposal are used to predict the class and bounding box for that region.
+
+1 Citation: Jason Brownlee. 2019. Deep Learning for Computer Vision.
+5. R-CNN: backbone
+00:37 - 00:57
+Using a pre-trained model as the backbone is a common strategy. The term backbone refers to the core CNN architecture responsible for feature extraction. The backbone consists of multiple layers of convolutions and pooling operations. These layers extract features for region proposal and object detection.
+
+6. R-CNN: backbone with PyTorch
+00:57 - 01:23
+Let's use the backbone from the pre-trained classification model called VGG16. We import torch-dot-nn and the VGG16 model together with weights from torchvision-dot-models, and initialize the model with default pre-trained weights. The VGG model has a features block, a pooling layer for size reduction, and a classifier block with fully connected layers.
+
+7. R-CNN: backbone with PyTorch
+01:23 - 01:33
+Our goal is to re-use only the features block from the pre-trained VGG model. The dot-features attribute provides access to these convolutional layers.
+
+8. R-CNN: backbone with PyTorch
+01:33 - 01:38
+The children method returns all layers of the features block.
+
+9. R-CNN: backbone with PyTorch
+01:38 - 01:45
+To extract the backbone, we convert all layers from the features block into a list and pass to a new sequential block.
+
+10. R-CNN: classifier layer
+01:45 - 02:26
+Let's define the classifier layer. It comes on top of the backbone, so its input size must match the backbone's output size. To extract the output size of the VGG backbone, we create a list of all layers in model's original classifier block. We extract the first layer from the list using the index zero and dot-in-features and store this value as input_dimension. Now, we define a new classifier sequential block with two linear layers and the relu activation. The first layer's input dimension is what we defined earlier. The last linear layer has a number of classes as output size.
+
+11. R-CNN: box regressor layer
+02:26 - 02:51
+Finally, let's define regressor to predict bounding box coordinates. Similarly to the classifier, it also sits on top of the backbone, so we use the same input size. We define a sequential block with two linear layers and the relu activation. In features is set to the input dimension from the backbone. The second linear layer has an output equal to four, representing the four coordinates to predict.
+
+12. Putting it all together: object detection model
+02:51 - 03:15
+Let's put the backbone, classifier and box regressor together into a one model called ObjectDetectorCNN. In the init method, we extract the VGG16 backbone and assign it to self-dot-backbone. Next, we identify the input shape required for the classifier and regressor, and define both of them just like we have seen before.
+
+13. Putting it all together: object detection model
+03:15 - 03:27
+We also define the forward method that passes the input through the backbone to extract features. It then processes features separately using the classifier and the bounding box regressor to obtain the two outputs.
+
+14. Running object recognition
+03:27 - 03:51
+With the model at hand, let's recap how to run object recognition for an image. We start by loading and transforming an image to a tensor. Remember to unsqueeze it in order to add the batch dimension. Next, we pass the image tensor to the model and run non-max suppression over model's output Finally, we can draw the bounding box on top of the image.
+
+15. Let's practice!
+03:51 - 03:56
+It's your turn to build the R-CNN!

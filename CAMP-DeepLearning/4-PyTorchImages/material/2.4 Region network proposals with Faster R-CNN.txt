@@ -1,0 +1,62 @@
+1. Region network proposals with Faster R-CNN
+00:00 - 00:06
+In this video, we will cover region proposal networks and the Faster R-CNN model.
+
+2. Regions and anchor boxes
+00:06 - 00:20
+Regions are smaller areas of an image that might contain objects of interest. They are grouped by visual characteristics like color and shape. Detecting regions aids object detection by narrowing down search areas.
+
+3. Regions and anchor boxes
+00:20 - 00:29
+Anchor boxes are often used to help generate the regions. They are pre-defined frames of different sizes and aspect ratios.
+
+4. Faster R-CNN model
+00:29 - 00:39
+Faster R-CNN is an advanced version of the previously discussed R-CNN. It consists of 3 modules: a backbone with pre-trained convolutional layers,
+
+1 Edward Raff. 2022. Inside Deep Learning.
+5. Faster R-CNN model
+00:39 - 00:45
+a region proposal network, or RPN, to generate bounding boxes,
+
+1 Edward Raff. 2022. Inside Deep Learning.
+6. Faster R-CNN model
+00:45 - 00:50
+and the classifier and regressor like the ones in the regular R-CNN.
+
+1 Edward Raff. 2022. Inside Deep Learning.
+7. Region proposal network (RPN)
+00:50 - 00:56
+The backbone processes the input image and extracts feature maps for the RPN.
+
+8. Region proposal network (RPN)
+00:56 - 01:11
+The Region Proposal Network starts by generating region proposals. It is faster than the original R-CNN, and trainable end-to-end. It generates multiple anchor boxes of different sizes and aspect ratios on top of the backbone's output.
+
+9. Region proposal network (RPN)
+01:11 - 01:18
+Then, the RPN predicts whether each box contains any object, as well as the box coordinates.
+
+10. Region proposal network (RPN)
+01:18 - 01:41
+Finally, the proposed regions from the RPN are resized to a fixed size using a process called Region of Interest (RoI) pooling. This allows the regions to be processed by fully connected layers regardless of their original size. These layers then determine the object class and refine bounding box coordinates.
+
+11. RPN in PyTorch
+01:41 - 02:36
+Let's build an RPN in PyTorch! We start by importing anchorgenerator from torchvision-dot-models-detection-rpn. We instantiate the anchor generator and specify sizes and aspect ratios for the boxes. Faster R-CNN typically uses three scales and three aspect ratios, resulting in nine anchor boxes. For RoI pooling, we import the MultiScaleRoIAlign class module from torchvision-dot-ops. We create a pooler by specifying the backbone layer name. Here we choose the first layer labeled zero in our backbone architecture. We also pass two other parameters. Output size determines the size of the output after pooling, while sampling ratio specifies how many samples are taken from each bin when pooling. We will set them to 7 and 2, respectively.
+
+12. Fast R-CNN loss functions
+02:36 - 03:15
+The region proposal network uses two loss functions. For the RPN classifier, we use binary cross-entropy available as nn-dot-BCEWithLogitsLoss, since this is a binary classifier indicating whether a proposed region contains an object. For the RPN box regressor, we use the mean squared error loss available as nn-dot-MSEloss. For the final R-CNN classification, we apply nn-dot-crossentropyloss, since we may have many classes. For the R-CNN box regressor, we use nn-dot-MSEloss again.
+
+13. Faster R-CNN in PyTorch
+03:15 - 03:51
+FasterRCNN model is available from torchvison. We choose the backbone, here: a small mobilenet model with default pre-trained weights. We extract its backbone using the dot-features attribute. FasterRCNN model requires setting out channels in the backbone. We could print the model architecture to check it. Here we already know the value as 1280. To create the FasterRCNN model, provide the backbone, the number of object classes, and the previously defined anchor generator and RoI pooling module.
+
+14. Faster R-CNN in PyTorch
+03:51 - 04:37
+We can also use a pre-trained Faster R-CNN without manually extracting a backbone from a different model. We import FastRCNNPredictor from torchvision-dot-models-dot-detection-dot-faster-rcnn and load a pre-trained Faster R-CNN model, this time with resnet50 as a backbone and its default weights. We set the number of classes to two for our binary classification problem of detecting cats and dogs. Next, we extract the number of input features to the classifier head of the Faster R-CNN model and store it as in-features. Finally, we replace the default box predictor of the model with a new one that has the desired number of output classes. The model is ready to use!
+
+15. Let's practice!
+04:37 - 04:43
+It is your turn to build the Faster R-CNN model!

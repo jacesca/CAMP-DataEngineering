@@ -1,0 +1,31 @@
+1. Bounding boxes
+00:00 - 00:07
+So far, we worked with image classification. In this video, we will talk about bounding boxes and object recognition.
+
+2. What is object recognition?
+00:07 - 00:48
+Object recognition identifies objects in images. Think of a self-driving car. Its systems need to identify the location of all objects on the road such as other cars and pedestrians. This is typically achieved by drawing bounding boxes around the objects. All localized objects must then be identified with their class label. Object recognition is used in many applications such as surveillance, medical diagnosis, traffic management, or sports analytics. We'll be reviewing how to annotate image data with bounding boxes in this video while later videos will cover model evaluation and explore two different model structures for object recognition.
+
+3. Bounding box representation
+00:48 - 01:08
+A bounding box, like this red rectangle around the cat, describes an object's spatial location within the image. Bounding boxes are used for annotating training data. They are also the outputs of object recognition models. A ground truth bounding box precisely outlines the location of an object within an image.
+
+4. Bounding box representation
+01:08 - 01:31
+A bounding box is typically described by its top left and bottom right coordinates. These four numbers: x1, y1, x2 and y2 define each bounding box. Sometimes, the one and two are referred to as min and max, respectively, so that x1 is x_min, x2 is x_max, and similarly for the y coordinates.
+
+5. Pixels and coordinates
+01:31 - 02:04
+An image consists of pixels. Pixels provide a way to specify the location, size, and object boundaries within an image. Each pixel is defined by the column number or the x-coordinate and the row number or the y-coordinate. The origin of the image (the very first pixel) has the coordinates x equals zero and y equals zero and is at the top-left corner. For example, the pixel in the column twenty and row five corresponds to x and y equal to twenty and five, respectively.
+
+6. Converting pixels to tensors
+02:04 - 03:01
+To be able to process images in PyTorch, we must convert pixel arrays to tensors. There are two transforms, ToTensor() and PILToTensor() that produce different output formats. ToTensor converts pixels to float tensors, scaling values from zero to one. We import transforms from torchvision-dot-transforms and use transforms-dot-compose to combine transformations. Let's use transforms-dot-resize to set the image size to 224 and apply transforms-dot-ToTensor to create the float tensors. PILToTensor converts pixels to 8-bit integer tensors. Pixel values remain unscaled from zero to 255. We can apply PILToTensor in the same way, just updating the transform function. The PILToTensor transformation is useful for bounding boxes.
+
+7. Drawing the bounding box
+03:01 - 03:42
+Let's see how to draw bounding boxes on top of images! We will use the draw bounding boxes function from torchvision-dot-utils. Assume we know the coordinates, perhaps as predicted by the object recognition model. We collect them into a tensor using the torch-dot-tensor method. Next, we pass the image tensor and the box coordinates to draw bounding boxes, setting line width to three and color to red. To display the box, we convert the tensor to an image using the ToPILImage transform and call imshow from matplotlib. We have a ground truth bounding box around the cat!
+
+8. Let's practice!
+03:42 - 03:51
+It is your turn to draw a bounding box, an important part of the object recognition workflow!
