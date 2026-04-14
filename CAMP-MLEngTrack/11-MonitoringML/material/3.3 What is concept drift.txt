@@ -1,0 +1,23 @@
+1. What is concept drift?
+00:00 - 00:05
+Welcome back, let’s now discuss in detail what the concept drift is.
+
+2. Definition
+00:05 - 00:25
+Concept drift has been mentioned a few times in this course already, and the definition was a change in the relationship between the model inputs and the target. The training P(Y|X) is not equal to the production P(Y|X) and P(X) stays the same.
+
+3. Why drift happens?
+00:25 - 01:29
+The concept drift can occur for a variety of reasons, but we will narrow it down to four causes: External events: Unexpected events, policy changes, or interventions can introduce abrupt shifts in the data distribution, affecting the concept drift. Seasonality - Some domains exhibit regular patterns or cycles that impact the incoming data, such as daily, weekly, or yearly variations, which can cause concept drift. In the case of demand forecasting, black Friday and Christmas are yearly recurring variations. Changes in the data-generating process might include a new interface to the application that collects the data. Following the update, users may interact with the application differently, adopt new usage patterns, or respond differently to the revised features. Evolving user behavior - User preferences, habits, or interactions with a system may change, leading to a shift in the patterns.
+
+4. The dynamics of concept drift
+01:29 - 02:21
+To clarify, the relationship between features and targets is referred to as a concept. Similar to covariate shift, there are various dynamics of occurrence that depend on the specific application. We can categorize them into three types: - Sudden drift - a new concept occurs within a short time due to unforeseen circumstances like COVID-19. - Gradual drift - a new concept gradually replaces the old one. For example, inflation can affect a pricing model, which might take a long time to significantly impact the data. - Reoccurring - an old concept reoccurring after some time. As an example, during events like Black Friday, Halloween, etc., users' shopping pattern is different compared to other times of the year.
+
+5. Effects of covariate shift on concept drift
+02:21 - 03:43
+Concept drift and covariate shift are two related but distinct phenomena that can appear together or separately in machine learning. Measuring the separate effects of concept shift and covariate shift in such a situation is not enough. Usually, they will also interact with each other. There are two types of interactions: - Negative, where the effect of concept drift decreases - Positive, where the effect of concept drift increases Let's take a loan default prediction as an example. After a covariate shift, the mean income of applying people is 100k/year, compared to the mean of 80k/year in the training dataset. As a result of the concept shift, the probability of defaulting among applicants with lower income has significantly increased. However, due to fewer low-income applicants, the effect of concept drift has decreased, resulting in a negative effect. On the other hand, if the distribution of income has shifted towards lower incomes, with a mean of 60k, the effect of concept drift becomes more intensified. Since there are more applicants with low income in this scenario, the concept drift leads to a higher number of incorrect predictions, resulting in a positive effect of covariate shift.
+
+6. Let's practice!
+03:43 - 03:51
+In the following video, we will explore how to detect and prevent concept drift, but now let's practice!

@@ -1,0 +1,25 @@
+Transcript
+1. Challenges of monitoring ML models
+00:00 - 00:06
+Now we will discuss the challenges of monitoring machine learning models in production.
+
+2. Machine learning project components
+00:06 - 00:36
+Machine learning models are an integral part of much larger and more complex systems. Unlike software engineers who focus solely on the code, or data engineers who deal with data and code, data science requires an intersection of knowledge in coding, data, and machine learning models. Each of these components carries the risk of failure, creating challenges in monitoring the production stage. In general, machine learning models can fail in two ways.
+
+3. The model fails to make predictions
+00:36 - 01:53
+When a model fails to make a prediction, it seems that it cannot generate the output. Since the model is always a part of a larger software system, it can break for reasons beyond the machine learning algorithm alone. Here are three possible issues: Language barriers. This is a problem with integrating a component built in one programming language into a system written in a different programming language. It may require additional code or "glue" code to connect the two languages, increasing complexity and the risk of failure. Code maintenance. All libraries and other dependencies are constantly updated, which means their function commands are changing. It is essential to keep track of these changes in relation to the code so that it remains relevant and compatible. Scaling issues. As the model gets more and more users, the infrastructure may need to be more robust to handle all requests. A well-maintained software monitoring and maintenance system should prevent possible problems. However, even if something happens, we should receive direct information that something is wrong. In the next slide, we will look into problems whose detection is not so obvious.
+
+4. The model predictions fail
+01:53 - 03:05
+When a model's performance degrades, it can be a challenging problem to diagnose, as there may be no obvious alerts or indicators of the issue. This type of failure can be particularly tricky because the whole pipeline or application may still be functioning well, but the predictions produced by the model are no longer valid. There are two primary causes of this type of failure: - covariate shift, and - concept drift. Covariate shift occurs when the distribution of the input features changes over time, which can be detected using various distance methods like Jenson-Shanon and Wasserstain and statistical tests like Kolmogorov-Smirnov and Chi-squared. However, as we mentioned earlier, these methods generate a lot of false alerts since only some shifts impact the model's performance. As a result, we can easily miss the important drifts. Concept drift, on the other hand, refers to a change in the relationship between the input data and targets. This type of drift can be difficult to detect and almost always affects the business impact of the model.
+
+5. Availability of ground truth
+03:05 - 03:43
+Having access to target values is a crucial aspect of monitoring machine learning models in production. However, in real-life scenarios, target data may be delayed or entirely absent, which can make evaluating model performance challenging. For instance, demand forecasting for a clothing company provides an excellent example of a scenario where ground truth is often delayed. These companies use machine learning models to predict demand for the upcoming season. However, evaluating the predictions is tricky since they have to wait three months until the season is finished to measure the accuracy of the predictions.
+
+6. Let's practice!
+03:43 - 03:51
+We have now looked into the challenges of machine learning models in production. Now let’s put it to the test.
+

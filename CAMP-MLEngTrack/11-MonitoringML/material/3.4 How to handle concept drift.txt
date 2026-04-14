@@ -1,0 +1,23 @@
+1. How to handle concept drift?
+00:00 - 00:06
+Welcome to the last video of this course, we will dicuss here how to detect and resolve the concept drift problem in production.
+
+2. Concept drift detection
+00:06 - 01:03
+Concept drift detection is one of the hardest parts of the monitoring models in production since there's not one unified solution. Currently, it is still an active area of research. Generally, there are no industry standards. It comes from the fact that many research papers call covariate shift detection concept drift. Although the most commonly used methods are error-based methods. These methods look at the evolution of the error. If it drops or changes significantly, it indicates the concept shift. The downside of those methods is that they require a constant stream of ground truth, which is often not the case in real-world. Another example is to train a new model using the training and production data. Then we can compare the results with the trained model. If we notice they are significantly different, that means there is concept drift. The downside of this method is that it is costly, especially with larger models and big data to perform it. Now let's look at the resolution methods.
+
+3. Retraining
+01:03 - 01:45
+Machine learning model, in its nature, is static and doesn't adapt to the changes in the environment. Periodic or trigger-based retraining can keep the model up-to-date with recent patterns. While it seems like the obvious method, there are also some downsides. The more frequently you update your model, the more opportunities there are for updates to fail. Also, each update requires computing resources to train and test, increasing the overall costs. Secondly, retraining might not always be the required solution. There can be other underlying problems like changes in the downstream processes, data leakage, and training-serving skew, which require investigation, not retraining.
+
+4. Online learning
+01:45 - 02:42
+Online learning, also known as incremental or streaming learning, is a machine learning approach where models are trained and updated continuously as new data arrives. Unlike traditional batch learning, which trains models on a fixed dataset, online learning adapts to changes in the data stream, making it suitable for handling concept drift. The benefits of online learning include its ability to handle evolving data streams and adapt in real-time to changing conditions. It can capture concept drift and provide timely insights. Online learning is computationally efficient as it processes data instances one at a time, making it suitable for large-scale and high-velocity data scenarios. However, online learning also has limitations. It requires continuous access to ground truth data for model updates, which may not be feasible in certain situations. It can be sensitive to noisy or erroneous data, leading to potential model degradation. Online learning may also require careful parameter tuning and monitoring to maintain model performance over time.
+
+5. Other resolutions
+02:42 - 03:21
+In some circumstances, reoccurring concept drift may occur from events like Black Friday or Christmas; during that time behavior of the customers changes significantly. In these cases, models trained on historical data will become less reliable. A separate model can be deployed only during those times and trained on different data than the model for normal conditions. Data scientists can assign different weights to input data to indicate their relative importance when developing models. By giving higher weight to newer data, the algorithm can prioritize the importance of recent information and adapt to concept shifts. However, this approach carries the risk of negatively impacting model performance if new data is overweighted.
+
+6. Let's practice!
+03:21 - 03:28
+We looked at different methods to handle concept drift, now let's go into the last exercises!

@@ -1,0 +1,23 @@
+1. The ideal monitoring workflow
+00:00 - 00:06
+Good job on the tasks, now we investigate the ideal monitoring workflow in production.
+
+2. Monitoring workflows
+00:06 - 01:15
+The traditional way of monitoring models involves checking their performance, which relates to technical metrics like MSE, accuracy, or F1-score. In many cases, those metrics cannot be calculated since the ground truth is often not available in real-time. In that scenario, the popular approach is checking for changes in data distributions and alerting stakeholders whenever a change is detected. However, this approach has a significant limitation: not every change in distribution results in a drop in performance, which can lead to many false alerts. The ideal monitoring workflow for machine learning models should prioritize real-time performance monitoring at its core. Even if the ground truth is unavailable, the performance estimation helps to evaluate the model in real time. We will cover in detail how it works later in the course. When performance is degrading, the next step should be to conduct a root cause analysis. This involves checking for changes in distribution and linking them with drops in the performance. Once we identify the issue, we can resolve it and ensure the model continues delivering business value. Now, let's take a closer look at each element of the workflow.
+
+3. Monitoring performance
+01:15 - 02:21
+The first step in the monitoring workflow is performance monitoring. This involves tracking technical metrics, like mean squared error or accuracy, that tell us how well the model performs in production. These metrics are calculated using the predicted and ground truth values and serve as a direct way to evaluate the model's behavior in production. Even if the ground truth is not available, we can estimate the model's performance based on the input data and its predictions. This is achieved by either using an additional machine learning model to estimate the error in regression tasks or by leveraging confidence scores in classification tasks. In addition to technical metrics, measuring the model's business impact by monitoring key performance indicators (KPIs) is essential. This information gives us insight into how the model is performing in relation to our business goals. Any negative changes in these metrics indicate something is wrong with the model, and we need to determine the underlying cause.
+
+4. Root Cause Analysis
+02:21 - 03:00
+The second step in the monitoring workflow is investigating why the model's performance is degrading. In a previous video, we described three potential causes for a model to fail. However, in this scenario, we can rule out a code problem since the model is up and running in production. So, we need to focus on two other things: covariate shift, shifts in the input data and concept drift, changes in the relationship between features and targets. To detect these problems, we use various detection methods and link them to the model's performance to determine whether they are causing the issue.
+
+5. Issue resolution
+03:00 - 03:44
+Once the problem is detected, the next step is to work on a fixing it. Unfortunately, there isn't a one-size-fits-all solution, as the best approach depends on the specific issue at hand. However, there are a few popular solution methods to try: Retraining: This is by far the most popular technique, but it requires additional labeled data, and compute. Refactoring the use case: Sometimes, it's a good idea to take a step back and rethink which features are used and how they are engineered, or what type of model to create a more robust solution. Change the downstream processes: If the model isn't robust enough, the processes around it should be modified.
+
+6. Let's practice!
+03:44 - 03:52
+Now that you have an idea about the ideal monitoring workflow, let's move on to some exercises.

@@ -1,0 +1,28 @@
+1. What is covariate shift?
+00:00 - 00:13
+Welcome to the first video of this course's third chapter, which covers the detection of covariate shift and concept drift. Now let's look at what covariate shift is and how it manifests in real-world situations.
+
+2. Definitions
+00:13 - 00:54
+Throughout this course, the concept of covariate shift has been mentioned multiple times. It is one of the most widely studied forms of data drift. The name is derived from the term "covariate variables," which refers to input features. The mathematical representation of covariate shift is as follows: the distribution of covariates, noted as P(X) changes, while the conditional probability of the output given the input, noted as P(Y|X), in remains unchanged. To be specific, the accurate definition of covariate shift is the following: changes in the joint distribution of the covariates Now, let's examine why the "joint" part is important.
+
+3. Why joint probability distribution?
+00:54 - 01:39
+There are instances of covariate shifts where, if you examine each feature separately, you won't notice a change in distribution. Let's consider a situation where, during data preparation, two features accidentally get swapped. When we analyze each feature independently, their distributions appear almost the same, as depicted on the right and top of the plot. However, the joint distribution of these features experiences a change because their correlation shifts from positive to negative. In this scenario, the model can make mistakes because it incorrectly assumes that feature 1 is actually feature 2 and vice versa. This highlights the importance of defining covariate shift as a change in the joint probability distribution.
+
+4. Why does covariate shift occur?
+01:39 - 02:21
+Covariate shift can happen due to different factors, but we will focus on three main reasons: The real world is constantly changing - patterns and trends evolve, including shifts in social, economic, or environmental conditions. Changes in data sources - variations in how data is collected between testing and production. For instance, think of English speech recognition trained on native English speakers and applied to any English speaker. And finally, evolution of system and environment - for example, if the model was trained using data from a specific version of a software application and later deployed on an updated version with different user behaviors or features, the covariate distribution may change.
+
+5. How does covariate shift occur?
+02:21 - 03:04
+Now that we are aware of the reasons why covariate shift happens let's take a look at how it occurs in real-world scenarios. There are three dynamics of the changes in the distribution: {{1}} - Sudden: Caused by unusual events such as the recent Covid-19 pandemic for example. - Secondly, you have gradual: Slowly over time, for example changes in culture or trends, such as users migrating from one social media platform to another (as with Facebook and Instagram). - And then finally you have seasonal: Regular and predictable changes that happen every calendar year, such as increased taxi rides during the winter due to lower temperatures.
+
+6. How to detect the covariate shift?
+03:04 - 03:40
+One way to monitor covariate shift, as seen in the example above, is by plotting the distribution of a single feature. This is known as the univariate method. Another option is to look at all features at once, known as multivariate drift detection. It uses the PCA dimensionality reduction algorithm to transform high-dimensional data into a lower-dimensional representation and then reconstruct it to its initial state with some error. Changes in the error indicate a shift in the joint distribution. In the following video, you will explore in detail how these methods work.
+
+1 https://app.datacamp.com/learn/courses/dimensionality-reduction-in-python
+7. Let's practice!
+03:40 - 03:46
+We have covered some exciting concepts here. Now, let's practice and make them stick.

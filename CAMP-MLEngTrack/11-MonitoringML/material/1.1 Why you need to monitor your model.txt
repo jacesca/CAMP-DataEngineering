@@ -1,0 +1,27 @@
+1. Why you need to monitor your model
+00:00 - 00:25
+Welcome! I am Hakim, and I will be your instructor for this course. I worked both as a data engineer and data scientist in the energy sector and then ran a data science firm to help companies build and deploy machine learning models. In addition, I am the co-founder and CEO of NannyML, a fully open-source library for monitoring the performance of your machine-learning models in production.
+
+2. Machine learning in production
+00:25 - 01:07
+A growing number of companies are integrating machine learning solutions into their business processes. The popular data science development process is sequential and involves defining the project, preparing data, training the model, and deploying it in production. However, in real life, it is more complicated. Maintaining a model in production starts another cycle that's more similar to babysitting than checking off a list of steps. Just as a babysitter must continually keep an eye on a child, monitoring a machine learning model requires constant attention to ensure its safety and well-being. In the following slides, we will talk about the four benefits of monitoring in production.
+
+3. Reducing risk of failure
+01:07 - 01:46
+One of the most well-known machine learning failures in production occurred at Zillow. Their model incorrectly evaluated home market values, resulting in a loss of 384 million dollars and the layoff of 25% of their workforce. There is no official explanation for why the model failed, but there are many potential reasons, such as software problems like bugs in the code, drifts in the input data, or changes in the relationship between features and targets. Therefore, it is necessary to constantly monitor the model's performance and behavior to detect these issues before they become too costly.
+
+4. Maximizing business impact
+01:46 - 02:40
+Monitoring machine learning models in production is not only about preventing negative outcomes but also about ensuring that the system continues to provide value to the business. However, in some cases, the model's performance may meet expectations yet fail to improve key performance indicators, also called KPIs, critical for stakeholders. In such instances, it is important to reconsider the application of the model and explore alternative approaches to better align with business outcomes. Having a monitoring system also helps to reduce cloud costs. An example is automated retraining, where monitoring can help retrain only when performance degrades rather than doing it periodically, which leads to cost savings. A fully-working optimal model also requires a system to improve its safety usage in production.
+
+5. Improving AI safety
+02:40 - 03:25
+AI safety is a field concerned with preventing accidents, misuse, and harmful consequences arising from using artificial intelligence systems. Monitoring models in production can help prevent three of these problems: Bias measuring fairness metrics in production can help ensure that the model's output is fair for different groups of users. Adversarial attacks can be detected by observing a model's input data and performance. Unexpected or incorrect predictions can indicate the presence of a malicious attack. Observing the behavior of the model and its input data over time can foster model understanding and explainability.
+
+6. Changing the world with data
+03:25 - 03:49
+The ultimate goal of data science and machine learning is to enhance decision-making by using big data. Automation is a crucial component of achieving this goal, and successful automation requires a monitoring system. It gives organizations a comprehensive overview of all automated processes, allowing them to improve efficiency, reduce errors, and deploy their products to market more quickly.
+
+7. Let's practice!
+03:49 - 03:59
+Now that you have learned about monitoring machine learning models in production, let's move on to some exercises that will help you practice what you have learned!

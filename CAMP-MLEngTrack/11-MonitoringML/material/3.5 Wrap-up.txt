@@ -1,0 +1,19 @@
+1. Wrap-up
+00:00 - 00:06
+Congratulations on reaching the end of the course! Now, let's discuss what you have learned.
+
+2. Chapter 1 - What Is ML Monitoring?
+00:06 - 00:19
+In Chapter 1, you learned about the ideal monitoring workflow, with the technical performance evaluation at its core. You also discovered the importance of monitoring machine learning models in production and the potential challenges that may arise.
+
+3. Chapter 2 - Theoretical Concepts of Monitoring
+00:19 - 00:37
+In Chapter 2, we delved deeper into why covariate shift detection is not an effective approximation of performance. Instead, you learned how to estimate performance when ground truth is not available using Confidence Based Performance Estimation and Direct Loss Estimation algorithms.
+
+4. Chapter 3 - Covariate Shift and Concept Drift
+00:37 - 00:51
+Chapter 3 provided a detailed understanding of covariate shift, including two detection methods: multivariate and univariate. You also gained insights into the concept of drift and how to address it in a production environment.
+
+5. Congratulations!
+00:51 - 01:05
+Thank you for investing your time in this course. You are now equipped with the knowledge to build a robust monitoring system in production. It has been a great journey working with you, and I wish you all the best in your future endeavors. Bye!

@@ -1,0 +1,28 @@
+1. Performance estimation
+00:00 - 00:06
+Welcome back! In this video, we will take a closer look at the performance estimation algorithms.
+
+2. Overview
+00:06 - 00:33
+As mentioned earlier, in many cases where the ground truth is delayed or absent, it becomes necessary to estimate the model's performance to gain an understanding of the situation. For this purpose, there are two algorithms that have been specifically designed for two machine learning tasks: - The first is CBPE - used for classification problems, and the second is - DLE - used for regression problems Let's delve into how these algorithms work in detail.
+
+3. CBPE - How it works
+00:33 - 01:20
+CBPE stands for Confidence-Based Performance Estimation. It is a method used for classification tasks that utilizes the confidence score of a model's predictions to estimate the confusion matrix. For instance, suppose the model predicts a value of 0.9 for a given example. This indicates that the model is 90% certain that the example is correct and 10% certain that it is incorrect. This process is repeated for all examples, and the aggregated confidence scores generate an estimated confusion matrix. Based on these results, one can calculate many classification metrics, such as accuracy, precision, recall, F1-score. If the model is negatively affected by the covariate shift, the performance estimation will capture this impact.
+
+4. CBPE - Considerations
+01:20 - 02:28
+While it seems like a perfect solution, it still requires a bit of assumptions to be met before applied in production. Firstly, it assumes that there is no covariate shift into the unseen regions. For instance, consider a loan default prediction model that has been trained using data from mostly 40-70-year-old customers. If the model is deployed in a market where all your observations are of people below 40 years of age, the estimations may not be reliable. Secondly, this approach assumes that there is no concept drift present in the incoming data. It is important to recall that concept drift refers to changes in the relationship between input features and targets, which can cause the model's decision boundary to become outdated, making its predictions no longer valid. Thirdly, probability calibration is required. To put it simply, when the model predicts a score of 0.9 for a given example, it means that the model is correct 90% of the time and incorrect 10% of the time. This is an example of well calibrated model. However, by default, different machine learning models are not calibrated. The good news is that they can be calibrated before being put into production.
+
+5. DLE - How it works
+02:28 - 03:07
+DLE stands for Direct Loss Estimation, which is a technique involving the prediction of the absolute error of the model for regression tasks. This error represents the uncertainty associated with the model's output. DLE achieves this using an external child model, which is a popular ML algorithm, LightGBM. It's trained on reference data and the main model's predictions. The algorithm allows for the calculation of various regression error metrics, such as MAE and MSLE. As with classification model monitoring, DLE captures the presence of a covariate shift in the input data.
+
+6. DLE - Considerations
+03:07 - 03:33
+Before applying DLE in production, it's essential to consider a set of factors. Similarly to the CBPE algorithm, DLE assumes that there is no covariate shift in the unseen regions and no concept drift in the incoming data. In addition, DLE employs an additional model to estimate the performance, which adds extra complexity to the system. Therefore, it's crucial to consider the potential increase in computational resources required to power the monitoring system.
+
+7. Let's practice!
+03:33 - 03:40
+Now that we have learned about performance estimation in production, let's move on to some exercises.
+
