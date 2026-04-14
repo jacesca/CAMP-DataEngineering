@@ -1,0 +1,27 @@
+1. Automation
+00:00 - 00:22
+Welcome to the video on automation. Automation is a key component of MLOps that ensures both the reliability and efficiency of ML pipelines. In this video, we will learn about the principles of Continuous Integration, Continuous Delivery, Continuous Training, and Continuous Monitoring and how they can be used to automate ML workflows.
+
+2. Introduction to ML automation
+00:22 - 00:49
+Automation ensures the reliability and efficiency of ML pipelines. Automation helps to reduce the risk of human error. Automation can also streamline the development and deployment process. Our four main Automation principles are Continuous Integration (CI), Continuous Delivery (CD), Continuous Training (CT), and Continuous Monitoring (CM).
+
+3. Four principles of automation
+00:49 - 01:43
+Continuous Integration (CI) is the practice of integrating code changes into a shared repository regularly. This allows for early detection and resolution of conflicts, and ensures that the code is always in a working state. Continuous Delivery (CD) is the practice of automatically building, testing, and deploying code changes. This allows for rapid and consistent model delivery. Continuous Training (CT) is the practice of continuously re-training and updating the model as new data becomes available. This allows the model to remain accurate and up-to-date, even as the data changes over time. Continuous Monitoring (CM) is the practice of monitoring the performance and accuracy of the model on an ongoing basis. This allows for early detection of issues and can be used to trigger a re-training.
+
+4. Continuous integration and delivery
+01:43 - 02:24
+Continuous Integration can help to ensure that the code is always in a working state while reducing the risk of human error. It can also help to catch issues early in the development process, reducing the time required to resolve problems. Continuous Delivery can help to ensure that models are deployed quickly and consistently, reducing the time required to bring new models to production. Like Continuous Integration, it can also help to reduce the risk of human error by streamlining the cumbersome process of code deployments. There are several CI/CD tools and practices available, including Git, AWS CodePipeline, Jenkins, and Travis CI.
+
+5. Continuous training and monitoring
+02:24 - 03:00
+Continuous Training helps ensure that the model remains accurate and up-to-date, reducing the risk of model decay and reduce the time required to re-train the model, as the process is automated and can be performed on a continuous basis. Continuous Monitoring also reduces the risk of model decay and improves overall accuracy by allowing for the access to consistent and reliable ML performance metrics. By doing so, we can identify model issues early and set up triggers for model re-training if performance dips.
+
+6. Example of ML automation at scale
+03:00 - 04:09
+Implementing automation in ML pipelines involves integrating the four Automation principles: CI, CD, CT, and CM into our ML pipeline. Here is a sample workflow for a simple classification model. First the code for the classification model is committed to a version control system like Git. Then the committed code is automatically built and tested using a CI/CD tool such as Jenkins. If the build and tests pass, the code is automatically deployed to a test environment. The model is then serialized and its dependencies are added to a Docker image which is deployed to a target environment, such as a local machine or a cloud platform. Once we deploy our model, the performance of the model is continuously monitored using monitoring tools such as Prometheus or Grafana. Feedback from the monitoring process is used to inform decisions about the model, such as re-training or optimizing the model. Given our monitoring, we can then trigger further re-trainings which starts the whole process over again.
+
+7. Let's practice!
+04:09 - 04:14
+Let's put our newfound knowledge of automation to the test!

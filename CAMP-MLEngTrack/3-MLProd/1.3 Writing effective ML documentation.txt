@@ -1,0 +1,35 @@
+1. Writing effective ML documentation
+00:00 - 00:14
+In this video, we will understand why effective, concise and reusable documentation is necessary for machine applications that will be deployed, and we will be able to explain key characteristics of such documentation.
+
+2. The components of excellent ML documentation
+00:14 - 00:27
+We will look at six main areas of documentation: data sources, data schemas, labeling methods, model experimentations plus selection criteria, training environments, and model pseudocode.
+
+3. Documenting data sources
+00:27 - 00:52
+Documenting data sources allows us to establish processes for evaluating our data quality by providing a basis for comparison and identifying potential errors or inconsistencies. It also helps us keep track of where data is coming from and whether we can access that data in the future. It also enables us to set up processes to evaluate the quality of our data and iterate on the quality if necessary.
+
+4. Data schemas
+00:52 - 01:26
+Once we have documented where our data comes from, the next area to document is data schemas. A data schema is a structure that describes the organization of data. For example, a relational database schema would specify the tables, the fields in each table, and the relationships between fields and tables. By writing down schemas in our documentation, we can provide structure for data that would otherwise be unorganized and let others know what kind of data our model is learning from.
+
+5. Labeling methods (for classification)
+01:26 - 02:10
+Often, we deal with supervised classification tasks. If that's the case, then we want to document how we came to the final labels for the response variable. For example, when working with raw unstructured data such as images, they may not be previously annotated and labeled. Understanding exactly how data was collected and labeled is vital for reproducibility. We can also use this to assess the quality of the labels, which affects the reliability of the machine learning models. Model performance can also be improved with access to better labeled data. Labeling methods can evolve if labels drift or if better labeling sources are available.
+
+6. Model pseudocode
+02:10 - 02:34
+Model pseudocode is a simplified representation of the steps involved in building your machine learning model. This often includes writing out the steps of our feature engineering work, the components of an ensemble pipeline, and outlining a model's expected inputs and outputs. This documentation allows you to keep track of the these steps for future reference and debugging purposes.
+
+7. Model experimentation + selection
+02:34 - 03:22
+Once we have our data and know how it was labeled, it's time to document how we ran our experiments and selected our machine learning models. This is important because it allows to track the model's development and share it so others can iterate on the process to make it better. We also want to document which model architectures were considered, and the metrics used to decide which model was considered "best". In tandem, we should document which hyperparameter combinations were considered when training the models. This way we can get the full picture of how and why the decision was made to choose a particular model and hyperparameter combination and potentially iterate on this in the future.
+
+8. Training environments
+03:22 - 04:02
+In addition to documenting the model selection process, we also must document what our training environment looked like, including any 3rd party packages (like scikit-learn) or any random seeds we used during training. This step is vital to help anyone reproduce the results of our machine learning training. It can also affect the performance of the machine learning algorithm. For example, if the data is transformed or a model is trained under a different random seed than the one in which the machine learning algorithm will be deployed, the algorithm may not perform as expected.
+
+9. Let's practice!
+04:02 - 04:10
+Let's practice our new knowledge to make sure it really sank in!

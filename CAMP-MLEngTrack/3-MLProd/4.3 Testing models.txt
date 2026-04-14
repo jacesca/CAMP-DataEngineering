@@ -1,0 +1,27 @@
+1. Testing models
+00:00 - 00:12
+Just like we test data, we should be testing our model to ensure reliability. This video focuses on methods for evaluating the performance and reliability of ML models.
+
+2. Individual vs Group fairness
+00:12 - 01:09
+Similar to how we test our data for bias and fairness, we can also test our ML models to make sure they are not biased against certain groups or individuals, keeping them fair and trustworthy. Individual fairness is the idea that similar individuals should be treated similarly. In other words, the model should make similar predictions for individuals who have similar features or characteristics. For example, if two individuals have similar education, work experience, and skills, they should be given similar job opportunities. Group fairness, on the other hand, is the idea that different groups should be treated equally. This means the model should make similar predictions for individuals in different groups, such as races or genders. For example, if the model is predicting loan approvals, it should not discriminate against individuals from certain racial or ethnic groups.
+
+3. Holdout testing
+01:09 - 01:40
+Holdout testing is the process of testing a model on a separate dataset that was not used during training. This is used to test the reliability of the model. One example is to conduct holdout testing at model training time. The goal is to assess a model's performance based on data the model did not train on. By testing a model on a holdout dataset, it's possible to identify issues with the model, such as overfitting or underfitting.
+
+4. Looking for model drift
+01:40 - 02:18
+Models can exhibit signs of drift, or changes, in how it makes predictions over time. Concept drift refers to a shift in the relationship between the features and the response. This can occur when the meaning or usage of features changes over time. Prediction drift refers to a shift in the model's prediction distribution, while label drift refers to a shift in the actual label distribution. Both types of drift can occur when the underlying data changes, but are measured at the model level.
+
+5. Example of looking for model drift
+02:18 - 02:45
+In this coding example, we are simulating concept drift by introducing data drift to X. The addition of noise to the test data is a form of data drift, which is a change in the distribution of the input data. By introducing this change, we are testing the model's ability to adapt to new or unexpected patterns in the input data, which is one of the key challenges in dealing with concept drift.
+
+6. Cost of complex models vs baseline models
+02:45 - 03:54
+Complex models can be more expensive than smaller baseline models in terms of both training and inference time, which can impact the scalability and efficiency of the model. Latency is the amount of time it takes for the model to process a single input and generate a prediction. This can include the time it takes to load the data into memory, run the prediction algorithm, and return the result. Latency is crucial for applications that require real-time or near-real-time processing. Throughput refers to the number of predictions the model can make in a given period of time. This can be expressed as the number of predictions per unit of time. Throughput is an important metric for applications that require high-volume processing, such as large-scale data processing or batch processing. By testing a model's latency and throughput, we can identify how much complexity we can afford to add to the model while still maintaining acceptable performance. This can help us to optimize the model's architecture and parameters to achieve the desired balance between accuracy and efficiency.
+
+7. Let's practice!
+03:54 - 04:04
+Now that we have seen tests for both data and models, let's take some time to put this material into practice and your knowledge to the test.

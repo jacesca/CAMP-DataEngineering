@@ -1,0 +1,31 @@
+1. Testing data
+00:00 - 00:22
+Ensuring that the data used in an ML pipeline is accurate, consistent, and free from errors is important because inaccurate or inconsistent data can lead to incorrect predictions and unreliable models. This video focuses on the ways we can implement tests for data to make sure that our pipeline is performing accurately and consistently.
+
+2. Data validation and schema tests
+00:22 - 01:13
+Testing data can help identify issues such as missing or abnormal outlier values, inconsistent data types, and data that is not representative of the target population. Data validation tests are used to ensure that the data being used in an ML pipeline is accurate and consistent. Schema tests are used to ensure that the data being used is in the correct format and meets certain criteria. For example, if we have a feature called "time to value" measured in seconds we want to make sure it is in fact always measured in seconds and not, for example, in minutes. Data validation and schema tests can be automated in an ML pipeline using tools such as Great Expectations, which allows for automated testing of data pipelines.
+
+3. Beyond simple testing
+01:13 - 01:41
+Standard data validation tests and schema tests check for basic issues, such as missing values and incorrect formats, but we need to think about more complicated tests like expectation tests to check for more specific or complex issues. For example, we might want to check if certain data values are within expected ranges given a mean and standard deviation or if certain patterns or trends are present in the data.
+
+4. Expectation tests
+01:41 - 02:14
+Expectation tests are a type of data validation testing routine used to test the quality of data in an ML pipeline. They check whether the data meets certain criteria or "expectations" that are defined by the user or the system. The goal is to ensure that incoming data conforms to the expected format or structure. For example, we might expect time on a website to be around 4 minutes or that a patient's medical office visits are always before the current day.
+
+5. Feature importance tests
+02:14 - 02:46
+Feature importance tests test the importance of features in an ML model and help identify which features are the most important in making predictions. One example is permutation importance. The idea is to randomly permute the values of features to see how much the performance of the model changes. These kinds of tests constantly test a model's sensitivity to features and can inform whether it is worth re-training with an updated dataset.
+
+6. Example of permutation importance
+02:46 - 03:28
+Here's an example of how to perform permutation importance analysis using Python and the scikit-learn library. We start by training a random forest classifier on the training set. We then use the permutation_importance function from the sklearn.inspection module which takes the trained model, the test set, the target values, and the number of times to repeat the permutation process as input. The output of permutation_importance is a dictionary containing the mean, standard deviation, and raw importance scores for each feature. The permutation_importance function can be used with other types of models, including regression models, as well.
+
+7. Looking for data drift
+03:28 - 04:05
+Once a model is deployed, it is important to test for drift among labels and input data. Data drift, also known as feature drift, refers to a change in the distribution of the model's input data. The model may not be able to generalize to the new data as well as it did to the original data and start to under-perform. Label drift refers to a shift in the actual label distribution. This can happen when the distribution of labels in the data changes over time, such as when the behavior of users or the population being modeled changes.
+
+8. Let's practice!
+04:05 - 04:15
+With all of that new information on testing, it's time to practice what we just learned and make sure we understand how to properly test our data. Let's go!

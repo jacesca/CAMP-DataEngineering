@@ -1,0 +1,32 @@
+1. Data and model versioning
+00:00 - 00:26
+In machine learning, it is important to keep track of the different versions of the data and models used in experiments. This is known as versioning. By versioning the data and models, we can ensure reproducibility and traceability of the experiments. This means that we can easily go back to a previous version of the data or model if needed and see how the experiment progressed over time.
+
+2. Major & minor versioning
+00:26 - 00:58
+There are two types of versioning: major and minor. Major versioning is used to indicate a big change in the data or model, such as a new feature, while minor versioning indicates a small change, such as a bug fix. By using major and minor versioning, we can easily see how the data or model has changed over time and what changes were made. This allows us to keep track of the different versions of data and models used in experiments.
+
+3. Versioning training data
+00:58 - 01:45
+To version training data, we can use unique major/minor labels or timestamps to identify different versions of the data. By doing so, we can track what data was being used for which experiments and go back to a previous version of the data if needed to see how the data has changed over time. For example, let's say version 1.0 is our initial dataset. Data version 1.1 included additional feature transformations like scaling. Data version 1.2 added a feature selection method like Chi-squared. Finally, Data version 2.0 includes a brand new source of data marking our first major upgrade to our data.
+
+4. Feature stores
+01:45 - 02:06
+A feature store is a central repository for storing and managing different versions of features. Feature stores track versions of the features which improves collaboration and reduce duplication of work. Using a feature store, we can ensure that experiments are using the same version of the data and models.
+
+5. Versioning ML models
+02:06 - 03:19
+Like data, We can also version ML models to ensure reproducbility and enabling rollbacks. Oftentimes, we increment our model versions alongside our data but sometimes our model version can change independently of our data. For example, we can also start with a model 1.0, our initial model. When we increment to data versions 1.1, we can run a fine-tuning loop and find that the same RandomForest model is still the winner, even if it has different hyperparameters than version 1.0. When we hit training data version 1.2, maybe the experiment shows that an XGBoost model is performing better now and we have major version change with version 2.0 being fine-tuned on data version 1.2. When our data changes to version 2.0 but our model is still XGBoost, that would still be a minor change. How you decide what is or is not a major/minor change is up to you, this is just one example.
+
+6. Model stores
+03:19 - 03:40
+Like a feature store, a model store is a repository for managing model versions. Using a model store, we can track versions of the models and rollback to different versions. Model stores are often used in tandem with feature stores, providing total control over data and model versions.
+
+7. Example of model versioning with MLflow
+03:40 - 04:04
+We can use mlflow to log model versions. Here we set it to "1.0". Then we save the model using mlflow's log_model function. This example is pretty simple and in practice, versioning is more complicated than this but we can get a sense of how this would work.
+
+8. Let's practice!
+04:04 - 04:12
+Let's practice our new versioning skills
+

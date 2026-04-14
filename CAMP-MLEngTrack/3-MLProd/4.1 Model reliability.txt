@@ -1,0 +1,27 @@
+1. Model reliability
+00:00 - 00:30
+In this video, we will look at model reliability in machine learning. How people perceive your model's reliability is not just about performance. It concerns the data and environment the model lives in and also elements like latency or speed of your model. We will look how models can produce accurate and consistent results when exposed to new data and how to monitor for reliability so we can intervene if necessary. Let's get started.
+
+2. Aligning ML models with business impact metrics
+00:30 - 01:18
+Businesses place significant value on model reliability, which goes beyond obtaining results. The results need to be trustworthy and align with the company's objectives. The use of business impact metrics allows businesses to assess the impact of ML models on their operations. These metrics must be consistent with the model's intended purpose and used to determine whether the model is meeting its objectives. To establish the appropriate business impact metrics, companies need to identify the model's intended purpose. The metrics may include revenue, cost savings, or customer satisfaction, among others. It is important to note that the intended purpose of the model should guide the selection of business impact metrics.
+
+3. Testing routines in ML pipelines
+01:18 - 02:15
+Testing routines help identify issues with the data, the model, or the pipeline and inform us to make improvements for more accurate and reliable models. Three important types of tests are unit tests, integration tests, and smoke tests. Unit tests test individual components of an ML pipeline like testing if a PCA instance returns the correct number of features. Integration tests test the entire pipeline and how all the components work together. Smoke tests are quick tests that can be used to ensure that the system is working as expected. For example we could test the latency - or speed - of our API and model by running samples of data through and measuring performance. Setting up testing routines and using them often can help ensure that any issues are caught early and can be addressed before they become more serious.
+
+4. Example unit test
+02:15 - 02:45
+Here's an example of a unit test for a machine learning pipeline that involves a data preprocessing step and a model training step. The unit test generates mock data, fits the pipeline on training data, and evaluates the pipeline on test data. We then assert that the accuracy is greater than 80%. This unit test can be run as part of a larger test suite to ensure that the machine learning pipeline is working correctly.
+
+5. Monitoring model staleness
+02:45 - 03:10
+In parallel with testing routines, we also need to check for model staleness. Staleness occurs when a model's performance decreases over time. This can happen due to changes in the data or changes in the environment in which the model is used. These changes are often referred to as data or model drift and can lead to inaccurate predictions.
+
+6. Identifying and addressing model staleness
+03:10 - 03:55
+Model staleness can be identified by monitoring the model's performance over time. Signs of model staleness include changes in the data or changes in the environment in which the model is used. Addressing model staleness might involve re-training the model on new data or updating the data pipeline to account for changes in the environment. For example, if the time someone spends on a website is a model feature and your analytics platform changes how that is calculated, it might confuse your model as your training data is now out of sync with inference data. Other techniques might include updating the feature engineering process or changing the model architecture.
+
+7. Let's practice!
+03:55 - 04:04
+Now that you have a sense for why and how to keep ML models reliable, let's put these ideas to the test!

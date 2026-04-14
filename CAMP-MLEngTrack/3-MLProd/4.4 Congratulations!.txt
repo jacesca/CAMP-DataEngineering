@@ -1,0 +1,27 @@
+1. Congratulations!
+00:00 - 00:12
+Here you are! Throughout our time together, you were introduced to the challenges of moving machine learning experiments into production, and you learned how to adopt an ML mindset.
+
+2. Move from experiment to production
+00:12 - 00:29
+You began your journey by learning to identify what makes an ML experiment ready to be moved into production and recognized the causes of technical debt. You learned the components of effective documentation and maintainable code and how that leads to reduced technical debt.
+
+3. Ensure reproducibility
+00:29 - 00:39
+You then saw how to ensure reproducibility in machine learning by designing reproducible experiments, performing feature engineering, and implementing data and model versioning.
+
+4. Deploying ML models
+00:39 - 00:57
+You then saw the steps to deploy machine learning models in production environments, including packaging ML models, ensuring scalability, and implementing automation. You were also introduced to the four MLOps principles: Continuous Integration, Continuous Delivery, Continuous Training, and Continuous Monitoring.
+
+5. Test + Evaluate
+00:57 - 01:16
+After deploying, you saw how to test pipelines by evaluating model reliability, testing data, and testing models. You also gained an understanding of different types of testing routines in ML pipelines, such as unit tests, integration tests, and smoke tests, and were introduced to the concept of model staleness.
+
+6. Keep going!
+01:16 - 02:04
+As your next steps, you may want to apply what you have learned in this course to a real-world project. Start by identifying a problem that can be solved with machine learning, and work on designing and implementing a machine learning solution that can be deployed in a production environment. Keep in mind the best practices you have learned in this course, such as ensuring reproducibility, scalability, reliability, and monitoring for data drift. Additionally, consider ensuring that your model is explainable and interpretable, setting up an experimentation framework for A/B testing your model and regularly re-training and updating your model to ensure it remains relevant and accurate over time. Keep learning and exploring new developments in the field of machine learning, and continue to improve your skills and expertise.
+
+7. Let's go!
+02:04 - 02:30
+Congratulations on completing the "Developing Machine Learning Models for Production" course! You have gained valuable knowledge and skills on how to adopt an ML mindset, ensure reproducibility, deploy machine learning models in production environments, and test machine learning pipelines. You are now well-equipped to take on the challenges of real-world machine learning applications. Good luck on your journey!
