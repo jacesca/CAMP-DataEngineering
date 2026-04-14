@@ -1,0 +1,47 @@
+1. Recurrent Neural Networks
+00:00 - 00:04
+It's time to discuss recurrent neural networks!
+
+2. Recurrent neuron
+00:04 - 00:38
+So far, we built feed-forward neural networks where data is passed in one direction: from inputs, through all the layers, to the outputs. Recurrent neural networks, or RNNs, are similar, but also have connections pointing back. At each time step, a recurrent neuron receives some input x, multiplied by the weights and passed through an activation. Out come two values: the main output y, and the hidden state, h, that is fed back to the same neuron. In PyTorch, a recurrent neuron is available as nn.RNN.
+
+3. Unrolling recurrent neuron through time
+00:38 - 00:58
+We can represent the same neuron once per time step, a visualization known as unrolling a neuron through time. At a given time step, the neuron represented as a gray circle receives input data x-zero and the previous hidden state h0 and produces output y-zero and a hidden state h1.
+
+4. Unrolling recurrent neuron through time
+00:58 - 01:05
+At the next time step, it takes the next value x1 as input and its last hidden state, h1.
+
+5. Unrolling recurrent neuron through time
+01:05 - 01:26
+And so it continues until the end of the input sequence. Since at the first time step there is no previous hidden state, h0 is typically set to zero. Notice that the output at each time step depends on all the previous inputs. This allows recurrent networks to maintain memory through time, which allows them to handle sequential data well.
+
+6. Deep RNNs
+01:26 - 01:42
+We can also stack multiple layers of recurrent cells on top of each other to get a deep recurrent neural network. In this case, each input will pass through multiple neurons one after another, just like in dense and convolutional networks we have discussed before.
+
+7. Sequence-to-sequence architecture
+01:42 - 02:06
+Depending on the lengths of input and output sequences, we distinguish four different architecture types. Let's look at them one by one. In a sequence-to-sequence architecture, we pass the sequence as input and make use of the output produced at every time step. For example, a real-time speech recognition model could receive audio at each time step and output the corresponding text.
+
+8. Sequence-to-vector architecture
+02:06 - 02:34
+In a sequence-to-vector architecture, we pass a sequence as input, but ignore all the outputs but the last one. In other words, we let the model process the entire input sequence before it produces the output. We can use this architecture to classify text as one of multiple topics. It's a good idea to let the model "read" the whole text before it decides what it's about. We will also use the sequence-to-vector architecture for electricity consumption prediction.
+
+9. Vector-to-sequence architecture
+02:34 - 02:54
+One can also build a vector-to-sequence architecture where we pass a single input and replace all other inputs with zeros but make use of all the outputs from each time step. This architecture can be used for text generation: given a single vector representing a specific topic, style, or sentiment, a model can generate a sequence of words or sentences.
+
+10. Encoder-decoder architecture
+02:54 - 03:19
+Finally, in an encoder-decoder architecture, we pass the input sequences, and only then start using the output sequence. This is different from sequence-to-sequence in which outputs are generated while the inputs are still being received. A canonical use case is machine translation. One cannot translate word by word; rather the entire input must be processed before output generation can start.
+
+11. RNN in PyTorch
+03:19 - 04:25
+Let's build a sequence-to-vector RNN in PyTorch. We define a model class with the init method as usual. Inside it, we assign the nn.RNN layer to self.rnn, passing it an input size of 1 since we only have one feature, the electricity consumption, an arbitrarily chosen hidden size of 32 and 2 layers, and we set batch_first to True since our data will have the batch size as its first dimension. We also define a linear layer mapping from the hidden size of 32 to the output of 1. In the forward method, we initialize the first hidden state to zeros using torch.zeros and assign it to h0. Its shape is the number of layers (2) by input size, which we extract from x as x.size-zero, by hidden state size (32). Next, we pass the input x and the first hidden state through the RNN layer. Then, we select only the last output by indexing the middle dimension with -1, pass the result through the linear layer, and return.
+
+12. Let's practice!
+04:25 - 04:28
+Let's practice!

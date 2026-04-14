@@ -1,0 +1,43 @@
+1. PyTorch and object-oriented programming
+00:00 - 00:05
+Welcome! My name is Micha? Oleszak, and I will be your instructor for this course.
+
+2. What we will learn
+00:05 - 00:26
+We will learn how to train robust deep learning models in PyTorch. We will cover how to improve the training process with optimizers, mitigate frequent training issues of vanishing and exploding gradients, build Convolutional Neural Networks for image data, Recurrent Neural Networks for sequence data, and models with multiple inputs or outputs.
+
+3. Prerequisites
+00:26 - 00:44
+Before starting, you should have a basic understanding of the training process for neural networks, including forward pass, loss computation, and backpropagation. You should also be able to train and evaluate basic models in PyTorch using Datasets and DataLoaders, as taught in the following course.
+
+4. Object-Oriented Programming (OOP)
+00:44 - 01:06
+Object-oriented programming, or OOP, is used throughout the PyTorch community to define objects with more flexibility. We will use it to define PyTorch Datasets and Models. OOP is a way of writing computer programs where we create "objects" (like virtual entities), each with abilities (called methods) and data (called attributes).
+
+5. Object-Oriented Programming (OOP)
+01:06 - 01:41
+Take this class called BankAccount. We implement the init method inside the class definition, which is called when the BankAccount object is created. It is written with two underscores on either side, takes two arguments, self and balance, and assigns balance to the object itself using self.balance. This way, the balance becomes the object's attribute. We can now create a new account object with a balance of 100 by calling BankAccount with argument 100 and assigning it to account. We can then access it with account.balance.
+
+6. Object-Oriented Programming (OOP)
+01:41 - 01:59
+Classes can also have methods. These are functions to perform various tasks. We'll add a deposit method that updates the account's balance; it's written like a normal Python function with the addition of self. We can now use this method by calling account.deposit to increase the balance.
+
+7. Water potability dataset
+01:59 - 02:16
+In this chapter, we will be working with the water potability dataset. The task is to classify a water sample as potable or drinkable (1 or 0) based on its chemical characteristics. All features have been normalized to between zero and one.
+
+8. PyTorch Dataset
+02:16 - 03:07
+To train a model, we need to build a PyTorch Dataset, set up a DataLoader, and define the model. Let's build a custom Dataset for our water potability data using OOP. We start with the init method, which reads a CSV file into a DataFrame and stores it in the data attribute as a NumPy array. The super-init command ensures our WaterDataset class behaves like its parent class, torch Dataset. Next, PyTorch requires us to implement the len method that returns the total size of the dataset which we access as the 0th element of DataFrame's shape. Finally, we add the getitem method, which takes one argument called idx, the index of a sample, and returns the features (all columns but the last one) and the label (the final column) for that sample.
+
+9. PyTorch DataLoader
+03:07 - 03:33
+With the WaterDataset class defined, we create an instance of the Dataset, passing it the training data file path. Then, we pass the Dataset to the PyTorch DataLoader, setting the batch size to two and shuffling the training samples randomly. We use the next-iter-combination to get one batch from the DataLoader. With a batch size of two, we get two samples, each consisting of nine features and a target label.
+
+10. PyTorch Model
+03:33 - 04:11
+PyTorch models are also best defined as classes. We may have seen sequential models defined like this before. That's fine for small models, but using classes gives us more flexibility to customize as complexity grows. We can rewrite this model using OOP. The Net class is based on the nn.Module, PyTorch's base class for neural networks. We define the model layers we want to use in the init method. The forward method describes what happens to the input when passed to the model. Here, we pass it through subsequent layers that we defined in the init method and wrap each layer's output in the activation function.
+
+11. Let's practice!
+04:11 - 04:14
+Let's practice!

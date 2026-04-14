@@ -1,0 +1,31 @@
+1. Multi-output models
+00:00 - 00:06
+Welcome back! In this video, we'll look at multi-output models.
+
+2. Why multi-output?
+00:06 - 00:55
+Just like multi-input models, multi-output architectures are everywhere. Their simplest use-case is for multi-task learning, where we want to predict two things from the same input, such as a car's make and model from its picture. In multi-label classification problem, the input can belong to multiple classes simultaneously. For instance, an image can depict both a beach and people. For each of these labels, a separate output from the model is needed. Finally, in very deep models built of blocks of layers, it is a common practice to add extra outputs predicting the same targets after each block. These additional outputs ensure that the early parts of the model are learning features useful for the task at hand while also serving as a form of regularization to boost the robustness of the network.
+
+3. Character and alphabet classification
+00:55 - 01:07
+Let's use the Omniglot dataset again to build a model to predict both the character and the alphabet it comes from based on the image. First, we will pass the image through some layers to obtain its embedding.
+
+4. Character and alphabet classification
+01:07 - 01:12
+Then we add two independent classifiers on top, one for each output.
+
+5. Two-output Dataset
+01:12 - 01:42
+The good news is that we have already done much of the work needed. We can reuse the OmniglotDataset we built before, with just one small difference in the samples we pass it. When the alphabet was an input to the model, we represented it as a one-hot vector. Now that it is an output, all we need is the integer representing the class label, just like with the other output, the character. This will be a number between 0 and 29 since we have 30 alphabets in the Dataset.
+
+6. Two-output architecture
+01:42 - 02:12
+Let's look at the model's architecture. We start with defining a sub-network for processing the image identical to the one we used before. Then, we define two classifier layers, one for each output, with the output shape corresponding to the number of alphabets (30) and characters (964), respectively. In the forward method, we first pass the image through its dedicated sub-network, and then feed the result separately to each of the two classifiers. Finally, we return the two outputs.
+
+7. Training loop
+02:12 - 02:56
+Let's examine the training loop. The beginning should look familiar, except for the fact that now the model produces two outputs instead of one. Having produced these outputs, we calculate the loss for each of them separately using the appropriate target labels. Next, we need to define the total loss for the model to optimize. Here, we just sum the two partial losses together, indicating that the accuracy of predicting the alphabet and the character is equally important. If that is not the case, we can weigh the partial losses with some weights to reflect their relative importance. We will explore this idea later in the next video. Finally, we run backpropagation and the optimization step as always.
+
+8. Let's practice!
+02:56 - 03:00
+Let's build a multi-output model!

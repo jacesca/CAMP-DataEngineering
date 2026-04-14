@@ -1,0 +1,51 @@
+1. Vanishing and exploding gradients
+00:00 - 00:02
+Welcome back!
+
+2. Vanishing gradients
+00:02 - 00:18
+Neural networks often suffer from gradient instability during training. Sometimes, the gradients get smaller during the backward pass. This is known as vanishing gradients. As a result, earlier layers receive hardly any parameter updates and the model doesn't learn.
+
+3. Exploding gradients
+00:18 - 00:28
+In other cases, the gradients get increasingly large, leading to huge parameter updates and divergent training. This is known as exploding gradients.
+
+4. Solution to unstable gradients
+00:28 - 00:39
+To address these problems, we need a three-step solution consisting of proper weights initialization, good activations, and batch normalization. Let's review these steps.
+
+5. Weights initialization
+00:39 - 00:46
+Whenever we create a torch layer, its parameters stored in the weight attribute get initialized to random values.
+
+6. Weights initialization
+00:46 - 01:14
+To prevent unstable gradients, research showed that initialization should ensure that the variance of the layer's inputs is close to that of its outputs and the variance of the gradients is the same before and after passing through the layer. The way to achieve this is different for each activation function. For ReLU, or Rectified Linear Unit, and similar activations, we can use He initialization, also known as Kaiming initialization.
+
+7. Weights initialization
+01:14 - 01:26
+To apply this initialization, we call kaiming-underscore-uniform-underscore from torch.nn.init on the layer's weight attribute. This ensures the desired variance properties.
+
+8. He / Kaiming initialization
+01:26 - 01:43
+To implement it, we need one small change in our model's init method: for each layer, we call kaiming_uniform_ on its weight attribute. For the last layer, where we use sigmoid activation in the forward method, we also specify nonlinearity as sigmoid.
+
+9. He / Kaiming initialization
+01:43 - 01:46
+This is what it looks like within the full model.
+
+10. Activation functions
+01:46 - 02:38
+Let's discuss activation functions now. The ReLU, or Rectified Linear Unit, is arguably the most commonly used activation. It's available as nn.functional.relu. It has several advantages, but also an important drawback. It suffers from the dying neuron problem: during training, some neurons only output a zero. This is caused by the fact that ReLU is zero for any negative value. If inputs to a neuron become negative, it effectively dies. The ELU or Exponential Linear Unit is one activation designed to improve upon ReLU. It's available as nn.functional.elu. Thanks to non-zero gradients for negative values, it doesn't suffer from the dying neurons problem. Additionally, its average output is near zero, so it's less prone to vanishing gradients.
+
+11. Batch normalization
+02:38 - 03:27
+A good choice of initial weights and activation functions can alleviate unstable gradients at the beginning of training, but it doesn't prevent them from returning during training. A solution to this is batch normalization. Batch normalization is an operation applied after a layer, in which the layer's outputs are first normalized by subtracting the mean and dividing by the standard deviation. This ensures the output distribution is roughly normal. Then, the normalized outputs are scaled and shifted using shift and scale parameters that the batch normalization learns just like linear layers learn their weights. Effectively, batch norm allows the model to learn the optimal distribution of inputs to each layer before it is applied. This speeds up the loss decrease and makes it more immune to unstable gradient issues.
+
+12. Batch normalization
+03:27 - 03:52
+To add batch normalization to a PyTorch model, we must define the batch norm layer using nn.BatchNorm1d in the init method. Here, we call it "bn1". We pass it the input size, which needs to be equal to the preceding layer's output size, in this case 16. Then, in the forward method, we pass the linear layer's output to the batch norm layer and pass the result to the activation function.
+
+13. Let's practice!
+03:52 - 03:55
+Time to practice!

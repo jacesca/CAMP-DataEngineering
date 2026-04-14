@@ -1,0 +1,71 @@
+1. Convolutional Neural Networks
+00:00 - 00:05
+Welcome! Let's discuss neural networks for image processing.
+
+2. Why not use linear layers?
+00:05 - 00:12
+Let's start with a linear layer. Imagine a grayscale image of 256 by 256 pixels.
+
+3. Why not use linear layers?
+00:12 - 00:15
+It has over 65 thousand model inputs.
+
+4. Why not use linear layers?
+00:15 - 00:19
+Using a layer with 1,000 neurons, which isn't much,
+
+5. Why not use linear layers?
+00:19 - 00:23
+would result in over 65 million parameters!
+
+6. Why not use linear layers?
+00:23 - 00:30
+For a color image with three times more inputs, the result is over 200 million parameters in just the first layer.
+
+7. Why not use linear layers?
+00:30 - 00:55
+This many parameters slows down training and risks overfitting. Additionally, linear layers don't recognize spatial patterns. Consider this image with a cat in the corner. Linearly connected neurons could learn to detect the cat, but the same cat won't be recognized if it appears in a different location. When dealing with images, a better alternative is to use convolutional layers.
+
+8. Convolutional layer
+00:55 - 01:52
+In a convolutional layer, parameters are collected in one or more small grids called filters. These filters slide over the input, performing convolution operations at each position to create a feature map. Here, we slide a 3-by-3 filter over a 5-by-5 input to get a 3-by-3 feature map. A feature map preserves spatial patterns from the input and uses fewer parameters than a linear layer. In a convolutional layer, we can use many filters. Each results in a separate feature map. Finally, we apply activations to each feature map. All the feature maps combined form the output of a convolutional layer. In PyTorch, we use nn.Conv2d to define a convolutional layer. We pass it the number of input and output feature maps, here arbitrarily chosen 3 and 32, and the kernel or filter size, 3. Let's look at the convolution operation in detail.
+
+9. Convolution
+01:52 - 02:18
+In the context of deep learning, a convolution is the dot product between two arrays, the input patch and the filter. Dot product is element-wise multiplication between the corresponding elements. For instance, for the top-left field, we multiply 1 from the input patch with 2 from the filter to get 2. We sum all values in the outcome array, returning a single value that becomes part of the output feature map.
+
+10. Zero-padding
+02:18 - 02:41
+Before a convolutional layer processes its input, we often add zeros around it, a technique called zero-padding. This is done with the padding argument in the convolutional layer. It helps maintain the spatial dimensions of the input and output, and ensures equal treatment of border pixels. Without padding, the pixels at the border would have a filter slide over them fewer times resulting in information loss.
+
+11. Max Pooling
+02:41 - 03:22
+Max pooling is another operation commonly used after convolutional layers. In it, we slide a non-overlapping window, marked by different colors here, over the input. At each position, we select the maximum value from the window to pass forward. For example, for the green window position, the maximum is five. Using a window of two-by-two as shown here halves the input's height and width. This operation reduces the spatial dimensions of the feature maps, reducing the number of parameters and computational complexity in the network. In PyTorch, we use nn.MaxPool2d to define a max pooling layer, passing it the kernel size.
+
+12. Convolutional Neural Network
+03:22 - 04:20
+Let's build a convolutional network! It will have two parts: a feature extractor and a classifier. Feature extractor has convolution, activation, and max pooling layers repeated twice. The first two arguments in Conv2d are the numbers of input and output feature maps. The first Conv2d has three input feature maps corresponding to the RGB channels. We use filters of size 3 by 3 set by the kernel_size argument and zero-padding by setting padding to 1. For max pooling, we use the MaxPool2d layer with a window of size 2 to halve the feature map in height and width. Finally, we flatten the feature extractor output into a vector. Our classifier consists of a single linear layer. We will discuss how we got its input size shortly. The output is the number of target classes, the model's argument. The forward method applies the extractor and classifier to the input image.
+
+13. Feature extractor output size
+04:20 - 04:28
+To determine the feature extractor's output size, we start with the input image's size of 3 by 64 by 64.
+
+14. Feature extractor output size
+04:28 - 04:37
+The first convolution has 32 output feature maps, increasing the first dimension to 32. Zero-padding doesn't affect height and width.
+
+15. Feature extractor output size
+04:37 - 04:40
+Max pooling cuts height and width in two.
+
+16. Feature extractor output size
+04:40 - 04:46
+The second convolution again increases the number of feature maps in the first dimension to 64.
+
+17. Feature extractor output size
+04:46 - 04:52
+And the last pooling halves height and width again, giving us 64 by 16 by 16.
+
+18. Let's practice!
+04:52 - 04:55
+Let's practice!

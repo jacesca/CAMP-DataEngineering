@@ -1,0 +1,32 @@
+1. Training and evaluating RNNs
+00:00 - 00:04
+Welcome back! Let's train and evaluate our RNN.
+
+2. Mean Squared Error Loss
+00:04 - 00:44
+Up to now, we have been solving classification tasks using cross-entropy losses. Forecasting of electricity consumption is a regression task, for which we will use a different loss function: Mean Squared Error. Here is how it's calculated. The difference between the predicted value and the target is the error. We then square it, and finally average over the batch of examples. Squaring the errors plays two roles. First, it ensures positive and negative errors don't cancel out, and second, it penalizes large errors more than small ones. Mean Squared Error loss is available in PyTorch as nn.MSELoss.
+
+3. Expanding tensors
+00:44 - 01:23
+Before we take a look at the model training and evaluation, we need to discuss two useful concepts: expanding and squeezing tensors. Let's tackle expanding first. All recurrent layers, RNNs, LSTMs, and GRUs, expect input in the shape: batch size, sequence length, number of features. But as we loop over the DataLoader, we can see that we got the shape batch size of 32 by the sequence length of 96. Since we are dealing with only one feature, the electricity consumption, the last dimension is dropped. We can add it, or expand the tensor, by calling view on the sequence and passing the desired shape.
+
+4. Squeezing tensors
+01:23 - 02:00
+Conversely, as we evaluate the model, we will need to revert the expansion we have applied to the model inputs which can be achieved through squeezing. Let's see why that's the case and how to do it. As we iterate through test data batches, we get labels in shape batch size. Model outputs, however, are of shape batch size by 1, our number of features. We will be passing the labels and the model outputs to the loss function, and each PyTorch loss requires its inputs to be of the same shape. To achieve that, we can apply the squeeze method to the model outputs. This will reshape them to match the labels' shape.
+
+5. Training loop
+02:00 - 02:18
+The training loop is similar to what we have already seen. We instantiate the model and define the loss and the optimizer. Then, we iterate over epochs and training data batches. For each batch, we reshape the input sequence as we have just discussed. The rest of the training loop is the same as before.
+
+6. Evaluation loop
+02:18 - 02:47
+Let's look at the evaluation loop. We start by setting up the Mean Squared Error metric from torchmetrics. Then, we iterate through test data batches without computing the gradients. Next, we reshape the model inputs just like during training, pass them to the model, and squeeze the outputs. Finally, we update the metric. After the loop, we can print the final metric value by calling compute on it, just like we did before.
+
+7. LSTM vs. GRU
+02:47 - 03:15
+Here is our LSTM's test Mean Squared Error again. Let's see how it compares to a GRU network. It seems that for our electricity consumption dataset, with the task defined as predicting the next value based on the previous 24 hours of data, both models perform similarly, with GRU achieving even a slightly lower error. In this case, GRU might be preferred as it achieves the same or better results while requiring less processing power.
+
+8. Let's practice!
+03:15 - 03:20
+Let's practice evaluating recurrent neural networks!
+

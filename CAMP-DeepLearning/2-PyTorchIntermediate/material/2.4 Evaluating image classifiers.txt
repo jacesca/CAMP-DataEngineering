@@ -1,0 +1,40 @@
+1. Evaluating image classifiers
+00:00 - 00:03
+It's time to evaluate our cloud classifier!
+
+2. Data augmentation at test time
+00:03 - 00:31
+First, we need to prepare the Dataset and DataLoader for test data. But what about data augmentation? Previously we defined the training dataset passing it training transforms, including our augmentation techniques. For test data, we need to define separate transforms without data augmentation! We only keep parsing to tensor and resizing. This is because we want the model to predict a specific test image, not a random transformation of it.
+
+3. Precision & Recall: binary classification
+00:31 - 00:50
+Previously, we evaluated a model based on its accuracy, which looks at the frequency of correct predictions. Let's review other metrics. In binary classification, precision is the fraction of correct positive predictions, while recall is the fraction of all positive examples that were correctly predicted.
+
+4. Precision & Recall: multi-class classification
+00:50 - 01:11
+For multi-class classification, we can get a separate recall and precision score for each class. For example, precision of the cumulus cloud class will be the fraction of cumulus-predictions that were correct, and the recall for the cumulus class will be the fraction of all cumulus clouds examples that were correctly predicted by the model.
+
+5. Averaging multi-class metrics
+01:11 - 02:02
+With 7 cloud classes, we have 7 precision and 7 recall scores. We can analyze them individually for each class or aggregate them. There are three ways to do so. Micro average calculates the precision and recall globally by counting the total true positives, false positives, and false negatives across all classes. It then computes the precision and recall using these aggregated values. Macro average computes the precision and recall for each class independently and takes the mean across all classes. Each class contributes equally to the final result, regardless of its size. Weighted average calculates the precision and recall for each class independently and takes the weighted mean across all classes. The weight applied is proportional to the number of samples in each class. Larger classes have a greater impact on the final result.
+
+6. Averaging multi-class metrics
+02:02 - 02:46
+In PyTorch, we specify the average type when defining a metric. For example, for recall, we pass average as none to get seven recall scores, one for each class, or we can set it to micro, macro, or weighted. But when to use each of them? If our dataset is highly imbalanced, micro-average is a good choice because it takes into account the class imbalance. Macro-averaging treats all classes equally regardless of their size. It can be a good choice if you care about performance on smaller classes, even if those classes have fewer data points. Weighted averaging is a good choice when class imbalance is a concern and you consider errors in larger classes as more important.
+
+7. Evaluation loop
+02:46 - 03:28
+We start the evaluation by importing and defining precision and recall metrics. We will use macro averages for demonstration. Next, we iterate over test examples with no gradient calculation. For each test batch, we get model outputs, take the most likely class, and pass it to metric functions along with the labels. Finally, we compute the metrics and print the results. We got a recall higher than precision, meaning the model is better at correctly identifying true positives than avoiding false positives. Note that using larger images, more convolutional layers, and a classifier with more than one linear layer could improve both metrics.
+
+8. Analyzing performance per class
+03:28 - 03:55
+Sometimes it is informative to analyze the metrics per class to compare how the model predicts specific classes. We repeat the evaluation loop with the metric defined with average equals None. This time, we only compute the recall. We get seven scores, one per class, but which score corresponds to which class? To learn this, we can use our Dataset's class_to_idx attribute, which maps class names to indices.
+
+9. Analyzing performance per class
+03:55 - 04:26
+We can use a dictionary comprehension to map each class name (k) to its recall score by indexing the list of all scores called recall with the v class index from the class_to_idx method. This will be a tensor of length one, so we call dot-item on it to turn it into a scalar. Looking at the results, a recall of 1.0 indicates that all examples of clear sky have been classified correctly, while high cumuliform clouds were harder to classify and have the lowest recall score!
+
+10. Let's practice!
+04:26 - 04:29
+Let's practice!
+

@@ -1,0 +1,23 @@
+1. Evaluation of multi-output models and loss weighting
+00:00 - 00:09
+Welcome back! In this final video of the course, we will discuss loss weighting and evaluation of multi-output models. Let's dive in!
+
+2. Model evaluation
+00:09 - 01:04
+Let's start with the evaluation of a multi-output model. It's very similar to what we have done before. However, with two different outputs, we need to set up two accuracy metrics: one for alphabet classification and one for character classification. We iterate over the test DataLoader and get the model's predictions as usual. Finally, we update the accuracy metrics, and after the loop, we can calculate their final values. The accuracy is higher for alphabets than for characters, which is not surprising: predicting the alphabet is an easier task with just 30 classes to choose from; for characters, there are 964 possible labels. The difference in accuracy scores is not very large, however: 31 versus 24 percent. This is because learning to recognize the alphabets helped the model recognize individual characters: there is a combined positive effect from solving these two tasks at once.
+
+3. Multi-output training loop revisited
+01:04 - 01:37
+Let's now take a look at the training loop for our last model predicting characters and alphabets. Because the model solves two classification tasks at the same time, we have two losses: one for alphabets, and another one for characters. However, since the optimizer can only handle one objective, we had to combine the two losses somehow. We chose to define the final loss as the sum of the two partial losses. By doing so, we are telling the model that recognizing characters and recognizing alphabets are equally important to us. If that is not the case, we can combine the two losses differently.
+
+4. Varying task importance
+01:37 - 02:05
+Let's say that correct classification of characters is twice as important for us as the classification of alphabets. To pass this information to the model, we can multiply the character loss by two to force the model to optimize it more. Another approach is to assign weights to both losses that sum up to one. This is equivalent from the optimization perspective, but arguably easier to read for humans, especially with more than two loss components.
+
+5. Warning: losses on different scales
+02:05 - 02:57
+There is just one caveat: when assigning loss weights, we must be aware of the magnitudes of the loss values. If the losses are not on the same scale, one loss could dominate the other, causing the model to effectively ignore the smaller loss. Consider a scenario where we're building a model to predict house prices, and use MSE loss. If we also want to use the same model to provide a quality assessment of the house, categorized as "Low", "Medium", or "High", we would use cross-entropy loss. Cross-entropy is typically in the single-digit range, while MSE can reach tens of thousands. Combining these two would result in the model ignoring the quality assessment task completely. A solution is to scale each loss by dividing it by the maximum value in the batch. This brings them to the same range, allowing us to weight them if desired and add together.
+
+6. Let's practice!
+02:57 - 03:00
+Let's practice!

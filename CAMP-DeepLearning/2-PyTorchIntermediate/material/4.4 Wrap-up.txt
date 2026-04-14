@@ -1,0 +1,15 @@
+1. Wrap-up
+00:00 - 00:03
+Congratulations on completing the course!
+
+2. What you learned
+00:03 - 00:57
+In Chapter 1, we discussed object-oriented programming and how it's used to construct PyTorch Datasets and models. You also learned about different optimizers, and how to combat the problems of vanishing and exploding gradients using weight initialization, activation functions, and batch normalization. In Chapter 2, you learned to handle images in PyTorch to train and evaluate image classifying convolutional neural networks. You also augmented the image data to improve the classification results. In Chapter 3, you tackled sequential data. You learned how to process it and how to construct a PyTorch dataset from it. You also got familiar with popular recurrent architectures, including LSTM and GRU models, which you have trained and evaluated. Finally, in Chapter 4, you learned to build models with multiple inputs and multiple outputs, and apply loss weighting to multi-output models to put more focus on one of the tasks.
+
+3. What's next?
+00:57 - 01:37
+You can now build a wide range of deep learning models to solve various problems. But the journey doesn't end here! Here are a couple of next steps you could take on your journey. First, the transformers model. This type of architecture was first developed for natural language processing but today it finds applications in other areas such as computer vision. Transformers also stand behind large language models like ChatGPT. Second, self-supervised learning. It's a training method in which the model creates labels from unlabeled data. It's increasingly popular in many domains. You can learn more about various data science topics through other DataCamp courses.
+
+4. Congratulations and good luck!
+01:37 - 01:47
+Once again, congratulations! I hope the knowledge and skills you've gained will help you build a variety of robust neural networks in PyTorch!

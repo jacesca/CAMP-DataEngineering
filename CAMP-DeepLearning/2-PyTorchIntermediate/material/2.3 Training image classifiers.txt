@@ -1,0 +1,39 @@
+1. Training image classifiers
+00:00 - 00:05
+Welcome back! In this video, we will train the cloud classifier.
+
+2. Data augmentation revisited
+00:05 - 00:18
+Before we proceed to the training itself, however, let's take one more look at data augmentation and how it can impact the training process. Say we have this image in the training data with the associated label: cat.
+
+3. Data augmentation revisited
+00:18 - 00:38
+We apply some augmentations, for example rotation and horizontal flip, to arrive at this augmented image, and we assign it the same cat label. Both images are part of the training set now. In this example, it is clear that the augmented image still depicts a cat and can provide the model with useful information. However, this is not always the case.
+
+4. What should not be augmented
+00:38 - 00:48
+Imagine we are doing fruit classification, and decide to apply a color shift augmentation to an image of the lemon. The augmented image will still be labeled as lemon,
+
+5. What should not be augmented
+00:48 - 00:51
+but in fact, it will look more like a lime.
+
+6. What should not be augmented
+00:51 - 01:26
+Another example: classification of hand-written characters. If we apply the vertical flip to the letter "W" it will look like the letter "M". Passing it to the model labeled as "W" will confuse the model and impede training. These examples show that, sometimes, specific augmentations can impact the label. It's important to notice that an augmentation could be confusing depending on the task. We could apply the vertical flip to the lemon or the color shift to the letter "W" without introducing noise in the labels. Remember to always choose augmentations with the data and task in mind!
+
+7. Augmentations for cloud classification
+01:26 - 02:01
+So, what augmentations will be appropriate for our cloud classification task? We will use three augmentations. Random rotation will expose the model to different angles of cloud formations. Horizontal flip will simulate different viewpoints of the sky. Automatic contrast adjustment simulates different lighting conditions and improves the model's robustness to lighting variations. We have already used the RandomHorizontalFlip and RandomRotation transforms. To include a random contrast adjustment, we will add the RandomAutocontrast function to the list of transforms.
+
+8. Cross-Entropy loss
+02:01 - 02:31
+In the clouds dataset, we have seven different cloud types, which means this is a multi-class classification task. This calls for a different loss function than we used before. The model for water potability prediction we built before was solving a binary classification task, for which the BCE or binary cross-entropy loss function is appropriate. For multi-class classification, we will need to use the cross-entropy loss. It's available in PyTorch as nn.CrossEntropyLoss.
+
+9. Image classifier training loop
+02:31 - 02:48
+Except for the new loss function, the training loop looks the same as before. We instantiate the model we have build with seven classes and set up the cross-entropy loss and the Adam optimizer. Then, we iterate over the epochs and training batches and perform the usual sequence of steps for each batch.
+
+10. Let's practice!
+02:48 - 02:51
+Let's practice!
