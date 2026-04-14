@@ -1,0 +1,59 @@
+1. Model packaging
+00:00 - 00:07
+We will close off this chapter by digging a bit deeper into an MLOps-worthy model package.
+
+2. Into the wild
+00:07 - 00:26
+Model packaging marks the end of the ML development stage and our entry into Operations. This is when things get real, and, before we step into that wilderness, we need to ensure that our model package has everything we need to reach our core MLOps objectives. These are, once again:
+
+3. Into the wild - deployment
+00:26 - 00:28
+smooth deployment
+
+4. Into the wild - reproducibility
+00:28 - 00:30
+reproducibility
+
+5. Into the wild - monitoring
+00:30 - 00:32
+and monitoring.
+
+6. Model storage format options
+00:32 - 00:47
+First, we need our crown jewel, the trained model itself. We can save it in various formats, but ultimately, we must choose one that our model development framework can produce and our serving framework can load and run.
+
+7. PMML and pickle
+00:47 - 00:55
+Two well-known examples are the PMML and the pickle format.
+
+8. PMML
+00:55 - 01:19
+PMML is designed to be universal, allowing you to train a model using one programming language, then load it and serve it using an application written in a completely different one. The downside of such universal formats is that they can be pretty tricky to customize. Open-source tools give us the highest degree of freedom when custom models are required.
+
+9. Pickle
+01:19 - 01:43
+Within the Python ecosystem, for example, the most common object storage format is the so-called pickle format. There is practically no limit to what you can store in it. Still, we lose on the side of cross-platform compatibility: a "pickled" model can only be loaded by another Python application that has the exact same libraries as the ones used during model training.
+
+10. Pickle 2
+01:43 - 02:01
+So, if pickle is our format of choice, we must store the list of model dependencies within the package metadata and use it to verify compatibility on the serving side. Bottom line, there is no free lunch, so choose your model storage format carefully.
+
+11. Reproducibility 1
+02:01 - 02:28
+Then, we must ensure reproducibility. As mentioned previously, a model is reproducible if we can recreate it in an automated manner at any point in time. Being able to do that proves that we control our model production process to the finest level of detail. We will not lay out the reproduction procedure step-by-step, but let's list the ingredients you need to have in your package when the time comes.
+
+12. Reproducibility 2
+02:28 - 02:49
+They are: A pointer to the exact version of the model build pipeline code. A pointer to the exact versions of the datasets used during the training, including the train/splits during performance evaluation. The record of the performance achieved on the test set.
+
+13. Monitoring
+02:49 - 03:08
+Finally, we want to monitor our model in production. Whether it is implemented within the model-serving app or delegated to another service, the prerequisite is that data profiles, which contain our expectations about the input and output data, are saved within the model package.
+
+14. Lock 'n' load!
+03:08 - 03:14
+We're locked and loaded and ready to go! Excited? Not so fast.
+
+15. Let's practice!
+03:14 - 03:17
+First, let's establish what we have learned!

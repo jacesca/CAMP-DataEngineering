@@ -1,0 +1,95 @@
+1. Life-cycling stages
+00:00 - 00:13
+So what exactly do we mean when we talk about the model life cycle? To avoid confusion down the line, let's differentiate between the different life cycles we come across in the domain of machine learning.
+
+2. Machine Learning life cycles
+00:13 - 00:27
+We have the ML project, the ML application, and the ML model life cycle. Let's first define these three terms and explain the relationships between them.
+
+3. ML Project Life Cycle
+00:27 - 00:40
+The detailed ML project flow and life cycle are not the focus of this course, so let's broadly define it as the over-arching effort of solving a business problem using machine learning, which, if successful
+
+4. If successful
+00:40 - 00:48
+results in building our ML application and models. We will focus from now on on the app and model life cycle only.
+
+5. Machine Learning Application vs Models
+00:48 - 00:58
+These two are entirely separate things. An ML model is just the pure estimator, such as a predictive model that produces a daily sales forecast.
+
+6. ML application
+00:58 - 01:07
+But an ML application, although it has ML models in its core, typically includes many the other bells and whistles, like
+
+7. Business rules
+01:07 - 01:18
+business rules, such as "If a user has rated less than 10 movies, recommend most popular movies globally, otherwise use the personalized recommendation model."
+
+8. Database
+01:18 - 01:23
+a database, for storing extra features, and logging model outputs,
+
+9. GUI
+01:23 - 01:27
+a graphical interface for admin users, to configure and troubleshoot the app.
+
+10. API
+01:27 - 01:35
+an API, through which the app can communicate with the outside world in a consistent and secure manner, and so forth.
+
+11. Monolithic ML app
+01:35 - 01:38
+In practice, it is not rare to see the ML model
+
+12. Lock in
+01:38 - 01:42
+locked into the ML application, forming a monolithic unit.
+
+13. App model separation
+01:42 - 01:46
+The best practice, however, is to separate them
+
+14. Each its own way
+01:46 - 01:52
+so that each can go its own way, which is the philosophy of the so-called "microservice architecture"
+
+15. Decoupled ML app
+01:52 - 01:54
+resulting in
+
+16. Application life cycle
+01:54 - 01:57
+a separate ML application life cycle and ML model life cycle.
+
+17. Model life cycle
+01:57 - 02:10
+Think of the ML application as a car, which can have a lifetime of several decades, and ML models as its tires, which can be changed independently numerous times over that same period.
+
+18. We are here
+02:10 - 02:16
+That being said, in this course, we are focusing on the model life cycle.
+
+19. A model is...
+02:16 - 02:28
+Within that scope, we need to be specific with one thing: A model for us is not something abstract or theoretical but a concrete, trained model, ready to be put in use.
+
+20. Deployment
+02:28 - 02:42
+A trained model and other resources needed for deployment comprise a model deployment package. Putting that model into use is what we call deployment and what marks the beginning of our model's life cycle.
+
+21. Model monitoring
+02:42 - 02:56
+Once up and running, we keep a watchful eye over the model's behavior to ensure, first, that it is running and, second, that its performance meets expectations. We call this post-deployment model monitoring.
+
+22. Decommissioning
+02:56 - 03:16
+Finally, a time will come when we would want to replace our current model with a new version. Perhaps we found a better model, or better features, or the modeled process changed, invalidating the existing model. The old model will be decommissioned and archived, making way for the new kid on the block.
+
+23. Model archiving
+03:16 - 03:39
+Proper archiving is especially important in regulated industries, where regulators can ask us to explain our model's decision from several years ago. For that, we need to be able to load and run all previous model versions, which is not as trivial a requirement as it may seem. This is called reproducibility.
+
+24. Let's practice!
+03:39 - 03:44
+Ok, let's practice and see what we have learned!

@@ -1,0 +1,103 @@
+1. Serving modes
+00:00 - 00:14
+Welcome back again! So, we have created our model package with our trained model and all the necessary metadata. We are entering the Operations phase, and our model's life cycle is about to begin.
+
+2. Model as a service 1
+00:14 - 00:21
+So what is model serving? Although our ML app and model are pieces of software
+
+3. Model as a service 2
+00:21 - 00:23
+from the perspective of end-users
+
+4. Model as a service 3
+00:23 - 00:27
+they are services like any other.
+
+5. Model as a service 4
+00:27 - 00:34
+Just like they call a food delivery service and expect a meal at their door within a certain amount of time, our users expect to
+
+6. Model as a service 5
+00:34 - 00:38
+simply make a call to our ML app and receive predictions.
+
+7. Serving and serving mode
+00:38 - 00:53
+This act of providing predictions as a service is called model serving. The exact way in which we then implement it is called the serving mode. Choosing the right one for our use case is not trivial.
+
+8. When 1
+00:53 - 00:58
+First question we ask ourselves is: WHEN should this model generate predictions?
+
+9. When 2
+00:58 - 01:01
+Can we just schedule it to run once a day?
+
+10. When 3
+01:01 - 01:08
+Or should it run on-demand, whenever a certain event occurs, or a user makes a request?
+
+11. Batch prediction 1
+01:08 - 01:10
+The first case is called
+
+12. Batch prediction 2
+01:10 - 01:12
+batch prediction
+
+13. Batch prediction 3
+01:12 - 01:20
+because scheduled predictions are usually run on a larger collection of data, called a BATCH in ML jargon.
+
+14. Batch prediction 4
+01:20 - 01:28
+And because it is not event- or user-driven, we also call it OFFLINE or STATIC prediction.
+
+15. Batch prediction: Keep it simple
+01:28 - 01:42
+Batch prediction is the simplest form of model serving to implement technically; if our use case allows it, we should go for it. A good fit for this approach would be the automatic generation of monthly sales forecasts.
+
+16. On-demand prediction 1
+01:42 - 01:52
+But, in many cases, it only makes sense to generate predictions if a specific event happens or a user makes a request to do it.
+
+17. On-demand prediction 2
+01:52 - 01:58
+We call this on-demand prediction, but also online or dynamic prediction.
+
+18. On-demand prediction 3
+01:58 - 02:04
+And as with every on-demand service, time now becomes of importance.
+
+19. Latency definition 1
+02:04 - 02:06
+The technical term for the time passed between the
+
+20. Latency definition 2
+02:06 - 02:08
+user request
+
+21. Latency definition 3
+02:08 - 02:12
+and the service response is called latency.
+
+22. Acceptable latency
+02:12 - 02:19
+Sometimes the users can wait for an hour for the predictions, but sometimes they must be produced immediately.
+
+23. Near-real time prediction a.k.a. Stream processing
+02:19 - 02:35
+When latency of several minutes is acceptable, we implement the so-called near-real-time prediction. This mode of serving is also called “stream processing” because the requests going into the model and predictions going out of it form so-called data streams.
+
+24. Real-time prediction
+02:35 - 02:53
+When the predictions must be generated in less than a second, we call this real-time prediction. ML services for detecting credit card fraud require this level of performance. In such cases, a late prediction is as good as useless.
+
+25. When latency is a priority
+02:53 - 03:24
+Sometimes, achieving low latency has such a high priority, that we will choose a weaker, but faster model, over a stronger, but slower one. Sometimes, the model is even deployed directly to the user’s device, reducing the latency to a minimum. This mode of serving is called “edge deployment” and our smartphones run many ML models already. We use them in our navigation apps, to unlock our phone via facial recognition, to apply image filters, et cetera.
+
+26. Let's practice!
+03:24 - 03:32
+Ok, let's practice now and see how well you understood the most important ML serving modes!

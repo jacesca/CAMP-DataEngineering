@@ -1,0 +1,72 @@
+1. Model maintenance
+00:00 - 00:02
+Welcome back!
+
+2. Previously...
+00:02 - 00:20
+In the previous video we discussed building a system for catching all sorts of anomalies and disturbances in our ML services. We can't address each potential failure in detail, so we'll focus on our core object of interest: the ML model.
+
+3. Model deteriorated
+00:20 - 00:33
+Once we have concluded that it has deteriorated below acceptable levels, we should do something to bring it within acceptable boundaries. But what? Essentially, we can choose between two paths:
+
+4. Options
+00:33 - 00:36
+to improve the model
+
+5. Options 2
+00:36 - 00:40
+or to improve the training data.
+
+6. Model-centric
+00:40 - 01:05
+The first direction is called the model-centric approach to ML development, and it is something that we see in ML competitions. There it makes perfect sense because, in competitions, datasets are fixed. Our only option under such constraints is to experiment with different models or combinations of models and derive better features from the data at hand.
+
+7. Data-centric model development
+01:05 - 01:37
+But in real-life use cases, we have much more freedom to clean, enrich and enlarge our training datasets. We call this direction the data-centric approach to ML development, which has been gaining more and more popularity in recent years. It has been shown that, on average, for the same amount of effort, it yields superior performance improvements compared to the pure model-centric approach. So how do we do it?
+
+1 https://datacentricai.org/
+8. Quality above quantity
+01:37 - 02:00
+The key idea is that the quality of our dataset is more important than its size. That means having more features carrying relevant information, and better labels. Labels are the values of the target variable in the training set and their quality is defined by how close they are to the ground truth.
+
+9. Poor labels
+02:00 - 02:08
+If we train a regression model for predicting temperature and use labels collected from a cheap, noisy thermometer
+
+10. Poor models
+02:08 - 02:18
+-- our model cannot possibly be any good. The same goes for classification tasks: Poor labels equal poor models.
+
+11. Benefits of labeling tools
+02:18 - 02:55
+When done manually, labeling can be a complex and long process, resulting in numerous mistakes. Luckily, numerous labeling tools make this process more efficient and accurate. They equip the labelers with a convenient interface built for the purpose. They suggest examples that should be labeled first based on their impact on model performance, detect labeling mistakes, and so forth. Here we can see one such tool for labeling data for building image classifiers.
+
+12. Human-in-the-Loop
+02:55 - 03:23
+In some applications, we can achieve continuous labeling integrated within the same process that uses the ML model. That is the case with so-called Human-in-the-loop systems, where humans and ML models work side-by-side and support each other. Imagine an ML-based application for medical diagnostics. First, the ML model gives a prediction and a measure of confidence in it.
+
+13. HIL 2
+03:23 - 03:28
+If it's confident enough, we accept the prediction as final.
+
+14. HIL 3
+03:28 - 03:34
+If not, we forward the case to an actual doctor to make the final decision.
+
+15. HIL 4
+03:34 - 03:43
+After each human intervention, we will have one more labeled example that we can use to improve our model.
+
+16. When the labels arrive
+03:43 - 03:57
+When we finally construct our new training dataset, we run the ML build pipeline, and voila - we have our new model. We can proceed with the testing and deployment if it performs better than the old one. If not, we keep searching
+
+17. Keep searching
+03:57 - 04:32
+looking for better models, features, data, etc. What will help us immensely, in that case, is a metadata store for experiment tracking, such as MLFlow Tracking. Such stores help us document the model selection journey and avoid running the same experiments twice. Bottom line, in whichever direction the reality changes, MLOps tools and practices will help us maintain our model fastest and most efficiently.
+
+18. Let's practice!
+04:32 - 04:35
+It's time for some exercises.

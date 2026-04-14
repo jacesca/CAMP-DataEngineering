@@ -1,0 +1,67 @@
+1. Model governance
+00:00 - 00:08
+Welcome to the last lesson of this chapter and this course. We will use it to introduce the topic of Model Governance.
+
+2. Impact of ML today
+00:08 - 00:21
+Machine Learning models are everywhere nowadays. Small and large enterprises in all industries use them to make complex and frequent decisions with enormous impact.
+
+3. Disaster scenario
+00:21 - 00:27
+Imagine a major bank giving out loans based on predictions from an ML model.
+
+4. Risk underestimation
+00:27 - 00:32
+If that model constantly underestimates each client's risk of default
+
+5. Bankruptcy
+00:32 - 00:43
+that can lead to the bankruptcy of the bank itself, endangering the savings of all of its clients and disrupting the whole economies of multiple countries.
+
+6. Cost of decisions
+00:43 - 00:49
+Whether made by a man or a machine, every wrong estimate has a cost
+
+7. Cost of decision 2
+00:49 - 01:02
+and ML models can make thousands of them per second. It quickly becomes apparent that we cannot let anybody deploy whatever model they want, whenever they want.
+
+8. Governance
+01:02 - 01:25
+The people from DataRobot define model governance as "the overall process for how an organization controls access, implements policy, and tracks activity for models and their results", and add that "effective model governance is the bedrock for minimizing risk to both an organization's bottom line and to its brand".
+
+9. Governance in all phases
+01:25 - 01:33
+Model governance spans all phases of an ML project.
+
+10. During design
+01:33 - 01:55
+The design phase deals with questions such as: In which cases is it ethical to use ML and in which not? Which use cases may justify the usage of private, sensitive data, and how will that be controlled? How will we detect and eliminate potential unethical model bias?
+
+11. During development
+01:55 - 02:14
+In the development phase, governance will define the requirements for documenting the model selection journey, training data preparation, data quality assurance and data and code versioning, reproducibility, etc. This is where having a metadata store, for example, will be of great value.
+
+12. Before production
+02:14 - 02:42
+Then, before going to production, we will have to prove the API of our model is secure, that we have a monitoring and alerting system in place, and that we have understood and handled various ways our ML service can fail. And for all of those controls, it must be defined who exactly will perform them, when, and how we will document the outcomes for audit purposes.
+
+13. Freedom to govern
+02:42 - 03:02
+In some industries, we are free to define our governance approaches ourselves. In others, like in the financial sector, model governance requirements are determined by local and international regulations, where a lack of compliance can lead to severe penalties. Of course, the strictness of governance is proportional to the risk associated with the model in question.
+
+14. Spectrum extremes
+03:02 - 03:16
+Product recommendation engines will be much less scrutinized than models for detecting money laundering.
+
+15. Risk categories
+03:16 - 03:34
+The key criteria for assigning a model a low, medium, or high-risk score are the impact of its decisions and the frequency at which it produces them. In such an analysis, not only financial but also reputational risks are estimated.
+
+16. Summary
+03:34 - 04:18
+It's clear that all these extra steps may add a bit of friction to our project, which is why governance is not the most beloved word in the ML-vocabulary. But its opposite is anarchy, which we clearly don't want. Launching as many ML models in production as fast as possible is not a goal in itself. These models must ultimately generate business value, and we must refrain from doing harm through reckless, ungoverned practices. The more our MLOps framework matures and the more models we have in operation, the more obvious the value of a good governance framework will become.
+
+17. Let's practice!
+04:18 - 04:21
+Let's practice what we have just learned!

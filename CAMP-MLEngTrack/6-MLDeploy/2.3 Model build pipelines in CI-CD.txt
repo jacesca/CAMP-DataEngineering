@@ -1,0 +1,79 @@
+1. Model build pipelines in CI/CD
+00:00 - 00:05
+We mentioned in the first chapter that we have two ML-related build pipelines:
+
+2. Two build pipelines in ML
+00:05 - 00:22
+The one that builds the app that serves our model, which is a standard software build pipeline. And the other one that builds, aka trains, the model itself, which is the central pipeline of our MLOps framework, and to which we will dedicate this lesson.
+
+3. Model not the same as build
+00:22 - 00:39
+We also mentioned earlier that a pipeline is a catch-all term for any automated sequence of steps, which can cause confusion sometimes. So it's maybe useful to take a moment here to note that the model BUILD pipeline should not be confused with the MODEL pipeline.
+
+4. Model pipe 1
+00:39 - 00:46
+A model pipeline is a term we use for a machine learning model which executes a sequence of data processing steps
+
+5. Model pipe 2
+00:46 - 00:47
+like cleaning
+
+6. Model pipe 3
+00:47 - 00:49
+and feature extraction
+
+7. Model pipe 4
+00:49 - 00:53
+before the final prediction is made.
+
+8. ML build pipe 1
+00:53 - 01:01
+And the model BUILD pipeline is an automated workflow that, at the very least, loads a model or a model pipeline and the training dataset
+
+9. ML build pipe 2
+01:01 - 01:06
+then trains the model and saves it for further use.
+
+10. MLOps-worthy build pipeline
+01:06 - 01:24
+So, we can easily set up SOME model build pipeline, but to create one deserving of an MLOps seal of approval, it also needs to enable and facilitate deployment, reproducibility, monitoring, and CI/CD integration. Let's go through each of these points.
+
+11. Full package
+01:24 - 01:35
+The model build pipeline should not produce only the model but a complete model package, containing a variety of MLOps-critical artifacts.
+
+12. Deployment artifacts
+01:35 - 01:41
+As explained earlier, an artifact is a term we us for all pipeline outputs.
+
+13. Deployment artifacts 2
+01:41 - 01:57
+In the context of deployment, a mandatory artifact can be an extensive specification of software dependencies which our model needs in order to run. To be sure everything is indeed in place, we will perform test deployments on a regular basis.
+
+14. Reproducibility
+01:57 - 02:27
+Then we have one of the greatest fears of many scientists nowadays: Reproducibility. A model is reproducible if we can demonstrate that we can recreate it from scratch at any point in time. Even if there is no frequent need to do that, reproducibility increases trust because it proves that we can control our model production process to the finest level of detail. The keys to ensuring reproducibility are
+
+15. Reproducibility 2
+02:27 - 02:29
+code versioning
+
+16. Reproducibility 3
+02:29 - 02:37
+training data versioning, and recording these code and data versions within the model metadata.
+
+17. Monitoring
+02:37 - 02:48
+Then we have the monitoring. Monitoring means constantly checking if our model behaves as expected. As mentioned before, an important part in creating these expectations is called data profiling.
+
+18. Monitoring 2
+02:48 - 02:57
+The best practice is to create such data profiles during the execution of the model build pipeline.
+
+19. CI/CD enablement
+02:57 - 03:24
+Finally, the cherry on top of the MLOps cake is to enable our model build pipeline to run within the CI/CD framework. A key advantage of this approach is that it physically prevents us from creating any models using unversioned code or data. For it to work, the CI/CD platform needs to connect to all the MLOps components it uses as input sources and storage for the artifacts it generates.
+
+20. Let's practice!
+03:24 - 03:29
+That's a very nice list we have built! Let's practice what we have learned!

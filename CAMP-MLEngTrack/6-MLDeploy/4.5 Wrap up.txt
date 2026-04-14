@@ -1,0 +1,19 @@
+1. Wrap up
+00:00 - 00:04
+And there it is, model operations in a nutshell.
+
+2. Principles above all
+00:04 - 00:24
+We have introduced many concepts and tools during this course. Still, we should remember that MLOps is, above all, a set of principles and practices revolving around automation, collaboration, efficiency, transparency, and user satisfaction.
+
+3. MLOps is a necessity
+00:24 - 00:48
+As complex as it might look at first glance, implementing MLOps tools and practices is the only sustainable way to practice Machine Learning at any reasonable scale. It is the only antidote against accumulating crippling technical debt and even with just a dozen models in production, it's importance quickly becomes obvious.
+
+4. Start small and grow
+00:48 - 01:04
+And it's not all or nothing: We can and should start small and simple and go from there. Every step forward in our MLOps maturity will pay off a hundredfold.
+
+5. Thank you!
+01:04 - 01:15
+Thank you for staying with us all the way through. We wish you all the success in your MLOps journey. Keep learning, keep growing and enjoy the ride!
