@@ -1,0 +1,35 @@
+1. Hyperparameter Tuning with DVC
+00:00 - 00:07
+Hi again! In this video, we are going to learn hyperparameter tuning with DVC.
+
+2. Hyperparameter tuning workflow
+00:07 - 01:11
+Hyperparameter tuning involves fine-tuning different parameters in a machine learning model to optimize its performance. This involves searching a parameter space spanned by predefined ranges. The end result is a unique set of these parameters that achieves the highest possible score, such as accuracy. We can use the results of hyperparameter tuning in model training. It can take the best parameter configuration and produce metrics on the test set. For example, in this case, the optimal max_depth is 20. It is important to consider that model training can also be performed without searching for best parameters, so a loose coupling between the two is desired - where changes from hyperparameter tuning job are sufficient, but not necessary, to run a new training job. Finally, both jobs are affected by upstream dataset changes.
+
+3. Training code changes
+01:11 - 01:30
+A typical modification in training code would be reading hyperparameters from a file and training a model on that set of parameters. Note that depending upon the model type and architecture, the parameter file can change considerably.
+
+4. Hyperparameter Tuning with GridSearch
+01:30 - 02:32
+To perform hyperparameter tuning, let's consider using Grid Search cross-validation. The general idea here is to split the training data equally into N groups, also called folds. Then, for each combination of parameters, we train the model N times, each using a unique combination of N-1 folds and checking performance on the hold-out fold. In this example, we define the same model type and read the parameter ranges from a configuration file. Then, we define a GridSearch cross-validation object that splits data into five folds and does cross-validation. Finally, we access the best hyperparameter combination and write it to the same file that the training job can read.
+
+5. DVC YAML changes
+02:32 - 03:15
+Here is what a hyperparameter tuning stage looks like in the DVC YAML file. Note the dependency of the dataset, which will trigger the preprocessing step if needed, in addition to the configuration file and the Python script. We track the performance of hyperparameter tuning in a markdown file. Note how we are not tracking the best parameters output file here because if we did, running the training job after manually editing the best parameter file would have triggered running the hyperparameter tuning job, which we don't necessarily want.
+
+6. Triggering individual stages
+03:15 - 04:07
+With the previous setup in DVC YAML, we can discuss triggering the stages independently. DVC allows us to do that by specifying the stage name in the dvc repro command. Since we are not tracking the output file, we need to run the hyperparameter tuning stage forcibly using the dash f flag. This ensures that the best parameter file always gets updated after running this step. Similarly, we can trigger the training stage by providing the appropriate target. As mentioned earlier, both stages are dependent upon the preprocessing step, so any data changes will result in running those steps.
+
+7. Hyperparameter Run Output
+04:07 - 04:35
+Once the hyperparameter job is triggered and completed, it generates a tabular output to display the scores values with the pertinent parameter combination. We can access it using cv results property of the grid search cv object and write it to markdown table. This would be useful later while generating PRs, which we will discuss in the next video.
+
+8. Summary
+04:35 - 05:13
+In summary, there are two ways we can trigger a model training job. Running in tandem with hyperparameter tuning, we can start with a correct branch name, make changes to the search configuration, and force executing the DVC pipeline. We can use CML to create a new training PR, and trigger GHA workflow by force pushing the commit. Alternatively, we can choose to edit the parameter file manually in a branch starting with train slash, and open a PR to run model training.
+
+9. Let's practice!
+05:13 - 05:21
+It is time to test your knowledge of performing hyperparameter tuning with DVC.

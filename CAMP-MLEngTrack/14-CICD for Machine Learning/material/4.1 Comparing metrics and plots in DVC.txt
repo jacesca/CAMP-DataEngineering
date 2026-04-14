@@ -1,0 +1,49 @@
+1. Comparing metrics and plots in DVC
+00:00 - 00:09
+Welcome back! In this video, we will learn about tracking model performance with metrics and plots using DVC.
+
+2. Configuring DVC YAML file
+00:09 - 00:49
+One useful feature of DVC is that we can track model performance metrics, visualize them with plots, and compare performance across experiments. This is very useful in picking the best model for a given machine learning problem. To track metrics, we need to configure our DVC YAML file by tracking the metrics dot json file under a metrics key instead of the outs field. The parameter cache equals false indicates that the metrics file should be tracked in git instead of DVC.
+
+3. Querying and comparing DVC metrics
+00:49 - 01:24
+We can use the DVC metrics show command to print current metrics on the terminal. DVC also supports comparing metrics in different experiments. Assuming you have committed your previous experiment in DVC and Git, we can change a hyperparameter and rerun dvc repro. This would create a new experiment. Comparing metrics using dvc metrics diff command shows an improvement in model performance.
+
+1 https://dvc.org/doc/command-reference/metrics
+4. Setting up DVC Github Action
+01:24 - 01:42
+To compare metrics in the GitHub Actions pipeline, we first need to add setup-dvc github action as a step. Next, we replace the model training block with running DVC pipeline instead of running Python scripts for preprocessing and training.
+
+5. Setting up DVC Github Action
+01:42 - 02:31
+Finally, we can print the metrics in the markdown report that will get published as comment in the pull request using dvc metrics show. The additional md argument prints the metrics as a markdown table. Recall that we are working from a training branch, so comparing metrics should be done against the main branch to answer if our current model is better than the existing one. To do that, we need to run a git fetch command to get latest state of main branch, and then running dvc metrics diff specifying the comparison branch as main. Finally, we can create a comment using CML as before.
+
+6. Pipeline in action
+02:31 - 02:52
+Upon push, we should see the comment with metrics and metrics diff appear, which should guide us if we want to merge this pull request. Note that setting the diff for the first time from a branch may not be informative because the main branch does not contain any tracked metrics yet.
+
+7. Plot types in DVC
+02:52 - 03:10
+With DVC, it is also possible to render and compare plots. DVC templates support a variety of plot types including scatter plots, different styles of linear plots, confusion matrices, and horizontal bar plots.
+
+1 https://dvc.org/doc/user-guide/experiment-management/visualizing-plots#plot-templates-data-series-only
+8. Configuring DVC YAML for plots
+03:10 - 03:47
+DVC does not track image file for plots, but plot data files instead. The datafile name also serves as a target name that can be referenced later under the plots key in DVC yaml file. A template is required to specify the plot style. Next, we indicate how data is structured by specifying column names from the data file and the plot axis labels with title. Recall that cache false means that the predictions file is tracked via Git.
+
+9. Plotting Confusion Matrix
+03:47 - 04:07
+Similar to metrics, we can now display plots by running dvc plots show command in the terminal. It needs to reference the corresponding target in the DVC YAML. By default, it returns a path to an HTML file with an embedded interactive plot.
+
+10. Comparing Confusion Matrix
+04:07 - 04:28
+We can also compare plots in different branches using dvc plots diff followed by a target in DVC YAML and the branch to compare it to. This allows us to visualize the plots side by side and compare the changes between branches.
+
+11. Comparing ROC Curves
+04:28 - 04:48
+To compare line plots like the ROC curve, which plots true positive rate versus false positive rate at different decision thresholds, we can calculate values of true positive rate and false positive rate from scikit learn, and use the simple template to plot a linear plot.
+
+12. Let's practice!
+04:48 - 04:57
+It is time to test your understanding of handling metrics and plots in DVC.

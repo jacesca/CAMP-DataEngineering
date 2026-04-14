@@ -1,0 +1,31 @@
+1. Introduction to YAML
+00:00 - 00:05
+Now, we will learn the basics of YAML.
+
+2. What is YAML?
+00:05 - 01:31
+YAML, which stands for "YAML Ain't Markup Language," is a widely used language for organizing data in a readable format. It is employed for configuration files, data exchange, and structured data representation in different applications. It serves as an alternative to languages like XML and is comparable to JSON in terms of functionality. YAML aims to provide a standard format for transferring data between different programming languages or applications, facilitating interoperability and seamless communication. One of YAML's key strengths lies in its simplicity and clean syntax. The format is designed to be easily readable by humans, making it straightforward to write and comprehend. YAML files typically use the file extensions dot yaml or dot yml. YAML finds extensive usage in writing configurations for various CI/CD tools. For instance, popular tools like GitHub Actions and Data Version Control, which we will cover later in the course, rely on YAML configuration files to define workflows, specify tasks, and orchestrate the build, test, and deployment processes.
+
+3. YAML Syntax
+01:31 - 02:22
+In YAML, there is an emphasis on indentation and line separation to denote levels and structure in data. The indentation system is quite similar to the one Python uses. However, tabs are not allowed in YAML, so we have to use spaces for indentation. Incorrect or inconsistent indentation in YAML can lead to syntax errors, misinterpretation of the document's structure, or unexpected behavior during parsing. For this reason, it is a good practice to use YAML validation tools that most modern IDEs are equipped with. Finally, the text after the pound or the hash symbol is treated as a comment in YAML.
+
+4. YAML Scalars
+02:22 - 03:25
+YAML supports a range of data types for representing different values. These types include scalars representing fundamental values like strings, numbers, booleans, and null. Numbers can be represented as integers or floating points. Like in other programming languages, Boolean values in YAML have two possible states: true or false. In YAML, true and false are keywords and should not be enclosed in quotation marks to be interpreted as booleans. Similarly, null values in YAML are represented by the keyword null or the tilde character. In YAML, strings, in some cases, can be left unquoted, but you can also wrap them in single or double quotes. There are other important styles for writing strings, which we will cover in the next chapter.
+
+5. YAML Collections
+03:25 - 04:26
+Collections are another data type that include both sequences and mappings, making it easier to organize ordered data and key-value pairs in a structured manner. Sequences, also known as lists, arrays, or vectors, allow for an ordered collection of elements. They can be written in block style using hyphens or in flow style using square brackets. The examples demonstrate the block and flow styles of representing a sequence with three elements. Mappings, also known as dictionaries, key-value pairs, hashes, or objects, consist of unique keys and corresponding values that are separated by a colon. The examples display string keys mapped to different data types like string, a nested block list, and a compact flow list consisting of heterogeneous data.
+
+6. Summary
+04:26 - 04:54
+YAML is a data formatting language commonly used for writing CI/CD configurations for Machine Learning applications. Indentation is vital in maintaining the structure, though tabs are prohibited. YAML consists of mappings, sequences, and scalars serving as the foundational elements. Understanding these concepts enables organized and readable YAML files.
+
+7. Editor Exercises Layout
+04:54 - 05:22
+In editor exercises, you'll see the layout shown in the slide. The pink box shows folder contents, that allows us to select and open files. The blue box highlights opened files and provides area to edit these files. The green box outlines the terminal area that is used for running bash commands.
+
+8. Let's practice!
+05:22 - 05:27
+It is time to test your knowledge of basic YAML syntax.

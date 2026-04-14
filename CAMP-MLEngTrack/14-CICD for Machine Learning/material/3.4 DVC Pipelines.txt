@@ -1,0 +1,40 @@
+1. DVC Pipelines
+00:00 - 00:09
+Welcome back! In this video, we will learn about DVC pipelines, a powerful way to reproduce ML steps.
+
+2. The need for a data pipeline
+00:09 - 01:14
+So far, we have learned about versioning data files with DVC, but it is still not very useful for ML tasks. This is because, for actual ML use cases, data needs to be filtered, cleaned, and transformed before training ML models. Additionally, there is no need to repeat steps that don't introduce change. For example, changing model hyperparameters doesn't necessitate rerunning data cleaning code. For example, we can start with a raw dataset and run preprocessing code to obtain a processed dataset as output. This then gets fed into a model training and evaluation code to generate model artifacts, plots, and metrics. Often, these steps are dependent on each other and can be expressed as a dependency graph, more commonly called Directed Acyclic Graphs or DAG.
+
+3. DVC pipelines
+01:14 - 02:22
+A DVC pipeline is a structured sequence of stages that defines the workflow and its dependencies for a machine learning or data processing task. These steps are defined in the dvc dot yaml file, which configures the stages of a DVC pipeline, such as Input data and scripts, such as preprocessing or training code files, under the deps key Stage execution commands, such as running Python scripts, under cmd key. Output artifacts, such as processed dataset, under outs key, and Special outputs like evaluation metrics and plot data under their respective keys. The workflow defined by DVC pipeline is similar to the GitHub Actions workflow, but geared towards ML tasks instead of CI/CD. As a substitute for Python commands, we can run the DVC pipeline inside the GitHub Actions workflow.
+
+4. Defining pipeline stages
+02:22 - 02:58
+We can use dvc stage add command to create a stage in the dvc dot yaml file. In this example, we run the dvc stage command to perform data preprocessing by specifying name with dash n, dependencies with dash d, outputs with dash o, and writing the command at the end. This creates a corresponding stage in dvc dot yaml file where corresponding entries are written appropriately.
+
+5. Dependency graphs
+02:58 - 03:16
+Similarily, we can add a training stage that depends upon the processed data output from the previous step. This creates a dependency graph described by two steps, named preprocess and train as shown on the right.
+
+6. Reproducing a pipeline
+03:16 - 03:58
+The pipeline definition in dvc dot yaml allows us to quickly reproduce the pipeline using dvc repro. In our example, preprocess and train steps are run one after the other, and a dvc dot lock file is created. This file is very similar to dot dvc files, which we learned about in the previous video, and captures the pipeline state. It's good practice to immediately commit dvc dot lock file to Git after its creation or modification to record the current state and results.
+
+7. Using cached results
+03:58 - 04:14
+If we don't change the dependencies of a step, it will skip its execution when we try to rerun the pipeline. This is particularly useful in complex DAGs, where we don't want to run unchanged steps.
+
+8. Visualizing DVC pipeline
+04:14 - 04:26
+Visualizing the pipeline as a graph of connected stages helps to understand its structure. We can use dvc dag command for this purpose.
+
+1 https://dvc.org/doc/command-reference/dag
+9. Summary
+04:26 - 05:08
+To summarize, DVC pipelines solve important issues in ML iteration by Automatically determining which parts of a project need to be run, and uses caching to avoid unnecessary reruns. dvc dot yaml and dvc dot lock files describe the data to use and commands to generate the pipeline results. This sets the stage for CI/CD for ML, which we will learn in the next chapter. We can generate pipelines with dvc stage add, run them with dvc repro, and visualize them with dvc dag.
+
+10. Let's practice!
+05:08 - 05:15
+Finally, let's test your knowledge of DVC pipelines.

@@ -1,0 +1,32 @@
+1. Introduction to Continuous Integration/Continuous Delivery for Machine Learning
+00:00 - 00:07
+Hi, my name is Ravi, and in this course we will learn Continuous Integration/Continuous Delivery techniques for machine learning.
+
+2. SDLC Overview
+00:07 - 00:57
+The Software Development Life Cycle (SDLC) is a systematic approach and process that encompasses all the stages involved in the development, deployment, and maintenance of software applications. Workflow in SDLC refers to the sequence of steps and activities that are followed to complete a specific task or achieve a particular goal. Examples of these steps include building, testing, and deploying code. "Build" involves transforming source code into an executable form. "Test" encompasses activities to validate the software's functionality and quality. "Deploy" involves making the software available for use in a specific environment.
+
+3. SDLC in machine learning
+00:57 - 02:08
+Developing machine learning (ML) applications is a complex task that requires addressing unique challenges alongside conventional software expectations. Unlike fixed algorithms, ML models continuously learn and adapt to new data. Data engineering plays a crucial role in ML projects, consuming a significant portion of the development budget and necessitating skilled engineers for tasks such as data collection, extraction, transformation, storage, and serving. However, integrating ML with the software development life cycle (SDLC) and adopting automation, such as Continuous Integration/Continuous Delivery, streamlines the process, enabling faster delivery of high-quality ML software. Continuous Integration/Continuous Delivery also facilitates efficient iteration and exploration of algorithms, hyperparameters, and data configurations. It allows for rapid prototyping and testing, leading to quicker insights and informed decision-making.
+
+1 https://cloud.google.com/blog/products/ai-machine-learning/making-the-machine-the-machine-learning-lifecycle
+4. What is CI/CD?
+02:08 - 02:56
+Continuous Integration is a software development practice that involves automatically building and testing code changes as they are integrated into a shared repository, ensuring the code remains functional and free of integration issues throughout the development process. The acronym CD can mean either Continuous Delivery or Continuous Deployment depending upon the context. Continuous Delivery is a software development approach that aims to automate the entire process of delivering software changes to production or a production-like environment. Continuous Deployment takes the principles of Continuous Delivery a step further by automating the entire release process with automated deployments.
+
+5. CI/CD in machine learning
+02:56 - 04:25
+Machine Learning (ML) application workflows differ from conventional software development in a few key aspects. First, a model should be interpreted as a combination of certain algorithms and data, so it is important to version and manage datasets used in model training in addition to the models and the code. Second, experimentation with different model architectures and hyperparameters requires extensive bookkeeping of model performance that can benefit from automation. Next, there are challenges around versioning models, data, and code to ensure reproducibility, experiment tracking, and deployment rollbacks. Traditional software testing often focuses on functional and unit testing, while ML systems require additional testing techniques. CI for ML should involve testing the entire ML pipeline, including data preprocessing, model training, and evaluation, to ensure the quality and reliability of the system. Deploying ML models is often more complex compared to deploying traditional software. CI for ML requires careful consideration of model serving infrastructure, monitoring model performance in production, and managing model updates in real-world scenarios.
+
+6. Scope of this course
+04:25 - 04:38
+In this course, we will focus on data preparation and versioning, model development and evaluation, and hyperparameter tuning steps using CI/CD.
+
+7. Summary
+04:38 - 05:35
+The Software Development Life Cycle workflow encompasses building, testing, and deploying code. Continuous Integration (CI) facilitates frequent code merging and early issue detection. Continuous Delivery (CD) enables manual approval for code changes before deployment. Continuous Deployment (CD) automates code deployment without manual intervention. In Machine Learning, CI/CD brings additional benefits like data and model versioning, model building, automation of experiments, comprehensive testing, and efficient deployment. Data and model versioning ensure reproducibility. Automation streamlines iterative experimentation. Testing encompasses the entire ML pipeline, and deployment is made more efficient, rapid, and reliable.
+
+8. Let's practice!
+05:35 - 05:40
+It's time to test your knowledge about CI/CD.

@@ -1,0 +1,57 @@
+1. Model training with GitHub Actions
+00:00 - 00:08
+Welcome back! In this video, we will learn how to train Machine Learning models with GitHub Actions.
+
+2. Dataset: Weather Prediction in Australia
+00:08 - 00:42
+We will use the weather prediction dataset to train a binary classification model. It is a mid-sized dataset on weather records in different areas of Australia and is used for classification models to predict whether it will rain tomorrow. It contains five categorical features, such as location, Wind directions, or if it rained today, and 17 numerical features, such as temperature readings throughout the day, wind gust speeds, rainfall amount etc.
+
+1 https://www.kaggle.com/datasets/rever3nd/weather-data
+3. Modeling workflow
+00:42 - 01:26
+On a high level, our modeling workflow entails converting categorical features to numerical, replacing missing values, and standardizing features by scaling to zero mean and unit standard deviation. Then, we split data into train and test batches and fit a Random Forest Classifier with fixed hyperparameters. Finally, we report standard model performance metrics like precision and recall on test dataset. Note that we are not doing hyperparameter tuning at this stage, and we will do so later in the course.
+
+4. Data preparation: target encoding
+01:26 - 01:58
+Target encoding allows us to efficiently convert categorical variables into numerical ones without significant complexity. It is useful when the large dimensionality of the categorical features might prevent us from using one hot encoding. In target encoding, we replace each occurrence of a given element in the feature column with its corresponding average value in the associated target column.
+
+1 https://maxhalford.github.io/blog/target-encoding/
+5. Imputing and Scaling
+01:58 - 02:14
+Next, we impute missing values using the mean strategy, followed by scaling the imputed data to zero mean and unit standard deviation using the function impute_and_scale_data.
+
+6. Training
+02:14 - 02:43
+Finally, we split our dataset into training and test sets using the train_test_split function from the scikit-learn library, and train the classifier model using the training set. We have chosen the RandomForestClassifier type of model to ensure high predictive accuracy, robustness to overfitting, and its ability to handle large features.
+
+7. Metrics
+02:43 - 02:53
+To get a comprehensive view of model performance, we report the standard metrics such as accuracy, precision, recall, and F1 score.
+
+1 https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
+8. Plots
+02:53 - 03:16
+We also create a plot that displays the confusion matrix as a heatmap, showing the count of true positive, false positive, true negative, and false negative predictions. Each cell of the heatmap represents the corresponding count, and the diagonal cells represent the correct predictions.
+
+9. GitHub Actions Workflow
+03:16 - 04:07
+Our workflow triggers the model training when a pull request is created from a feature branch to main. We can merge the when the training is successful and peer review is positive. To assist with this workflow, we will use Continuous Machine Learning (CML). It is an open-source tool for implementing CI/CD in ML. As GitHub Action, CML is used for machine provisioning, model training and evaluation, comparing ML experiments, and monitoring changing datasets. CML can help train and evaluate models and then generate a visual report with results and metrics automatically on every pull request.
+
+1 https://cml.dev/
+2 https://martinfowler.com/bliki/FeatureBranch.html
+10. CML commands
+04:07 - 04:21
+Our Github Actions YAML file would first declare the usage of setup-cml github action, followed by running the model training code as one would on a terminal.
+
+1 https://www.markdownguide.org/basic-syntax/#images
+11. CML commands
+04:21 - 04:55
+Next, we read the contents of results dot txt file and a graph image that are outputs of model evaluation and write them to a markdown file. Finally, we use cml comment create command followed by the name of markdown file we just created to create a comment in the PR. Notice the use of github token as environment variable allowing us to comment in the PR.
+
+12. Output
+04:55 - 05:02
+Once the workflow is triggered using a pull request, it will create a comment similar to the one shown in the figure.
+
+13. Let's practice!
+05:02 - 05:09
+It is time to practice setting ML training pipelines with CML.

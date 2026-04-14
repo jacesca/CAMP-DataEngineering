@@ -1,0 +1,56 @@
+1. Setting a basic CI pipeline
+00:00 - 00:09
+Welcome back! In this video we will learn how to set up a continuous integration pipeline using GitHub Actions.
+
+2. Anatomy of GitHub Actions workflow
+00:09 - 00:41
+Before we set up a workflow, let's take a closer look at the components of it. First, we define the name of the workflow - here we call it "CI". Then, we need to define what events in the repository can trigger this workflow. In this case, we want the workflow to be triggered by pushes into the main branch, so we use the on-push-branches block to configure that.
+
+3. Anatomy of GitHub Actions workflow
+00:41 - 01:44
+We know that a workflow run is made up of one or more jobs that can run sequentially or in parallel. Here, let's define a job called "build". Recall that jobs run on compute machines called "runners", and we can configure the type of runner using "runs-on" field. Notice the indentation of the "runs-on" field relative to the "build" field. Finally, we can define our steps using the "steps" field, which, in our case, contains a multi-line echo command that will print the strings using the runner's shell. Notice the vertical bar after the "run" key indicating literal block style strings used to write the commands. This means that the echo commands would execute one after another.
+
+4. Anatomy of GitHub Actions workflow
+01:44 - 01:51
+Putting it all together, here is what our workflow looks like.
+
+5. Create a GitHub repository
+01:51 - 02:08
+Now, we will create a new repository. Go to github dot com slash new. After adding a Python-based gitignore file and an appropriate license, click the create repository button.
+
+6. Set up GitHub Actions
+02:08 - 02:33
+Next, we would need to verify that GitHub Actions are enabled in the repository. We can navigate to github dot com slash username slash repository name slash settings slash actions, and verify that the actions permissions are set up as shown in the slide.
+
+7. Setup a "Hello, World!" GitHub Action
+02:33 - 02:43
+We are ready to set up our first GitHub Action. On the repository landing page, click on Actions in the top banner.
+
+8. Setup a "Hello, World!" GitHub Action
+02:43 - 02:51
+This takes us to a page where we can search for a "Simple Workflow" and click Configure.
+
+9. Setup a "Hello, World!" GitHub Action
+02:51 - 03:25
+This leads us to a page where we can create or edit a YAML file to describe our workflow. Note that all workflows should be saved in dot github slash workflows folder relative to the parent directory of the repository. Let's create a workflow to print Hello World on the screen. We can use the left section to write the YAML contents and commit our changes.
+
+10. Setup a "Hello, World!" GitHub Action
+03:25 - 03:34
+Type in the commit message and click on the Commit changes button. This should kick off the workflow immediately.
+
+11. Inspect the GitHub Actions Run
+03:34 - 04:02
+Navigating back to the landing page, we will see that the commit SHA is preceded by either an amber circle that represents ongoing execution, or a green tick that represents successful execution, or red cross that indicates that the pipeline failed. In this particular case, our pipeline succeeded.
+
+12. Inspect the GitHub Actions Run
+04:02 - 04:28
+Clicking on the "Actions" in the top menu bar again, we can see that the layout of this page has changed from before, and now it shows our successful workflow. Clicking on it leads to the page where we can see the jobs in the workflow. In our case, we can see the job with the name "build."
+
+13. Inspecting the Logs
+04:28 - 04:49
+Clicking on the "build" job leads us to a page with output logs from the steps. In addition to the "Run a multi-line script" step, which shows the output of the echo commands we wrote, we can see two additional steps for setting up and completing the job.
+
+14. Let's practice!
+04:49 - 04:56
+It is time to test your knowledge of GitHub Actions syntax.
+

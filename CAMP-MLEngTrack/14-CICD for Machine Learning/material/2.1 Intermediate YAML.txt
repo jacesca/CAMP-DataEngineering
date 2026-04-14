@@ -1,0 +1,63 @@
+1. Intermediate YAML
+00:00 - 00:10
+We've learned some YAML fundamentals. In order to work effectively with GitHub Actions, we will need to broaden our understanding of YAML.
+
+2. Multiline strings: Block scalar format
+00:10 - 00:44
+So far, we covered single-line strings. Now, we'll explore multiline strings in YAML using Block Scalar Strings, which is a way to represent multi-line strings with line breaks and indentation while preserving their formatting. It's useful for code snippets, log messages, and configurations in ML CI/CD workflows. It has two styles and three chomping indicators, which we will learn next.
+
+3. Style indicators - literal
+00:44 - 00:59
+The literal style is one of the two block scalar styles. This style preserves line breaks and indentation exactly, which is quite useful for writing shell commands.
+
+4. Literal style example
+00:59 - 01:20
+Here is an example containing several lines of text with blank lines and extra indentation. Notice how literal style preserves these new lines and indentations, except for the last line - which is controlled by the chomping style indicator that we will learn later.
+
+1 https://yaml-multiline.info/
+5. Style indicators - fold
+01:20 - 01:42
+Fold style is another type of block scalar format that removes line breaks into spaces. This is useful for writing messages in a wrapped style, where the text is divided into multiple lines to improve readability and accommodate long or multi-line content.
+
+6. Fold style example
+01:42 - 02:05
+In this example, the fold style of multiline string removes blank lines and collapses line breaks into spaces. However, line breaks followed by a blank line are preserved as line breaks. Lines with extra indentation are also not folded.
+
+1 https://yaml-multiline.info/
+7. Chomping indicators
+02:05 - 02:35
+Chomping indicators are like special instructions that help YAML know whether to keep or remove extra blank lines at the end of a multi-line text. They are added after the style indicators. The default mode is "clip," which adds a single newline at the end. This mode does not require any additional symbol for representation.
+
+8. Chomping indicators - strip
+02:35 - 02:40
+"Strip" indicator removes all newlines at the end.
+
+9. Strip chomping example
+02:40 - 02:56
+In this example, notice how strip chomping style is added after the literal style indicator. Consequently, there is an absence of newline characters at the end of the example block.
+
+1 https://yaml-multiline.info/
+10. Chomping indicators - keep
+02:56 - 03:02
+"Keep" indicator retains all newlines at the end.
+
+11. Keep chomping example
+03:02 - 03:12
+Switching to keep chomping style, we can see that all newline character at the end of the example block are preserved.
+
+1 https://yaml-multiline.info/
+12. Dynamic value injection
+03:12 - 04:18
+Although not part of standard YAML specification, expressions are used as placeholders to represent values that can change when the YAML file is being read by specific programs. They allow us to inject values from the environment or references to other parts of the YAML file, making it easier to manage and customize configurations for various scenarios. These expressions are typically embedded within curly braces with a leading dollar symbol. In this example, we are dynamically referencing the database YAML fields from a config object that is defined elsewhere as a separate object. However, it's essential to note that not all YAML parsers support expressions, and their exact syntax and usage might depend on the specific context and tools being used.
+
+13. Multi-document YAML
+04:18 - 05:19
+If you want to store or transmit multiple independent YAML documents in a single file, you can create a multi-document YAML file. A multi-document YAML file is a YAML file that contains multiple independent YAML documents within it. Each YAML document is a separate and complete YAML structure. Multi-document YAML allows you to group related documents together for easier organization and management. These YAML documents are separated by the three dashes delimiter. In this example, three separate YAML documents are within the same file. Each document represents information about a person, including their name, age, and an additional occupation in the case of Bob.
+
+14. Summary
+05:19 - 05:31
+Here is a summary of the symbols covered in the video so far. To reiterate, chomping indicators appear after style indicators in YAML.
+
+15. Let's practice!
+05:31 - 05:37
+It's time for you to test your YAML knowledge.

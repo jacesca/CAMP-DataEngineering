@@ -1,0 +1,44 @@
+1. Introduction to GitHub Actions
+00:00 - 00:05
+In this video, we'll learn GitHub Actions, a popular CI/CD platform.
+
+2. What is GitHub Actions?
+00:05 - 00:37
+GitHub Actions, abbreviated as GHA, is a built-in automation and CI/CD system provided by GitHub that allows us to automate your build, test, and deployment pipeline directly within our GitHub repositories. Pipeline refers to a sequence of interconnected steps or stages that represent the flow of work and data in a software development or deployment process.
+
+3. What is GitHub Actions?
+00:37 - 00:54
+In a car assembly line, workers perform specific tasks like attaching the engine and painting. GitHub Actions automates software development in a similar manner, ensuring seamless, efficient steps.
+
+4. What is GitHub Actions?
+00:54 - 01:10
+Developers create automated steps for tasks like code building, testing, and deployment in GitHub Actions. These actions follow an order, mirroring an assembly line, for smooth software development progress.
+
+1 https://medium.com/empathyco/applying-ci-cd-using-github-actions-for-android-1231e40cc52f
+5. GHA Components: Event
+01:10 - 01:35
+Now, we'll look at the different components of GitHub Actions. An event is a particular action within a repository that initiates the execution of a workflow. These actions can originate from GitHub when someone opens a pull request, creates an issue, or pushes a commit to the repository.
+
+6. GHA Components: Workflow
+01:35 - 02:30
+A workflow is a customizable automated process that executes one or multiple jobs. These workflows are specified in a YAML file stored in your repository and can be triggered by events within the repository, manually initiated, or scheduled to run at specific intervals. In a repository, workflows are specified within the dot github slash workflows directory. Multiple workflows can exist, each performing a distinct set of tasks. For instance, one workflow can be dedicated to building and testing pull requests, another to deploy the application upon each release, and yet another to add labels when new issues are opened.
+
+7. GHA Components: Steps and Actions
+02:30 - 03:27
+Steps in the GitHub Actions Platform are individual units of work, executed in order and dependent on the previous step. Each step is executed on the same compute machine, and we can share data from one step to another. For example, we can have a step that builds our application followed by a step that tests the application that was built. Examples of work that can be performed in steps are running applications like compiled code and shell scripts. We can also combine complex but frequently repeated tasks specific to the GitHub Actions platform in a custom application called Action. Examples of actions could be checking out a repository, automatically commenting on a pull request, etc.
+
+8. GHA Components: Jobs and Runners
+03:27 - 03:55
+A job is a set of steps in a workflow. Unlike steps, each job is independent of other jobs - so we can run multiple jobs in parallel. It is possible, however, to configure a job dependent on another job. All the steps in a single job are executed on the same compute machine called runners.
+
+9. A simple GHA workflow
+03:55 - 04:19
+For example, a push event in a repository can trigger a workflow where a single job runs on an Ubuntu Linux runner machine. The job contains two steps that are run in order. Checking out the repository, which is an Action. Running the Python code, which is a simple python application.
+
+10. Putting it all together
+04:19 - 05:06
+This graph provides an overview of how the different components, jobs, and steps are interconnected in a GitHub Actions workflow. A GitHub repository houses a workflow file in the dot github slash workflows directory. This file defines the workflow that gets triggered by events such as push or pull requests. The workflow can run multiple jobs in parallel that are constituted by steps. Steps can be shell scripts, programs, or actions that run on the same runner machine. They can optionally produce an artifact as an output.
+
+11. Let's practice!
+05:06 - 05:13
+It is time to test your understanding of GitHub Actions.

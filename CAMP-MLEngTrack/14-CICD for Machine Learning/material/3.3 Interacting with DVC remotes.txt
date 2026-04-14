@@ -1,0 +1,27 @@
+1. Interacting with DVC remotes
+00:00 - 00:09
+Welcome! In this video, we are going to take a deeper look into storing and accessing data with DVC.
+
+2. Understanding DVC Remotes
+00:09 - 01:19
+Although Git excels in software version control, services like GitHub, which host Git repositories, often impose restrictive storage limits, making it a challenge to track this data with Git. DVC addresses this concern by using external storage locations called DVC remotes to track and share data and ML models. These are similar to Git remotes but for cached data instead of files. Primary benefits of remote storage include: Syncing large files and directories monitored by DVC. Establishing a centralized data repository to facilitate sharing and collaboration. Archiving diverse iterations of datasets and models, thereby conserving local storage capacity. DVC remotes support a variety of cloud-based providers like AWS, GCP, and Azure, in addition to on-prem storage accessible via SSH and HTTP.
+
+3. Setting Up Remotes
+01:19 - 02:15
+We can set up one or more storage locations with dvc remote commands. These read and write to the remote section of the project's config file dot dvc slash config. For example, we can add a S3 bucket named "mybucket" as a dvc remote and name it as myAWSremote as shown. DVC reads existing local configurations for major cloud providers so that many times running dvc remote add suffices. Sometimes, we need to customize settings, and we can use dvc remote modify command for that purpose. This results in an entry in dot dvc slash config file where these settings are persisted.
+
+4. Local and Default Remotes
+02:15 - 03:19
+Local remotes in DVC offer greater autonomy, faster access, and enhanced security and are particularly suitable for learning, testing, and scenarios where external storage is impractical or unnecessary. We can use system directories, file-system on your laptop, mounted drives, network resources e.g. network-attached storage (NAS), and other external devices as storage. We can set the default remote using the dash d flag while running the dvc remote add command. Commands that require a remote, such as dvc pull, dvc push, or dvc fetch, will be using this remote by default to upload or download data. This command assigns the default remote in the core section of the DVC config file.
+
+5. Uploading and Retrieving Data
+03:19 - 04:27
+The commands "dvc push" and "dvc pull" serve as methods to transfer data between remote storage locations and our local workspace. These commands are similar to "git push" and "git pull" in their functioning. It is important to note here that the metadata in the corresponding dot dvc file is tracked by Git. The primary purposes of these commands include sharing data across different environments and maintaining data versions, including input datasets, interim outcomes, models, and DVC metrics, in remote locations. The target can be specified as individual files. Otherwise, the entire contents of the data cache would be pushed by default. Finally, we can specify a specific remote location with the dash r flag. Not specifying it would result in interactions with the default remote.
+
+6. Tracking Data Changes
+04:27 - 05:10
+In the event that the contents of the data file change, the following steps are needed to keep track these changes with DVC. First, stage changes to the DVC cache by running dvc add command, which will also update datafile dot dvc. Stage and commit datafile dot dvc with Git using git add and git commit commands. Push your metadata changes to Git with git push. Push changed data file to DVC remote using dvc push.
+
+7. Let's practice!
+05:10 - 05:16
+It's time to test your knowledge of DVC remotes.

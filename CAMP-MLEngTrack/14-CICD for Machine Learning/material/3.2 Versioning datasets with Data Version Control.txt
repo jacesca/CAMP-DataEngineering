@@ -1,0 +1,35 @@
+1. Versioning datasets with Data Version Control
+00:00 - 00:08
+Welcome back. In this video, we will look deeper into versioning machine learning datasets.
+
+2. Why versioning data matters
+00:08 - 01:02
+As machine learning practitioners, we experiment with different versions of code and data to develop the optimal model. Like we version control code, versioning data for future purposes is crucial. A few reasons why this is important are It involves the ability to replicate model training performed by others. Iterating on model performance across various architectures. Enabling multiple individuals to collaborate using the same data. Answering questions when a specific dataset leads to degraded performance. Monitoring data changes that might necessitate retraining the model. Maintaining an audit trail of data used in Machine Learning in industries like finance or healthcare.
+
+3. Data Version Control (DVC)
+01:02 - 01:27
+Data Version Control, abbreviated DVC, is an open source tool to manage data, similar to Git. One of the strengths of DVC is its integration with Git. While Git is great for code, DVC specializes in data. This means we can manage both code changes and data changes in a unified manner.
+
+4. DVC Storage
+01:27 - 02:01
+DVC enables us to maintain records of various data versions using Git, while the actual remote data storage is situated separately. The storage can be configured by a variety of back-end sources, such as on-site storage accessible via SSH or web APIs, various cloud-based providers, and local machine systems for testing purposes. To start with DVC, we can install it via pip.
+
+5. Initializing DVC
+02:01 - 02:49
+DVC works in conjunction with Git, so we need to initialize Git first by running git init. Next, we run dvc init to initialize DVC. After running it, the following files and directories would be present within the .dvc directory: dot gitignore contains DVC-specific files that shouldn't be tracked in git. config contains configuration settings like default remote storage location, compression settings, etc. for the DVC project. The folder tmp contains caches, logs, or other temporary data created when interacting with DVC.
+
+6. Adding Files to DVC
+02:49 - 03:34
+Tracking data files with DVC is straightforward. Use the command dvc add <file> to add a file for versioning. Running this command generates special dot dvc placeholder files unique for each DVC tracked file. These files contain metadata about the data file. By versioning these dot dvc files with Git, you can keep track of data changes while keeping your repository lightweight. Finally, the DVC cache, a hidden storage for files and directories tracked by DVC, is populated at dot dvc slash cache.
+
+7. DVC data files
+03:34 - 04:38
+Let's dive inside these dot dvc files. outs: This section specifies the output data files or artifacts associated with the DVC pipeline. md5: The MD5 checksum of the tracked data file. MD5 is a widely used cryptographic hash function. It's a unique value generated based on the contents of the file. If the file changes, the MD5 checksum also changes. size: The size of the tracked data file in bytes. In this case, the size is 28 bytes. hash: Specifies the type of hash function used to calculate the checksum. In this case, it's MD5. path: The path to the tracked data file within the project directory. In this example, the tracked file is named data dot csv.
+
+8. Summary
+04:38 - 05:07
+Data versioning is essential for reproducibility and successful collaboration in data science projects. DVC makes data versioning efficient and integrated with Git. We can start by initializing DVC using dvc init and then track files using dvc add. Remember, the .dvc files store metadata and checksums, while Git tracks versions.
+
+9. Let's practice!
+05:07 - 05:14
+It is time to test your knowledge of DVC!

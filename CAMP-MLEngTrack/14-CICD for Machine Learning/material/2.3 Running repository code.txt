@@ -1,0 +1,47 @@
+1. Running repository code
+00:00 - 00:08
+In this video, we will look at extending our GitHub Actions workflow to trigger on a pull request.
+
+2. Shared repository model
+00:08 - 00:57
+In a collaborative environment, multiple developers often work on the same repository, making changes simultaneously. To organize these changes, feature or topic branches are created for related work. When developers complete their work in a feature branch, they open a pull request for code review. Upon this event, the CI/CD tools can automatically run a series of tests, checking for code quality, security vulnerabilities, and compatibility with other components. This early feedback helps catch issues before merging the code into the main branch. This code review process aided by CI/CD is crucial for ensuring high-quality code.
+
+3. Create a feature branch
+00:57 - 01:20
+To create a feature branch, first click on branch in the repository landing page. This will take us to a new page, where we can click the "New branch" button. We can then follow the prompts and provide a name for the new branch. In our case, we are calling it pr dash workflow.
+
+4. Create a feature branch
+01:20 - 01:27
+Post creation, we can verify that the feature branch is active on the repository landing page.
+
+5. Add repository code
+01:27 - 01:46
+We can now add a Python script to our branch. For illustration, we can work with a simple script that prints a hello world message, in addition to the current time. We can commit this file as hello_world dot py.
+
+6. Configure workflow event
+01:46 - 02:17
+We need to make a few changes to our workflow from the previous video to trigger upon pull requests. First, we need to change the event that triggers the workflow to be a pull request. For this, we change the on-push to on-pull_request. The branches key here describes the target branch of the pull request, which is the branch where the code will be merged into, which in our case is main.
+
+7. Actions syntax
+02:17 - 03:01
+Since our next steps involve using Actions, let's look at its syntax. Actions are defined in steps under the "uses" key. The syntax involves specifying the organization or username, followed by the repository name and release version number, separated by the AT sign. Arguments can also be specified to an Action using the "with" key. We can think of Actions as a function and argument as a parameter to that function. We can find various ready-to-use Actions in the GitHub Marketplace and from many other private contributors.
+
+8. Configure workflow steps and actions
+03:01 - 03:47
+To run our repository code, we need to Check out the repository, and Configure the Python environment. We use two separate steps for this. The first one uses the "checkout" action to check out the repository. Notice the usage of the "uses" key to outline the action name, followed by AT v3 to specify the version. To set up Python, we use an action called "setup-python" with an argument "python-version". The AT v4 specifies the release version of the Action, while the "python-version" argument allows selecting the Python version.
+
+9. Putting it together
+03:47 - 04:06
+Our final workflow is displayed on the right. It swaps the on-push to on-pull_request as an event trigger. In the steps section, it adds checkout and setup-python steps before running the Python script as the last step.
+
+10. Create PR and trigger workflow
+04:06 - 04:30
+Now we can commit the above changes into the feature branch and create a pull request from "pr-workflow" to "main". This should trigger the workflow immediately after the pull request is opened, and we can inspect its status. Clicking on the "Details" link next to the job would take us to the logs page.
+
+11. Inspect workflow logs
+04:30 - 04:48
+In the logs page, we can see two additional steps regarding the checkout and setup-python, and our Python script is successfully executed.
+
+12. Let's practice!
+00:00 - 04:48
+Let's review your knowledge of setting up GitHub Actions for pull request cases.
