@@ -1,0 +1,31 @@
+1. Optimizing Docker images
+00:00 - 00:07
+Welcome back! We're now going to look at some options to optimize our container images. Let's get started!
+
+2. Docker image explanation
+00:07 - 00:19
+As you may remember, docker images are the base of a given container. It is, in effect, the file system of a container and holds all content initially available to a container instance.
+
+3. Docker image concerns
+00:19 - 00:55
+Given Docker containers' relative power and flexibility, new users are tempted to add all potentially needed components to an image. While doable, this usually isn't recommended for several reasons. The first is the container image size becomes large and unwieldy, especially if you need to run multiple copies of the container image. It is also challenging to handle any security issues or required updates as there are many more dependencies between components. Finally, it's harder to combine containers without wasting space or bandwidth due to the large size.
+
+4. Docker image recommendations
+00:55 - 01:34
+The usual recommendation when working with containers is to split the containers to the smallest level needed for a given task. We'll discuss this with an example in a moment, but it becomes much easier to combine multiple containers later versus building a single large image. This is like building with a reusable set of components instead of building fully from scratch each time. In this case, updates to specific software in our image only affect containers using that image rather than all containers needing the update. We can also optimize the amount of space used, allowing for more efficient use and distribution of said container images.
+
+5. Docker image breakdown example
+01:34 - 02:14
+Let's consider a data engineering project that uses the following software. We need a PostgreSQL database, some custom Python ETL software, and our web server components. Now, we could add all of these components to a single image, but we'd need to update this image anytime we needed to update the individual components, such as the ETL or web server setup. Also, let's consider how we would add a separate web server instance if, for example, our business wanted to provide a different level of access to a business partner. In other words, we'd have to set up a much more complex configuration within the container to handle both web server instances.
+
+6. Example with minimized containers
+02:14 - 02:56
+Fortunately, Docker handles these issues well if we're willing to redesign our setup slightly. The main option is to split each software we're using into its own container image. In this case, we'd have a PostgreSQL image, an image for the ETL components, and a web server image. We could then create containers using these images as needed. We can build an optimized configuration for our use and can add/remove components as needed without affecting the rest of the configuration. If we needed to add a web server, as mentioned before, we only need to create a new web server container, not update our image, and update each container in turn.
+
+7. Determining image size
+02:56 - 03:22
+You may be wondering how to determine the actual size of the images we're using. The simplest method is using the docker images command. This will provide a list of images in use on the local system along with individual image details, including the size of the image. Note that there are other options available for the docker images command that you may use. docker images dash-dash-help shows further detail.
+
+8. Let's practice!
+03:22 - 03:30
+We've covered a lot of information regarding Docker image sizes. Let's solidify your knowledge in the exercises ahead.

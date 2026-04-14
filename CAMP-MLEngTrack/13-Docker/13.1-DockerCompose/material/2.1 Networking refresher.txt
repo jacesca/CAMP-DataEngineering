@@ -1,0 +1,40 @@
+1. Networking refresher
+00:00 - 00:14
+Welcome to networking with Docker. Before discussing Docker's networking capabilities, we'll review its terms and concepts. Please note, this video is not meant to be a true introduction to computer networking.
+
+2. What is networking?
+00:14 - 00:47
+A computer network consists of systems communicating via a defined method to share information. There are, among others, physical and logical networks. Common physical networks include wired ethernet and WiFi. Logical networking includes TCP/IP and application-level protocols like HTTP for web communication and SMTP for email. Networks are defined in various layers or levels. The combination of various components is referred to as a networking stack.
+
+1 Photo by Jordan Harrison on Unsplash.
+3. Networking terms
+00:47 - 01:25
+Given the depth of information regarding computer networks, we will cover a set of terms you might encounter while working with Docker. The first term is host, a general term for a computer. A network is a group of hosts. An interface is a connection from a host to a network, such as Ethernet or WiFi. Note that an interface can be virtual, meaning it's entirely in software. A LAN references a Local Area Network, a set of computers at a given location. There is also the term VLAN, a virtual or software-based LAN.
+
+4. Internet Protocol
+01:25 - 01:58
+You've probably heard the term IP, or Internet Protocol, a method to connect between networks using IP addresses. There are two types of IP in use today, the first being IPv4. IPv4 is currently in use and supports approximately 4.2 billion addresses, though many are reserved for special purposes. The address space is currently exhausted, meaning all addresses have been allocated. IPv6 is the newer version of IP and supports significantly more addresses, and is still being deployed.
+
+5. TCP / UDP
+01:58 - 02:15
+TCP is the Transmission Control Protocol, and is used to reliably communicate between hosts on an IP network. UDP is the User Datagram Protocol and can communicate between hosts over IP where reliable communication is not required.
+
+6. Ports
+02:15 - 02:56
+Both TCP and UDP require a port value, a method to address different services on a given host via TCP or UDP. The port is a value between 0 and 65535. Values below 1024 are typically reserved for privileged accounts like root. Values above 1024 are usually referred to as ephemeral or temporary ports. Another important concept is that application servers are said to listen on a given port. This means it waits for new connections on that port and responds to clients from it.
+
+7. Application protocols
+02:56 - 03:21
+HTTP is an application protocol defaulting to TCP port 80 for web communication. There is also the secure version, https, running over port 443. SMTP is an email transfer protocol and uses TCP port 25. SNMP, a network management protocol, uses UDP port 161.
+
+8. Docker and networking
+03:21 - 03:44
+Docker has extensive networking capabilities and can facilitate communications between containers and the host system. Depending on the settings, it can allow communication with external hosts or the wider Internet. Typically, communication is handled by exposing ports from containers to the host and acts like a translation between them.
+
+9. Docker and IP
+03:44 - 04:25
+Containers can have their own IP addresses. You can use the command ifconfig or the command ip addr show to view the interfaces and IPs assigned. You can also add the interface name to see a specific interface. Look at the ifconfig example and the IPv4 and IPv6 addresses outlined in red. Note that the interfaces here are virtual between the host and the containers. Finally, you can use the ping command to verify connectivity. The dash-c flag requires a count for the number of pings, and the host you wish to connect to, such as an IP address or a hostname.
+
+10. Let's practice!
+04:25 - 04:31
+We've covered many terms - let's practice what these mean in the exercises ahead.

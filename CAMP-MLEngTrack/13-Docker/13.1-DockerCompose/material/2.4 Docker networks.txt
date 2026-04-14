@@ -1,0 +1,35 @@
+1. Docker networks
+00:00 - 00:06
+Let's talk about creating networks within Docker and some of the capabilities we gain when doing so.
+
+2. Docker networking
+00:06 - 00:24
+Docker has extensive networking options, allowing the use of containers in many different situations. We will only cover a few options, but Docker can create networks to communicate between containers, the host, and external systems. Let's review several of the commands you'll be working with.
+
+3. Docker networking types
+00:24 - 01:12
+Docker supports different types of networks using various drivers. The bridge driver is the default driver and allows communication to the Internet, to exposed ports, and between containers on the bridge, but not further. The host driver allows full communication between the host and any running containers. This works for specific circumstances but also has some security implications. The last driver we'll cover is the "none" driver, which completely isolates the container from communicating with anything else. It's helpful in testing untrusted containers and applications without concern for what they're doing. Many other types of drivers are available, and you can create your own if needed. We will primarily use the bridge driver when working with our networks.
+
+4. Working with Docker networks
+01:12 - 02:03
+Our primary method for working with docker networks is the appropriately named docker network command. The docker network actually takes subcommands in the form of a docker network command to accomplish specific tasks. As with other docker entries, you can use dash-dash-help to gain further information about available options. There are several docker network commands we'll use. We'll cover three here and the others in a few moments. The first command is docker-network-ls, which provides a list of all docker networks defined on the host. docker-network-create requires a name argument but can also take several other options, including dash-d for the driver to use and various other details. Finally, we can use docker-network-rm network name to remove a given network.
+
+5. Docker network example
+02:03 - 02:33
+We can create a network named "mynetwork" using the docker-network-create-mynetwork command. It will return an id, the internal identifier Docker assigns to the network. Your system will return a different entry. If we run the command docker network ls, we can get a list of the network ids and information. Note that the ids are a shorter form than what gets returned by the docker network create command. This is normal and expected.
+
+6. Attaching containers to networks
+02:33 - 03:18
+You may wonder how to connect a container to a given network. There are two methods available depending on your needs. The first is using docker run with a new flag, dash-dash-network, and the network name. For example, we can create a container with the docker run --network mynetwork ubuntu bash. We can also connect a container later using the docker network connect networkname containerid command. The containerid can be a literal containerid or the name given to the container. We have an example of docker network connect mynetwork ubuntu-B to connect the ubuntu-B container to mynetwork.
+
+7. docker network inspect
+03:18 - 03:41
+To check the details of the network, we use another command - docker network inspect network name. This provides configuration details, including the IP ranges assigned to the network. You can also see the actual IP addresses assigned to the containers. As an example, we can use the docker network inspect mynetwork.
+
+8. docker network inspect example
+03:41 - 03:53
+This is an abbreviated output, but you can see the type of network driver and the various details. We can specifically see the IP address assigned to containers connected to the network as well.
+
+9. Let's practice!
+03:53 - 04:00
+We've covered a lot about docker networking, let's practice in the exercises ahead.

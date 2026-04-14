@@ -1,0 +1,28 @@
+1. Multi-platform builds
+00:00 - 00:05
+Welcome back to our last video in this chapter, multi-platform builds.
+
+2. Multi-platform?
+00:05 - 00:54
+Our first question may be, what does multi-platform mean? It references two different aspects: an operating system and a CPU type. For different OS types, containerized applications usually use Linux, but could use Windows or macOS. Regarding CPU types, we usually see the x86_64 or amd64 type, the CPU instruction set behind most modern Intel and AMD processors. You may also see arm64 or arm7 chips, popular in cell phones, Apple devices, and single-board computers such as Raspberry Pi. Usually, the platform is defined as the ostype slash cputype, such as linux/amd64 or macos/arm64.
+
+3. Creating multi-platform builds
+00:54 - 01:27
+Multi-platform builds use the concepts covered in multi-stage builds. The build stages use cross-compilers and rely on the platform of the host system. While it's possible to create multi-platform builds separately, such as for linux/amd64 and linux/arm64, it's not recommended. Note: cross-compiler means compiling code to run on a platform different than the current host. The final stage of the build uses the platform for the intended target and copies any compiled binaries in place.
+
+4. Multi-platform Dockerfile options
+01:27 - 02:24
+Several options are used in Dockerfiles for multi-platform builds that define which container versions should be loaded. The first option used with the build stage is the dash-dash-platform-equals-$BUILDPLATFORM option. $BUILDPLATFORM represents the host's platform for running the build. Assuming the base image is available for that platform, it should work automatically on different host platforms. Sometimes, the Docker ARG directive is used, along with a list of environment variables defined on the host. This is usually TARGETOS and TARGETARCH representing the platform components of the destination system. An example is the line ARG TARGETOS TARGETARCH. We'll see this in a full Dockerfile shortly. Note the variables defined on the host can be defined in the shell or via the env command.
+
+5. Multi-platform example
+02:24 - 03:23
+Let's look at an example. First, we have the initial stage, named build. The dash-dash-platform-equals-$BUILDPLATFORM tells Docker to pull the golang-colon-1.21 image that matches the current host platform. We then use the WORKDIR and COPY commands to prepare the build container. Now, we see the ARG TARGETOS TARGETARCH command, which passes in the target platform components. Please note these are defined by the specific command we enter on the command-line of the host. Next, the command to actually compile the application is used. Note this is specific to compiling a golang application, but the principle is the same for other programming languages. Notice that the TARGETOS and TARGETARCH values are referenced using $ symbols. Finally, we create the final stage using the alpine image and copy the compiled code from the build stage.
+
+6. Building a multi-platform build
+03:23 - 04:15
+To run a multi-platform build, we must use the docker-buildx command rather than docker-build. docker-buildx provides more commands and capabilities than docker-build, including specifying destination platforms. The actual command used is docker buildx build dash-dash-platform followed by the platforms, then dash-t, the image name, and a dot. This tells Docker to build an image for both the linux amd64 and arm64 platforms. Note that Docker buildx also requires a new builder container present to build multiple platforms. This is done with the 'docker buildx create dash-dash-bootstrap dash-dash-use' command. Don't worry about the details of this command, just note that it must be present prior to running a multi-platform build.
+
+7. Let's practice!
+04:15 - 04:22
+That was a lot of information about building multi-platform images. Let's practice this knowledge now.
+

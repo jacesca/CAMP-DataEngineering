@@ -1,0 +1,12 @@
+1. Course review
+00:00 - 00:06
+Great work going through everything in this course! Let's provide a few options for future study.
+
+2. Next steps
+00:06 - 01:19
+Given the general purpose capabilities of Docker, it can be tricky to determine what to work on next. The first suggestion is to look through the extensive documentation available at docs.docker.com. There are many details and examples of various ways to implement Docker for your environment. Your best learning option is to containerize more applications, regardless of the purpose or platform. You can containerize custom scripts, services, and even games depending on your needs. Each behaves differently and can provide strategies to improve your Docker configurations. You can also create your own custom or private repositories to store your container images. You may wish to look at container orchestration platforms such as Docker Swarm or Kubernetes. These are multi-host platforms that provide options to run containers in a powerful, scalable, fault-tolerant way. If you're primarily a software developer, you can use Docker for continuous integration and delivery tasks. Finally, you can also look at using Docker with specific hardware such as GPUs. This can allow you to better utilize your hardware without requiring new setups for each application.
+
+3. Congratulations!
+01:19 - 01:38
+I hope you've found the content valuable. If you have any questions or comments, feel free to contact me directly. I'm often on the DataCamp Slack channel and am happy to help! I'm looking forward to hearing about your journeys using Docker. Thank you, and I congratulate you again on completing this course.
+

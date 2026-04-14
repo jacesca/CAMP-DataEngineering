@@ -1,0 +1,47 @@
+1. Dependencies and troubleshooting in Docker Compose
+00:00 - 00:08
+Welcome back! We're getting near the end of our course so let's cover one last new topic in Docker Compose - dependencies.
+
+2. What are dependencies?
+00:08 - 00:38
+So, what are dependencies? Dependencies in Docker Compose define the order of resource startup. Resources, meaning containers, may require other resources to be in place first. Consider an example: a simple web application consisting of three resources. Our first resource is a database container running postgresql, which must start prior to the others. Otherwise, the application will throw errors until the database is available.
+
+3. What are dependencies?
+00:38 - 00:44
+Next is the Python application that controls communications between the web and the database.
+
+4. What are dependencies?
+00:44 - 00:50
+Finally, the nginx resource starts up the web server and actually serves the web content.
+
+5. depends_on
+00:50 - 01:31
+Basic dependencies are defined using the depends-underscore-on attribute, followed by a list of the resources it depends on. Dependencies can be chained, as in our example. First, we define the postgresql resource, which has no dependencies. The python-app then has a depends_on attribute listing PostgreSQL, followed by the nginx resource, which depends on the python-app. In addition to a dependency chain, you can list multiple dependencies per resource if required. It's important to note that once dependencies are defined, the order of resources within the compose-dot-yaml file does not matter.
+
+6. Shutting down applications
+01:31 - 01:41
+Important, when shutting down applications, the resources shut down in reverse order. In our example, the nginx resource would be stopped first.
+
+7. Shutting down applications
+01:41 - 01:45
+Then the python_app resource is removed.
+
+8. Shutting down applications
+01:45 - 01:50
+And finally the postgresql resource is shut down as no running containers require it.
+
+9. Other options
+01:50 - 03:04
+Docker Compose provides other options for defining dependencies. The condition attribute tells Docker Compose when a dependency is successfully started and is ready. The first condition is called service-underscore-started, meaning the resource must have started normally. This is the same as the default behavior when using depends-on without a condition attribute. The next condition is called service-underscore-completed-underscore-successfully. This indicates that a resource ran to completion before moving to the next resource. This isn't used often but could be as a setup resource, a configuration validation, or anything where you need steps to occur before starting an application. The last and most powerful condition is called service-underscore-healthy. This means the resource is started and is not considered ready until it passes a healthcheck. The healthcheck is a defined method, such as accessing a specific webpage or verifying a TCP port answers a connection request. Healthchecks can be defined in Dockerfiles or in a Docker Compose file as needed. We won't cover creating our own healthchecks in this course, but we can still use existing ones in our dependencies.
+
+10. Docker Compose troubleshooting tools
+03:04 - 03:43
+Before we complete this video, let's look at some extra troubleshooting tools available within Docker Compose. The command docker-compose-logs will gather the output from all resources within an application. Here's an example application using redis and a web application. Notice that the name of the resource is prepended to each line of output. This would be the same as running docker-logs-containerid for each resource in the application. You can also run docker-compose-logs-resourcename, such as docker-compose-logs-web, to get just the output from the web resource.
+
+11. docker compose top
+03:43 - 04:00
+Another useful tool for troubleshooting Docker Compose is docker-compose-top. This shows the status of resources within an application. This example shows the same redis and web resources with the name of the application, composetest.
+
+12. Let's practice!
+04:00 - 04:06
+Let's practice what you've learned about dependencies and troubleshooting in the exercises ahead.

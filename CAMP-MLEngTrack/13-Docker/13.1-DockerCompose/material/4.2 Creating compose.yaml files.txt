@@ -1,0 +1,29 @@
+1. Creating compose.yaml files
+00:00 - 00:07
+Let's take a look at how to create our applications with Docker Compose by writing our own compose-dot-yaml files.
+
+2. YAML
+00:07 - 01:01
+Docker compose files are written using YAML. Depending on your experience, you may be wondering what YAML is. YAML originally stood for Yet Another Markup Language, but now has the more amusing moniker of YAML Ain't Markup Language. It is a text-based file format, but whitespace indentation matters, much like Python. YAML is used in many development scenarios, often for configuration, due to its relatively human-readable format. The rules for writing or modifying YAML can be tricky, but maintain indentation as illustrated in examples. You can see this in the compose.yaml example, where postgres-colon and pgadmin-colon are at the same level of indentation. A YAML skeleton will be provided when needed, but be aware of the formatting requirements if you need to create one from scratch.
+
+3. Main sections
+01:01 - 01:58
+A docker compose configuration file can have multiple primary sections that handle different parts of the application. A primary section is left-justified, or not indented, in the file. The services section is the only required component and lists all the containers required for the application. The networks section is optional and allows specific networking configurations used by the various containers in the application. A volumes section is another optional area to define storage requirements for data shared between containers. The configs section allows for specifying configuration details that would otherwise require a new container image. Lastly, the secrets section allows the user to configure any passwords, tokens, or API keys that the application might require. We'll cover a few of these in more detail, but they are all extensively documented in the Docker Compose documentation.
+
+1 https://docs.docker.com/compose/compose-file/
+4. Services section
+01:58 - 02:34
+The section we'll be using the most is the services section. This section defines all required resources that make up the application. This specifies all the containers and images, along with the various settings for each container instance. There are extensive options available, but it's important to note that the settings only apply to the container they're specified on. Being defined in YAML, the sections are indented as required. The first subsection for each service is the name of the component or service and the settings for each indented after that.
+
+5. Services example
+02:34 - 03:23
+Let's look at a sample services section in a config-dot-yaml file. We first have our services section defined, followed by the resource name at the first level of indentation. In this case, we have a resource named postgres. For the postgres resource, we use a container-underscore-name option, which assigns a name to the container. Otherwise, the name is randomly generated which can make troubleshooting more difficult. After that, we use the image option to specify which container image to use. In our example, we then show the ports subsection, which provides a list of all mapped IP ports. In this case, we map port 5432 to 5432 in the container. The flow then repeats as needed for the remaining resources.
+
+6. Additional comments
+03:23 - 03:58
+Before we move to some practice exercises, let's review a few things. The first is that the config-dot-yaml syntax is extensive. We've only reviewed a very small subset of the options available in a config-dot-yaml file. Review the documentation for further details. Note that it is typically not required to build a compose-dot-yaml from scratch. It is far better to start with an initial configuration and modify it from there.
+
+1 https://docs.docker.com/compose/compose-file/
+7. Let's practice!
+00:00 - 03:58
+Let's practice with some exercises utilizing compose-dot-yaml files.

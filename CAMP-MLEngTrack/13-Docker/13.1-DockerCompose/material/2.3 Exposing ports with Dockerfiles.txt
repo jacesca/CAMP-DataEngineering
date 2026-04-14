@@ -1,0 +1,27 @@
+1. Exposing ports with Dockerfiles
+00:00 - 00:08
+Welcome back! We've just covered exposing ports manually in Docker, but let's cover exposing services via Dockerfiles.
+
+2. Exposing services
+00:08 - 00:52
+Our first topic for this video is the EXPOSE command within a dockerfile. Expose technically defines which ports a container will use at runtime within the container. Each EXPOSE line should include a number for the port to use, a number slash tcp or slash udp, such as EXPOSE 80 or EXPOSE 80 slash tcp. Note that a protocol defaults to TCP if we do not define a protocol manually. We can also have multiple EXPOSE entries per Dockerfile if multiple ports or protocols are required. It is important to note that this is primarily used as a documentation method, letting the Docker user know which ports should be exposed from within the container.
+
+3. Using the -p / -P flags
+00:52 - 01:24
+That said, it does not actually expose the ports for use without defining a dash P or a dash p host port : container port command. The dash-upper-case-P flag will automatically map ephemeral ports to the exposed container ports. Remember that ephemeral in this case , means high-numbered and unprivileged. The dash-lower-case-p flag works as described in the previous video and allows a specific port to be defined.
+
+4. EXPOSE example
+01:24 - 02:19
+Let's look at an example using the expose command. First, we've created our Dockerfile from the python 3.11 slim image. We then add an entrypoint startup command - in this case, we're running Python's built-in webserver. Finally, we add the EXPOSE 8000 entry to indicate that the container listens internally on TCP port 8000. Assuming our image builds correctly, we create an instance of the container using the docker run command. To determine the state of the container, we can use the docker ps dash-a command. Note that we've truncated the output slightly, but note the PORTS column. Here, the container is exposing tcp port 8000 as expected. Be aware, if we try to access this port from the host, it will not be reachable as we have not defined what host port to use.
+
+5. Making ports reachable
+02:19 - 03:12
+Now, we'd like to make the ports reachable from outside the container. The simplest method is to use the docker run dash-upper-case-P flag, which will automatically assign an ephemeral port from the host and map it to the internal container port. Note that this differs from the previous chapter, which uses manual mapping with a dash-lower-case-p flag. We have a few options to see which port is used. The simplest is using the docker ps dash-a command as before. Note under the ports column that we now see a mapping, in this case 0.0.0.0:55001 pointing to 8000/tcp. This means if we make a connection with a web browser on the host at port 55001, it will automatically redirect to the container's listening port.
+
+6. Finding exposed ports
+03:12 - 03:46
+Another more verbose method to find the exposed ports is the docker inspect command. If we run docker inspect containerid, we'll get a considerable amount of information in a JSON format. If we parse through the information, under the NetworkSettings:Ports section, we'll see the exposed ports within the container and what HostIP and port they are mapped to. Note that typically this information is overkill but may be useful in cases of many exposed ports or more extended troubleshooting situations.
+
+7. Let's practice!
+03:46 - 03:54
+We've covered a lot about the EXPOSE command within Docker. Let's practice what we've learned in the exercises ahead.

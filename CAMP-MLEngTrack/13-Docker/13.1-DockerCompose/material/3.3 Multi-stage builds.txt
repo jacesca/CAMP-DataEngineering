@@ -1,0 +1,19 @@
+1. Multi-stage builds
+00:00 - 00:05
+Welcome back! Let's now learn about multi-stage builds in Docker.
+
+2. Single-stage builds
+00:05 - 01:00
+Typically, a docker image is created using a single FROM command or source image. This is also referenced as a single-stage build, meaning only one stage or container is used to create the docker image. We can obviously add anything to a given image, but each addition requires more space and can make the image more difficult to manage. Let's look at the Dockerfile for this build. We're using the base ubuntu image, but adding the necessary programs for compiling the code, then actually compiling it, and then running the final application. This leaves all the code to compile the application in the container image, in addition to the development software that isn't necessary to run the program. This increases the size of the image and clutters the image unnecessarily. Note that in this case, compile refers to creating an executable program from source code.
+
+3. Multi-stage builds
+01:00 - 01:47
+A multi-stage build uses multiple stages, or multiple containers for different steps of the build, to create a final container image. Typically, a multi-stage build has one or more build stages, where data or binaries are prepared or compiled in some fashion. These components are then copied into a minimal final container image, saving space. The containers used in the build steps are then removed automatically. To accomplish this, Docker supports some additional syntax we've not seen in the Dockerfile yet. This includes the AS alias on the FROM statement. It also uses the COPY command, with the additional dash-dash-from-equals-alias option. It's easiest to see how these work with an example.
+
+4. Multi-stage build example
+01:47 - 03:15
+Let's consider our previous situation, where we need to compile an application prior to containerization. This time, we are using a multi-stage build process to create the final container, but with a smaller, more efficient image as a result. First, we use the FROM ubuntu command, but you'll notice we have AS stage1 at the end. This provides an alias, or name, for the stage. In this case, we're using stage1 as the alias. Note that we could name this anything, but it's named this way for illustration purposes. Next, we have our normal build commands, which could include copying source files, updating packages, and actually compiling code. You'll next notice that we use a second FROM statement to define the base of our final image. In this case, we're using the alpine-base image. Now, we use the COPY dash-dash-FROM-equals-stage1 /data-app /data-app command. This tells Docker to copy the /data-app program from the container used in stage1, where we compiled the code, and place it as /data-app in the final image. We can use this to copy any data we want from any number of build stages as required. Finally, we set a CMD entry to the data-app program and finish building the image. The entire build process is cleaned up, and the image used for stage1 is removed automatically.
+
+5. Let's practice!
+03:15 - 03:22
+Let's now practice what you've learned about multi-stage builds in the exercises ahead.

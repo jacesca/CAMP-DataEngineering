@@ -1,0 +1,23 @@
+1. Making network services available in Docker
+00:00 - 00:05
+Welcome back! Let's look at how to make network services available from within Docker.
+
+2. Network services
+00:05 - 00:41
+As briefly mentioned, network services listen on a given port. As such, only one program can listen on a specific IP and port combo. For example, 10.1.2.3:80 would mean that a program on the host with IP 10.1.2.3 is listening on port 80. Consider what this would mean if we were trying to debug different web server versions that listen on that port. We could effectively only run one copy of the application given that only one program can listen on that ip:port combo.
+
+3. Containerized services
+00:41 - 01:13
+We can partially solve our problem by wrapping an application in a container, meaning each container can now listen on the port. This is because the IP:port combo is different for each container because each container has a different IP address. We can also now have multiple copies of a container running, including those of different versions running simultaneously. However, the question then becomes, how do we connect to the individual containers without knowing the specific IP addresses of each container?
+
+4. Port mapping
+01:13 - 02:08
+The answer to our problem is port mapping, sometimes called port forwarding or translation. Port mapping takes a connection to a given IP:port combo and automatically forwards it to another IP:port combo. In this instance, we could map an unused port, or ports, on our host and point it to port 80 on the containers. The Docker engine can handle this for us automatically with a command line option we'll mention in a moment. Let's look at a quick example with three containers running in our Docker engine. Each container is listening on port 80, which works as the individual containers have their own IP address. To make them accessible to the host or systems that can reach the host, we can use port mapping to connect ports 5501, 5502, and 5503 to point to port 80 on the individual containers.
+
+5. Enabling port mapping
+02:08 - 03:19
+To enable port mapping on a given container, we add a flag to the docker run command, the dash-p flag. This is also known as the publish flag. The dash-p flag requires two arguments, written as the host port, colon, and container port. For example, to map port 5501 to port 80 in the container, we would use dash-p 5501:80. Also, note that we can have multiple dash-p flags if there are different ports to publish from the container to the host. As a full command, we would run docker run dash-p 5501 colon 80 nginx. This would set up the web server listening on port 80 in the container, and Docker would create the map from 5501 to 80 for us. Using docker ps dash-a, we can look for the ports column to verify the mapping. In this case, the 0.0.0.0:5501 means any IP on the host with port 5501 should map to port 80 using TCP. The second part means the same thing but for IPv6.
+
+6. Let's practice!
+03:19 - 03:28
+We've covered a fair amount about network services in Docker - let's try some exercises to get a feel for how this all works.

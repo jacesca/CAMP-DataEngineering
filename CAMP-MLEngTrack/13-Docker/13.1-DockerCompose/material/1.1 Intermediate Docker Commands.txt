@@ -1,0 +1,24 @@
+1. Intermediate Docker Commands
+00:00 - 00:15
+Welcome to the course covering the intermediate use of Docker! I'm Mike Metzger, a consultant in the data engineering space for over ten years. This course will take your knowledge of Docker to the next level and help you utilize containers in your data career. Let's get started!
+
+2. Docker refresher
+00:15 - 00:55
+As a quick refresher, let's review a bit about Docker. Docker is a container runtime, meaning it is a tool designed to run and manage various containerized applications. There are versions of Docker for all major operating systems, including Windows, Mac, and Linux. We can run containers using pre-built images or create our own images. Docker uses Dockerfiles, which are text files that act like instructions to create a new Docker image. Finally, remember that containers in Docker are instances of a given Docker image. Please note that this content is covered within the DataCamp's introductory Docker course, which should be taken prior to this course.
+
+3. Docker commands
+00:55 - 01:36
+From our previous experience with Docker, we've used several commands, including docker-run, docker-stop, and docker-build. We'll cover more about these commands and many others throughout this course. Before continuing, look at one of the most useful commands, docker-dash-dash-help. Docker-dash-dash-help provides a list of the available commands within the Docker toolset. For each of these commands (sometimes called subcommands), you can also run docker-command-dash-dash-help to get further information about each individual command. For example, you can use docker-run-dash-dash-help to get more specific information about the Docker run command.
+
+4. Temporary containers
+01:36 - 02:54
+Docker containers are typically created with the docker run command. In the default configuration, these containers will remain even after stopping or exiting. While this is the default behavior, there are situations where you'd like to run a container instance and remove it immediately upon exit. These situations can include development, testing, or running scripts. Docker provides an option to do this automatically using the docker-run-dash-dash-rm command. For example, if you wanted to run a quick shell prompt in the latest version of Alpine and remove it automatically, you could use docker-run-dash-dash-run-alpine-colon-latest-slash-bin-slash-sh. Note that Alpine is a Linux distribution designed to take up very little space, like Ubuntu, but smaller, making it ideal for use with containers. We'll cover space optimization later, but you will see many different container images used in this course. The last slash-bin-slash-sh is required on some containers to specify what program to run inside the container. In this case, we want to run a shell, which is slash-bin-slash-sh. This command line option is referenced as cleanup or remove.
+
+5. docker ps
+02:54 - 03:26
+A command we'll use extremely often is the docker-ps command. We'll cover some of its capabilities in more depth here and later in this course. The docker-ps command is used to determine the name, id, running status, and other attributes of all the containers running with Docker on the local system. Not all this information is printed each time, so we can use the dash-a-flag to see further information about existing containers. We will also cover other commands to get extremely detailed container information later.
+
+6. Let's practice!
+03:26 - 03:36
+In this video, we've covered a bit about accessing Docker commands and help documentation. Let's work through some of these concepts in the exercises ahead.
+

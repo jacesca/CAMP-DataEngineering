@@ -1,0 +1,35 @@
+1. Understanding layers
+00:00 - 00:07
+Welcome back! Let's look at a fairly technical topic: examining layers in Docker.
+
+2. Docker layers
+00:07 - 00:31
+Docker images are made up of layers, which generally reference a change or a command within a given Dockerfile. Docker will automatically determine which layers can be cached or reused in other Docker images. For example, any image using the requests library with pip could re-use this layer. A command's order and specific nature within the Dockerfile can affect whether layers are reused.
+
+3. Why do we care about layers?
+00:31 - 00:40
+You may wonder why we care about reusing layers. There are two primary reasons: faster build times and builds taking up less space.
+
+4. docker image inspect
+00:40 - 01:10
+How can we determine the layers that exist within an image? We can do this using the 'docker image inspect' with the image id or the name of the image. This command provides considerable information about the image, including configuration details, the system architecture it's designed for, OS details, and so forth. For our purposes, it also contains a RootFS Layers section that provides information about which layers make up the specific image.
+
+5. docker image inspect example
+01:10 - 01:41
+As an example, let's look at the layers found in a postgres docker image. Note that Postgres is a database server, but you do not need any knowledge of it for this course. We'll use the command 'docker image inspect postgres:latest'. Under the RootFS section, we can see the list of layers included. The list of layers references the id assigned to the layer. We won't inspect these further, but it is an interesting tool to see how layers are used within an image.
+
+6. jq command-line tool
+01:41 - 02:04
+It can sometimes be challenging to analyze the results of a docker command, such as docker image inspect. The jq commandline tool is used to read JSON data, like what is returned from the docker image inspect command. In addition to parsing the JSON data, we can also use the jq command to query specific portions of JSON data. Let's look at a couple of examples.
+
+7. jq recipes with Docker
+02:04 - 03:02
+Let's consider using jq to look at a specific portion of the dataset, such as the RootFS data detailing the layers used in a Docker image. To use jq, it's easiest to pipe the output of one command, in this case docker-image-inspect-id of container, into jq. After jq, we enter the portion of the output we want in single quotes. First, we ask for dot-open-bracket-zero-closed-bracket. This represents the first instance of data found in the JSON data. We then add another pipe symbol and the text dot-RootFS, representing the RootFS section of the JSON output. This content will likely be confusing until you've used it more. Treat everything after the jq command as the recipe of what you want jq to do. This outputs all of the information specified for the RootFS as previously.
+
+8. jq recipes with Docker (part 2)
+03:02 - 03:43
+A second example is more complex, where we use jq to count the number of layers present in an image. In this case, our initial command is the same as before, but the recipe fed to jq is different. The dot-openbracket-zero-closedbracket is the same, but it's piped to LayerCount-colon dot-RootFS-dot-Layers pipe-symbol length. This tells jq to look for the Layers array in the RootFS section and determine the length of that array. It then returns it as the LayerCount-colon-2 entry, as seen below. jq is a very powerful tool with many capabilities we don't cover here.
+
+9. Let's practice!
+03:43 - 03:51
+We've covered a lot about Docker layers and jq in this chapter - let's practice what you've learned in the exercises ahead.

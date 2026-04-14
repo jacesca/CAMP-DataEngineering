@@ -1,0 +1,19 @@
+1. Mounting the host filesystem
+00:00 - 00:07
+Welcome back! Now, we will look at how to share information between our containers and the host system. Let's get started.
+
+2. Container filesystems
+00:07 - 00:51
+Let's consider a container instance's filesystem for a moment. Each container instance has its own filesystem, which is based on the image it was created with. Changes can be made to the filesystem but are tied to that instance only. If we restart the container, the changes stay, but only for that specific instance. They do not apply to other instances of that same container image. If we create a new container instance, it will not have those changes. You can see a quick example of this in the diagram - we have our original Docker image and create Container1 and Container2. Container1 has a file in /home called NewFile. As this file was not created on Container2, it is not present there.
+
+3. Sharing files or directories
+00:51 - 01:46
+Rather than modifying the contents of our running containers or always creating new Docker images, we can attach files or directories from the host system to a container. This allows for the persistence of data, whether log files, database files, configuration files, and so on, without the requirement of maintaining a specific container. We can use Docker to upgrade the container to a newer version but safely keep all of our data separate. This technique, known as a bind-mount, is one of a few options to share data between host and container. We'll discuss some others later in this chapter. A bind-mount can be read-only, where the container can see the data but cannot change it. The bind-mount can also be read/write, but in this case, only one container can modify the contents at a time. Once attached, files or directories are not accessible to the host until the container using them is shut down.
+
+4. Using the -v option
+01:46 - 03:21
+A bind-mount is usually defined using the dash-v flag, specifically with dash-v source-colon-destination. The source is the file or directory on the host's filesystem to be shared, and the destination is the location within the container's filesystem where the source data will appear. Multiple dash-v commands are permitted per container. The maximum number varies, but generally, you can add at least 16 bind-mounts per container. In addition to the dash-v flag, there is a more verbose option, the dash-dash-mount flag. We won't cover this here, but it tends to permit more specific options than are available with dash-v. One note is that a bind-mount will hide any files or subdirectories that exist within the container. In other words, if we bind-mount the /data directory to /home/mydata, anything present in /home/mydata in the container image is not accessible. Here are two examples of using bind-mounts - the first is an nginx web server container attaching the host's /html directory to the /var/www/html directory within the container. The second attaches the /pgdata directory and the pg.conf file on the host to the /opt/data directory and /etc/pg.conf file in the postgresql container, respectively. Note that in all these examples, the local path must either start with a dot slash or be a full path to the file.
+
+5. Let's practice!
+03:21 - 03:30
+We've discussed accessing the host filesystem using bind-mounts with Docker. Let's solidify what we've learned in the exercises ahead.

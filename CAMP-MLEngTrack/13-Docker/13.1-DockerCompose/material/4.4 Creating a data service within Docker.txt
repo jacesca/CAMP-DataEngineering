@@ -1,0 +1,39 @@
+1. Creating a data service within Docker
+00:00 - 00:11
+Welcome back to the last video of this course! We're going to cover a few outstanding details and review some of the topics we've covered thus far before finishing our last exercises.
+
+2. Data sharing
+00:11 - 00:31
+Let's review a task discussed earlier, sharing data between host and container using bind mounts. This is handled with the docker-run-dash-v command, followed by the host directory-colon-container directory. For example, we can use dash-v tilde-slash-hostdata-colon-slash-containerdata.
+
+3. Data sharing in compose.yaml
+00:31 - 01:10
+One piece we had not covered previously is bind mounts can be applied in compose.yaml files as well. Under each resource directory, we can use the volumes option as shown. Under the volumes option, we can use the list syntax in YAML, starting with a dash-space-hostdirectory-colon-containerdirectory. As with above, we can use dash-tilde-slash-hostdata-colon-slash-containerdata. Note that list syntax here means each indented line starting with a dash. While we don't show it here, we can use as many entries as needed for all required bind mounts.
+
+4. Networks
+01:10 - 01:40
+As a reminder about adding containers to specific networks, we can use the dash-dash-network flag with the name of the network. For example, we can use docker run dash-dash-network net1 to connect a container to the net1 network. We can also define a networks section in compose.yaml files under a resource. The name of a network is added as a section with other config options available, such as assigning a specific IP address.
+
+5. Port mapping
+01:40 - 02:25
+A quick review for port mapping, the docker run dash-p hostport-colon-containerport will connect traffic going to the defined host on the port and send it to the container port, and vice versa. A quick example is using dash-p 8000-colon-8000. As with bind mounts, we can also map ports in compose.yaml files. The syntax is similar, with a ports option under a resource. We can then define the mapping using the list syntax with dash-hostport-colon-containerport. For the example above, we can use dash-8000-colon-8000. We can map as many ports as required using the syntax, with one mapping per line.
+
+6. docker inspect
+02:25 - 03:01
+We covered some of this previously, but docker inspect provides information about provisioned containers, including stopped ones. To run the command, we use docker-inspect-id-or-name. This provides various levels of information, including Mounts for mounted data and NetworkSettings for information about the networking configuration of the container. The Networks section under NetworkSettings will show the name of the Docker networks the container communicates with and other details. In this example, the container would be connected to the network1 network.
+
+7. Data service
+03:01 - 03:23
+Let's quickly cover what we're going to build in the exercises ahead. We're going to create a basic multi-container data application. The first container consists of a Python web application that communicates with a database. We'll be using an embedded database for this example, but it could easily be a database on a separate container.
+
+8. Data service
+03:23 - 03:32
+Next, we'll add a data client application to communicate with the data service. The client is fairly simple but could be easily expanded.
+
+9. Data service
+03:32 - 03:39
+All container communication will be over HTTP, but it could be done using a different protocol as desired.
+
+10. Let's practice!
+03:39 - 03:46
+Now, let's take everything we've learned in this course and build out our sample data application.

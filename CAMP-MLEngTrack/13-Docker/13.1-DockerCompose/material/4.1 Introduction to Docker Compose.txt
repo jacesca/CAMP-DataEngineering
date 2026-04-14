@@ -1,0 +1,27 @@
+1. Introduction to Docker Compose
+00:00 - 00:07
+Welcome back! In this chapter, let's discuss how to create multi-container applications using Docker Compose.
+
+2. What is Docker Compose?
+00:07 - 00:47
+Docker compose is an additional command-line tool for use with the Docker engine. It defines and manages multi-container applications. We'll discuss what this means more in a few minutes. Docker Compose can specify containers, networking, and storage volumes in a single file, compose-dot-yml or compose-dot-yaml. You may also see older files named docker-dash-compose-dot-yml or dot-yaml. Docker Compose makes it very easy to share or demo applications by providing the compose file. We'll create our own compose files later. For now, let's look at an example and how to use it.
+
+3. Example compose.yaml
+00:47 - 01:35
+Let's look at a simple compose.yaml file. Don't worry too much about the individual pieces, we'll cover this more in-depth in the next video. As an overview, this particular application first specifies a container named webapp, using the webapp image. This would be a custom web application housed in a container. This container needs to expose ports on the host, so the ports section shows a mapping of port 8000 on the host to port 5000 inside the container. Next, we define the other required component of the application, the redis backend. If you're not familiar with it, redis is a key-value system used to store and retrieve data in a simpler form than a relational database. Our redis container uses the redis-colon-alpine image.
+
+4. Starting an application
+01:35 - 02:36
+To start an application, change to a directory containing the docker-compose.yaml file and run docker compose up. Note that on older systems, you may see docker-dash-compose up. We can also specify a yaml file of a different name (or location) using the dash-f option with the name of the file. Note that if you need to use the dash-f option for an application, it must be used for each docker compose command you run. There is the option to start an application and detach from it, which keeps the containers running in the background. This is done with the docker-compose-up-dash-d command. In this case, we run docker compose up and see that our two containers are created, and then the system attaches to them and shows us the output. In addition to the containers, you'll see that a new docker network is automatically created. Note that your output will likely be different, this is shortened for illustrative purposes.
+
+5. Checking status of applications
+02:36 - 02:50
+To check on the status of a docker compose application, we can use the command docker compose ls. This provides a list of the application(s), the status of the required containers, and the config file used to start the application.
+
+6. Stopping an application
+02:50 - 03:18
+Let's consider if we want to shut down a running application. We can use the docker compose down command instead. Remember, if the dash-f option is used to start the application, it must be used to shut it down as well. This will automatically shut down any running resources from a given application. In this case, the redis and webapp containers are shut down and removed, and then the network created specifically for this application is shut down and removed.
+
+7. Let's practice!
+03:18 - 03:29
+Docker compose is a fairly large subject and we'll cover more in the coming lessons. In the mean time, let's practice what you've learned in the exercises ahead.

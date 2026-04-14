@@ -1,0 +1,32 @@
+1. Persistent volumes
+00:00 - 00:08
+Nice work on those last exercises! Let's take a look at another method to store data with Docker containers - persistent volumes.
+
+2. What is a volume?
+00:08 - 00:58
+The first question is, of course, what is a volume? Volumes are another way to store data in Docker that is unrelated to the container image or the host file system. Docker manages volumes on its own, using the command-line tools. Technically, volumes can also be managed from the Docker API, but we won't cover the API in this course. One advantage of Docker volumes is that they can be shared with multiple containers. You still need to handle data access issues, such as two containers writing to the same file, but it is considerably more powerful than a bind-mount option. It should be noted that volumes are higher performance than using bind-mounts and are recommended if there are performance concerns. Finally, Docker volumes exist until they are specifically removed, even if the container they're attached to is deleted.
+
+1 Image modified from https://docs.docker.com
+3. Managing volumes
+00:58 - 01:54
+Volumes are managed using the docker-volume command and its various options and subcommands. To create a volume, we use docker-volume-create-volumename. This defaults to creating a volume locally, but there are other options we'll discuss shortly. To view a list of existing volumes, we can use the docker-volume-ls command. An alias, docker-volume-list works as well. There are some various filtering and formatting options available depending on our version of Docker. To see more extensive information about a volume, we can use the docker-volume-inspect-command. This command shows assorted metadata about the volume, including its name, mount point (on the host/destination), and various options for the volume. Finally, we can also remove volumes using the docker-volume-rm command.
+
+4. Volume creation example
+01:54 - 02:25
+Let's look at a quick example of working with a volume. First, we'll create a volume called sqldata using the command docker-volume-create-sqldata. This simply returns the name of the volume when it's created. Next, we can use docker-volume-ls to get a list of our volumes. You will likely see many volumes depending on the number of containers or volumes you've created. In this case, it shows the driver and the volume name. We'll discuss drivers in a moment.
+
+5. Volume inspect example
+02:25 - 02:39
+Let's also use the docker-volume-inspect command, such as docker-volume-inspect-sqldata. This returns various metadata regarding the name, age, mountpoint, options, and so forth.
+
+6. Attaching volumes
+02:39 - 03:20
+To actually use our volume with a container, we use the dash-v command once again. This would look like docker-run-dash-v-space-volumename-colon-destination path and, optionally, colon options. The volume name is the name of an existing Docker volume. The destination path is the location in the container where the volume is mounted. Options represent an optional comma-separated list of values to pass to the volume configuration. This can be something like the ro option for read-only. Note: There is also a dash-dash-mount flag with different options. We won't cover it in this course.
+
+7. Drivers
+03:20 - 03:53
+For the last part of this video, we'll discuss the Docker volume drivers. Drivers are simply methods of storing Docker volumes. These can include various methods, but typically it's a local filesystem, which is the default. There are countless other drivers, but two very common ones are NFS or unix filesharing. Another common option is using SMB or CIFS for Windows filesharing. Other drivers include options for remote systems, backup devices, and so forth.
+
+8. Let's practice!
+03:53 - 04:02
+We've covered a considerable amount about persistent volumes. Let's try a few exercises to solidify your knowledge.
