@@ -1,0 +1,131 @@
+Creating new tools
+
+# How can I edit a file?
+nano filename
+# Ctrl + K: delete a line.
+# Ctrl + U: un-delete a line.
+# Ctrl + O: save the file ('O' stands for 'output'). You will also need to press Enter to confirm the filename!
+# Ctrl + X: exit the editor.
+
+
+# How can I record what I just did?
+history
+history | tail
+
+
+# How can I save commands to re-run later?
+$ echo head -n 1 seasonal/*.csv > headers.sh
+$ bash headers.sh
+
+
+# How can I re-use pipes?
+$ echo "cut -d , -f 1 seasonal/*.csv | grep -v Date | sort | uniq" >> all-dates.sh
+$ bash all-dates.sh > dates.out
+
+
+# How to inspect the content of a file?
+cat file
+
+
+# How can I pass filenames to scripts?
+$ nano unique-lines.sh
+$ cat unique-lines.sh
+sort $@ | wc -l
+$ bash unique-lines.sh seasonal/summer.csv
+25
+$ bash unique-lines.sh seasonal/summer.csv seasonal/autumn.csv
+46
+$ bash unique-lines.sh seasonal/autumn.csv
+21
+$ bash unique-lines.sh seasonal/*.csv
+92
+$ bash unique-lines.sh seasonal/*.csv > num-records.out
+$ cat num-records.out
+92
+
+
+# How can I process a single argument?
+# Ex. Script to selects a column from a CSV file
+$ nano column.sh
+$ cat column.sh
+cut -d , -f $2 $1
+$ bash column.sh seasonal/autumn.csv 1 | head -n 3
+Date
+2017-01-05
+2017-01-17
+$ bash column.sh seasonal/autumn.csv 2 | head -n 3
+Tooth
+canine
+wisdom
+
+# Ex. to take a filename, the number of the row to select, the number of the column to select
+$ nano get-field.sh
+$ cat get-field.sh
+head -n $2 $1 | tail -n 1 | cut -d , -f $3
+$ bash get-field.sh seasonal/summer.csv 4 2
+bicuspid
+
+
+
+# How can one shell script do many things?
+$ nano range.sh
+$ cat range.sh
+wc -l $@ | grep -v total | sort -n | head -n 1
+wc -l $@ | grep -v total | sort -n -r | head -n 1
+$ bash range.sh seasonal/*.csv
+  21 seasonal/autumn.csv
+  26 seasonal/winter.csv
+$ bash range.sh seasonal/*.csv > range.out
+$ cat range.out
+  21 seasonal/autumn.csv
+  26 seasonal/winter.csv
+
+
+
+# How can I write loops in a shell script?
+# Ex. Print the first and last data records of each file
+$ nano first-end-file.sh
+$ cat first-end-file.sh
+	for filename in $@
+	do
+	        head -n 2 $filename | tail -n 1
+        	tail -n 1 $filename
+	done
+$ bash first-end-file.sh seasonal/*.csv
+	2017-01-05,canine
+	2017-08-16,canine
+	2017-01-25,wisdom
+	2017-09-07,molar
+	2017-01-11,canine
+	2017-08-04,canine
+	2017-01-03,bicuspid
+	2017-08-13,canine
+
+
+# Ex. Print the first and last date from each data file.
+$ nano date-range.sh
+$ cat date-range.sh
+for filename in $@
+do
+    cut -d , -f 1 $filename | grep -v Date | sort | head -n 1
+    cut -d , -f 1 $filename | grep -v Date | sort | tail -n 1
+done
+$ bash date-range.sh seasonal/*.csv
+2017-01-05
+2017-08-16
+2017-01-25
+2017-09-07
+2017-01-11
+2017-08-04
+2017-01-03
+2017-08-13
+$ bash date-range.sh seasonal/*.csv | sort
+2017-01-03
+2017-01-05
+2017-01-11
+2017-01-25
+2017-08-04
+2017-08-13
+2017-08-16
+2017-09-07
+

@@ -1,0 +1,48 @@
+Manipulating data
+
+# How can I view a file's contents?
+cat file.txt
+
+# How can I view a file's contents piece by piece?
+# If you give less the names of several files, you can type :n (colon and a lower-case 'n') to move to the next file, :p to go back to the previous one, or :q to quit.
+less file1 file2
+
+# How can I look at the start of a file?
+# by default head shows the first 10 lines
+head file 
+head -n 2 file
+
+# How can I get help for a command?
+man head
+
+# How can I show the end of a file
+tail file
+tail -n +7 file
+tail -n 5 file
+
+# How can I select columns from a file?
+cut -f 2-5,8 -d , values.csv
+# which means "select columns 2 through 5 and columns 8, using comma as the separator". cut uses -f (meaning "fields") to specify columns and -d (meaning "delimiter") to specify the separator.
+
+# How can I review the command history?
+history
+# and then ! with the number of the command
+
+# How can I select lines containing specific values?
+grep bicuspid seasonal/winter.csv         # prints lines from winter.csv that contain "bicuspid".
+grep term file1 file2
+
+# some of grep's more common flags:
+# 
+# -c: print a count of matching lines rather than the lines themselves
+# -h: do not print the names of files when searching multiple files
+# -i: ignore case (e.g., treat "Regression" and "regression" as matches)
+# -l: print the names of files that contain matches, not the matches
+# -n: print line numbers for matching lines
+# -v: invert the match, i.e., only show lines that don't match
+
+
+# How to combine data files
+paste
+# Example: combine the autumn and winter data files in a single table using a comma as a separator. 
+paste -d , seasonal/autumn.csv seasonal/winter.csv

@@ -1,0 +1,81 @@
+Combining tools
+
+# How can I store a command's output in a file?
+head file > new-file
+
+
+# How can I use a command's output as an input?
+# instead of this
+head -n 5 seasonal/winter.csv > top.csv
+tail -n 3 top.csv
+# you can do
+head -n 5 seasonal/summer.csv | tail -n 3
+
+# Ex. Use cut to select all of the tooth names from column 2 of the comma delimited file seasonal/summer.csv, 
+# then pipe the result to grep, with an inverted match, to exclude the header line containing the word "Tooth". 
+# And then show the first 10 lines
+cut -f 2 -d , seasonal/summer.csv | grep -v Tooth | head
+
+
+# How can I count the records in a file?
+wc file
+#   -c, --bytes            print the byte counts
+#   -m, --chars            print the character counts
+#   -l, --lines            print the newline counts
+#       --files0-from=F    read input from the files specified by
+#                            NUL-terminated names in file F;
+#                            If F is - then read names from standard input
+#   -L, --max-line-length  print the maximum display width
+#   -w, --words            print the word counts
+#       --help     display this help and exit
+#       --version  output version information and exit
+
+# Ex. Count how many records in seasonal/spring.csv have dates in July 2017 (2017-07).
+grep 2017-07 seasonal/spring.csv | wc -l
+
+
+# How can I specify many files at once?
+# Ex. get the first column from all of the seasonal data files at once
+cut -d , -f 1 seasonal/winter.csv seasonal/spring.csv seasonal/summer.csv seasonal/autumn.csv
+
+# or
+cut -d , -f 1 seasonal/*
+cut -d , -f 1 seasonal/*.csv
+
+
+# What other wildcards can I use?
+# 1) ? matches a single character, so 201?.txt will match 2017.txt or 2018.txt, but not 2017-01.txt.
+# 2) [...] matches any one of the characters inside the square brackets, so 201[78].txt matches 2017.txt or 2018.txt, but not 2016.txt.
+# 3) {...} matches any of the comma-separated patterns inside the curly brackets, so {*.txt, *.csv} matches any file whose name ends with .txt or .csv, but not files whose names end with .pdf.
+
+
+# How can I sort lines of text?
+cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort
+# -f, --ignore-case, to fold lower case to upper case characters
+# -g, --general-numeric-sort, to compare according to general numerical value
+# -M, --month-sort, to compare (unknown) < 'JAN' < ... < 'DEC'
+# -n, --numeric-sort, to compare according to string numerical value
+# -r, --reverse, to reverse the result of comparisons
+wc -l seasonal/*.csv | grep -v total | sort -n
+# Output
+  21 seasonal/autumn.csv
+  24 seasonal/spring.csv
+  25 seasonal/summer.csv
+  26 seasonal/winter.csv
+
+# How can I remove duplicate lines? uniq >> it removes adjacent duplicated lines. 
+cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort | uniq -c
+# Output:
+      4 bicuspid
+      7 canine
+      6 incisor
+      4 molar
+      4 wisdom
+
+
+# How can I save the output of a pipe?
+cut -d , -f 2 seasonal/*.csv | grep -v Tooth > teeth-only.txt
+
+
+# How can I stop a running program?
+Ctrl + C
